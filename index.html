@@ -11,7 +11,7 @@
 <meta property="og:image" content="https://johnrecords.org/assets/reading-room.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
 <style>
 /* ══════════════════════════════════════════════════════════════
    johnrecords.org — JOHN'S READING ROOM
@@ -43,7 +43,7 @@
   --line-faint:rgba(83,52,26,.10);
   --shadow:0 18px 40px -22px rgba(42,33,24,.45);
   --hero-filter:none;
-  --display:"Fraunces",Georgia,serif;
+  --display:"IM Fell English","Iowan Old Style",Georgia,serif;
   --read:"Newsreader",Georgia,"Times New Roman",serif;
   --data:"DM Mono",ui-monospace,SFMono-Regular,monospace;
 }
@@ -135,11 +135,9 @@ a{color:inherit}
 .mast{padding:clamp(26px,4.5vw,52px) 0 0}
 .mast h1{
   font-family:var(--display);
-  font-variation-settings:"SOFT" 40,"WONK" 1,"opsz" 144;
-  font-weight:390; font-size:clamp(44px,8.4vw,98px); line-height:.98;
-  margin:0; letter-spacing:-.02em; text-wrap:balance;
+  font-weight:400; font-size:clamp(42px,7.6vw,86px); line-height:1.04;
+  margin:0; letter-spacing:.005em; text-wrap:balance;
 }
-.mast h1 em{font-style:italic; color:var(--terracotta)}
 .mast .thesis{
   margin:clamp(18px,2.6vw,28px) 0 0; max-width:34em;
   font-size:clamp(19px,2vw,23px); line-height:1.55; color:var(--ink-soft);
@@ -205,13 +203,22 @@ a{color:inherit}
   background:var(--oak-grain);
   box-shadow:0 3px 6px -2px rgba(42,33,24,.35);
 }
+.book .plate{ /* a tipped-in plate, bound in under the spine */
+  margin:-26px -26px 20px -36px;
+  border-bottom:1px solid var(--line);
+  overflow:hidden;
+}
+.book .plate img{
+  display:block; width:100%; height:auto; aspect-ratio:3/2; object-fit:cover;
+  filter:var(--hero-filter); transition:filter .8s ease, transform .5s ease;
+}
+a.book:hover .plate img{transform:scale(1.025)}
+.book.soon .plate img{opacity:.9}
 a.book:hover{transform:translateY(-5px); box-shadow:var(--shadow)}
 a.book:hover h3{color:var(--terracotta)}
 .book h3{
   font-family:var(--display);
-  font-variation-settings:"SOFT" 30,"WONK" 1,"opsz" 72;
-  font-size:28px; line-height:1.14; margin:0 0 4px; font-weight:450;
-  letter-spacing:-.01em;
+  font-size:26px; line-height:1.18; margin:0 0 4px; font-weight:400;
 }
 .book .byline{
   font-family:var(--read); font-style:italic; font-size:16px;
@@ -306,7 +313,7 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
   </div>
 
   <header class="mast">
-    <h1>John&rsquo;s <em>Reading Room</em></h1>
+    <h1>John&rsquo;s Reading Room</h1>
     <p class="thesis">Books — <span class="adj">devotional, mystical, mythic,
       and down-to-earth</span> — translations and letters on contemplative
       practice and the work of compassion.</p>
@@ -327,6 +334,7 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
   <div class="shelf">
 
     <a class="book" href="/autobiography-of-a-yogi/" style="--spine:#B07A26">
+      <figure class="plate"><img src="/assets/plates/yogi.jpg" width="768" height="512" loading="lazy" alt="Himalayan peaks at dawn, a lone figure seated in meditation on a ledge." /></figure>
       <h3>Autobiography of a Yogi</h3>
       <p class="byline">Paramahansa Yogananda, 1946 — an annotated edition</p>
       <p class="d">One of the foundational books for Yoga in the West. It hugely
@@ -338,6 +346,7 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
     </a>
 
     <a class="book" href="https://rosy-truffle-2d7p.here.now/" style="--spine:#3E5A45">
+      <figure class="plate"><img src="/assets/plates/love.jpg" width="768" height="512" loading="lazy" alt="Two hands gently cupping a small warm flame." /></figure>
       <h3>Love in Action</h3>
       <p class="byline">John Records, 2017</p>
       <p class="d">Heal the world, heal yourself.</p>
@@ -345,6 +354,7 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
     </a>
 
     <a class="book" href="https://opaque-acorn-59v4.here.now/" style="--spine:#5C7350">
+      <figure class="plate"><img src="/assets/plates/love-rev.jpg" width="768" height="512" loading="lazy" alt="A green seedling growing from the open pages of a well-worn book." /></figure>
       <h3>Love in Action — Revised</h3>
       <p class="byline">John Records</p>
       <span class="state">In process</span>
@@ -355,6 +365,7 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
     </a>
 
     <div class="book soon" style="--spine:#4C5A82">
+      <figure class="plate"><img src="/assets/plates/gateways.jpg" width="768" height="512" loading="lazy" alt="An ancient carved stone gateway opening onto a starry night sky." /></figure>
       <h3>112 Gateways</h3>
       <p class="byline">Vijñāna Bhairava Tantra — a new translation from the Sanskrit</p>
       <span class="state">In process</span>
@@ -366,6 +377,7 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
     </div>
 
     <a class="book" href="https://plush-chant-thza.here.now/" style="--spine:#A64B2A">
+      <figure class="plate"><img src="/assets/plates/shortcuts.jpg" width="768" height="512" loading="lazy" alt="A meditation cushion by a sunlit window, a lit candle on the sill." /></figure>
       <h3>Shortcuts to Meditation</h3>
       <p class="byline">John Records</p>
       <p class="d">Meditation shortcuts gathered over nearly forty years of
@@ -376,6 +388,7 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
     </a>
 
     <a class="book" href="https://one-heart-practice.john-records.workers.dev/" style="--spine:#A85F62">
+      <figure class="plate"><img src="/assets/plates/oneheart.jpg" width="768" height="512" loading="lazy" alt="Open palms holding a softly radiant heart." /></figure>
       <h3>The One Heart Practice</h3>
       <p class="byline">John Records</p>
       <p class="d">A body-led practice in five gestures — My Heart, Our Hearts,
@@ -386,6 +399,7 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
     </a>
 
     <a class="book" href="https://floral-mirage-avqw.here.now/" style="--spine:#8A6516">
+      <figure class="plate"><img src="/assets/plates/remember.jpg" width="768" height="512" loading="lazy" alt="Warm light streaming through an open wooden doorway into a dark room." /></figure>
       <h3>Remember Who You Are</h3>
       <p class="byline">John Records, 2004</p>
       <p class="d">The Creator waking up in and as Creation — in and as you and
@@ -394,6 +408,7 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
     </a>
 
     <a class="book" href="https://velvet-quill-y5x3.here.now/" style="--spine:#7A4E28">
+      <figure class="plate"><img src="/assets/plates/dust.jpg" width="768" height="512" loading="lazy" alt="Two travelers walking a dusty road under a wide golden sky." /></figure>
       <h3>The Dust Between Us</h3>
       <p class="byline">John Records — a novel</p>
       <p class="d">A homage to Louis L&rsquo;Amour&rsquo;s westerns with the
@@ -405,6 +420,7 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
     </a>
 
     <a class="book" href="https://happy-canyon-38dp.here.now/" style="--spine:#3E5A45">
+      <figure class="plate"><img src="/assets/plates/athy.jpg" width="768" height="512" loading="lazy" alt="Twin children on an ancient Greek shore among olive trees, a ship on the horizon." /></figure>
       <h3>Athy and Alexander</h3>
       <p class="byline">John Records — a web novel</p>
       <p class="d">Made for my friend, on whom Athy is based. Twins born eleven
@@ -416,6 +432,7 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
     </a>
 
     <a class="book" href="https://zen-cedar-sj5s.here.now/" style="--spine:#4C5A82">
+      <figure class="plate"><img src="/assets/plates/heir.jpg" width="768" height="512" loading="lazy" alt="A space station shaped like a temple gateway orbiting an amber planet." /></figure>
       <h3>The Calibrated Heir</h3>
       <p class="byline">John Records — the Rāmāyaṇa, retold as science fiction</p>
       <p class="d">Six books: a sci-fi retelling of the Rāmāyaṇa. It&rsquo;s
