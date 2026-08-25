@@ -3,44 +3,478 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>John Records</title>
-<meta name="description" content="Books, editions and letters on contemplative practice and the work of compassion." />
+<title>John&rsquo;s Reading Room</title>
+<meta name="description" content="The reading room of John Records — books devotional, mystical, mythic and down-to-earth, translations, and letters on contemplative practice and the work of compassion." />
+<link rel="canonical" href="https://johnrecords.org/" />
+<meta property="og:title" content="John's Reading Room" />
+<meta property="og:description" content="Books, translations and letters on contemplative practice and the work of compassion." />
+<meta property="og:image" content="https://johnrecords.org/assets/reading-room.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
 <style>
+/* ══════════════════════════════════════════════════════════════
+   johnrecords.org — JOHN'S READING ROOM
+   Palette taken from John's photograph of a 1902 library:
+   honey encaustic tile, quarter-sawn oak, the terracotta Greek
+   key in the floor border, and the floral tapestry of the
+   rocking chair. Day is the room by window light; evening is
+   the same room by the lamp.
+   ══════════════════════════════════════════════════════════════ */
+
+/* ---------- DAY (default) ---------- */
 :root{
-  --paper:#fcfcfa; --ink:#1d1d1b; --soft:#6a685f; --mark:#8a5a2b; --rule:#dedbd2;
+  --room:#EFE3C8;            /* the room behind the page — warm tile-washed */
+  --paper:#FAF5E9;           /* the page itself */
+  --card:#FFFDF4;            /* a book pulled into the light */
+  --ink:#2A2118;
+  --ink-soft:#6E5F4B;
+  --ink-faint:#93856D;
+  --oak:#7A4E28;             /* the woodwork */
+  --oak-deep:#53341A;
+  --oak-grain:linear-gradient(180deg,#8a5c33,#6b4322 55%,#53341A);
+  --terracotta:#A64B2A;      /* the Greek key in the floor */
+  --leaf:#3E5A45;            /* the chair's tapestry */
+  --rose:#A85F62;
+  --tile:#E2BE72;            /* the honey floor */
+  --lamp:#B07A26;            /* brass, by day: quiet */
+  --glow:transparent;
+  --line:rgba(83,52,26,.22);
+  --line-faint:rgba(83,52,26,.10);
+  --shadow:0 18px 40px -22px rgba(42,33,24,.45);
+  --hero-filter:none;
+  --display:"Fraunces",Georgia,serif;
+  --read:"Newsreader",Georgia,"Times New Roman",serif;
+  --data:"DM Mono",ui-monospace,SFMono-Regular,monospace;
 }
+/* ---------- EVENING (lamplight) ---------- */
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --room:#191008;
+    --paper:#241A0F;
+    --card:#2E2214;
+    --ink:#F0E5CE;
+    --ink-soft:#C4B394;
+    --ink-faint:#94836A;
+    --oak:#B98B54;
+    --oak-deep:#8A5F33;
+    --oak-grain:linear-gradient(180deg,#6b4a26,#4a3117 55%,#33200e);
+    --terracotta:#D2764E;
+    --leaf:#8FB49A;
+    --rose:#D49295;
+    --tile:#B08A3F;
+    --lamp:#F2B94E;
+    --glow:rgba(242,185,78,.16);
+    --line:rgba(240,229,206,.22);
+    --line-faint:rgba(240,229,206,.09);
+    --shadow:0 18px 44px -20px rgba(0,0,0,.7);
+    --hero-filter:brightness(.8) saturate(.88) sepia(.18);
+  }
+}
+:root[data-theme="dark"]{
+  --room:#191008;
+  --paper:#241A0F;
+  --card:#2E2214;
+  --ink:#F0E5CE;
+  --ink-soft:#C4B394;
+  --ink-faint:#94836A;
+  --oak:#B98B54;
+  --oak-deep:#8A5F33;
+  --oak-grain:linear-gradient(180deg,#6b4a26,#4a3117 55%,#33200e);
+  --terracotta:#D2764E;
+  --leaf:#8FB49A;
+  --rose:#D49295;
+  --tile:#B08A3F;
+  --lamp:#F2B94E;
+  --glow:rgba(242,185,78,.16);
+  --line:rgba(240,229,206,.22);
+  --line-faint:rgba(240,229,206,.09);
+  --shadow:0 18px 44px -20px rgba(0,0,0,.7);
+  --hero-filter:brightness(.8) saturate(.88) sepia(.18);
+}
+
 *{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
 body{
-  margin:0; background:var(--paper); color:var(--ink);
-  font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;
-  font-size:21px; line-height:1.65; -webkit-font-smoothing:antialiased;
-  min-height:100vh; display:flex; align-items:center; justify-content:center;
-  padding:32px;
+  margin:0; background:var(--room); color:var(--ink);
+  font-family:var(--read); font-optical-sizing:auto;
+  font-size:18.5px; line-height:1.62; -webkit-font-smoothing:antialiased;
+  overflow-x:clip;
 }
-main{max-width:34em}
-h1{font-size:clamp(40px,7vw,58px); font-weight:400; margin:0 0 18px; line-height:1.1}
-p{margin:0 0 14px; color:var(--soft)}
-a{color:var(--mark)}
-a:hover{text-decoration:none}
-.works{border-top:1px solid var(--rule); margin-top:30px; padding-top:24px}
-.works a{display:block; text-decoration:none; font-size:26px; margin:0 0 4px}
-.works a:hover{text-decoration:underline}
-.works .about{font-size:18px; font-style:italic; color:var(--soft); margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--terracotta);outline-offset:3px}
+
+.page{
+  max-width:1120px; margin:0 auto; background:var(--paper);
+  padding:0 clamp(22px,4.5vw,64px) clamp(28px,4vw,52px);
+  box-shadow:0 0 0 1px var(--line-faint), 0 30px 80px -40px rgba(42,33,24,.5);
+}
+
+/* ---------- top strip + the lamp ---------- */
+.strip{
+  display:flex; justify-content:space-between; align-items:center; gap:16px;
+  padding:clamp(16px,2.4vw,26px) 0 0;
+}
+.strip .who{
+  font-family:var(--data); font-size:.66rem; letter-spacing:.22em;
+  text-transform:uppercase; color:var(--ink-faint);
+}
+.lampbtn{
+  appearance:none; background:none; border:0; cursor:pointer; padding:6px 8px;
+  display:flex; align-items:center; gap:10px; color:var(--ink-soft);
+  font-family:var(--data); font-size:.62rem; letter-spacing:.18em;
+  text-transform:uppercase; border-radius:2px;
+}
+.lampbtn:hover{color:var(--lamp)}
+.lampbtn svg{display:block; overflow:visible}
+.lampbtn .shade{fill:var(--lamp)}
+.lampbtn .base{fill:var(--oak)}
+.lampbtn .halo{fill:var(--glow)}
+
+/* ---------- masthead ---------- */
+.mast{padding:clamp(26px,4.5vw,52px) 0 0}
+.mast h1{
+  font-family:var(--display);
+  font-variation-settings:"SOFT" 40,"WONK" 1,"opsz" 144;
+  font-weight:390; font-size:clamp(44px,8.4vw,98px); line-height:.98;
+  margin:0; letter-spacing:-.02em; text-wrap:balance;
+}
+.mast h1 em{font-style:italic; color:var(--terracotta)}
+.mast .thesis{
+  margin:clamp(18px,2.6vw,28px) 0 0; max-width:34em;
+  font-size:clamp(19px,2vw,23px); line-height:1.55; color:var(--ink-soft);
+}
+.mast .thesis .adj{font-style:italic; color:var(--ink)}
+
+/* the floor: a Greek key band, from the tile border in the photograph */
+.keyband{
+  height:13px; margin:clamp(28px,4vw,44px) 0 0;
+  background-color:transparent;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='13' viewBox='0 0 26 13'%3E%3Cpath d='M1 12 V1 H25 M25 1 V12 H9 V5 H17 V9 H13' fill='none' stroke='%23A64B2A' stroke-width='1.6'/%3E%3C/svg%3E");
+  background-repeat:repeat-x; background-size:26px 13px;
+  opacity:.85;
+}
+:root[data-theme="dark"] .keyband{opacity:.6}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .keyband{opacity:.6}
+}
+
+/* ---------- the hero: a view into the room ---------- */
+.hero{margin:clamp(30px,4.5vw,50px) 0 0}
+.hero .frame{
+  padding:clamp(10px,1.6vw,16px);
+  background:var(--oak-grain);
+  box-shadow:var(--shadow);
+}
+.hero img{
+  display:block; width:100%; height:auto;
+  filter:var(--hero-filter);
+  transition:filter .8s ease;
+}
+.hero figcaption{
+  margin:14px 2px 0; font-size:16px; font-style:italic; color:var(--ink-faint);
+}
+
+/* ---------- section labels ---------- */
+.label{
+  font-family:var(--data); font-size:.68rem; letter-spacing:.24em;
+  text-transform:uppercase; color:var(--terracotta);
+  margin:clamp(52px,7vw,84px) 0 6px; display:flex; align-items:baseline; gap:14px;
+}
+.label .n{color:var(--ink-faint); letter-spacing:.12em}
+.label::after{content:""; flex:1; height:1px; background:var(--line); align-self:center}
+.leadin{margin:0 0 30px; color:var(--ink-soft); font-size:17.5px; max-width:36em}
+
+/* ---------- the shelf ---------- */
+.shelf{
+  display:grid; gap:clamp(26px,3.4vw,38px) 28px;
+  grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+}
+.book{
+  position:relative; display:flex; flex-direction:column; text-decoration:none;
+  background:var(--card); border:1px solid var(--line);
+  padding:26px 26px 22px 36px;
+  transition:transform .3s cubic-bezier(.2,.7,.3,1), box-shadow .3s;
+}
+.book::before{ /* the spine */
+  content:""; position:absolute; left:0; top:0; bottom:0; width:10px;
+  background:var(--spine,var(--oak));
+}
+.book::after{ /* the shelf it stands on */
+  content:""; position:absolute; left:-8px; right:-8px; bottom:-9px; height:7px;
+  background:var(--oak-grain);
+  box-shadow:0 3px 6px -2px rgba(42,33,24,.35);
+}
+a.book:hover{transform:translateY(-5px); box-shadow:var(--shadow)}
+a.book:hover h3{color:var(--terracotta)}
+.book h3{
+  font-family:var(--display);
+  font-variation-settings:"SOFT" 30,"WONK" 1,"opsz" 72;
+  font-size:28px; line-height:1.14; margin:0 0 4px; font-weight:450;
+  letter-spacing:-.01em;
+}
+.book .byline{
+  font-family:var(--read); font-style:italic; font-size:16px;
+  color:var(--ink-soft); margin:0 0 14px;
+}
+.book p.d{margin:0 0 18px; color:var(--ink-soft); font-size:17px; line-height:1.58}
+.book .meta{
+  margin-top:auto;
+  font-family:var(--data); font-size:.62rem; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--ink-faint);
+  display:flex; flex-wrap:wrap; gap:4px 0;
+}
+.book .meta span:not(:last-child)::after{content:"·"; margin:0 8px; color:var(--line)}
+.book .meta b{font-weight:400; color:var(--oak)}
+.book.soon h3{color:var(--ink-soft)}
+.book.soon::before{opacity:.45}
+.state{
+  display:inline-block; align-self:flex-start;
+  font-family:var(--data); font-size:.58rem;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--terracotta);
+  border:1px solid currentColor; padding:3px 9px 2px; border-radius:2px;
+  margin:0 0 12px;
+}
+
+/* ---------- letters ---------- */
+.two{display:grid; grid-template-columns:1.5fr 1fr; gap:clamp(34px,5vw,64px); align-items:start}
+.letters{list-style:none; margin:0; padding:0}
+.letters li{border-top:1px solid var(--line-faint)}
+.letters li:first-child{border-top:0}
+.letters .lt{
+  display:flex; align-items:baseline; gap:16px; padding:17px 0;
+}
+.letters .tick{
+  flex:none; width:15px; height:6px; background:var(--tile);
+  box-shadow:0 0 0 1px var(--line-faint);
+  position:relative; top:-3px;
+}
+.letters li:nth-child(3n+2) .tick{background:var(--leaf)}
+.letters li:nth-child(3n) .tick{background:var(--rose)}
+.letters h4{
+  font-family:var(--read); font-size:21px; font-weight:400; margin:0; line-height:1.32;
+}
+.aside{
+  background:var(--card); border:1px solid var(--line); padding:28px 30px;
+  position:relative;
+}
+.aside::before{
+  content:""; position:absolute; left:0; right:0; top:0; height:4px;
+  background:var(--tile);
+}
+.aside h4{
+  font-family:var(--data); font-size:.64rem; letter-spacing:.2em;
+  text-transform:uppercase; margin:0 0 14px; color:var(--terracotta); font-weight:400;
+}
+.aside p{margin:0 0 14px; font-size:16.5px; color:var(--ink-soft)}
+.aside p:last-child{margin:0}
+
+/* ---------- footer ---------- */
+footer{
+  margin-top:clamp(56px,8vw,92px); border-top:1px solid var(--line);
+  padding:26px 0 10px;
+  font-family:var(--data); font-size:.66rem; letter-spacing:.08em;
+  color:var(--ink-faint);
+  display:flex; justify-content:space-between; gap:14px 28px; flex-wrap:wrap;
+}
+footer a{color:var(--oak); text-decoration:none; border-bottom:1px solid var(--line)}
+footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
+
+@media (max-width:840px){
+  .two{grid-template-columns:1fr; gap:40px}
+  .book::after{left:-4px; right:-4px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important}
+}
 </style>
 </head>
 <body>
-<main>
-  <h1>John Records</h1>
-  <p>Books, editions and letters on contemplative practice and the work of
-     compassion. This site is being assembled; what is finished is already here.</p>
-  <div class="works">
-    <a href="/autobiography-of-a-yogi/">Autobiography of a Yogi</a>
-    <p class="about">Paramahansa Yogananda &mdash; the 1946 text, annotated, with
-       the whole book read aloud. 49 chapters, 17 hours.</p>
+<div class="page">
+
+  <div class="strip">
+    <span class="who">johnrecords.org</span>
+    <button class="lampbtn" id="lamp" type="button" aria-pressed="false">
+      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+        <circle class="halo" cx="13" cy="9" r="12"/>
+        <path class="shade" d="M5 11 L9 3 H17 L21 11 Z"/>
+        <rect class="base" x="12" y="11" width="2" height="9"/>
+        <path class="base" d="M8 22 Q13 19 18 22 L18 23 H8 Z"/>
+      </svg>
+      <span id="lampword">Light the lamp</span>
+    </button>
   </div>
-</main>
+
+  <header class="mast">
+    <h1>John&rsquo;s <em>Reading Room</em></h1>
+    <p class="thesis">Books — <span class="adj">devotional, mystical, mythic,
+      and down-to-earth</span> — translations and letters on contemplative
+      practice and the work of compassion.</p>
+  </header>
+
+  <div class="keyband" role="presentation"></div>
+
+  <figure class="hero">
+    <div class="frame">
+      <img src="/assets/reading-room.jpg" width="1152" height="736"
+           alt="A reading nook: an antique rocking chair with floral tapestry upholstery beside a glowing brass reading lamp, on a patterned rug over a honey-colored tile floor, surrounded by tall oak bookshelves full of well-worn books." />
+    </div>
+    <figcaption>The room, more or less. After a photograph taken in a library
+      organized in 1886.</figcaption>
+  </figure>
+
+  <p class="label">The Shelf <span class="n">ten works</span></p>
+  <div class="shelf">
+
+    <a class="book" href="/autobiography-of-a-yogi/" style="--spine:#B07A26">
+      <h3>Autobiography of a Yogi</h3>
+      <p class="byline">Paramahansa Yogananda, 1946 — an annotated edition</p>
+      <p class="d">One of the foundational books for Yoga in the West. It hugely
+        influenced my spiritual path, and the Kriya yogis have taken me under
+        their wing. The complete 1946 text, unaltered, with links and photos for
+        the names, places and Sanskrit a first-time reader stumbles over — and
+        the whole of it read aloud.</p>
+      <p class="meta"><span><b>49</b> chapters</span><span><b>17</b> hours narrated</span><span>Free</span></p>
+    </a>
+
+    <a class="book" href="https://rosy-truffle-2d7p.here.now/" style="--spine:#3E5A45">
+      <h3>Love in Action</h3>
+      <p class="byline">John Records, 2017</p>
+      <p class="d">Heal the world, heal yourself.</p>
+      <p class="meta"><span>Read by the author</span><span>Free</span></p>
+    </a>
+
+    <a class="book" href="https://opaque-acorn-59v4.here.now/" style="--spine:#5C7350">
+      <h3>Love in Action — Revised</h3>
+      <p class="byline">John Records</p>
+      <span class="state">In process</span>
+      <p class="d">The same book, reworked: a five-part structure and a new
+        chapter on receiving love, drafted alongside the rest. Text-only for
+        now.</p>
+      <p class="meta"><span>Free</span></p>
+    </a>
+
+    <div class="book soon" style="--spine:#4C5A82">
+      <h3>112 Gateways</h3>
+      <p class="byline">Vijñāna Bhairava Tantra — a new translation from the Sanskrit</p>
+      <span class="state">In process</span>
+      <p class="d">A new translation of the Vijñāna Bhairava Tantra, roughly
+        1300 years old, collated against Śivopādhyāya&rsquo;s commentary — with
+        our own commentary, practice suggestions, and chants of the original
+        Sanskrit with a pronunciation guide.</p>
+      <p class="meta"><span><b>112</b> gateways</span><span>CC BY 4.0</span></p>
+    </div>
+
+    <a class="book" href="https://plush-chant-thza.here.now/" style="--spine:#A64B2A">
+      <h3>Shortcuts to Meditation</h3>
+      <p class="byline">John Records</p>
+      <p class="d">Meditation shortcuts gathered over nearly forty years of
+        practising in several traditions and teaching in yoga studios, homeless
+        shelters, a school of nursing and two social work schools. Each one
+        works with your own physiology instead of against it.</p>
+      <p class="meta"><span>Free</span></p>
+    </a>
+
+    <a class="book" href="https://one-heart-practice.john-records.workers.dev/" style="--spine:#A85F62">
+      <h3>The One Heart Practice</h3>
+      <p class="byline">John Records</p>
+      <p class="d">A body-led practice in five gestures — My Heart, Our Hearts,
+        More Hearts, All Hearts, Return — carried through three times, because
+        the one practicing is not the same by the third pass. Offered as a
+        gift, not a product.</p>
+      <p class="meta"><span>Free</span></p>
+    </a>
+
+    <a class="book" href="https://floral-mirage-avqw.here.now/" style="--spine:#8A6516">
+      <h3>Remember Who You Are</h3>
+      <p class="byline">John Records, 2004</p>
+      <p class="d">The Creator waking up in and as Creation — in and as you and
+        me. An autobiography of sorts.</p>
+      <p class="meta"><span>Narrated</span><span>Free</span></p>
+    </a>
+
+    <a class="book" href="https://velvet-quill-y5x3.here.now/" style="--spine:#7A4E28">
+      <h3>The Dust Between Us</h3>
+      <p class="byline">John Records — a novel</p>
+      <p class="d">A homage to Louis L&rsquo;Amour&rsquo;s westerns with the
+        Bhagavad Gita underpinning the plot and characters. A man walks out of
+        the desert into the town of Perdido leading a horse in worse shape than
+        he is. He stopped running three years ago; what he is doing instead, he
+        hasn&rsquo;t yet found a word for.</p>
+      <p class="meta"><span>Complete</span><span>Read or listen</span></p>
+    </a>
+
+    <a class="book" href="https://happy-canyon-38dp.here.now/" style="--spine:#3E5A45">
+      <h3>Athy and Alexander</h3>
+      <p class="byline">John Records — a web novel</p>
+      <p class="d">Made for my friend, on whom Athy is based. Twins born eleven
+        minutes apart divide the world between them — Athy takes the daylight,
+        Alexander takes the dark — until an old coin with an owl struck on it
+        puts them in the path of a goddess who was never quite finished with
+        the world.</p>
+      <p class="meta"><span><b>12</b> chapters</span><span>Narrated</span></p>
+    </a>
+
+    <a class="book" href="https://zen-cedar-sj5s.here.now/" style="--spine:#4C5A82">
+      <h3>The Calibrated Heir</h3>
+      <p class="byline">John Records — the Rāmāyaṇa, retold as science fiction</p>
+      <p class="d">Six books: a sci-fi retelling of the Rāmāyaṇa. It&rsquo;s
+        about an old scripture carried into a future that has to keep
+        re-deciding what duty means. All six narrated.</p>
+      <p class="meta"><span><b>6</b> books</span><span>Complete</span><span>Narrated</span></p>
+    </a>
+
+  </div>
+
+  <p class="label">Letters to a Sangha <span class="n">newest first</span></p>
+  <div class="two">
+    <div>
+      <ul class="letters">
+        <li><span class="lt"><span class="tick"></span><h4>Easy Tips On Walking North</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>One Heart Reflection Guide</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>The Great Mandala</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Bishop William Barber: A Call to Love Forward</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>The Teacher Who Points South</h4></span></li>
+      </ul>
+    </div>
+    <div class="aside">
+      <h4>What these are</h4>
+      <p>For years these were written on Thursdays, to the people who would be
+        in the room. They are not a blog.</p>
+      <p>They are kept here because the practice in them outlasts the week they
+        were written for. The full set — sixty-nine letters — is being bound
+        now; each will get its own address.</p>
+    </div>
+  </div>
+
+  <footer>
+    <span>© John Records · the Yogi text is public domain; the annotations and narration are given freely</span>
+    <span><a href="/autobiography-of-a-yogi/colophon/">How this was made</a></span>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn  = document.getElementById('lamp');
+  var word = document.getElementById('lampword');
+  function evening(){
+    var t = root.getAttribute('data-theme');
+    if (t) return t === 'dark';
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  function paint(){
+    var on = evening();
+    btn.setAttribute('aria-pressed', String(on));
+    word.textContent = on ? 'Morning' : 'Light the lamp';
+  }
+  btn.addEventListener('click', function(){
+    root.setAttribute('data-theme', evening() ? 'light' : 'dark');
+    paint();
+  });
+  paint();
+})();
+</script>
 </body>
 </html>
