@@ -244,12 +244,13 @@ a.book:hover h3{color:var(--terracotta)}
 }
 
 /* ---------- letters ---------- */
-.two{display:grid; grid-template-columns:1.5fr 1fr; gap:clamp(34px,5vw,64px); align-items:start}
-.letters{list-style:none; margin:0; padding:0}
-.letters li{border-top:1px solid var(--line-faint)}
-.letters li:first-child{border-top:0}
+.letters{
+  list-style:none; margin:0; padding:0;
+  columns:2; column-gap:clamp(40px,5vw,72px);
+}
+.letters li{border-bottom:1px solid var(--line-faint); break-inside:avoid}
 .letters .lt{
-  display:flex; align-items:baseline; gap:16px; padding:17px 0;
+  display:flex; align-items:baseline; gap:14px; padding:11px 0;
 }
 .letters .tick{
   flex:none; width:15px; height:6px; background:var(--tile);
@@ -259,7 +260,7 @@ a.book:hover h3{color:var(--terracotta)}
 .letters li:nth-child(3n+2) .tick{background:var(--leaf)}
 .letters li:nth-child(3n) .tick{background:var(--rose)}
 .letters h4{
-  font-family:var(--read); font-size:21px; font-weight:400; margin:0; line-height:1.32;
+  font-family:var(--read); font-size:18px; font-weight:400; margin:0; line-height:1.35;
 }
 .aside{
   background:var(--card); border:1px solid var(--line); padding:28px 30px;
@@ -288,7 +289,7 @@ footer a{color:var(--oak); text-decoration:none; border-bottom:1px solid var(--l
 footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
 
 @media (max-width:840px){
-  .two{grid-template-columns:1fr; gap:40px}
+  .letters{columns:1}
   .book::after{left:-4px; right:-4px}
 }
 @media (prefers-reduced-motion:reduce){
@@ -324,7 +325,7 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
   <figure class="hero">
     <div class="frame">
       <img src="/assets/reading-room.jpg" width="1152" height="736"
-           alt="A reading nook: an antique rocking chair with floral tapestry upholstery beside a glowing brass reading lamp, on a patterned rug over a honey-colored tile floor, surrounded by tall oak bookshelves full of well-worn books." />
+           alt="A reading nook: an antique rocking chair with floral tapestry upholstery beside a glowing brass reading lamp, on a patterned rug over a honey-colored tile floor, against a plain plaster wall with tall oak bookshelves off to either side." />
     </div>
     <figcaption>The room, more or less. After a photograph taken in a library
       organized in 1886.</figcaption>
@@ -366,14 +367,14 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
 
     <div class="book soon" style="--spine:#4C5A82">
       <figure class="plate"><img src="/assets/plates/gateways.jpg" width="768" height="512" loading="lazy" alt="An ancient carved stone gateway opening onto a starry night sky." /></figure>
-      <h3>112 Gateways</h3>
+      <h3>112 Portals</h3>
       <p class="byline">Vijñāna Bhairava Tantra — a new translation from the Sanskrit</p>
       <span class="state">In process</span>
       <p class="d">A new translation of the Vijñāna Bhairava Tantra, roughly
         1300 years old, collated against Śivopādhyāya&rsquo;s commentary — with
         our own commentary, practice suggestions, and chants of the original
         Sanskrit with a pronunciation guide.</p>
-      <p class="meta"><span><b>112</b> gateways</span><span>CC BY 4.0</span></p>
+      <p class="meta"><span><b>112</b> portals</span><span>CC BY 4.0</span></p>
     </div>
 
     <a class="book" href="https://plush-chant-thza.here.now/" style="--spine:#A64B2A">
@@ -443,26 +444,82 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
 
   </div>
 
-  <p class="label">Letters to a Sangha <span class="n">newest first</span></p>
-  <div class="two">
-    <div>
-      <ul class="letters">
+  <p class="label">Letters to a Sangha <span class="n">sixty-nine letters, newest first</span></p>
+  <p class="leadin">For years these were written on Thursdays, to the people who would be
+    in the room. They are not a blog; they are kept because the practice in them outlasts
+    the week they were written for. The full set is being bound now — each letter will
+    get its own address here.</p>
+  <ul class="letters">
         <li><span class="lt"><span class="tick"></span><h4>Easy Tips On Walking North</h4></span></li>
         <li><span class="lt"><span class="tick"></span><h4>One Heart Reflection Guide</h4></span></li>
         <li><span class="lt"><span class="tick"></span><h4>The Great Mandala</h4></span></li>
         <li><span class="lt"><span class="tick"></span><h4>Bishop William Barber: A Call to Love Forward</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Love in Action in a Time of State Terrorism and Great Evil</h4></span></li>
         <li><span class="lt"><span class="tick"></span><h4>The Teacher Who Points South</h4></span></li>
-      </ul>
-    </div>
-    <div class="aside">
-      <h4>What these are</h4>
-      <p>For years these were written on Thursdays, to the people who would be
-        in the room. They are not a blog.</p>
-      <p>They are kept here because the practice in them outlasts the week they
-        were written for. The full set — sixty-nine letters — is being bound
-        now; each will get its own address.</p>
-    </div>
-  </div>
+        <li><span class="lt"><span class="tick"></span><h4>This Explains a Lot</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Wrestling Through the Night</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>A Gift and Two Lost Opportunities to Love</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Love in Action: Responding to the Food Crisis in Our Communities</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Grace, Prayer, and the Gift of Ambiguity</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Both/and, not either/or</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>A Look At Focusing</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Who Are You?</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Against Oppression</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>The Heart is the Hub of All Sacred Places</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Mirroring and Magnifying</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Opening Our Hearts in Uncertain Times</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Pretty Much the Opposite</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Favorite Colors and Chakras</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>An easy and needed Love in Action for you</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>The broken world waits in darkness for the light that is you</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Bastards and the Golden Rule</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>What You Said About One Heart Practice</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>The Pearl Beyond Price</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>A Week With Paramahamsa Hariharananda</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>2025: A New Year</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Christmas 2024</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Where Else But Your Own Heart?</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>The Courage of Uncertainty</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Live Powerfully and Happily in Love and Service</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Love in Action: Responding to Change</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Invincible, Indivisible</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Resilience</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Simple Gifts</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 9</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 8</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 7</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 6</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Death As Graduation</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 5</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 4</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 3</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 2</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 1</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Entelechy and Awakening</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>From Caterpillar to Butterfly</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Questions In Support of Your Entelechy</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Why Wait Til I&#x27;m Dead? - Nikki Cuthbertson</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Discomfort When Opening to Suffering</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Who You Were Meant to Be</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Retreat at Holy Terror Farm, Paonia, Colorado, September 2023</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Don&#x27;t leave us, don&#x27;t leave us!</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Being Present and Aware In Our Lives</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Blessing</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>The Sweet Lingering Kiss of Heaven and Earth</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Are You a Wounded Healer?</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Your Next Steps</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Of Course We&#x27;re Imperfect</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>One Heart Practice final</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>One Heart Practice continued</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>One Heart Practice</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>A Request for Your Song</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>2022 for You?</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Frailty, Foibles, Humanity</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Perspectives on Aging</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Leonard Cohen offers this</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Love in Action videos</h4></span></li>
+        <li><span class="lt"><span class="tick"></span><h4>Other Videos</h4></span></li>
+  </ul>
 
   <footer>
     <span>© John Records · the Yogi text is public domain; the annotations and narration are given freely</span>
