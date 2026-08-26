@@ -220,10 +220,37 @@ a{color:inherit}
   display:block; width:100%; height:auto; aspect-ratio:3/2; object-fit:cover;
   filter:var(--hero-filter); transition:filter .8s ease, transform .5s ease;
 }
-a.book:hover .plate img{transform:scale(1.025)}
+.book:hover .plate img{transform:scale(1.025)}
 .book.soon .plate img{opacity:.9}
-a.book:hover{transform:translateY(-5px); box-shadow:var(--shadow)}
-a.book:hover h3{color:var(--terracotta)}
+.book:hover{transform:translateY(-5px); box-shadow:var(--shadow)}
+.book:hover h3{color:var(--terracotta)}
+.book>summary{
+  list-style:none; cursor:pointer;
+  display:flex; flex-direction:column; flex:1;
+}
+.book>summary::-webkit-details-marker{display:none}
+.book>summary::marker{content:""}
+.book .meta .choose{position:relative; padding-right:16px}
+.book .meta .chev{position:absolute; right:0; top:0}
+.book .meta .chev::before{content:"+"}
+details.book[open] .meta .chev::before{content:"\2013"}
+.book-editions{
+  margin:18px -26px -22px -36px; padding:18px 26px 20px 36px;
+  border-top:1px solid var(--line);
+  display:flex; flex-direction:column; gap:12px;
+}
+.book-editions a{
+  display:block; text-decoration:none; color:inherit;
+  padding:10px 14px; border:1px solid var(--line); background:var(--paper);
+  transition:border-color .2s;
+}
+.book-editions a:hover{border-color:var(--terracotta)}
+.book-editions .ed-name{
+  display:block; font-family:var(--display); font-size:17px;
+  color:var(--oak); margin:0 0 3px;
+}
+.book-editions a:hover .ed-name{color:var(--terracotta)}
+.book-editions .ed-d{display:block; font-size:14px; color:var(--ink-soft); line-height:1.5}
 .book h3{
   font-family:var(--display);
   font-size:26px; line-height:1.18; margin:0 0 4px; font-weight:400;
@@ -251,12 +278,15 @@ a.book:hover h3{color:var(--terracotta)}
   margin:0 0 12px;
 }
 
-/* ---------- letters ---------- */
+/* ---------- letters ----------
+   Two independent lists side by side, not CSS multicol — a details/summary
+   toggling open inside `columns:2` could balance the browser's column
+   heights wrong and leave the second column blank until a resize. */
 .letters{
-  list-style:none; margin:0; padding:0;
-  columns:2; column-gap:clamp(40px,5vw,72px);
+  display:flex; align-items:flex-start; gap:clamp(40px,5vw,72px);
 }
-.letters li{border-bottom:1px solid var(--line-faint); break-inside:avoid}
+.letters-col{list-style:none; margin:0; padding:0; flex:1; min-width:0}
+.letters-col li{border-bottom:1px solid var(--line-faint)}
 .letters .lt{
   display:flex; align-items:baseline; gap:14px; padding:11px 0;
   color:inherit; text-decoration:none; cursor:pointer; list-style:none;
@@ -318,7 +348,7 @@ footer a{color:var(--oak); text-decoration:none; border-bottom:1px solid var(--l
 footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
 
 @media (max-width:840px){
-  .letters{columns:1}
+  .letters{flex-direction:column; gap:0}
   .book::after{left:-4px; right:-4px}
 }
 @media (prefers-reduced-motion:reduce){
@@ -360,7 +390,7 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
       organized in 1886.</figcaption>
   </figure>
 
-  <p class="label">The Shelf <span class="n">eleven works</span></p>
+  <p class="label">The Shelf <span class="n">ten works</span></p>
   <div class="shelf">
 
     <a class="book" href="/autobiography-of-a-yogi/" style="--spine:#B07A26">
@@ -375,20 +405,35 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
       <p class="meta"><span><b>49</b> chapters</span><span><b>17</b> hours narrated</span><span>Free</span></p>
     </a>
 
-    <a class="book" href="https://rosy-truffle-2d7p.here.now/" style="--spine:#3E5A45">
-      <figure class="plate"><img src="/assets/plates/love.jpg" width="768" height="512" loading="lazy" alt="Two hands gently cupping a small warm flame." /></figure>
-      <h3>Love in Action</h3>
-      <p class="d">Heal the world, heal yourself.</p>
-      <p class="meta"><span>Read by the author</span><span>Free</span></p>
-    </a>
-
-    <a class="book" href="https://opaque-acorn-59v4.here.now/" style="--spine:#5C7350">
-      <figure class="plate"><img src="/assets/plates/love-rev.jpg" width="768" height="512" loading="lazy" alt="A green seedling growing from the open pages of a well-worn book." /></figure>
-      <h3>Love in Action — Revised</h3>
-      <p class="d">The same book, reworked: a five-part structure and a new
-        chapter on receiving love. Text-only for now.</p>
-      <p class="meta"><span>Free</span></p>
-    </a>
+    <details class="book" style="--spine:#3E5A45">
+      <summary>
+        <figure class="plate"><img src="/assets/plates/love.jpg" width="768" height="512" loading="lazy" alt="Two hands gently cupping a small warm flame." /></figure>
+        <h3>Love in Action</h3>
+        <p class="d">Heal the world, heal yourself. This book distills what
+          I&rsquo;ve learned helping over 20,000 people, and through decades
+          of spiritual practice. As you read and reflect, you&rsquo;ll learn
+          how to be more loving with your family, in the workplace, and as a
+          volunteer. You&rsquo;ll learn about the simple spiritual practice of
+          offering your entire being to love, and gradually being
+          transformed into a vehicle for love&rsquo;s expression.</p>
+        <p class="meta"><span class="choose">Choose a paperback or an edition<i class="chev"></i></span></p>
+      </summary>
+      <div class="book-editions">
+        <a href="https://www.amazon.com/Love-Action-Heal-World-Yourself/dp/1976826284">
+          <span class="ed-name">Paperback</span>
+          <span class="ed-d">The printed book, at Amazon.</span>
+        </a>
+        <a href="https://rosy-truffle-2d7p.here.now/">
+          <span class="ed-name">Original edition</span>
+          <span class="ed-d">Read by the author. Free.</span>
+        </a>
+        <a href="https://opaque-acorn-59v4.here.now/">
+          <span class="ed-name">Revised edition</span>
+          <span class="ed-d">The same book, reworked: a five-part structure
+            and a new chapter on receiving love. Text-only for now. Free.</span>
+        </a>
+      </div>
+    </details>
 
     <a class="book" href="https://lively-nectar-cwz7.here.now/" style="--spine:#4C5A82">
       <figure class="plate"><img src="/assets/plates/gateways.jpg" width="768" height="512" loading="lazy" alt="An ancient carved stone gateway opening onto a starry night sky." /></figure>
@@ -475,12 +520,13 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
 
   </div>
 
-  <p class="label">Letters to a Sangha <span class="n">forty-eight letters, oldest first</span></p>
-  <p class="leadin">Across several years, I sent a note to the people who were part of
+  <p class="label">Notes to a Sangha <span class="n">forty-eight notes, oldest first</span></p>
+  <p class="leadin">Across several years, I sent notes to the people who were part of
     the online sangha I&rsquo;m given to facilitate — a passage to sit with, a practice to
     try, sometimes just an honest account of how the week had gone. They were written to
     particular people, not to a general reader, but may have something useful for you.</p>
-  <ul class="letters">
+  <div class="letters">
+    <ul class="letters-col">
         <li><details><summary class="lt"><span class="tick"></span><h4>Leonard Cohen offers this</h4></summary><div class="letter-body"><p>Ring the bells that still can ring</p>
 <p>Forget your perfect offering</p>
 <p>There is a crack in everything</p>
@@ -532,7 +578,7 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
 <p>If some of the most advanced and caring human beings of our time have these challenges, it should come as no surprise that we, too, stumble. The same is true for others, of course. So we can be forgiving of others and of ourselves.</p>
 <p>It can help not to take ourselves too seriously. After all, we have the bodies of primates. We’ve been called “naked apes.” As my dad observed, “we came down from the trees, and not too long ago!”</p>
 <p>Fortunately, that’s not all we are. Through regular practice of meditation and support from others with similar perspective and practices, we can realize that in addition to our vulnerable, animal aspect we also are unborn, undying, and capable of giving and receiving great love.</p>
-<p>In this short, humble and humorous video, the Dalai Lama explains our commonality. None of us are special, and we all have the potential to create ourselves anew.</p>
+<p>In <a href="https://www.youtube.com/watch?v=Bb5LTDzpzUc">this short, humble and humorous video</a>, the Dalai Lama explains our commonality. None of us are special, and we all have the potential to create ourselves anew.</p>
 <p>Everyone—even the Dalai Lama, Mother Teresa, you, and me—has challenges and imperfections. Yet there are people who despite their human stumbles change our lives. Here’s a definition of saints by Frederick Buechner:</p>
 <p>“A saint is a life-giver […] a human being with the same sorts of hang-ups and abysses as the rest of us”. Yet, “if a saint touches your life”, he concludes, “you become alive in a new way”.</p>
 <p>We all have this potential! We don’t have to become perfect in some sense. It suffices to continue to choose to open ourselves to Spirit, to the Stillness, to the Great Mystery, to the Ground of Being, to the Divine.</p>
@@ -561,9 +607,9 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
 <p>You are a living prayer, a living blessing.</p>
 <p>Walk with that in your heart today- or better yet, dance.</p>
 <p>Nikki and her beloved grandson. You can learn more about Nikki and her teachings, and schedule a private session with her, at <a href="http://www.nikkicuthbertson.com">www.nikkicuthbertson.com</a>.</p></div></details></li>
-        <li><details><summary class="lt"><span class="tick"></span><h4>One Heart Practice</h4></summary><div class="letter-body"><p>Our hearts are an aspect of, a facet of, a gateway to, One Heart. This video guides you through simple movements and perceptions to realize the One Heart.</p></div></details></li>
-        <li><details><summary class="lt"><span class="tick"></span><h4>One Heart Practice continued</h4></summary><div class="letter-body"><p>People are enjoying One Heart Practice, so I&rsquo;m offering more videos on it. In this video, Doug Matchett, who has a lot of experience with meditation, and I discuss Doug&rsquo;s use of One Heart Practice, and how he has modified it to his own taste and needs. I offer observations from my own experience. If you haven&rsquo;t seen the first video, please look below for that.</p></div></details></li>
-        <li><details><summary class="lt"><span class="tick"></span><h4>One Heart Practice final</h4></summary><div class="letter-body"><p>The One Heart Practice is transformative for some. Here&rsquo;s the last video in this series, in which Doug Matchett and I practice together, facilitating for one another. You might get some ideas on how you could practice with a friend, or for your own practice. The video is a bit shorter than 15 minutes.</p></div></details></li>
+        <li><details><summary class="lt"><span class="tick"></span><h4>One Heart Practice</h4></summary><div class="letter-body"><p>Our hearts are an aspect of, a facet of, a gateway to, One Heart. <a href="https://www.youtube.com/watch?v=8PiOa2mHHFU">This video</a> guides you through simple movements and perceptions to realize the One Heart.</p></div></details></li>
+        <li><details><summary class="lt"><span class="tick"></span><h4>One Heart Practice continued</h4></summary><div class="letter-body"><p>People are enjoying One Heart Practice, so I&rsquo;m offering more videos on it. In <a href="https://www.youtube.com/watch?v=iTeELelV6xY">this video</a>, Doug Matchett, who has a lot of experience with meditation, and I discuss Doug&rsquo;s use of One Heart Practice, and how he has modified it to his own taste and needs. I offer observations from my own experience. If you haven&rsquo;t seen the first video, please look above for that.</p></div></details></li>
+        <li><details><summary class="lt"><span class="tick"></span><h4>One Heart Practice final</h4></summary><div class="letter-body"><p>The One Heart Practice is transformative for some. <a href="https://www.youtube.com/watch?v=5caDlQnQOYg">Here&rsquo;s the last video</a> in this series, in which Doug Matchett and I practice together, facilitating for one another. You might get some ideas on how you could practice with a friend, or for your own practice. The video is a bit shorter than 15 minutes.</p></div></details></li>
         <li><details><summary class="lt"><span class="tick"></span><h4>Of Course We&#x27;re Imperfect</h4></summary><div class="letter-body"><p>Of course we&rsquo;re imperfect. Who in their right mind, with any degree of world experience and maturity, would expect otherwise?</p>
 <p>Don&rsquo;t compare your own inner struggles to the apparent outer ease of the lives of others. That&rsquo;s not fair to you. You don&rsquo;t know what&rsquo;s going on inside others.</p>
 <p>Don&rsquo;t get hung up on your past mistakes or shortcomings. That&rsquo;s not fair to you, to judge your past self by your present development and perspective. Just learn from your past and move on.</p>
@@ -897,6 +943,8 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
 </li>
 </ul>
 <p>Now kindly review and internalize this excerpt from <em>Reflections on Awakening</em>:</p></div></details></li>
+    </ul>
+    <ul class="letters-col">
         <li><details><summary class="lt"><span class="tick"></span><h4>Death As Graduation</h4></summary><div class="letter-body"><p>Dennis Smith, our friend and member of our sangha, passed away on April 21, 2024.</p>
 <p>Our hearts are with him, Billie, Cass, and all who loved him. We will do One Heart practice to support his transition at our next gathering. In the meantime, please continue your loving support.</p>
 <p>Death can be very difficult to encounter. About 10 years ago, I made a podcast titled &ldquo;Death As Graduation.&rdquo; You might find this helpful. You&rsquo;ll find a link to the audio below, as well as the transcript.</p>
@@ -1547,32 +1595,12 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
 </ul>
 <p>The world is full of teachers. May we have the wisdom to learn from all of them—those who show us the way, and those who show us what to avoid. May we walk North together, supporting each other when we stumble, celebrating when we find our way.</p>
 <p><strong>P.S.</strong> If this reflection sparks something in you, I&rsquo;d welcome hearing about it at our next gathering. What have your South-pointing teachers taught you?</p></div></details></li>
-        <li><details><summary class="lt"><span class="tick"></span><h4>Bishop William Barber: A Call to Love Forward</h4></summary><div class="letter-body"><p>Vic shared this video with me and I thought you might like it. You&rsquo;ll need to click on the image above and your computer will open a new tab or window, and play the video. It may start muted, so you may have to click the tiny speaker icon to be able to hear it.</p>
+        <li><details><summary class="lt"><span class="tick"></span><h4>Bishop William Barber: A Call to Love Forward</h4></summary><div class="letter-body"><p>Vic shared <a href="https://ourmoralmoment.substack.com/p/we-shall-love-forward-together">this video</a> with me and I thought you might like it.</p>
 <p>I&rsquo;m sharing Bishop Barber&rsquo;s presentation because it moved me deeply. Here is a Black preacher speaking on behalf of a people who have known discrimination and abuse firsthand — who live daily with the threat of violence and the stripping of rights that so many of us are only now waking up to. He speaks with the power and moral authority that can only be forged through suffering.</p>
 <p>Many of us in our sangha have never encountered Black preaching. I haven&rsquo;t worshipped in a Black church myself, but I&rsquo;m drawn to its style — the cadence, the conviction, the fire. You can hear echoes of it when President Obama speaks.</p>
 <p>What I most want you to take away is this: we are not alone. There are powerful voices already aligned with our values — people who have faced hatred and violence and chose to walk straight into it anyway, guided by love. They are our teachers and our allies. There are millions of us. And together, we love forward.</p>
 <hr />
-<p>Here&rsquo;s the transcript of Bishop Barber&rsquo;s presentation:</p>
-<p>And we’re grateful for those who drove all the way from Mitchell County in the west, and Asheville, and Dare County, and Washington County all across the coast—from Charlotte, the Piedmont, the Black Belt counties down east. We celebrate all those who come from Granville and Warren and Vance County, what we call the historic wellsprings of rebellion against authoritarianism, white supremacy, and tyranny. We welcome all those who come from the Triangle because today we are one people.</p>
-<p>But no matter how far we have traveled today, we’ve all come here through great tribulations. Our minds are troubled; our hearts are troubled. In many ways, we are heartbroken. Heartbroken in this nation, we continue to try to love and love and love, and we find ourselves saying what Langston Hughes once said: that America has never been America to me, but I swear this oath—that America will be.</p>
-<p>We come here with some anger and grief—not madness, but anger at the murderous assaults on American democracy and the assaults on human decency that we’ve been witnessing with our own eyes. We will not let anybody tell us that we’re not seeing what we’re seeing. More than anything, with all of that in our minds and our hearts, we’ve come here today in a spirit of love. We’ve assembled in our yearning to come home, to wake up to a new country. We’re not fighting for normalcy; we’re not fighting to go backwards. We’re fighting to go forward to the America that never was, but yet must be.</p>
-<p>The living ingredients of our own history have taught us that things do not have to be the way they are. Indeed, things cannot stay the way they are. As we gather here today, let us be reminded that in the third century, when an emperor named Claudius—an authoritarian named Claudius—was hungry for power and wanted to put his name on every building. Talking about Claudius! He wanted to use his military to run rampant around the world, and he wanted to use young men to wage wars when he himself wouldn&rsquo;t even fight.</p>
-<p>Claudius, who wanted to expand territory, put out a decree against marriage for young men so that he could send them to war. He thought that he could control love. Claudius reasoned that if he could maximize the potential of his people for war, he had to minimize love. But Claudius’ plans were frustrated by a priest in Rome named Valentine—a bishop of the church who believed that love was more powerful than an empire’s army.</p>
-<p>Yes, Claudius could marshal the resources of the Roman purse and the force of the Roman legions to impose his will on the world, but he found out that he couldn’t stop love. Men and women defied him and kept falling in love. Claudius couldn&rsquo;t stop Bishop St. Valentine; he married people in secret and they came out in public. In an act of civil disobedience, Valentine refused to cooperate with the emperor’s unjust decree. Because not only can people in the military defy an unjust decree, we the people can defy an unjust decree. And he signed the certificates of their marriage.</p>
-<p>On February 14th, 269, Saint Valentine was beheaded in Rome. Claudius used his power and his wealth to kill him, but he still didn&rsquo;t have the power to stop love. Eighteen centuries later, we don’t remember Claudius. Hey, there’s no day named &ldquo;Claudius Day.&rdquo; No one recalls the name of the henchman who cut off St. Valentine’s head. But every February 14th, we remember St. Valentine in the public square.</p>
-<p>This day we celebrate the power of love is also the day that Frederick Douglass chose as his birthday. He didn’t know when his real birthday was because he was born in slavery. But he said, &ldquo;If I’m going to choose a birthday, I’m going to choose it, my brothers, on Love Day.&rdquo; Douglass knew the cold cruelty of American totalitarianism; he knew what it meant to be treated as property. He knew what it meant to be separated from his mother as a boy. He knew what it meant to be assaulted.</p>
-<p>But when things got bad, Frederick Douglass said this to the nation: even though these things are happening, the time is now for us to intensify and embolden our agitation. He knew that people who claimed to own him didn&rsquo;t have the power to quench his mother’s love. So, for most of his life, he carried the memory of a sweet cake that his mother gave to him the last time he saw her. She made it in the shape of a heart, and he wrote of a &ldquo;rich, dark ring glazed upon the edge of it.&rdquo; She called Frederick her &ldquo;little Valentine,&rdquo; and that love kept him alive. That love gave him a heart for a country that dared to enslave him.</p>
-<p>My brothers and sisters, here we are today. We live in a moment when the ruling authorities claim that &ldquo;might makes right.&rdquo; They claim that the Constitution doesn’t constrain them. They’re ignoring the separation of powers and defying the lawful orders of the courts and of the Congress. They’ve abdicated their moral responsibility to care for the poor by spreading lies about waste, fraud, and abuse. They claim to do all these things; they call a bill a &ldquo;mega bill&rdquo; or a &ldquo;beautiful bill&rdquo; when it is really a big, bad, deadly, ugly bill. They loose their forces to shoot people down in the street.</p>
-<p>But we’ve come here today to say that the love in our heart will not let us bow anymore. We cannot bow to their vision of power, and we will not. We are here to love forward together. And coming after me are people that are going to talk about why we love, what we must love, and how we must love. Yes, their troops are in the street. Yes, their masked men are knocking on our doors. Yes, they are now talking more about nuclear power. But we are here to remind them that love has proven down through history to be stronger than all of this.</p>
-<p>And so, my brothers and sisters, here we are today. Since Wednesday, we’ve been marching. We started in Wilson, in the old district—Toby Fitch—that they’ve gerrymandered to steal and rob a seat. We started the day before early voting began, and we’re here today to declare that when we leave here, we’re going back to our communities across this state. We’re going to take love and organize everybody we know. We’re going to say to them: it&rsquo;s time to voice your love, and vote your love, and stand in the vitality of your love, because we need love to be victorious one more time.</p>
-<p>If you love seeing people out of poverty, it’s time for us to love forward together. If you love seeing people make a living wage, it’s time for us to love forward together. If you love to see the establishment of justice rather than the establishment of injustice, it’s time to love forward together. If you&rsquo;re tired of seeing 87 million people either uninsured or underinsured and you want everybody to have healthcare, it’s time to love forward together.</p>
-<p>If you would rather see a nation put more money in public education, training our children’s minds, than putting money in bombs to kill our people’s future, it’s time to love together. If you want to see a nation that recognizes that power is not supposed to be used to hurt and to beat people, but power is supposed to be used to lift and help people, it’s time to love together. If you would love to be in a nation that cares about everybody—that believes that empathy is a virtue we all should have, and that looking down on people should only happen when you’re looking down to pick them up—it’s time to love together on every street corner, on every step, down every tobacco road, through every cornfield. It&rsquo;s time to love together.</p>
-<p>And let them tell us not what we can do. For we come from people like Harriet Tubman. She didn’t have Snapchat, she didn’t have email, she didn’t have a cell phone, she didn’t have social media—but she had love in her heart, she had a made-up mind, she had a strong constitution, and she got 700 people out of slavery, even though she had epilepsy. Don’t tell us what we can’t do! Our ancestors took on this nation before; it’s just our time to take it on today.</p>
-<p>And while we’re taking it on, I want to suggest, with just a little bit of preaching, that we ought to sing while we’re doing it. And we ought to sing that song that never fails: <em>We Shall Overcome</em>. It was a song that came from the enslaved people’s spirituals. It was a song that was sung in the labor movement. It’s a song that was sung when Joan Baez sang it at the March on Washington. It was the song they taught at the Highlander Folk School up in Tennessee. It became the anthem of the Civil Rights Movement.</p>
-<p>And the words teach us how we have to love. It says &ldquo;We.&rdquo; Not &ldquo;I,&rdquo; but &ldquo;We.&rdquo; Look at your neighbor and say, &ldquo;We.&rdquo; Black and white: We. Brown and indigenous: We. Asian and young and old: We. Gay and straight and trans: We. Baptists and Methodists and Christian and Jewish and Muslim and people who may not be of faith but believe in the moral arc of the universe: We shall.</p>
-<p>They say &ldquo;shall,&rdquo; not &ldquo;maybe.&rdquo; In fact, you never change that word to &ldquo;we might overcome.&rdquo; No, it’s &ldquo;We shall overcome.&rdquo; Why &ldquo;shall&rdquo;? Why is it definite? Because in the Bible, in the Greek word, the &ldquo;overcome&rdquo; comes from the word <em>nikos</em>, which is just like the word Nike, but it means to be victorious. Whenever you use the word &ldquo;overcome,&rdquo; it is a recognition that you will not overcome in your own strength. You will not overcome in your own power. You will not overcome in your own might. But if you do the Lord’s work, you <em>shall</em> overcome.</p>
-<p>Oh, can I holler just a second? I don&rsquo;t care what they say: The Lord is my light and my salvation; whom shall I fear? I don&rsquo;t care what they say: Who shall be against us if the Lord is for us? I don&rsquo;t care what they say: They that wait on the Lord shall renew their strength. They shall mount up on wings as eagles; they shall run and not get weary; they shall walk and not faint. Do I have a witness here? I don&rsquo;t care what they take from us; God shall supply every need that we have. The Lord is my shepherd; we shall not want.</p>
-<p>So I’m going to let the other folk talk now. But we shall vote like never before. We shall stand like never before. We shall overcome. We shall make it through this mess. We shall see a new day. We shall love forward. We shall overcome. We shall organize. We shall tell the truth. We shall see a new America. Do I have a witness? Yes, we shall! Yes, we shall! Yes, we shall! Yes, we shall! We shall overcome! We shall overcome!</p></div></details></li>
+<p>A taste of the presentation itself: &ldquo;We shall vote like never before. We shall stand like never before. We shall overcome.&rdquo; <a href="https://ourmoralmoment.substack.com/p/we-shall-love-forward-together">Read the full transcript, or watch the video, at Substack</a>.</p></div></details></li>
         <li><details><summary class="lt"><span class="tick"></span><h4>One Heart Reflection Guide</h4></summary><div class="letter-body"><p>I encourage you to read the questions below, and reflect on your own practice and experience. You might find opportunities to open yourself in ways that you have not yet.</p>
 <p>Is there a time of day when you find the practice more useful? Any difference between morning and evening practice? Have you tried bookending your day with it, and if so, what do you notice?</p>
 <p>When you settle into the practice, does mental chatter ever quiet? Does that change over time, or from day to day?</p>
@@ -1592,7 +1620,8 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
 <p><em>&ndash;</em>The Modern Taoist</p>
 <p><em>When making a choice, consider the person you want to be</em>.</p>
 <p>&ndash; Anonymous</p></div></details></li>
-  </ul>
+    </ul>
+  </div>
 
   <p class="label">About the Author</p>
   <p class="leadin">I&rsquo;ve been a lawyer and have practiced in New York and Oregon. My
