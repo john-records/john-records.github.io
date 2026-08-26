@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>John&rsquo;s Reading Room</title>
+<title>John&rsquo;s Reading Nook</title>
 <meta name="description" content="The reading room of John Records — books devotional, mystical, mythic and down-to-earth, translations, and letters on contemplative practice and the work of compassion." />
 <link rel="canonical" href="https://johnrecords.org/" />
-<meta property="og:title" content="John's Reading Room" />
+<meta property="og:title" content="John's Reading Nook" />
 <meta property="og:description" content="Books, translations and letters on contemplative practice and the work of compassion." />
 <meta property="og:image" content="https://johnrecords.org/assets/reading-room.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -182,6 +182,8 @@ a{color:inherit}
 .label .n{color:var(--ink-faint); letter-spacing:.12em}
 .label::after{content:""; flex:1; height:1px; background:var(--line); align-self:center}
 .leadin{margin:0 0 30px; color:var(--ink-soft); font-size:17.5px; max-width:36em}
+.leadin a{color:var(--oak); text-decoration:none; border-bottom:1px solid var(--line)}
+.leadin a:hover{color:var(--terracotta); border-color:var(--terracotta)}
 
 /* ---------- the shelf ---------- */
 .shelf{
@@ -251,7 +253,9 @@ a.book:hover h3{color:var(--terracotta)}
 .letters li{border-bottom:1px solid var(--line-faint); break-inside:avoid}
 .letters .lt{
   display:flex; align-items:baseline; gap:14px; padding:11px 0;
+  color:inherit; text-decoration:none;
 }
+.letters a.lt:hover h4{color:var(--terracotta)}
 .letters .tick{
   flex:none; width:15px; height:6px; background:var(--tile);
   box-shadow:0 0 0 1px var(--line-faint);
@@ -314,7 +318,7 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
   </div>
 
   <header class="mast">
-    <h1>John&rsquo;s Reading Room</h1>
+    <h1>John&rsquo;s Reading Nook</h1>
     <p class="thesis">Books — <span class="adj">devotional, mystical, mythic,
       and down-to-earth</span> — translations and letters on contemplative
       practice and the work of compassion.</p>
@@ -331,7 +335,7 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
       organized in 1886.</figcaption>
   </figure>
 
-  <p class="label">The Shelf <span class="n">ten works</span></p>
+  <p class="label">The Shelf <span class="n">eleven works</span></p>
   <div class="shelf">
 
     <a class="book" href="/autobiography-of-a-yogi/" style="--spine:#B07A26">
@@ -382,7 +386,7 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
       <p class="meta"><span>Free</span></p>
     </a>
 
-    <a class="book" href="https://one-heart-practice.john-records.workers.dev/" style="--spine:#A85F62">
+    <a class="book" href="https://verdant-poplar-rfb7.here.now/" style="--spine:#A85F62">
       <figure class="plate"><img src="/assets/plates/oneheart.jpg" width="768" height="512" loading="lazy" alt="Open palms holding a softly radiant heart." /></figure>
       <h3>The One Heart Practice</h3>
       <p class="d">A body-led practice in five gestures — My Heart, Our Hearts,
@@ -397,7 +401,7 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
       <h3>Remember Who You Are</h3>
       <p class="d">The Creator waking up in and as Creation — in and as you and
         me. An autobiography of sorts.</p>
-      <p class="meta"><span>Narrated</span><span>Free</span></p>
+      <p class="meta"><span>Free</span></p>
     </a>
 
     <a class="book" href="https://velvet-quill-y5x3.here.now/" style="--spine:#7A4E28">
@@ -415,8 +419,8 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
     <a class="book" href="https://happy-canyon-38dp.here.now/" style="--spine:#3E5A45">
       <figure class="plate"><img src="/assets/plates/athy.jpg" width="768" height="512" loading="lazy" alt="Twin children on an ancient Greek shore among olive trees, a ship on the horizon." /></figure>
       <h3>Athy and Alexander</h3>
-      <p class="byline">A web novel</p>
-      <p class="d">Made for my friend, on whom Athy is based. Twins born eleven
+      <p class="byline">A web novelette</p>
+      <p class="d">Twins born eleven
         minutes apart divide the world between them — Athy takes the daylight,
         Alexander takes the dark — until an old coin with an owl struck on it
         puts them in the path of a goddess who was never quite finished with
@@ -434,6 +438,16 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
       <p class="meta"><span><b>6</b> books</span><span>Complete</span><span>Narrated</span></p>
     </a>
 
+    <a class="book" href="https://arctic-savoy-hq5r.here.now/" style="--spine:#22304D">
+      <figure class="plate"><img src="/assets/plates/godforgot.jpg" width="768" height="512" loading="lazy" alt="A crow perched on a moonlit palace balustrade beside a glowing lamp." /></figure>
+      <h3>The God Who Forgot Himself</h3>
+      <p class="byline">The Rāmāyaṇa, told in one volume</p>
+      <p class="d">Valmiki&rsquo;s epic told whole, through the eyes of
+        Bhushundi the crow, who has watched it happen more times than he can
+        count.</p>
+      <p class="meta"><span><b>17</b> chapters</span><span>Complete</span><span>Narrated</span></p>
+    </a>
+
   </div>
 
   <p class="label">Letters to a Sangha <span class="n">forty-eight letters, oldest first</span></p>
@@ -444,54 +458,54 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
     the order they were written, so the thread of a practice deepening over years is
     easier to follow than it ever was in an inbox.</p>
   <ul class="letters">
-        <li><span class="lt"><span class="tick"></span><h4>Leonard Cohen offers this</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Perspectives on Aging</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Frailty, Foibles, Humanity</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>A Request for Your Song</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>One Heart Practice</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>One Heart Practice continued</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>One Heart Practice final</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Of Course We&#x27;re Imperfect</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Your Next Steps</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Are You a Wounded Healer?</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>The Sweet Lingering Kiss of Heaven and Earth</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Being Present and Aware In Our Lives</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Don&#x27;t leave us, don&#x27;t leave us!</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Who You Were Meant to Be</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Discomfort When Opening to Suffering</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Why Wait Til I&#x27;m Dead? - Nikki Cuthbertson</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Questions In Support of Your Entelechy</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>From Caterpillar to Butterfly</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Entelechy and Awakening</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 1</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 2</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 3</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 4</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 5</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Death As Graduation</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 6</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 7</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 8</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 9</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Simple Gifts</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Resilience</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Live Powerfully and Happily in Love and Service</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>A Week With Paramahamsa Hariharananda</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>The Pearl Beyond Price</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>What You Said About One Heart Practice</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Bastards and the Golden Rule</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Mirroring and Magnifying</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>The Heart is the Hub of All Sacred Places</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Against Oppression</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>A Look At Focusing</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Both/and, not either/or</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Grace, Prayer, and the Gift of Ambiguity</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>A Gift and Two Lost Opportunities to Love</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>This Explains a Lot</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>The Teacher Who Points South</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Bishop William Barber: A Call to Love Forward</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>One Heart Reflection Guide</h4></span></li>
-        <li><span class="lt"><span class="tick"></span><h4>Easy Tips On Walking North</h4></span></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.xasgp2u6kixr_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Leonard Cohen offers this</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.m2sazksohqu3_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Perspectives on Aging</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.hts4b2qvzg3k_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Frailty, Foibles, Humanity</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.3j1cfq270xj6_l" target="_blank" rel="noopener"><span class="tick"></span><h4>A Request for Your Song</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.7banrq8jef6q_l" target="_blank" rel="noopener"><span class="tick"></span><h4>One Heart Practice</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.svzbf0u9uh9g_l" target="_blank" rel="noopener"><span class="tick"></span><h4>One Heart Practice continued</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.pv9ikn6j3m1o_l" target="_blank" rel="noopener"><span class="tick"></span><h4>One Heart Practice final</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.fbkma610wml_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Of Course We&#x27;re Imperfect</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.n5gf45tk87gj_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Your Next Steps</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.zb3s1fcwh0uq_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Are You a Wounded Healer?</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.ucm7np7endk3_l" target="_blank" rel="noopener"><span class="tick"></span><h4>The Sweet Lingering Kiss of Heaven and Earth</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.axbmc3lj7vuw_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Being Present and Aware In Our Lives</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.mpfdy8q8oavd_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Don&#x27;t leave us, don&#x27;t leave us!</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.h74l4c4nmp6_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Who You Were Meant to Be</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.3hcuv79n9bll_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Discomfort When Opening to Suffering</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.ug0mfe74345v_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Why Wait Til I&#x27;m Dead? - Nikki Cuthbertson</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.dem49dwtxczx_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Questions In Support of Your Entelechy</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.p80a85benhxg_l" target="_blank" rel="noopener"><span class="tick"></span><h4>From Caterpillar to Butterfly</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.9hu352ft05av_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Entelechy and Awakening</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.9ey30salef4_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 1</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.2zlcfw6sqw2c_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 2</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.fsqcd6yxy1jb_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 3</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.kpr7faopnmfj_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 4</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.tvsvbo959xqg_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 5</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.1fgcn9l56l81_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Death As Graduation</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.u3xk7qbdp8hm_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 6</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.6aktdpfe4cxb_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 7</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.5hyyxpihar1w_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 8</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.e7b3oftvqj5m_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Revisiting Meditation in Light of Awakening 9</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.gbtlzn6560ot_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Simple Gifts</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.gjl5cyv43sm_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Resilience</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.7e9e97h2yw8u_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Live Powerfully and Happily in Love and Service</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.odrvdxf2cm8t_l" target="_blank" rel="noopener"><span class="tick"></span><h4>A Week With Paramahamsa Hariharananda</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.rx230iz5b8tq_l" target="_blank" rel="noopener"><span class="tick"></span><h4>The Pearl Beyond Price</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.bfh3lxpqx527_l" target="_blank" rel="noopener"><span class="tick"></span><h4>What You Said About One Heart Practice</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.id3gu6pjf8kg_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Bastards and the Golden Rule</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.owv6keq2mwyp_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Mirroring and Magnifying</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.kopiejg9sxoy_l" target="_blank" rel="noopener"><span class="tick"></span><h4>The Heart is the Hub of All Sacred Places</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.bw8qxomj2jck_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Against Oppression</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.wda8iuvt1xpl_l" target="_blank" rel="noopener"><span class="tick"></span><h4>A Look At Focusing</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.9q5j70yw0jtf_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Both/and, not either/or</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.9ezfpthlg6ms_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Grace, Prayer, and the Gift of Ambiguity</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.m11z3s8kscqf_l" target="_blank" rel="noopener"><span class="tick"></span><h4>A Gift and Two Lost Opportunities to Love</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.cqus7i6mca7j_l" target="_blank" rel="noopener"><span class="tick"></span><h4>This Explains a Lot</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.2jr79cls5pv2_l" target="_blank" rel="noopener"><span class="tick"></span><h4>The Teacher Who Points South</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.6s59kdruajpm_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Bishop William Barber: A Call to Love Forward</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.1h4sd8z5mvzk_l" target="_blank" rel="noopener"><span class="tick"></span><h4>One Heart Reflection Guide</h4></a></li>
+        <li><a class="lt" href="https://www.loveinactionbook.com/sangha#h.rpgg9n8b8z8g_l" target="_blank" rel="noopener"><span class="tick"></span><h4>Easy Tips On Walking North</h4></a></li>
   </ul>
 
   <p class="label">About the Author</p>
@@ -508,6 +522,8 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
   <p class="leadin">My background in meditation, law and nonprofit management enables me
     to help with a wide range of challenges and opportunities. I&rsquo;m like a midwife
     who helps people to be born into the full bloom of their lives.</p>
+  <p class="leadin">I&rsquo;d love to hear from you:
+    <a href="mailto:john.records@gmail.com">john.records@gmail.com</a></p>
 
   <footer>
     <span>© John Records · The Autobiography of a Yogi text is public domain; the annotations and narration are given freely</span>
