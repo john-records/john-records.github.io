@@ -143,25 +143,53 @@ footer{
 footer a{color:var(--oak); text-decoration:none; border-bottom:1px solid var(--line)}
 footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
 @media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+
+/* site-wide search overlay (Pagefind) */
+.strip-controls{display:flex; align-items:center; gap:4px}
+.gsearch-overlay{position:fixed; inset:0; z-index:200; background:rgba(0,0,0,.45);
+  display:flex; align-items:flex-start; justify-content:center; padding:10vh 16px 0}
+.gsearch-overlay.hidden{display:none}
+.gsearch-panel{background:var(--paper); color:var(--ink); border-radius:14px; width:100%;
+  max-width:640px; box-shadow:0 20px 60px rgba(0,0,0,.35); padding:14px; max-height:70vh;
+  display:flex; flex-direction:column}
+.gsearch-panel input{width:100%; padding:12px 14px; font-size:16px; border:1px solid var(--line);
+  border-radius:10px; background:var(--paper); color:var(--ink); box-sizing:border-box}
+.gsearch-results{margin-top:10px; overflow:auto}
+.gsearch-hit{display:block; padding:10px 8px; border-radius:8px; text-decoration:none; color:inherit}
+.gsearch-hit:hover{background:var(--card)}
+.gsearch-hit-title{display:block; font-weight:600; font-size:14px}
+.gsearch-hit-excerpt{display:block; font-size:13px; color:var(--ink-soft); margin-top:2px}
+.gsearch-hit-excerpt mark{background:#ffe082; color:#333; border-radius:3px; padding:0 2px}
+.gsearch-empty{padding:10px 8px; font-size:13px; color:var(--ink-soft)}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"PodcastSeries","name":"Molten Golden Mountain Teachings","url":"https://johnrecords.org/molten-golden-mountain-teachings/","author":{"@type":"Person","name":"John Records"}}
 </script>
 </head>
 <body>
-<div class="page">
+<div class="page" data-pagefind-body>
 
-  <div class="strip">
+  <div class="strip" data-pagefind-ignore>
     <a class="home" href="/">← John&rsquo;s Reading Nook</a>
-    <button class="lampbtn" id="lamp" type="button" aria-pressed="false">
-      <svg width="22" height="22" viewBox="0 0 26 26" aria-hidden="true">
-        <circle class="halo" cx="13" cy="9" r="12"/>
-        <path class="shade" d="M5 11 L9 3 H17 L21 11 Z"/>
-        <rect class="base" x="12" y="11" width="2" height="9"/>
-        <path class="base" d="M8 22 Q13 19 18 22 L18 23 H8 Z"/>
-      </svg>
-      <span id="lampword">Light the lamp</span>
-    </button>
+    <div class="strip-controls">
+      <button class="lampbtn" type="button" data-gsearch-open aria-label="Search the site" title="Search the site">⌕<span>Search</span></button>
+      <button class="lampbtn" id="lamp" type="button" aria-pressed="false">
+        <svg width="22" height="22" viewBox="0 0 26 26" aria-hidden="true">
+          <circle class="halo" cx="13" cy="9" r="12"/>
+          <path class="shade" d="M5 11 L9 3 H17 L21 11 Z"/>
+          <rect class="base" x="12" y="11" width="2" height="9"/>
+          <path class="base" d="M8 22 Q13 19 18 22 L18 23 H8 Z"/>
+        </svg>
+        <span id="lampword">Light the lamp</span>
+      </button>
+    </div>
+  </div>
+
+  <div id="gsearch-overlay" class="gsearch-overlay hidden" role="dialog" aria-modal="true" aria-label="Search johnrecords.org" data-pagefind-ignore>
+    <div class="gsearch-panel">
+      <input id="gsearch-input" type="search" placeholder="Search johnrecords.org… (Esc to close)" autocomplete="off" />
+      <div id="gsearch-results" class="gsearch-results"></div>
+    </div>
   </div>
 
   <header class="mast">
@@ -336,13 +364,14 @@ healthy and happy expression in the world.</div>
     </article>
   </div>
 
-  <footer>
+  <footer data-pagefind-ignore>
     <span>© John Records · Recorded 2015&ndash;2022, offered freely.
     <a href="mailto:john.records@gmail.com">john.records@gmail.com</a></span>
   </footer>
 
 </div>
 
+<script src="/gsearch.js" defer></script>
 <script>
 (function(){
   var root = document.documentElement;
