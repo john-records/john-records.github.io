@@ -353,6 +353,8 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
 @media (max-width:840px){
   .letters{flex-direction:column; gap:0}
   .book::after{left:-4px; right:-4px}
+  .shelf{grid-template-columns:1fr}
+  .book.wide{grid-column:span 1}
 }
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important}
