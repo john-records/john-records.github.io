@@ -227,6 +227,47 @@ a{color:inherit}
 .book.soon .plate img{opacity:.9}
 .book:hover{transform:translateY(-5px); box-shadow:var(--shadow)}
 .book:hover h3{color:var(--terracotta)}
+
+/* ---------- "Where to Begin" — a full-width welcome card, ahead of the shelf ---------- */
+.begin{margin:clamp(40px,5.5vw,64px) 0 0}
+.begin.book{padding-bottom:34px}
+.begin:hover{transform:none; box-shadow:none}
+.begin:hover h3{color:inherit}
+.begin .d{max-width:44em}
+.begin-more{
+  position:relative; display:inline-block; margin:22px 0 0; padding-right:20px;
+  font-family:var(--data); font-size:.64rem; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--ink-faint); transition:color .2s;
+}
+.begin:hover .begin-more{color:var(--terracotta)}
+.begin-more .chev{position:absolute; right:0; top:-2px; font-family:var(--display); font-size:15px}
+.begin-more .chev::before{content:"+"}
+details.begin[open] .begin-more .chev::before{content:"\2013"}
+.begin-rest{margin-top:6px}
+.begin-qs{
+  margin:16px 0 24px; padding-left:20px; border-left:2px solid var(--terracotta);
+  font-family:var(--display); font-style:italic; font-size:19px; line-height:1.5;
+  color:var(--ink); display:flex; flex-direction:column; gap:9px;
+}
+.begin-doors{
+  columns:260px 3; column-gap:36px;
+  margin:12px 0 30px;
+}
+.begin-doors .door{
+  break-inside:avoid; -webkit-column-break-inside:avoid;
+  margin:0 0 26px;
+}
+.begin-doors .door h4{
+  font-family:var(--display); font-weight:400; font-size:18.5px; margin:0 0 8px;
+}
+.begin-doors .door p{margin:0 0 10px; color:var(--ink-soft); font-size:15.5px; line-height:1.62}
+.begin-doors .door p:last-child{margin:0}
+.begin-doors .door a{color:var(--oak); text-decoration:none; border-bottom:1px solid var(--line)}
+.begin-doors .door a:hover{color:var(--terracotta); border-color:var(--terracotta)}
+.begin-wander{margin-top:6px; padding-top:26px; border-top:1px solid var(--line); max-width:40em}
+.begin-wander p{margin:0 0 10px; color:var(--ink-soft); font-size:16px}
+.begin-wander p:last-child{margin:16px 0 0}
+.begin-wander strong{font-weight:600; color:var(--oak)}
 .book>summary{
   list-style:none; cursor:pointer;
   display:flex; flex-direction:column; flex:1;
@@ -425,6 +466,127 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
     <figcaption>The nook, more or less. After a photograph taken in a library
       organized in 1886.</figcaption>
   </figure>
+
+  <div class="keyband" role="presentation"></div>
+
+  <details class="book wide begin" style="--spine:#7A4E28">
+    <summary>
+      <figure class="plate"><img src="/assets/plates/begin.jpg" width="768" height="512" loading="lazy" alt="A row of old wooden doors of different styles set into a sunlit wall, one standing open with warm light spilling through." /></figure>
+      <h3>Where to Begin</h3>
+      <p class="d">Welcome to my Reading Nook.</p>
+      <p class="d">There is no particular way you need to enter.</p>
+      <p class="d">These offerings come from a life based on meditation, teaching,
+        service, and an enduring curiosity about a few simple questions:</p>
+      <p class="begin-qs">
+        <span>Who are we, really?</span>
+        <span>What lies beyond the small self we ordinarily take ourselves to be?</span>
+        <span>And how might awakening change the way we love and live?</span>
+      </p>
+      <p class="begin-more">Click for more<i class="chev"></i></p>
+    </summary>
+
+    <div class="begin-rest">
+    <p class="d">I&rsquo;ve explored those questions through Christianity, Kriya
+      Yoga, Buddhism, Kashmir Shaivism, myth, meditation, work with people
+      experiencing homelessness, and simply through the experience of being
+      human.</p>
+    <p class="d">Here are a few doors you might open.</p>
+
+    <div class="begin-doors">
+      <div class="door">
+        <h4>&#10084;&#65039; If your heart brings you here</h4>
+        <p>Begin with <a href="https://opaque-acorn-59v4.here.now/">Love in
+          Action</a>. This is perhaps the clearest expression of my
+          understanding of who we are, where we are, and how to live. Spoiler:
+          I find that love is more than something we feel or something we do,
+          and that we can gradually become a vehicle for its expression.</p>
+        <p>Then try <a href="https://verdant-poplar-rfb7.here.now/">The One
+          Heart Practice</a>. It begins with My Heart, expands through Our
+          Hearts, More Hearts, All Hearts, and finally returns to One Heart.
+          It is a practice, not a proposition.</p>
+      </div>
+      <div class="door">
+        <h4>&#129496; If you want to practice</h4>
+        <p>Begin with <a href="https://plush-chant-thza.here.now/">Shortcuts
+          to Meditation</a>. These are simple practices gathered from decades
+          of meditation and teaching. They work with your own physiology
+          rather than against it.</p>
+        <p>Then explore <a href="https://lively-nectar-cwz7.here.now/">112
+          Portals</a> &mdash; 112 doorways into awareness from the
+          Vijñāna Bhairava Tantra &mdash; or spend some time with the short
+          guided practices in <a href="/moon-in-the-water/">Moon in the
+          Water</a>.</p>
+        <p>You don&rsquo;t have to understand anything first. Just sit down
+          and see what happens.</p>
+      </div>
+      <div class="door">
+        <h4>&#127756; If you are drawn to the mystical</h4>
+        <p>Try <a href="https://floral-mirage-avqw.here.now/">Remember Who
+          You Are</a>. It grew out of experiences that led me to wonder
+          whether the &ldquo;I&rdquo; we ordinarily identify with is only a
+          small expression of something much larger.</p>
+        <p>You might then listen to <a href="/molten-golden-mountain-teachings/">Molten
+          Golden Mountain Teachings</a>, where many of these questions appear
+          in talks and guided meditations recorded over seven years.</p>
+      </div>
+      <div class="door">
+        <h4>&#10013;&#65039; If you are interested in the meeting of traditions</h4>
+        <p>You may find it interesting to wander among the works rather than
+          choosing a single tradition. Jesus and St. Francis appear alongside
+          the Buddha, Kuan Yin, Krishna, Shiva, and the great traditions of
+          Yoga and Buddhism. I don&rsquo;t see these as competing answers so
+          much as different languages and different doors.</p>
+        <p>The question is not only <em>What do they teach?</em> It is also:
+          <strong>What do they invite us to experience?</strong></p>
+      </div>
+      <div class="door">
+        <h4>&#128214; If you prefer stories</h4>
+        <p>Begin with <a href="https://velvet-quill-y5x3.here.now/">The Dust
+          Between Us</a>, a Western novel with the Bhagavad Gita quietly
+          underneath its characters and choices. Or enter the world of myth
+          through <a href="https://happy-canyon-38dp.here.now/">Athy and
+          Alexander</a>.</p>
+        <p>If the Rāmāyaṇa calls to you, there are two very different doors:
+          <a href="https://arctic-savoy-hq5r.here.now/">The God Who Forgot
+          Himself</a> tells the ancient epic through the eyes of Bhushundi
+          the crow. <a href="https://zen-cedar-sj5s.here.now/">The Calibrated
+          Heir</a> carries the same story into a science-fiction future.</p>
+        <p>It&rsquo;s said that a story is the shortest path to a truth. I
+          love a good story.</p>
+      </div>
+      <div class="door">
+        <h4>&#127911; If you&rsquo;d rather listen</h4>
+        <p>The complete <a href="/autobiography-of-a-yogi/">Autobiography of
+          a Yogi</a> is here as an annotated edition, with the entire book
+          narrated.</p>
+        <p>There are also the talks and meditations in <a href="/molten-golden-mountain-teachings/">Molten
+          Golden Mountain Teachings</a> and the shorter practices in
+          <a href="/moon-in-the-water/">Moon in the Water</a>.</p>
+      </div>
+      <div class="door">
+        <h4>&#127807; If you want something more personal</h4>
+        <p>Try <a href="/notes-to-a-sangha/">Notes to a Sangha</a>.</p>
+        <p>These began as notes to people in an online sangha I&rsquo;m given
+          to facilitate: a passage to sit with, a practice to try, or
+          sometimes simply an honest account of how the week had gone.</p>
+        <p>They weren&rsquo;t written for a general audience. But maybe
+          you&rsquo;re not a general audience.</p>
+      </div>
+    </div>
+
+    <div class="begin-wander">
+      <p>There is no course to complete here.</p>
+      <p>No belief system to adopt.</p>
+      <p>No finish line.</p>
+      <p>The Reading Nook is more like a shelf of things that have mattered to me, many of
+        which have emerged through me.</p>
+      <p>Take down whatever catches your eye. Sit with it for a while. Read. Listen.
+        Practice. Question.</p>
+      <p>And if something opens a door for you, follow it.</p>
+      <p><strong>You never know where a door will lead.</strong></p>
+    </div>
+    </div>
+  </details>
 
   <p class="label">The Shelf <span class="n">twelve works</span></p>
   <div class="shelf">
