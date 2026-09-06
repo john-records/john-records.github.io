@@ -102,7 +102,7 @@
 }
 
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%; overflow-x:clip}
 body{
   margin:0; background:var(--room); color:var(--ink);
   font-family:var(--read); font-optical-sizing:auto;
@@ -425,6 +425,12 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
   .book::after{left:-4px; right:-4px}
   .shelf{grid-template-columns:1fr}
   .book.wide{grid-column:span 1}
+}
+@media (max-width:600px){
+  .strip{flex-wrap:wrap; row-gap:12px}
+  .strip .who{flex:0 0 100%}
+  .strip-controls{flex:0 0 100%; justify-content:flex-end}
+  .lampbtn span{display:none}
 }
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important}
