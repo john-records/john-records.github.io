@@ -258,6 +258,59 @@ a{color:inherit}
 .book:hover{transform:translateY(-5px); box-shadow:var(--shadow)}
 .book:hover h3{color:var(--terracotta)}
 
+/* ---------- "Become All Flame" — the first card ---------- */
+.flamecard{margin:clamp(40px,5.5vw,64px) 0 0}
+.flamecard:hover{transform:none; box-shadow:none}
+.fc-grid{
+  display:grid; gap:clamp(22px,3vw,40px);
+  grid-template-columns:minmax(0,1fr) minmax(230px,320px);
+  align-items:start;
+}
+.fc-fig{margin:0}
+.fc-frame{
+  padding:clamp(7px,.9vw,10px);
+  background:var(--oak-grain);
+  box-shadow:var(--shadow);
+}
+.fc-frame img{
+  display:block; width:100%; height:auto;
+  filter:var(--hero-filter); transition:filter .8s ease;
+}
+.fc-fig figcaption{
+  margin:11px 2px 0; font-size:14px; font-style:italic;
+  color:var(--ink-faint); line-height:1.5;
+}
+.saying{
+  margin:0 0 22px; padding-left:clamp(16px,2vw,24px);
+  border-left:2px solid var(--terracotta);
+}
+.saying p{
+  margin:0 0 14px; font-family:var(--display);
+  font-size:clamp(18px,1.9vw,21px); line-height:1.5; color:var(--ink);
+}
+.saying p:last-of-type{margin-bottom:0}
+.saying .flame{font-style:italic}
+.saying .attrib{
+  display:block; margin:16px 0 0; font-style:normal;
+  font-family:var(--data); font-size:.62rem; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--ink-faint);
+}
+.needleman{
+  margin:0 0 20px; padding:0; border:0; max-width:38em;
+  color:var(--ink-soft); font-size:17px; line-height:1.6;
+}
+.needleman cite{
+  display:block; margin:10px 0 0; font-style:normal;
+  font-family:var(--data); font-size:.62rem; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--ink-faint);
+}
+.fc-close{margin:0; color:var(--ink); font-size:17.5px; line-height:1.6; max-width:38em}
+@media (max-width:760px){
+  .fc-grid{grid-template-columns:1fr}
+  .fc-fig{order:-1}
+  .fc-frame img{aspect-ratio:3/2; object-fit:cover; object-position:50% 22%}
+}
+
 /* ---------- "Where to Begin" — a full-width welcome card, ahead of the shelf ---------- */
 .begin{margin:clamp(40px,5.5vw,64px) 0 0}
 .begin.book{padding-bottom:34px}
@@ -507,9 +560,10 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
 
   <header class="mast">
     <h1>John&rsquo;s Reading Nook</h1>
-    <p class="thesis">Books and more — <span class="adj">mythic, mystical, devotional,
-      and down-to-earth</span> — translations, audio/video, and notes on contemplative
-      practice and the work of compassion.</p>
+    <p class="thesis">Here you will find most of what I&rsquo;ve shared over the
+      decades: books and more &mdash; <span class="adj">mythic, mystical,
+      devotional, and down-to-earth</span> &mdash; translations, audio/video, and
+      notes on contemplative practice and the work of compassion.</p>
   </header>
 
   <main id="main" tabindex="-1">
@@ -526,6 +580,51 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
   </figure>
 
   <div class="keyband" role="presentation"></div>
+
+  <section class="book wide flamecard" id="become-all-flame" style="--spine:#A64B2A">
+    <h2>Become All Flame</h2>
+    <p class="byline">Egypt, the fourth century</p>
+
+    <div class="fc-grid">
+      <div>
+        <blockquote class="saying">
+          <p>Abba Lot came to Abba Joseph and said: &ldquo;Father, as far as I am
+            able I keep my little rule, my little fast, my little prayer, my
+            little meditation, my little silence. As far as I am able I work to
+            cleanse my heart of thoughts. What more should I do?&rdquo;</p>
+          <p>The old man stood and stretched his hands toward heaven, and his ten
+            fingers became like ten lamps of flame. He said:
+            <span class="flame">&ldquo;If you want, you can become all
+            flame.&rdquo;</span></p>
+          <span class="attrib">The Sayings of the Desert Fathers</span>
+        </blockquote>
+
+        <blockquote class="needleman">
+          &ldquo;We are free to be &mdash; and are obliged to strive to become
+          &mdash; beings through whom and in whom the highest energies of
+          consciousness and eternity blend into a unity in relationship to all
+          the forces of earth and passing time.&rdquo;
+          <cite>Jacob Needleman</cite>
+        </blockquote>
+
+        <p class="d">In short, you have the opportunity to be Love incarnate
+          &mdash; or, more accurately said, for Love to incarnate in, through and
+          as you. The practical daily manifestation of this is Love in action,
+          your natural, healthy expression illuminating and healing this broken
+          world.</p>
+
+        <p class="fc-close">Everything here is in service of this coming alive
+          in you.</p>
+      </div>
+
+      <figure class="fc-fig">
+        <div class="fc-frame">
+          <img src="/assets/plates/joseph.jpg" width="768" height="1024" loading="lazy" alt="A painting of an elderly bearded desert monk in a rough robe, standing in the desert at dawn with both arms lifted and palms open, a golden radiance surrounding him and burning brightest around his open hands." />
+        </div>
+        <figcaption>Abba Joseph of Panephysis, in the desert of Egypt.</figcaption>
+      </figure>
+    </div>
+  </section>
 
   <details class="book wide begin" style="--spine:#7A4E28">
     <summary>
@@ -550,6 +649,12 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
     <p class="d">Here are a few doors you might open.</p>
 
     <div class="begin-doors">
+      <div class="door">
+        <h3>&#128293; If you want to know what it is all for</h3>
+        <p><a href="#become-all-flame">Become All Flame</a> sits just above: a
+          story from the Egyptian desert, and the reason any of the rest of this
+          is here.</p>
+      </div>
       <div class="door">
         <h3>&#10084;&#65039; If your heart brings you here</h3>
         <p>Begin with <a href="https://opaque-acorn-59v4.here.now/">Love in
