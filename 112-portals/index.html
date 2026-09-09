@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>112 Portals — John Records</title>
+<meta name="description" content="A new translation of the Vijñāna Bhairava Tantra, roughly 1300 years old, collated against Śivopādhyāya’s commentary — with our own commentary, practice suggestions, and chants of the original Sanskrit with a pronunciation guide." />
+<meta name="author" content="John Records" />
+<link rel="canonical" href="https://johnrecords.org/112-portals/" />
+<meta property="og:title" content="112 Portals — John Records" />
+<meta property="og:description" content="A new translation of the Vijñāna Bhairava Tantra, roughly 1300 years old, collated against Śivopādhyāya’s commentary — with our own commentary, practice suggestions, and chants of the original Sanskrit with a pronunciation guide." />
+<meta property="og:url" content="https://johnrecords.org/112-portals/" />
+<meta property="og:type" content="book" />
+<meta property="og:image" content="https://johnrecords.org/assets/plates/gateways.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="112 Portals — John Records" />
+<meta name="twitter:description" content="A new translation of the Vijñāna Bhairava Tantra, roughly 1300 years old, collated against Śivopādhyāya’s commentary — with our own commentary, practice suggestions, and chants of the original Sanskrit with a pronunciation guide." />
+<meta name="twitter:image" content="https://johnrecords.org/assets/plates/gateways.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --room:#EFE3C8; --paper:#FAF5E9; --card:#FFFDF4;
+  --ink:#2A2118; --ink-soft:#6E5F4B; --ink-faint:#93856D;
+  --oak:#7A4E28; --oak-deep:#53341A;
+  --oak-grain:linear-gradient(180deg,#8a5c33,#6b4322 55%,#53341A);
+  --terracotta:#A64B2A; --leaf:#3E5A45; --rose:#A85F62; --tile:#E2BE72;
+  --lamp:#B07A26; --glow:transparent;
+  --line:rgba(83,52,26,.22); --line-faint:rgba(83,52,26,.10);
+  --shadow:0 18px 40px -22px rgba(42,33,24,.45);
+  --display:"IM Fell English","Iowan Old Style",Georgia,serif;
+  --read:"Newsreader",Georgia,"Times New Roman",serif;
+  --data:"DM Mono",ui-monospace,SFMono-Regular,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --room:#191008; --paper:#241A0F; --card:#2E2214;
+    --ink:#F0E5CE; --ink-soft:#C4B394; --ink-faint:#94836A;
+    --oak:#B98B54; --oak-deep:#8A5F33;
+    --oak-grain:linear-gradient(180deg,#6b4a26,#4a3117 55%,#33200e);
+    --terracotta:#D2764E; --leaf:#8FB49A; --rose:#D49295; --tile:#B08A3F;
+    --lamp:#F2B94E; --glow:rgba(242,185,78,.16);
+    --line:rgba(240,229,206,.22); --line-faint:rgba(240,229,206,.09);
+    --shadow:0 18px 44px -20px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --room:#191008; --paper:#241A0F; --card:#2E2214;
+  --ink:#F0E5CE; --ink-soft:#C4B394; --ink-faint:#94836A;
+  --oak:#B98B54; --oak-deep:#8A5F33;
+  --oak-grain:linear-gradient(180deg,#6b4a26,#4a3117 55%,#33200e);
+  --terracotta:#D2764E; --leaf:#8FB49A; --rose:#D49295; --tile:#B08A3F;
+  --lamp:#F2B94E; --glow:rgba(242,185,78,.16);
+  --line:rgba(240,229,206,.22); --line-faint:rgba(240,229,206,.09);
+  --shadow:0 18px 44px -20px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; overflow-x:clip}
+body{
+  margin:0; background:var(--room); color:var(--ink);
+  font-family:var(--read); font-optical-sizing:auto;
+  font-size:18.5px; line-height:1.62; -webkit-font-smoothing:antialiased;
+  overflow-x:clip;
+}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--terracotta);outline-offset:3px}
+.page{
+  max-width:840px; margin:0 auto; background:var(--paper);
+  padding:0 clamp(22px,4.5vw,64px) clamp(28px,4vw,52px);
+  box-shadow:0 0 0 1px var(--line-faint), 0 30px 80px -40px rgba(42,33,24,.5);
+}
+.strip{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:16px 0; font-family:var(--data); font-size:13px;
+  letter-spacing:.04em; color:var(--ink-faint);
+}
+.strip .who{color:var(--ink-soft)}
+.strip a.home{color:var(--oak); text-decoration:none; border-bottom:1px solid var(--line)}
+.strip a.home:hover{color:var(--terracotta); border-color:var(--terracotta)}
+.lampbtn{
+  display:flex; align-items:center; gap:8px; background:none; border:none;
+  color:var(--ink-faint); font-family:var(--data); font-size:13px;
+  letter-spacing:.04em; cursor:pointer; padding:4px;
+}
+.lampbtn:hover{color:var(--lamp)}
+.lampbtn svg{display:block; overflow:visible}
+.lampbtn.searchbtn svg{fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round}
+.lampbtn .shade{fill:var(--lamp)}
+.lampbtn .base{fill:var(--oak)}
+.lampbtn .halo{fill:var(--glow)}
+header.mast{padding:clamp(18px,4vw,36px) 0 clamp(8px,2vw,16px)}
+header.mast h1{
+  font-family:var(--display); font-weight:400; font-size:clamp(32px,5.4vw,50px);
+  line-height:1.08; margin:0 0 14px; letter-spacing:.005em;
+}
+header.mast .byline{margin:0 0 6px; color:var(--ink-soft); font-size:16px}
+header.mast .thesis{
+  margin:0; font-size:18.5px; color:var(--ink-soft); max-width:44em;
+}
+.keyband{
+  height:10px; margin:18px 0 0;
+  background-image:repeating-linear-gradient(45deg, var(--terracotta) 0 6px, transparent 6px 12px);
+  opacity:.5;
+}
+.plate-hero{margin:clamp(20px,4vw,34px) 0 0; border-radius:3px; overflow:hidden; box-shadow:var(--shadow)}
+.plate-hero img{display:block; width:100%; height:auto}
+.leadin{margin:clamp(30px,4.5vw,46px) 0 0; color:var(--ink-soft); font-size:17.5px; max-width:40em}
+.leadin a{color:var(--oak); text-decoration:none; border-bottom:1px solid var(--line)}
+.leadin a:hover{color:var(--terracotta); border-color:var(--terracotta)}
+.cta{
+  display:inline-block; margin:28px 0 0; padding:14px 26px;
+  background:var(--oak); color:var(--paper); font-family:var(--data);
+  font-size:14px; letter-spacing:.04em; text-decoration:none; border-radius:4px;
+  box-shadow:var(--shadow);
+}
+.cta:hover{background:var(--oak-deep)}
+.note{margin:16px 0 0; color:var(--ink-faint); font-size:14px}
+footer{
+  margin-top:clamp(40px,6vw,64px); padding:20px 0 8px; border-top:1px solid var(--line);
+  font-family:var(--data); font-size:12.5px; color:var(--ink-faint);
+}
+footer a{color:var(--oak); text-decoration:none; border-bottom:1px solid var(--line)}
+footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
+@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+@media (max-width:600px){
+  .strip{flex-wrap:wrap; row-gap:12px}
+  .strip a.home{flex:0 0 100%}
+  .strip-controls{flex:0 0 100%; justify-content:flex-end}
+  .lampbtn span{display:none}
+}
+
+/* site-wide search overlay (Pagefind) */
+.strip-controls{display:flex; align-items:center; gap:4px}
+.gsearch-overlay{position:fixed; inset:0; z-index:200; background:rgba(0,0,0,.45);
+  display:flex; align-items:flex-start; justify-content:center; padding:10vh 16px 0}
+.gsearch-overlay.hidden{display:none}
+.gsearch-panel{background:var(--paper); color:var(--ink); border-radius:14px; width:100%;
+  max-width:640px; box-shadow:0 20px 60px rgba(0,0,0,.35); padding:14px; max-height:70vh;
+  display:flex; flex-direction:column}
+.gsearch-panel input{width:100%; padding:12px 14px; font-size:16px; border:1px solid var(--line);
+  border-radius:10px; background:var(--paper); color:var(--ink); box-sizing:border-box}
+.gsearch-results{margin-top:10px; overflow:auto}
+.gsearch-hit{display:block; padding:10px 8px; border-radius:8px; text-decoration:none; color:inherit}
+.gsearch-hit:hover{background:var(--card)}
+.gsearch-hit-title{display:block; font-weight:600; font-size:14px}
+.gsearch-hit-excerpt{display:block; font-size:13px; color:var(--ink-soft); margin-top:2px}
+.gsearch-hit-excerpt mark{background:#ffe082; color:#333; border-radius:3px; padding:0 2px}
+.gsearch-empty{padding:10px 8px; font-size:13px; color:var(--ink-soft)}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Book","name":"112 Portals","url":"https://johnrecords.org/112-portals/","author":{"@type":"Person","name":"John Records"}}
+</script>
+</head>
+<body>
+<div class="page" data-pagefind-body>
+
+  <div class="strip" data-pagefind-ignore>
+    <a class="home" href="/">&larr; John&rsquo;s Reading Nook</a>
+    <div class="strip-controls">
+      <button class="lampbtn searchbtn" type="button" data-gsearch-open aria-label="Search the site" title="Search the site">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/>
+          <path d="M21 21l-4.35-4.35"/>
+        </svg>
+        <span>Search</span>
+      </button>
+      <button class="lampbtn" id="lamp" type="button" aria-pressed="false">
+        <svg width="22" height="22" viewBox="0 0 26 26" aria-hidden="true">
+          <circle class="halo" cx="13" cy="9" r="12"/>
+          <path class="shade" d="M5 11 L9 3 H17 L21 11 Z"/>
+          <rect class="base" x="12" y="11" width="2" height="9"/>
+          <path class="base" d="M8 22 Q13 19 18 22 L18 23 H8 Z"/>
+        </svg>
+        <span id="lampword">Light the lamp</span>
+      </button>
+    </div>
+  </div>
+
+  <div id="gsearch-overlay" class="gsearch-overlay hidden" role="dialog" aria-modal="true" aria-label="Search johnrecords.org" data-pagefind-ignore>
+    <div class="gsearch-panel">
+      <input id="gsearch-input" type="search" placeholder="Search johnrecords.org&hellip; (Esc to close)" autocomplete="off" />
+      <div id="gsearch-results" class="gsearch-results"></div>
+    </div>
+  </div>
+
+  <header class="mast">
+    <h1>112 Portals</h1>
+    <p class="byline">Vijñāna Bhairava Tantra — a new translation from the Sanskrit</p>
+    <p class="thesis">A new translation of the Vijñāna Bhairava Tantra, roughly 1300 years old, collated against Śivopādhyāya’s commentary — with our own commentary, practice suggestions, and chants of the original Sanskrit with a pronunciation guide.</p>
+  </header>
+
+  <div class="keyband" role="presentation"></div>
+
+  <figure class="plate-hero">
+    <img src="/assets/plates/gateways.jpg" width="768" height="512" loading="eager" alt="An ancient carved stone gateway opening onto a starry night sky, cover art for 112 Portals." />
+  </figure>
+
+  <p class="leadin">This book is hosted in full &mdash; text and narrated audio &mdash; at its own
+    address so it doesn&rsquo;t depend on this page staying around.</p>
+  <a class="cta" href="https://lively-nectar-cwz7.here.now/">Read 112 Portals &rarr;</a>
+  <p class="note">lively-nectar-cwz7.here.now</p>
+
+  <footer data-pagefind-ignore>
+    <span>&copy; John Records &middot; <a href="mailto:john.records@gmail.com">john.records@gmail.com</a></span>
+  </footer>
+
+</div>
+
+<script src="/gsearch.js" defer></script>
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn  = document.getElementById('lamp');
+  var word = document.getElementById('lampword');
+  function evening(){
+    var t = root.getAttribute('data-theme');
+    if (t) return t === 'dark';
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  function paint(){
+    var on = evening();
+    btn.setAttribute('aria-pressed', String(on));
+    word.textContent = on ? 'Morning' : 'Light the lamp';
+  }
+  btn.addEventListener('click', function(){
+    root.setAttribute('data-theme', evening() ? 'light' : 'dark');
+    paint();
+  });
+  paint();
+})();
+</script>
+</body>
+</html>
