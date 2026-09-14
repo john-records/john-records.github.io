@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Page Not Found — John Records</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --room:#EFE3C8; --paper:#FAF5E9; --card:#FFFDF4;
+  --ink:#2A2118; --ink-soft:#6E5F4B; --ink-faint:#93856D;
+  --oak:#7A4E28; --oak-deep:#53341A;
+  --terracotta:#A64B2A;
+  --lamp:#B07A26; --glow:transparent;
+  --line:rgba(83,52,26,.22); --line-faint:rgba(83,52,26,.10);
+  --shadow:0 18px 40px -22px rgba(42,33,24,.45);
+  --display:"IM Fell English","Iowan Old Style",Georgia,serif;
+  --read:"Newsreader",Georgia,"Times New Roman",serif;
+  --data:"DM Mono",ui-monospace,SFMono-Regular,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --room:#191008; --paper:#241A0F; --card:#2E2214;
+    --ink:#F0E5CE; --ink-soft:#C4B394; --ink-faint:#94836A;
+    --oak:#B98B54; --oak-deep:#8A5F33;
+    --terracotta:#D2764E;
+    --lamp:#F2B94E; --glow:rgba(242,185,78,.16);
+    --line:rgba(240,229,206,.22); --line-faint:rgba(240,229,206,.09);
+    --shadow:0 18px 44px -20px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --room:#191008; --paper:#241A0F; --card:#2E2214;
+  --ink:#F0E5CE; --ink-soft:#C4B394; --ink-faint:#94836A;
+  --oak:#B98B54; --oak-deep:#8A5F33;
+  --terracotta:#D2764E;
+  --lamp:#F2B94E; --glow:rgba(242,185,78,.16);
+  --line:rgba(240,229,206,.22); --line-faint:rgba(240,229,206,.09);
+  --shadow:0 18px 44px -20px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; min-height:100vh; background:var(--room); color:var(--ink);
+  font-family:var(--read); font-optical-sizing:auto;
+  display:flex; align-items:center; justify-content:center;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--terracotta); outline-offset:3px}
+.card{
+  max-width:520px; margin:24px; padding:clamp(28px,6vw,56px);
+  background:var(--paper); text-align:center; border-radius:3px;
+  box-shadow:0 0 0 1px var(--line-faint), var(--shadow);
+}
+.n{
+  font-family:var(--data); font-size:13px; letter-spacing:.1em;
+  color:var(--ink-faint); text-transform:uppercase; margin:0 0 18px;
+}
+h1{
+  font-family:var(--display); font-weight:400; font-size:clamp(28px,5vw,40px);
+  margin:0 0 14px;
+}
+p{margin:0 0 28px; color:var(--ink-soft); font-size:17px; line-height:1.6}
+.actions{display:flex; gap:14px; justify-content:center; flex-wrap:wrap}
+.btn{
+  display:inline-block; padding:12px 22px;
+  font-family:var(--data); font-size:14px; letter-spacing:.04em;
+  text-decoration:none; border-radius:4px;
+}
+.btn.primary{background:var(--oak); color:var(--paper); box-shadow:var(--shadow)}
+.btn.primary:hover{background:var(--oak-deep)}
+.btn.ghost{border:1px solid var(--line); color:var(--oak); background:none; cursor:pointer}
+.btn.ghost:hover{color:var(--terracotta); border-color:var(--terracotta)}
+
+/* site-wide search overlay (Pagefind) */
+.gsearch-overlay{position:fixed; inset:0; z-index:200; background:rgba(0,0,0,.45);
+  display:flex; align-items:flex-start; justify-content:center; padding:10vh 16px 0}
+.gsearch-overlay.hidden{display:none}
+.gsearch-panel{background:var(--paper); color:var(--ink); border-radius:14px; width:100%;
+  max-width:640px; box-shadow:0 20px 60px rgba(0,0,0,.35); padding:14px; max-height:70vh;
+  display:flex; flex-direction:column}
+.gsearch-panel input{width:100%; padding:12px 14px; font-size:16px; border:1px solid var(--line);
+  border-radius:10px; background:var(--paper); color:var(--ink); box-sizing:border-box}
+.gsearch-results{margin-top:10px; overflow:auto}
+.gsearch-hit{display:block; padding:10px 8px; border-radius:8px; text-decoration:none; color:inherit}
+.gsearch-hit:hover{background:var(--card)}
+.gsearch-hit-title{display:block; font-weight:600; font-size:14px}
+.gsearch-hit-excerpt{display:block; font-size:13px; color:var(--ink-soft); margin-top:2px}
+.gsearch-hit-excerpt mark{background:#ffe082; color:#333; border-radius:3px; padding:0 2px}
+.gsearch-empty{padding:10px 8px; font-size:13px; color:var(--ink-soft)}
+</style>
+</head>
+<body>
+<main id="main">
+  <div class="card">
+    <p class="n">404</p>
+    <h1>This page wandered off.</h1>
+    <p>There&rsquo;s nothing at this address. It may have moved, or never
+      existed &mdash; but the rest of the Nook is still here.</p>
+    <div class="actions">
+      <a class="btn primary" href="/">&larr; Back to John&rsquo;s Reading Nook</a>
+      <button class="btn ghost" type="button" data-gsearch-open>Search the site</button>
+    </div>
+  </div>
+</main>
+
+<div id="gsearch-overlay" class="gsearch-overlay hidden" role="dialog" aria-modal="true" aria-label="Search johnrecords.org" data-pagefind-ignore>
+  <div class="gsearch-panel">
+    <input id="gsearch-input" type="search" placeholder="Search johnrecords.org… (Esc to close)" autocomplete="off" />
+    <div id="gsearch-results" class="gsearch-results"></div>
+  </div>
+</div>
+
+<script src="/gsearch.js" defer></script>
+</body>
+</html>

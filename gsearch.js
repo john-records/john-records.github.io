@@ -16,6 +16,10 @@
     var results = document.getElementById("gsearch-results");
     if (!overlay || !input || !results || !openers.length) return;
 
+    if (!input.hasAttribute("aria-label")) {
+      input.setAttribute("aria-label", "Search johnrecords.org");
+    }
+
     var pagefindPromise = null;
     function loadPagefind() {
       if (!pagefindPromise) {
@@ -27,13 +31,19 @@
       return pagefindPromise;
     }
 
-    function open() {
+    var lastOpener = null;
+    function open(e) {
+      lastOpener = (e && e.currentTarget) || null;
       overlay.classList.remove("hidden");
       loadPagefind();
       window.setTimeout(function () { input.focus(); }, 0);
     }
     function close() {
       overlay.classList.add("hidden");
+      if (lastOpener) {
+        lastOpener.focus();
+        lastOpener = null;
+      }
     }
 
     for (var i = 0; i < openers.length; i++) {

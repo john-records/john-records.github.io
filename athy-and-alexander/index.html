@@ -89,6 +89,15 @@ a{color:inherit}
 .lampbtn .shade{fill:var(--lamp)}
 .lampbtn .base{fill:var(--oak)}
 .lampbtn .halo{fill:var(--glow)}
+.skip-link{
+  position:absolute; top:-48px; left:12px; z-index:1000;
+  background:var(--card); color:var(--oak);
+  font-family:var(--data); font-size:.7rem; letter-spacing:.08em;
+  text-transform:uppercase; padding:10px 16px;
+  border:1px solid var(--line); text-decoration:none;
+  transition:top .15s ease;
+}
+.skip-link:focus{top:12px}
 header.mast{padding:clamp(18px,4vw,36px) 0 clamp(8px,2vw,16px)}
 header.mast h1{
   font-family:var(--display); font-weight:400; font-size:clamp(32px,5.4vw,50px);
@@ -153,6 +162,7 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
 </script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <div class="page" data-pagefind-body>
 
   <div class="strip" data-pagefind-ignore>
@@ -190,6 +200,8 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
     <p class="thesis">Twins born eleven minutes apart divide the world between them — Athy takes the daylight, Alexander takes the dark — until an old coin with an owl struck on it puts them in the path of a goddess who was never quite finished with the world.</p>
   </header>
 
+  <main id="main" tabindex="-1">
+
   <div class="keyband" role="presentation"></div>
 
   <figure class="plate-hero">
@@ -200,6 +212,8 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
     address so it doesn&rsquo;t depend on this page staying around.</p>
   <a class="cta" href="https://happy-canyon-38dp.here.now/#ch1">Read Athy and Alexander &rarr;</a>
   <p class="note">happy-canyon-38dp.here.now</p>
+
+  </main>
 
   <footer data-pagefind-ignore>
     <span>&copy; John Records &middot; <a href="mailto:john.records@gmail.com">john.records@gmail.com</a></span>
