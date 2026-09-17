@@ -62,7 +62,7 @@ html{-webkit-text-size-adjust:100%; overflow-x:clip}
 body{
   margin:0; background:var(--room); color:var(--ink);
   font-family:var(--read); font-optical-sizing:auto;
-  font-size:18.5px; line-height:1.62; -webkit-font-smoothing:antialiased;
+  font-size:23.125px; line-height:1.62; -webkit-font-smoothing:antialiased;
   overflow-x:clip;
 }
 a{color:inherit}
@@ -74,7 +74,7 @@ a{color:inherit}
 }
 .strip{
   display:flex; align-items:center; justify-content:space-between;
-  padding:16px 0; font-family:var(--data); font-size:13px;
+  padding:16px 0; font-family:var(--data); font-size:16.25px;
   letter-spacing:.04em; color:var(--ink-faint);
 }
 .strip .who{color:var(--ink-soft)}
@@ -82,7 +82,7 @@ a{color:inherit}
 .strip a.home:hover{color:var(--terracotta); border-color:var(--terracotta)}
 .lampbtn{
   display:flex; align-items:center; gap:8px; background:none; border:none;
-  color:var(--ink-faint); font-family:var(--data); font-size:13px;
+  color:var(--ink-faint); font-family:var(--data); font-size:16.25px;
   letter-spacing:.04em; cursor:pointer; padding:4px;
 }
 .lampbtn:hover{color:var(--lamp)}
@@ -94,7 +94,7 @@ a{color:inherit}
 .skip-link{
   position:absolute; top:-48px; left:12px; z-index:1000;
   background:var(--card); color:var(--oak);
-  font-family:var(--data); font-size:.7rem; letter-spacing:.08em;
+  font-family:var(--data); font-size:0.875rem; letter-spacing:.08em;
   text-transform:uppercase; padding:10px 16px;
   border:1px solid var(--line); text-decoration:none;
   transition:top .15s ease;
@@ -102,12 +102,12 @@ a{color:inherit}
 .skip-link:focus{top:12px}
 header.mast{padding:clamp(18px,4vw,36px) 0 clamp(8px,2vw,16px)}
 header.mast h1{
-  font-family:var(--display); font-weight:400; font-size:clamp(32px,5.4vw,50px);
+  font-family:var(--display); font-weight:400; font-size:clamp(40px,6.75vw,62.5px);
   line-height:1.08; margin:0 0 14px; letter-spacing:.005em;
 }
-header.mast .byline{margin:0 0 6px; color:var(--ink-soft); font-size:16px}
+header.mast .byline{margin:0 0 6px; color:var(--ink-soft); font-size:20px}
 header.mast .thesis{
-  margin:0; font-size:18.5px; color:var(--ink-soft); max-width:44em;
+  margin:0; font-size:23.125px; color:var(--ink-soft); max-width:44em;
 }
 .keyband{
   height:10px; margin:18px 0 0;
@@ -116,20 +116,20 @@ header.mast .thesis{
 }
 .plate-hero{margin:clamp(20px,4vw,34px) 0 0; border-radius:3px; overflow:hidden; box-shadow:var(--shadow)}
 .plate-hero img{display:block; width:100%; height:auto}
-.leadin{margin:clamp(30px,4.5vw,46px) 0 0; color:var(--ink-soft); font-size:17.5px; max-width:40em}
+.leadin{margin:clamp(30px,4.5vw,46px) 0 0; color:var(--ink-soft); font-size:21.875px; max-width:40em}
 .leadin a{color:var(--oak); text-decoration:none; border-bottom:1px solid var(--line)}
 .leadin a:hover{color:var(--terracotta); border-color:var(--terracotta)}
 .cta{
   display:inline-block; margin:28px 0 0; padding:14px 26px;
   background:var(--oak); color:var(--paper); font-family:var(--data);
-  font-size:14px; letter-spacing:.04em; text-decoration:none; border-radius:4px;
+  font-size:17.5px; letter-spacing:.04em; text-decoration:none; border-radius:4px;
   box-shadow:var(--shadow);
 }
 .cta:hover{background:var(--oak-deep)}
-.note{margin:16px 0 0; color:var(--ink-faint); font-size:14px}
+.note{margin:16px 0 0; color:var(--ink-faint); font-size:17.5px}
 footer{
   margin-top:clamp(40px,6vw,64px); padding:20px 0 8px; border-top:1px solid var(--line);
-  font-family:var(--data); font-size:12.5px; color:var(--ink-faint);
+  font-family:var(--data); font-size:15.625px; color:var(--ink-faint);
 }
 footer a{color:var(--oak); text-decoration:none; border-bottom:1px solid var(--line)}
 footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
@@ -149,15 +149,15 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
 .gsearch-panel{background:var(--paper); color:var(--ink); border-radius:14px; width:100%;
   max-width:640px; box-shadow:0 20px 60px rgba(0,0,0,.35); padding:14px; max-height:70vh;
   display:flex; flex-direction:column}
-.gsearch-panel input{width:100%; padding:12px 14px; font-size:16px; border:1px solid var(--line);
+.gsearch-panel input{width:100%; padding:12px 14px; font-size:20px; border:1px solid var(--line);
   border-radius:10px; background:var(--paper); color:var(--ink); box-sizing:border-box}
 .gsearch-results{margin-top:10px; overflow:auto}
 .gsearch-hit{display:block; padding:10px 8px; border-radius:8px; text-decoration:none; color:inherit}
 .gsearch-hit:hover{background:var(--card)}
-.gsearch-hit-title{display:block; font-weight:600; font-size:14px}
-.gsearch-hit-excerpt{display:block; font-size:13px; color:var(--ink-soft); margin-top:2px}
+.gsearch-hit-title{display:block; font-weight:600; font-size:17.5px}
+.gsearch-hit-excerpt{display:block; font-size:16.25px; color:var(--ink-soft); margin-top:2px}
 .gsearch-hit-excerpt mark{background:#ffe082; color:#333; border-radius:3px; padding:0 2px}
-.gsearch-empty{padding:10px 8px; font-size:13px; color:var(--ink-soft)}
+.gsearch-empty{padding:10px 8px; font-size:16.25px; color:var(--ink-soft)}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Book","name":"Love in Action (Original Edition)","url":"https://johnrecords.org/love-in-action/","author":{"@type":"Person","name":"John Records"}}
