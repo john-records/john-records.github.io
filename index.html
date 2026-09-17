@@ -298,11 +298,14 @@ a{color:inherit}
   text-transform:uppercase; color:var(--ink-faint);
 }
 .needleman{
-  margin:0 0 20px; padding:0; border:0; max-width:38em;
-  color:var(--ink-soft); font-size:17px; line-height:1.6;
+  margin:0 0 20px; padding:20px 24px; max-width:38em;
+  background:var(--paper); border-left:3px solid var(--oak);
+  box-shadow:0 8px 20px -14px rgba(42,33,24,.4);
+  font-family:var(--display); font-style:italic;
+  font-size:clamp(19px,2vw,22px); line-height:1.55; color:var(--ink);
 }
 .needleman cite{
-  display:block; margin:10px 0 0; font-style:normal;
+  display:block; margin:14px 0 0; font-style:normal;
   font-family:var(--data); font-size:.62rem; letter-spacing:.18em;
   text-transform:uppercase; color:var(--ink-faint);
 }
@@ -344,6 +347,10 @@ details.begin[open] .begin-more .chev::before{content:"\2013"}
 }
 .begin-doors .door h3{
   font-family:var(--display); font-weight:400; font-size:18.5px; margin:0 0 8px;
+  display:flex; align-items:center; gap:9px;
+}
+.door-icon{
+  width:19px; height:19px; flex:0 0 auto; color:var(--oak);
 }
 .begin-doors .door p{margin:0 0 10px; color:var(--ink-soft); font-size:15.5px; line-height:1.62}
 .begin-doors .door p:last-child{margin:0}
@@ -668,13 +675,13 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
 
     <div class="begin-doors">
       <div class="door">
-        <h3>&#128293; If you want to know what it is all for</h3>
+        <h3><svg class="door-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2c-1 3.5-4.5 5-4.5 9a4.5 4.5 0 0 0 9 0c0-1.8-.9-3-1.6-4 .1 1.4-.6 2.2-1.4 2.6C14.6 7 13.5 5 12 2z"/></svg>If you want to know what it is all for</h3>
         <p><a href="#become-all-flame">Become All Flame</a> sits just above: a
           story from the Egyptian desert, and the reason any of the rest of this
           is here.</p>
       </div>
       <div class="door">
-        <h3>&#10084;&#65039; If your heart brings you here</h3>
+        <h3><svg class="door-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.8-9.3C.8 8 2.2 4.8 5.4 4.1c2-.4 3.9.5 5 2.1 1.1-1.6 3-2.5 5-2.1 3.2.7 4.6 3.9 3.2 7.1C19.5 15.9 12 20.5 12 20.5z"/></svg>If your heart brings you here</h3>
         <p>Begin with <a href="https://opaque-acorn-59v4.here.now/">Love in
           Action</a>. This is perhaps the clearest expression of my
           understanding of who we are, where we are, and how to live. Spoiler:
@@ -685,7 +692,7 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
           Hearts, More Hearts, All Hearts, and finally returns to One Heart.</p>
       </div>
       <div class="door">
-        <h3>&#129496; If you want to practice</h3>
+        <h3><svg class="door-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 14c-2.8 0-5-2.2-5.3-5.6C8.6 9.3 10.5 10.8 12 12c1.5-1.2 3.4-2.7 5.3-3.6C17 11.8 14.8 14 12 14z"/><path d="M12 14c-1.6.9-3.7 1-5.6.1C7.3 12.3 9.3 11.2 12 12"/><path d="M12 14c1.6.9 3.7 1 5.6.1C16.7 12.3 14.7 11.2 12 12"/><path d="M3.5 15.8c2.7 1.7 5.6 2.4 8.5 2.4s5.8-.7 8.5-2.4"/></svg>If you want to practice</h3>
         <p>Begin with <a href="https://plush-chant-thza.here.now/">Shortcuts
           to Meditation</a>. These are simple practices gathered from decades
           of meditation and teaching. They work with your own physiology
@@ -699,7 +706,7 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
           and see what happens.</p>
       </div>
       <div class="door">
-        <h3>&#127756; If you are drawn to the mystical</h3>
+        <h3><svg class="door-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.5 3.5a7.5 7.5 0 1 0 5 12.6 6 6 0 0 1-5-12.6z"/><path d="M19 4v2.4M17.8 5.2h2.4"/><path d="M5 15v2M4 16h2"/></svg>If you are drawn to the mystical</h3>
         <p>Try <a href="https://floral-mirage-avqw.here.now/">Remember Who
           You Are</a>. It grew out of experiences that led me to wonder
           whether the &ldquo;I&rdquo; we ordinarily identify with is only a
@@ -709,7 +716,7 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
           in talks and guided meditations recorded over seven years.</p>
       </div>
       <div class="door">
-        <h3>&#10013;&#65039; If you are interested in the meeting of traditions</h3>
+        <h3><svg class="door-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v3M12 17.5v3M3.5 12h3M17.5 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/></svg>If you are interested in the meeting of traditions</h3>
         <p>You may find it interesting to wander among the works rather than
           choosing a single tradition. Jesus and St. Francis appear alongside
           the Buddha, Kuan Yin, Krishna, Shiva, and the great traditions of
@@ -719,7 +726,7 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
           experience.</p>
       </div>
       <div class="door">
-        <h3>&#128214; If you prefer stories</h3>
+        <h3><svg class="door-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5c-1.6-1.2-3.8-1.7-6-1.5v13c2.2-.2 4.4.3 6 1.5 1.6-1.2 3.8-1.7 6-1.5v-13c-2.2-.2-4.4.3-6 1.5z"/><path d="M12 5.5V19"/></svg>If you prefer stories</h3>
         <p>Begin with <a href="https://velvet-quill-y5x3.here.now/">The Dust
           Between Us</a>, a Western novel with the Bhagavad Gita quietly
           underneath its characters and choices. Or enter the world of myth
@@ -729,7 +736,7 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
           love a good story.</p>
       </div>
       <div class="door">
-        <h3>&#127911; If you&rsquo;d rather listen</h3>
+        <h3><svg class="door-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="2.7" y="13" width="4" height="6" rx="1.4"/><rect x="17.3" y="13" width="4" height="6" rx="1.4"/></svg>If you&rsquo;d rather listen</h3>
         <p>The complete <a href="/autobiography-of-a-yogi/">Autobiography of
           a Yogi</a> is here as an annotated edition, with the entire book
           narrated.</p>
@@ -738,7 +745,7 @@ footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
           <a href="/moon-in-the-water/">Moon in the Water</a>.</p>
       </div>
       <div class="door">
-        <h3>&#127807; If you want something more personal</h3>
+        <h3><svg class="door-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 4C10 4 4 10 4 18c8 0 14-6 14-14z"/><path d="M6 18c3-5 6.5-8.5 12-12"/></svg>If you want something more personal</h3>
         <p>Try <a href="/notes-to-a-sangha/">Notes to a Sangha</a>.</p>
         <p>These began as notes to people in an online sangha I&rsquo;m given
           to facilitate: a passage to sit with, a practice to try, or
