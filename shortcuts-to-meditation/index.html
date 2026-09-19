@@ -1,250 +1,1960 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.youtube-nocookie.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';">
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob:; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <title>Shortcuts to Meditation — John Records</title>
-<meta name="description" content="Meditation shortcuts gathered over decades of practice and teaching. Each one works with your own physiology instead of against it." />
-<meta name="author" content="John Records" />
-<link rel="canonical" href="https://johnrecords.org/shortcuts-to-meditation/" />
-<meta property="og:title" content="Shortcuts to Meditation — John Records" />
-<meta property="og:description" content="Meditation shortcuts gathered over decades of practice and teaching. Each one works with your own physiology instead of against it." />
-<meta property="og:url" content="https://johnrecords.org/shortcuts-to-meditation/" />
-<meta property="og:type" content="book" />
-<meta property="og:image" content="https://johnrecords.org/assets/plates/shortcuts.jpg" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Shortcuts to Meditation — John Records" />
-<meta name="twitter:description" content="Meditation shortcuts gathered over decades of practice and teaching. Each one works with your own physiology instead of against it." />
-<meta name="twitter:image" content="https://johnrecords.org/assets/plates/shortcuts.jpg" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="canonical" href="https://johnrecords.org/shortcuts-to-meditation/">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --room:#EFE3C8; --paper:#FAF5E9; --card:#FFFDF4;
-  --ink:#2A2118; --ink-soft:#6E5F4B; --ink-faint:#93856D;
-  --oak:#7A4E28; --oak-deep:#53341A;
-  --oak-grain:linear-gradient(180deg,#8a5c33,#6b4322 55%,#53341A);
-  --terracotta:#A64B2A; --leaf:#3E5A45; --rose:#A85F62; --tile:#E2BE72;
-  --lamp:#B07A26; --glow:transparent;
-  --line:rgba(83,52,26,.22); --line-faint:rgba(83,52,26,.10);
-  --shadow:0 18px 40px -22px rgba(42,33,24,.45);
-  --display:"IM Fell English","Iowan Old Style",Georgia,serif;
-  --read:"Newsreader",Georgia,"Times New Roman",serif;
-  --data:"DM Mono",ui-monospace,SFMono-Regular,monospace;
+:root { --fs: 1.25; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: #0d1b2a; }
+
+.magazine {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --room:#191008; --paper:#241A0F; --card:#2E2214;
-    --ink:#F0E5CE; --ink-soft:#C4B394; --ink-faint:#94836A;
-    --oak:#B98B54; --oak-deep:#8A5F33;
-    --oak-grain:linear-gradient(180deg,#6b4a26,#4a3117 55%,#33200e);
-    --terracotta:#D2764E; --leaf:#8FB49A; --rose:#D49295; --tile:#B08A3F;
-    --lamp:#F2B94E; --glow:rgba(242,185,78,.16);
-    --line:rgba(240,229,206,.22); --line-faint:rgba(240,229,206,.09);
-    --shadow:0 18px 44px -20px rgba(0,0,0,.7);
+.magazine::-webkit-scrollbar { display: none; }
+
+.page {
+  min-width: 100vw;
+  width: 100vw;
+  height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-shrink: 0;
+}
+
+/* ===========================
+   FIXED NAV — DOTS
+=========================== */
+.nav-dots {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 7px;
+  z-index: 1000;
+}
+.dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 1px solid rgba(255,255,255,0.5);
+}
+.dot.active { background: white; transform: scale(1.4); }
+
+/* ===========================
+   SHORTCUT PILL NAV (every page)
+=========================== */
+.sc-nav {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 1000;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 94vw;
+  transition: opacity 0.5s ease;
+}
+.sc-nav.nav-hidden { opacity: 0; pointer-events: none; }
+.sc-pill {
+  font-family: 'Lato', sans-serif;
+  font-size: 11.25px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.42);
+  padding: 4px 12px;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 14px;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: all 0.25s;
+  white-space: nowrap;
+  line-height: 1.5;
+}
+.sc-pill:hover { color: rgba(255,255,255,0.82); border-color: rgba(255,255,255,0.32); }
+.sc-pill.active { color: #48d1cc; border-color: rgba(72,209,204,0.55); background: rgba(72,209,204,0.1); }
+
+/* ===========================
+   FIXED NAV — ARROWS
+=========================== */
+.nav-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: white;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 21.25px;
+  transition: background 0.2s;
+  backdrop-filter: blur(6px);
+}
+.nav-arrow:hover { background: rgba(255,255,255,0.28); }
+.nav-arrow.left { left: 14px; }
+.nav-arrow.right { right: 14px; }
+
+/* PAGE COUNTER */
+.page-num {
+  position: fixed;
+  top: 20px;
+  right: 160px;
+  color: rgba(255,255,255,0.45);
+  font-family: 'Lato', sans-serif;
+  font-size: 13.75px;
+  letter-spacing: 2px;
+  z-index: 1000;
+}
+
+/* FONT SIZE CONTROLS */
+.fs-controls {
+  position: fixed;
+  top: 12px;
+  right: 14px;
+  z-index: 1000;
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  background: rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 8px;
+  padding: 3px 6px;
+  backdrop-filter: blur(10px);
+}
+.fs-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 12.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-right: 4px;
+}
+.fs-btn {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.28);
+  color: rgba(255,255,255,0.9);
+  font-family: 'Lato', sans-serif;
+  font-size: 17.5px;
+  font-weight: 700;
+  padding: 4px 11px;
+  border-radius: 5px;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: all 0.2s;
+  line-height: 1.4;
+  min-width: 36px;
+  text-align: center;
+}
+.fs-btn:hover { background: rgba(255,255,255,0.3); color: white; border-color: rgba(255,255,255,0.5); }
+
+/* ===========================
+   SHARED UTILITIES
+=========================== */
+.eyebrow {
+  font-family: 'Lato', sans-serif;
+  font-size: 12.5px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #48d1cc;
+  margin-bottom: 14px;
+}
+.eyebrow.warm  { color: #d4a96a; }
+.eyebrow.rose  { color: #d4a4b8; }
+.eyebrow.green { color: #74c69d; }
+.eyebrow.violet{ color: #a78bfa; }
+
+.body-para {
+  font-family: 'Lato', sans-serif;
+  font-size: calc(18.75px * var(--fs));
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+
+.subsection-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 12.5px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #48d1cc;
+  margin-bottom: 14px;
+  margin-top: 22px;
+  opacity: 0.75;
+}
+
+.callout-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: calc(25px * var(--fs));
+  font-style: italic;
+  border-left: 3px solid #48d1cc;
+  padding: 12px 18px;
+  margin: 18px 0;
+  line-height: 1.5;
+}
+
+/* ===========================
+   PAGE 1 — COVER
+=========================== */
+.cover {
+  background: linear-gradient(140deg, #0a1220 0%, #12233a 55%, #060c18 100%);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.cover::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 18% 22%, rgba(72,209,204,0.16) 0%, transparent 48%),
+    radial-gradient(ellipse at 80% 75%, rgba(147,112,219,0.12) 0%, transparent 48%);
+}
+.cover-inner { position: relative; z-index: 2; padding: 40px; }
+.cover-eyebrow {
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: rgba(72,209,204,0.7);
+  font-size: 13.75px;
+  font-weight: 300;
+  margin-bottom: 28px;
+}
+.cover-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(77.5px, 10vw, 170px);
+  color: white;
+  font-weight: 300;
+  line-height: 1.0;
+  letter-spacing: -2px;
+  margin-bottom: 6px;
+}
+.cover-title em { font-style: italic; color: #48d1cc; }
+.cover-bar {
+  width: 56px; height: 1px;
+  background: linear-gradient(90deg, transparent, #48d1cc, transparent);
+  margin: 22px auto;
+}
+.cover-byline {
+  font-family: 'Lato', sans-serif;
+  color: rgba(255,255,255,0.65);
+  font-size: 16.25px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+.cover-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+  color: rgba(255,255,255,0.35);
+  font-style: italic;
+  margin-bottom: 36px;
+}
+.cover-pills {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+.cover-pill {
+  font-family: 'Lato', sans-serif;
+  font-size: 12.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(72,209,204,0.75);
+  padding: 7px 16px;
+  border: 1px solid rgba(72,209,204,0.32);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.22s;
+  background: rgba(72,209,204,0.06);
+}
+.cover-pill:hover {
+  color: #48d1cc;
+  border-color: rgba(72,209,204,0.65);
+  background: rgba(72,209,204,0.13);
+  transform: translateY(-1px);
+}
+.cover-stat-row {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin: 30px 0 10px;
+}
+.cover-stat { text-align: center; }
+.cover-stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 70px;
+  color: rgba(72,209,204,0.5);
+  font-weight: 300;
+  line-height: 1;
+}
+.cover-stat-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 11.25px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-top: 4px;
+}
+
+/* ===========================
+   PAGE 2 — DEAR FRIENDS
+=========================== */
+.dear-friends { background: #f5f0e8; }
+.df-left {
+  width: 42%;
+  background: #243447;
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.df-right {
+  width: 58%;
+  padding: 56px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+}
+.df-big-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 162.5px;
+  color: rgba(72,209,204,0.22);
+  line-height: 1;
+  font-weight: 300;
+}
+.df-num-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 13.75px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-top: -10px;
+  margin-bottom: 30px;
+}
+.df-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(55px, 6vw, 90px);
+  color: white;
+  font-weight: 300;
+  line-height: 1.05;
+  margin-bottom: 22px;
+}
+.df-left-note {
+  font-family: 'Lato', sans-serif;
+  font-size: calc(16.25px * var(--fs));
+  color: rgba(255,255,255,0.5);
+  line-height: 1.7;
+}
+.df-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px;
+  color: #243447;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+.df-body { color: #444; }
+.highlight-bar {
+  border-left: 3px solid #48d1cc;
+  padding: 14px 18px;
+  background: rgba(72,209,204,0.06);
+  margin: 18px 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: calc(21.25px * var(--fs));
+  font-style: italic;
+  color: #243447;
+  line-height: 1.55;
+}
+.df-sig {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 27.5px;
+  color: #243447;
+  font-style: italic;
+  margin-top: 12px;
+}
+
+/* ===========================
+   PAGE 3 — WHAT IS MEDITATION
+=========================== */
+.what-is {
+  background: #131f30;
+  flex-direction: column;
+}
+.wi-topbar { background: #48d1cc; height: 6px; width: 100%; flex-shrink: 0; }
+.wi-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 60px 24px;
+  flex-shrink: 0;
+}
+.wi-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(55px, 7vw, 120px);
+  color: white;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+}
+.wi-title span { color: #48d1cc; }
+.wi-split {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+.wi-col {
+  padding: 28px 52px 24px;
+  overflow-y: auto;
+}
+.wi-col.isnt { border-right: 1px solid rgba(255,255,255,0.06); border-top: 2px solid rgba(210,60,60,0.4); }
+.wi-col.is   { border-top: 2px solid rgba(72,209,204,0.5); }
+.wi-col-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 12.5px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.wi-col.isnt .wi-col-label { color: rgba(210,70,70,0.8); }
+.wi-col.is   .wi-col-label { color: rgba(72,209,204,0.8); }
+.wi-item {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: calc(25px * var(--fs));
+  color: rgba(255,255,255,0.82);
+  margin-bottom: 16px;
+  padding-left: 22px;
+  position: relative;
+  line-height: 1.4;
+}
+.wi-col.isnt .wi-item::before { content: '✗'; position: absolute; left: 0; color: rgba(210,70,70,0.7); font-size: 16.25px; top: 5px; }
+.wi-col.is   .wi-item::before { content: '✓'; position: absolute; left: 0; color: #48d1cc; font-size: 16.25px; top: 5px; }
+.wi-bottom {
+  background: #48d1cc;
+  padding: 18px 60px;
+  flex-shrink: 0;
+}
+.wi-bottom p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: calc(22.5px * var(--fs));
+  color: #131f30;
+  font-style: italic;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ===========================
+   PAGE 4 — CAUTION
+=========================== */
+.caution { background: #ede8df; }
+.caut-left {
+  width: 38%;
+  background: linear-gradient(160deg, #6b4c3b, #8a5d45);
+  padding: 56px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.caut-right {
+  width: 62%;
+  padding: 44px 50px 44px 46px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.caut-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(47.5px, 5vw, 80px);
+  color: white;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+.caut-left-body {
+  font-family: 'Lato', sans-serif;
+  font-size: calc(16.25px * var(--fs));
+  color: rgba(255,255,255,0.65);
+  line-height: 1.75;
+}
+.caut-section { margin-bottom: 24px; }
+.caut-section h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 27.5px;
+  color: #5a3020;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+.caut-section p { color: #555; font-size: calc(17.5px * var(--fs)); line-height: 1.72; font-family: 'Lato', sans-serif; }
+.caut-list { list-style: none; margin-top: 10px; }
+.caut-list li {
+  font-family: 'Lato', sans-serif;
+  font-size: calc(16.25px * var(--fs));
+  color: #555;
+  padding: 7px 0 7px 20px;
+  position: relative;
+  border-bottom: 1px solid rgba(106,76,59,0.1);
+}
+.caut-list li::before { content: '→'; position: absolute; left: 0; color: #8a5d45; }
+
+/* ===========================
+   PAGE 5 — BENEFITS
+=========================== */
+.benefits { background: #0e1e30; flex-direction: column; }
+.ben-header {
+  padding: 38px 60px 24px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(72,209,204,0.09) 0%, transparent 100%);
+  flex-shrink: 0;
+}
+.ben-header h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(42.5px, 5vw, 85px);
+  color: white;
+  font-weight: 300;
+}
+.ben-header p {
+  font-family: 'Lato', sans-serif;
+  font-size: 17.5px;
+  color: rgba(255,255,255,0.45);
+  margin-top: 6px;
+}
+.ben-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  overflow: hidden;
+}
+.ben-card {
+  padding: 26px 36px;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.ben-card:nth-child(3), .ben-card:nth-child(6) { border-right: none; }
+.ben-card:nth-child(4), .ben-card:nth-child(5), .ben-card:nth-child(6) { border-bottom: none; }
+.ben-icon { font-size: 35px; margin-bottom: 12px; }
+.ben-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 27.5px;
+  color: #48d1cc;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.ben-text {
+  font-family: 'Lato', sans-serif;
+  font-size: calc(16.25px * var(--fs));
+  color: rgba(255,255,255,0.58);
+  line-height: 1.72;
+}
+.ben-footer {
+  background: rgba(72,209,204,0.07);
+  border-top: 1px solid rgba(72,209,204,0.2);
+  padding: 16px 60px;
+  flex-shrink: 0;
+}
+.ben-footer p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: calc(20px * var(--fs));
+  color: rgba(255,255,255,0.6);
+  font-style: italic;
+  text-align: center;
+}
+
+/* ===========================
+   PAGE 6 — THE BOW
+=========================== */
+.bow-page { background: #e5edf5; flex-direction: column; }
+.bow-header {
+  background: #254162;
+  padding: 32px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+.bow-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 150px;
+  color: rgba(255,255,255,0.08);
+  font-weight: 700;
+  line-height: 1;
+}
+.bow-header h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(45px, 5vw, 90px);
+  color: white;
+  font-weight: 300;
+  font-style: italic;
+}
+.bow-body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+.bow-left {
+  padding: 32px 46px;
+  overflow-y: auto;
+  border-right: 1px solid rgba(37,65,98,0.15);
+}
+.bow-right { padding: 32px 46px; overflow-y: auto; background: rgba(37,65,98,0.03); }
+.bow-body .body-para { color: #3a4a5a; }
+.bow-body .callout-quote { color: #254162; border-left-color: #48d1cc; }
+.bow-body .subsection-label { color: #254162; }
+.step-row {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 14px;
+  align-items: flex-start;
+}
+.step-circle {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: #254162;
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-size: 13.75px;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.step-text { font-family: 'Lato', sans-serif; font-size: calc(16.875px * var(--fs)); color: #3a4a5a; line-height: 1.65; }
+.step-text strong { color: #254162; }
+.ref-box { background: white; border-radius: 8px; padding: 22px; box-shadow: 0 2px 18px rgba(0,0,0,0.07); }
+.ref-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 27.5px;
+  color: #254162;
+  font-style: italic;
+  margin-bottom: 14px;
+}
+.bow-ref-q {
+  font-family: 'Lato', sans-serif;
+  font-size: calc(16.25px * var(--fs));
+  color: #4a5a6a;
+  margin-bottom: 10px;
+  padding: 10px 14px;
+  background: #f0f5fa;
+  border-radius: 5px;
+  line-height: 1.65;
+  border-left: 3px solid #254162;
+}
+
+/* ===========================
+   PAGE 7 — GESTURES OF RELEASE
+=========================== */
+.gestures-page { background: #1e0e22; }
+.gest-left {
+  width: 48%;
+  padding: 52px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.gest-bg-word {
+  position: absolute;
+  bottom: 20px; left: 30px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 125px;
+  color: rgba(255,255,255,0.04);
+  font-weight: 700;
+  pointer-events: none;
+  line-height: 1;
+  white-space: nowrap;
+}
+.gest-right {
+  width: 52%;
+  background: #f3e8d4;
+  padding: 52px 46px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+}
+.gest-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(45px, 5vw, 75px);
+  color: white;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+.gest-intro {
+  font-family: 'Lato', sans-serif;
+  font-size: calc(16.875px * var(--fs));
+  color: rgba(255,255,255,0.58);
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+.gest-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 7px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+}
+.gest-card-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 23.75px;
+  color: #d4a4b8;
+  font-style: italic;
+  margin-bottom: 7px;
+}
+.gest-card-desc {
+  font-family: 'Lato', sans-serif;
+  font-size: calc(16.25px * var(--fs));
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+}
+.gest-right h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 35px;
+  color: #3d2010;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+.gest-right .body-para { color: #4a3020; }
+.notice-list { list-style: none; margin-bottom: 18px; }
+.notice-list li {
+  font-family: 'Lato', sans-serif;
+  font-size: calc(16.875px * var(--fs));
+  color: #4a3020;
+  padding: 9px 0 9px 18px;
+  border-bottom: 1px solid rgba(90,62,43,0.12);
+  position: relative;
+  line-height: 1.6;
+}
+.notice-list li::before { content: '·'; position: absolute; left: 4px; color: #c4784a; font-size: 22.5px; top: 7px; }
+.gest-pull {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: calc(21.25px * var(--fs));
+  font-style: italic;
+  color: #3d2010;
+  border-left: 3px solid #c4784a;
+  padding: 12px 18px;
+  margin: 18px 0;
+  line-height: 1.5;
+}
+
+/* ===========================
+   PAGE 8 — SIGHING EXHALATION
+=========================== */
+.sigh-page { background: #091929; flex-direction: column; }
+.sigh-hero {
+  height: 42%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #091929 0%, #122840 100%);
+}
+.sigh-bg-text {
+  position: absolute;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(125px, 18vw, 300px);
+  color: rgba(72,209,204,0.08);
+  font-style: italic;
+  white-space: nowrap;
+  user-select: none;
+  letter-spacing: -4px;
+  line-height: 1;
+}
+.sigh-hero-content { position: relative; z-index: 2; text-align: center; }
+.sigh-hero-content h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(42.5px, 5vw, 85px);
+  color: white;
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.sigh-hero-content p {
+  font-family: 'Lato', sans-serif;
+  font-size: 13.75px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+.sigh-body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid rgba(72,209,204,0.15);
+  overflow: hidden;
+}
+.sigh-left, .sigh-right { padding: 32px 46px; overflow-y: auto; }
+.sigh-right { border-left: 1px solid rgba(72,209,204,0.1); background: rgba(72,209,204,0.02); }
+.sigh-body .body-para { color: rgba(255,255,255,0.65); }
+.sigh-body .subsection-label { color: rgba(72,209,204,0.65); }
+.sigh-examples { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+.sigh-ex {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: calc(23.75px * var(--fs));
+  color: rgba(255,255,255,0.65);
+  font-style: italic;
+  padding: 12px 18px;
+  background: rgba(255,255,255,0.04);
+  border-left: 2px solid rgba(72,209,204,0.35);
+  border-radius: 0 5px 5px 0;
+  line-height: 1.4;
+}
+.sigh-ex em { color: #48d1cc; font-size: calc(28.75px * var(--fs)); }
+.sigh-ref-q {
+  font-family: 'Lato', sans-serif;
+  font-size: calc(16.25px * var(--fs));
+  color: rgba(255,255,255,0.62);
+  margin-bottom: 9px;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 5px;
+  line-height: 1.65;
+  border-left: 3px solid rgba(72,209,204,0.4);
+}
+.sigh-quote-box {
+  background: rgba(72,209,204,0.07);
+  border: 1px solid rgba(72,209,204,0.18);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 18px 0;
+}
+.sigh-quote-box p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: calc(22.5px * var(--fs));
+  color: white;
+  font-style: italic;
+  line-height: 1.55;
+  margin: 0;
+}
+.sigh-quote-box cite {
+  display: block;
+  margin-top: 10px;
+  font-family: 'Lato', sans-serif;
+  font-size: 12.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #48d1cc;
+  font-style: normal;
+}
+
+/* ===========================
+   PAGE 9 — RESTING IN STILLNESS
+=========================== */
+.stillness-page { background: #040810; flex-direction: column; }
+.still-header {
+  height: 36%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: radial-gradient(ellipse at center, #081526 0%, #040810 100%);
+}
+.rings-wrap { position: absolute; top: 50%; left: 50%; }
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(72,209,204,0.1);
+  transform: translate(-50%,-50%);
+}
+.r1 { width: 100px; height: 100px; border-color: rgba(72,209,204,0.18); }
+.r2 { width: 180px; height: 180px; border-color: rgba(72,209,204,0.10); }
+.r3 { width: 280px; height: 280px; border-color: rgba(72,209,204,0.06); }
+.r4 { width: 400px; height: 400px; border-color: rgba(72,209,204,0.03); }
+.still-hero-content { position: relative; z-index: 2; text-align: center; }
+.still-hero-content h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(50px, 6vw, 110px);
+  color: white;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.05;
+  margin-bottom: 10px;
+}
+.still-hero-content h1 span { color: #48d1cc; }
+.still-hero-content p {
+  font-family: 'Lato', sans-serif;
+  font-size: 12.5px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: rgba(72,209,204,0.45);
+}
+.still-body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+.still-left, .still-right { padding: 32px 48px; overflow-y: auto; }
+.still-right { background: rgba(72,209,204,0.025); border-left: 1px solid rgba(72,209,204,0.1); }
+.still-body .body-para { color: rgba(255,255,255,0.62); }
+.still-body .subsection-label { color: rgba(72,209,204,0.6); }
+.still-body .callout-quote { color: rgba(255,255,255,0.78); border-left-color: rgba(72,209,204,0.4); }
+.practice-ol { list-style: none; counter-reset: pstep; }
+.practice-ol li {
+  counter-increment: pstep;
+  font-family: 'Lato', sans-serif;
+  font-size: calc(16.875px * var(--fs));
+  color: rgba(255,255,255,0.65);
+  padding: 9px 0 9px 38px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  position: relative;
+  line-height: 1.6;
+}
+.practice-ol li::before {
+  content: counter(pstep);
+  position: absolute; left: 0; top: 9px;
+  width: 22px; height: 22px;
+  background: rgba(72,209,204,0.15);
+  border-radius: 50%;
+  color: #48d1cc;
+  font-size: 12.5px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  line-height: 22px;
+}
+.still-big-box {
+  background: rgba(72,209,204,0.05);
+  border: 1px solid rgba(72,209,204,0.14);
+  border-radius: 8px;
+  padding: 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.still-big-box p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: calc(26.25px * var(--fs));
+  color: rgba(255,255,255,0.78);
+  font-style: italic;
+  line-height: 1.55;
+}
+.still-ref-q {
+  font-family: 'Lato', sans-serif;
+  font-size: calc(16.25px * var(--fs));
+  color: rgba(255,255,255,0.58);
+  margin-bottom: 9px;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 5px;
+  line-height: 1.65;
+  border-left: 3px solid rgba(72,209,204,0.35);
+}
+
+/* ===========================
+   PAGE 10 — NAMASTE
+=========================== */
+.namaste-page { background: #f7f2eb; }
+.nam-left {
+  width: 48%;
+  background: linear-gradient(150deg, #1a4d2e, #2e7d52);
+  padding: 52px 46px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.nam-symbol { font-size: 90px; margin-bottom: 22px; }
+.nam-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(60px, 7vw, 112.5px);
+  color: white;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.nam-meaning {
+  font-family: 'Lato', sans-serif;
+  font-size: 13.75px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 28px;
+}
+.nam-steps { text-align: left; width: 100%; }
+.nam-step {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  align-items: flex-start;
+}
+.nam-step-n {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.28);
+  color: rgba(255,255,255,0.65);
+  font-family: 'Lato', sans-serif;
+  font-size: 13.75px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.nam-step-t {
+  font-family: 'Lato', sans-serif;
+  font-size: calc(16.25px * var(--fs));
+  color: rgba(255,255,255,0.7);
+  line-height: 1.65;
+}
+.nam-right {
+  width: 52%;
+  padding: 52px 46px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+}
+.nam-right h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px;
+  color: #1a4d2e;
+  font-style: italic;
+  margin-bottom: 18px;
+}
+.nam-right .body-para { color: #3d3d3d; }
+.nam-big-quote {
+  background: linear-gradient(135deg, #1a4d2e, #2e7d52);
+  border-radius: 8px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.nam-big-quote p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: calc(21.25px * var(--fs));
+  color: white;
+  font-style: italic;
+  line-height: 1.55;
+}
+.nam-ref-q {
+  font-family: 'Lato', sans-serif;
+  font-size: calc(16.25px * var(--fs));
+  color: #2e4030;
+  margin-bottom: 10px;
+  padding: 11px 15px;
+  background: rgba(26,77,46,0.07);
+  border-radius: 5px;
+  line-height: 1.65;
+  border-left: 3px solid #2e7d52;
+}
+
+/* ===========================
+   PAGE 11 — ALL SHORTCUTS
+=========================== */
+.all-page { background: #161628; flex-direction: column; }
+.all-header {
+  background: linear-gradient(90deg, #3a7bd5, #7b68ee);
+  padding: 26px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+.all-header h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32.5px, 4vw, 60px);
+  color: white;
+  font-weight: 300;
+}
+.all-header p {
+  font-family: 'Lato', sans-serif;
+  color: rgba(255,255,255,0.75);
+  font-size: 16.25px;
+  max-width: 380px;
+  text-align: right;
+  line-height: 1.55;
+}
+.all-body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+.all-seq, .all-tips {
+  padding: 32px 46px;
+  overflow-y: auto;
+}
+.all-tips { background: rgba(255,255,255,0.02); border-left: 1px solid rgba(255,255,255,0.05); }
+.all-page .subsection-label { color: rgba(123,104,238,0.65); }
+.seq-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 18px;
+  align-items: flex-start;
+}
+.seq-icon { font-size: 25px; flex-shrink: 0; margin-top: 1px; }
+.seq-substeps { margin-top: 9px; margin-left: 4px; border-left: 2px solid rgba(167,139,250,0.25); padding-left: 12px; display: flex; flex-direction: column; gap: 7px; }
+.seq-substep { display: flex; gap: 8px; align-items: flex-start; font-family: 'Lato', sans-serif; font-size: calc(15.625px * var(--fs)); color: rgba(255,255,255,0.52); line-height: 1.6; }
+.seq-substep-icon { flex-shrink: 0; font-size: 16.25px; margin-top: 2px; }
+.seq-text h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 23.75px;
+  color: #a78bfa;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+.seq-text p {
+  font-family: 'Lato', sans-serif;
+  font-size: calc(16.25px * var(--fs));
+  color: rgba(255,255,255,0.52);
+  line-height: 1.65;
+}
+.tip-card {
+  background: rgba(123,104,238,0.08);
+  border: 1px solid rgba(123,104,238,0.18);
+  border-radius: 7px;
+  padding: 15px 18px;
+  margin-bottom: 12px;
+}
+.tip-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 11.25px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #a78bfa;
+  margin-bottom: 7px;
+}
+.tip-card p {
+  font-family: 'Lato', sans-serif;
+  font-size: calc(16.25px * var(--fs));
+  color: rgba(255,255,255,0.62);
+  line-height: 1.65;
+}
+.all-ref-q {
+  font-family: 'Lato', sans-serif;
+  font-size: calc(16.25px * var(--fs));
+  color: rgba(255,255,255,0.5);
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  line-height: 1.6;
+}
+
+/* ===========================
+   PAGE 12 — BACK COVER
+=========================== */
+.back-cover {
+  background: linear-gradient(140deg, #0a1220 0%, #12233a 55%, #060c18 100%);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.back-cover::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 70% 28%, rgba(147,112,219,0.13) 0%, transparent 50%),
+    radial-gradient(ellipse at 28% 72%, rgba(72,209,204,0.11) 0%, transparent 50%);
+}
+.back-inner { position: relative; z-index: 2; max-width: 680px; padding: 40px; }
+.back-big {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(80px, 11vw, 162.5px);
+  color: rgba(72,209,204,0.18);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 0;
+}
+.back-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(22.5px, 3vw, 35px);
+  color: rgba(255,255,255,0.5);
+  font-style: italic;
+  margin-bottom: 26px;
+}
+.back-body {
+  font-family: 'Lato', sans-serif;
+  font-size: calc(17.5px * var(--fs));
+  color: rgba(255,255,255,0.58);
+  line-height: 1.82;
+  margin-bottom: 30px;
+}
+.back-divider { width: 56px; height: 1px; background: linear-gradient(90deg, transparent, #48d1cc, transparent); margin: 24px auto; }
+.back-pills { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+.back-pill {
+  font-family: 'Lato', sans-serif;
+  font-size: 12.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(72,209,204,0.75);
+  padding: 7px 18px;
+  border: 1px solid rgba(72,209,204,0.28);
+  border-radius: 22px;
+  cursor: pointer;
+  transition: all 0.22s;
+  background: rgba(72,209,204,0.06);
+}
+.back-pill:hover { color: #48d1cc; border-color: rgba(72,209,204,0.6); background: rgba(72,209,204,0.13); }
+.back-dharma { font-size: 35px; display: block; margin: 14px auto; color: rgba(72,209,204,0.5); }
+.back-author { font-family: 'Cormorant Garamond', serif; font-size: 27.5px; color: rgba(255,255,255,0.45); font-style: italic; }
+.back-note { font-family: 'Lato', sans-serif; font-size: 12.5px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-top: 6px; }
+
+/* ===========================
+   RESPONSIVE — TABLET (≤ 900px)
+=========================== */
+@media (max-width: 900px) {
+  .df-left  { padding: 40px 30px; }
+  .df-right { padding: 40px 30px; }
+  .caut-left  { padding: 36px 26px; }
+  .caut-right { padding: 30px 26px; }
+  .wi-col   { padding: 20px 28px; }
+  .bow-left, .bow-right { padding: 22px 26px; }
+  .sigh-left, .sigh-right { padding: 22px 26px; }
+  .still-left, .still-right { padding: 22px 26px; }
+  .all-seq, .all-tips { padding: 22px 26px; }
+  .ben-card { padding: 18px 20px; }
+  .nam-left, .nam-right { padding: 36px 26px; }
+  .gest-left { padding: 36px 26px; }
+  .gest-right { padding: 36px 26px; }
+  .bow-num { font-size: 100px; }
+  .ben-header { padding: 28px 36px 18px; }
+}
+
+/* ===========================
+   RESPONSIVE — MOBILE (≤ 650px)
+=========================== */
+@media (max-width: 650px) {
+  /* Side-by-side pages → stacked column, page scrolls internally */
+  .dear-friends,
+  .caution,
+  .gestures-page,
+  .namaste-page {
+    flex-direction: column !important;
+    overflow-y: auto !important;
   }
-}
-:root[data-theme="dark"]{
-  --room:#191008; --paper:#241A0F; --card:#2E2214;
-  --ink:#F0E5CE; --ink-soft:#C4B394; --ink-faint:#94836A;
-  --oak:#B98B54; --oak-deep:#8A5F33;
-  --oak-grain:linear-gradient(180deg,#6b4a26,#4a3117 55%,#33200e);
-  --terracotta:#D2764E; --leaf:#8FB49A; --rose:#D49295; --tile:#B08A3F;
-  --lamp:#F2B94E; --glow:rgba(242,185,78,.16);
-  --line:rgba(240,229,206,.22); --line-faint:rgba(240,229,206,.09);
-  --shadow:0 18px 44px -20px rgba(0,0,0,.7);
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%; overflow-x:clip}
-body{
-  margin:0; background:var(--room); color:var(--ink);
-  font-family:var(--read); font-optical-sizing:auto;
-  font-size:23.125px; line-height:1.62; -webkit-font-smoothing:antialiased;
-  overflow-x:clip;
-}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--terracotta);outline-offset:3px}
-.page{
-  max-width:840px; margin:0 auto; background:var(--paper);
-  padding:0 clamp(22px,4.5vw,64px) clamp(28px,4vw,52px);
-  box-shadow:0 0 0 1px var(--line-faint), 0 30px 80px -40px rgba(42,33,24,.5);
-}
-.strip{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:16px 0; font-family:var(--data); font-size:16.25px;
-  letter-spacing:.04em; color:var(--ink-faint);
-}
-.strip .who{color:var(--ink-soft)}
-.strip a.home{color:var(--oak); text-decoration:none; border-bottom:1px solid var(--line)}
-.strip a.home:hover{color:var(--terracotta); border-color:var(--terracotta)}
-.lampbtn{
-  display:flex; align-items:center; gap:8px; background:none; border:none;
-  color:var(--ink-faint); font-family:var(--data); font-size:16.25px;
-  letter-spacing:.04em; cursor:pointer; padding:4px;
-}
-.lampbtn:hover{color:var(--lamp)}
-.lampbtn svg{display:block; overflow:visible}
-.lampbtn.searchbtn svg{fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round}
-.lampbtn .shade{fill:var(--lamp)}
-.lampbtn .base{fill:var(--oak)}
-.lampbtn .halo{fill:var(--glow)}
-.skip-link{
-  position:absolute; top:-48px; left:12px; z-index:1000;
-  background:var(--card); color:var(--oak);
-  font-family:var(--data); font-size:0.875rem; letter-spacing:.08em;
-  text-transform:uppercase; padding:10px 16px;
-  border:1px solid var(--line); text-decoration:none;
-  transition:top .15s ease;
-}
-.skip-link:focus{top:12px}
-header.mast{padding:clamp(18px,4vw,36px) 0 clamp(8px,2vw,16px)}
-header.mast h1{
-  font-family:var(--display); font-weight:400; font-size:clamp(40px,6.75vw,62.5px);
-  line-height:1.08; margin:0 0 14px; letter-spacing:.005em;
-}
-header.mast .byline{margin:0 0 6px; color:var(--ink-soft); font-size:20px}
-header.mast .thesis{
-  margin:0; font-size:23.125px; color:var(--ink-soft); max-width:44em;
-}
-.keyband{
-  height:10px; margin:18px 0 0;
-  background-image:repeating-linear-gradient(45deg, var(--terracotta) 0 6px, transparent 6px 12px);
-  opacity:.5;
-}
-.plate-hero{margin:clamp(20px,4vw,34px) 0 0; border-radius:3px; overflow:hidden; box-shadow:var(--shadow)}
-.plate-hero img{display:block; width:100%; height:auto}
-.leadin{margin:clamp(30px,4.5vw,46px) 0 0; color:var(--ink-soft); font-size:21.875px; max-width:40em}
-.leadin a{color:var(--oak); text-decoration:none; border-bottom:1px solid var(--line)}
-.leadin a:hover{color:var(--terracotta); border-color:var(--terracotta)}
-.cta{
-  display:inline-block; margin:28px 0 0; padding:14px 26px;
-  background:var(--oak); color:var(--paper); font-family:var(--data);
-  font-size:17.5px; letter-spacing:.04em; text-decoration:none; border-radius:4px;
-  box-shadow:var(--shadow);
-}
-.cta:hover{background:var(--oak-deep)}
-.note{margin:16px 0 0; color:var(--ink-faint); font-size:17.5px}
-footer{
-  margin-top:clamp(40px,6vw,64px); padding:20px 0 8px; border-top:1px solid var(--line);
-  font-family:var(--data); font-size:15.625px; color:var(--ink-faint);
-}
-footer a{color:var(--oak); text-decoration:none; border-bottom:1px solid var(--line)}
-footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
-@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
-@media (max-width:600px){
-  .strip{flex-wrap:wrap; row-gap:12px}
-  .strip a.home{flex:0 0 100%}
-  .strip-controls{flex:0 0 100%; justify-content:flex-end}
-  .lampbtn span{display:none}
-}
 
-/* site-wide search overlay (Pagefind) */
-.strip-controls{display:flex; align-items:center; gap:4px}
-.gsearch-overlay{position:fixed; inset:0; z-index:200; background:rgba(0,0,0,.45);
-  display:flex; align-items:flex-start; justify-content:center; padding:10vh 16px 0}
-.gsearch-overlay.hidden{display:none}
-.gsearch-panel{background:var(--paper); color:var(--ink); border-radius:14px; width:100%;
-  max-width:640px; box-shadow:0 20px 60px rgba(0,0,0,.35); padding:14px; max-height:70vh;
-  display:flex; flex-direction:column}
-.gsearch-panel input{width:100%; padding:12px 14px; font-size:20px; border:1px solid var(--line);
-  border-radius:10px; background:var(--paper); color:var(--ink); box-sizing:border-box}
-.gsearch-results{margin-top:10px; overflow:auto}
-.gsearch-hit{display:block; padding:10px 8px; border-radius:8px; text-decoration:none; color:inherit}
-.gsearch-hit:hover{background:var(--card)}
-.gsearch-hit-title{display:block; font-weight:600; font-size:17.5px}
-.gsearch-hit-excerpt{display:block; font-size:16.25px; color:var(--ink-soft); margin-top:2px}
-.gsearch-hit-excerpt mark{background:#ffe082; color:#333; border-radius:3px; padding:0 2px}
-.gsearch-empty{padding:10px 8px; font-size:16.25px; color:var(--ink-soft)}
+  /* Full-width panels */
+  .df-left, .caut-left, .nam-left {
+    width: 100% !important;
+    flex-shrink: 0;
+  }
+  .df-right, .caut-right, .nam-right {
+    width: 100% !important;
+    overflow-y: visible !important;
+    justify-content: flex-start !important;
+    padding-bottom: 90px !important;
+  }
+  .gest-left, .gest-right {
+    width: 100% !important;
+    overflow-y: visible !important;
+  }
+  .gest-left  { overflow: visible !important; }
+  .gest-right { padding-bottom: 90px !important; }
+  .gest-bg-word { display: none; }
+
+  /* Padding adjustments for mobile */
+  .df-left  { padding: 28px 22px !important; }
+  .df-right { padding: 22px 22px !important; }
+  .caut-left  { padding: 28px 22px !important; }
+  .caut-right { padding: 22px !important; }
+  .nam-left   { padding: 32px 22px !important; }
+  .nam-right  { padding: 22px !important; }
+  .gest-left  { padding: 28px 22px !important; }
+  .gest-right { padding: 22px !important; }
+
+  /* Decorative large numbers — shrink */
+  .df-big-num { font-size: 80px; }
+  .df-title   { font-size: 50px !important; }
+  .bow-num    { font-size: 60px !important; }
+  .nam-symbol { font-size: 55px !important; margin-bottom: 12px !important; }
+
+  /* Column-direction pages: inner grids → single column */
+  .wi-split {
+    grid-template-columns: 1fr !important;
+    overflow-y: auto !important;
+  }
+  .wi-col { overflow-y: visible !important; border-right: none !important; padding: 18px 22px !important; }
+  .wi-col.isnt { border-bottom: 2px solid rgba(210,60,60,0.2); border-top: 2px solid rgba(210,60,60,0.4); }
+  .wi-title-row { padding: 22px 22px 14px !important; }
+
+  .ben-grid {
+    grid-template-columns: 1fr 1fr !important;
+    overflow-y: auto !important;
+  }
+  .ben-card { padding: 14px 12px !important; overflow-y: visible; }
+  .ben-header { padding: 22px 18px 14px !important; }
+  .ben-footer { padding: 12px 18px !important; }
+  .ben-icon { font-size: 25px; }
+
+  .bow-body {
+    grid-template-columns: 1fr !important;
+    overflow-y: auto !important;
+  }
+  .bow-left, .bow-right {
+    overflow-y: visible !important;
+    border-right: none !important;
+    padding: 18px 20px !important;
+  }
+  .bow-right { padding-bottom: 90px !important; }
+  .bow-header { padding: 18px 22px !important; }
+
+  .sigh-hero  { height: 30% !important; }
+  .sigh-body  {
+    grid-template-columns: 1fr !important;
+    overflow-y: auto !important;
+  }
+  .sigh-left, .sigh-right {
+    overflow-y: visible !important;
+    border-left: none !important;
+    padding: 18px 20px !important;
+  }
+  .sigh-right { padding-bottom: 90px !important; }
+
+  .still-header { height: 26% !important; }
+  .still-body   {
+    grid-template-columns: 1fr !important;
+    overflow-y: auto !important;
+  }
+  .still-left, .still-right {
+    overflow-y: visible !important;
+    border-left: none !important;
+    padding: 18px 20px !important;
+  }
+  .still-right { padding-bottom: 90px !important; }
+
+  .all-header {
+    padding: 16px 18px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  .all-header p { text-align: left !important; max-width: 100% !important; margin-top: 6px; }
+  .all-body {
+    grid-template-columns: 1fr !important;
+    overflow-y: auto !important;
+  }
+  .all-seq, .all-tips {
+    overflow-y: visible !important;
+    border-left: none !important;
+    padding: 18px 20px !important;
+  }
+  .all-tips { padding-bottom: 90px !important; }
+
+  /* Cover responsive */
+  .cover-inner  { padding: 20px !important; }
+  .cover-stat-row { gap: 20px !important; margin: 16px 0 6px !important; }
+  .cover-stat-num { font-size: 45px !important; }
+  .cover-subtitle { margin-bottom: 18px !important; font-size: 20px !important; }
+  .cover-pills { gap: 7px !important; }
+  .cover-pill { font-size: 11.25px !important; padding: 6px 12px !important; }
+
+  /* Back cover responsive */
+  .back-inner { padding: 24px !important; }
+  .back-pills { gap: 7px !important; }
+  .back-pill  { font-size: 11.25px !important; padding: 6px 12px !important; }
+
+  /* Fixed chrome — shrink on mobile */
+  .nav-arrow { width: 34px !important; height: 34px !important; font-size: 16.25px !important; }
+  .nav-arrow.left  { left: 6px !important; }
+  .nav-arrow.right { right: 6px !important; }
+  .sc-pill { font-size: 10px !important; padding: 3px 9px !important; }
+  .sc-nav  { gap: 4px !important; bottom: 38px !important; }
+  .fs-btn  { font-size: 12.5px !important; padding: 3px 7px !important; }
+}
+.nook-home{position:fixed;top:20px;left:14px;z-index:1000;font-family:'Lato',sans-serif;font-size:13.75px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.55);text-decoration:none;padding:4px}.nook-home:hover,.nook-home:focus-visible{color:#fff}@media (max-width:640px){.nook-home span{display:none}}
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Book","name":"Shortcuts to Meditation","url":"https://johnrecords.org/shortcuts-to-meditation/","author":{"@type":"Person","name":"John Records"}}
-</script>
-</head>
+<meta property="og:title" content="Shortcuts to Meditation" />
+<meta property="og:description" content="A practical guide to meditation featuring five core techniques for finding peace and stillness in daily life." />
+<meta property="og:url" content="https://johnrecords.org/shortcuts-to-meditation/" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://johnrecords.org/assets/plates/shortcuts.jpg" />
+<meta name="twitter:image" content="https://johnrecords.org/assets/plates/shortcuts.jpg" />
+<meta name="twitter:card" content="summary_large_image" /></head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-<div class="page" data-pagefind-body>
 
-  <div class="strip" data-pagefind-ignore>
-    <a class="home" href="/">&larr; John&rsquo;s Reading Nook</a>
-    <div class="strip-controls">
-      <button class="lampbtn searchbtn" type="button" data-gsearch-open aria-label="Search the site" title="Search the site">
-        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="11" cy="11" r="7"/>
-          <path d="M21 21l-4.35-4.35"/>
-        </svg>
-        <span>Search</span>
-      </button>
-      <button class="lampbtn" id="lamp" type="button" aria-pressed="false" aria-label="Light the lamp">
-        <svg width="22" height="22" viewBox="0 0 26 26" aria-hidden="true">
-          <circle class="halo" cx="13" cy="9" r="12"/>
-          <path class="shade" d="M5 11 L9 3 H17 L21 11 Z"/>
-          <rect class="base" x="12" y="11" width="2" height="9"/>
-          <path class="base" d="M8 22 Q13 19 18 22 L18 23 H8 Z"/>
-        </svg>
-        <span id="lampword">Light the lamp</span>
-      </button>
+<div class="magazine" id="magazine" data-pagefind-body data-pagefind-meta="title:Shortcuts to Meditation">
+
+  <!-- ===================== PAGE 1: COVER ===================== -->
+  <div class="page cover" data-page="1">
+    <div class="cover-inner">
+      <div class="cover-eyebrow">A sangha practice guide · shared freely</div>
+      <h1 class="cover-title">Shortcuts<br>to <em>Meditation</em></h1>
+      <div class="cover-stat-row">
+        <div class="cover-stat">
+          <div class="cover-stat-num">5</div>
+          <div class="cover-stat-label">Core shortcuts</div>
+        </div>
+        <div class="cover-stat">
+          <div class="cover-stat-num">5</div>
+          <div class="cover-stat-label">Minutes to begin</div>
+        </div>
+      </div>
+      <div class="cover-bar"></div>
+      <div class="cover-byline">by John Records</div>
+      <div class="cover-subtitle">Simple practices. Profound peace.</div>
+      <div class="cover-pills">
+        <span class="cover-pill" onclick="goTo(5)">The Bow</span>
+        <span class="cover-pill" onclick="goTo(6)">Gestures of Release</span>
+        <span class="cover-pill" onclick="goTo(7)">Sighing Exhalation</span>
+        <span class="cover-pill" onclick="goTo(8)">Resting in Stillness</span>
+        <span class="cover-pill" onclick="goTo(9)">Namaste</span>
+      </div>
     </div>
   </div>
 
-  <div id="gsearch-overlay" class="gsearch-overlay hidden" role="dialog" aria-modal="true" aria-label="Search johnrecords.org" data-pagefind-ignore>
-    <div class="gsearch-panel">
-      <input id="gsearch-input" type="search" placeholder="Search johnrecords.org&hellip; (Esc to close)" autocomplete="off" />
-      <div id="gsearch-results" class="gsearch-results"></div>
+  <!-- ===================== PAGE 2: DEAR FRIENDS ===================== -->
+  <div class="page dear-friends" data-page="2">
+    <div class="df-left">
+      <div class="eyebrow">A letter from the author</div>
+      <h1 class="df-title">Dear<br>Friends</h1>
+      <p class="df-left-note">I've had the opportunity to share meditation practices at yoga studios, homeless shelters, Oregon Health Sciences University, social work schools, and JFK University's Graduate program in Integral Studies.</p>
+    </div>
+    <div class="df-right">
+      <h2 class="df-heading">Welcome to the practice</h2>
+      <p class="body-para df-body">My name is John Records. I'd like to share with you the <strong>Shortcuts to Meditation</strong> that I've learned in over 40 years of meditating in several traditions. I've shared meditation with countless people over many years and in many settings.</p>
+      <div class="highlight-bar">"These meditation shortcuts are helpful because frequently people try to meditate, feel frustrated, feel they can't do it — and give it up."</div>
+      <p class="body-para df-body">These shortcuts can be used individually or stacked together — to enhance your existing practice, or as a complete practice in themselves. I'll guide you through each one, then show you how to use them all sequentially.</p>
+      <p class="body-para df-body">I recommend meditating daily. On waking, use the toilet, don't pick up your phone, and go straight to your meditation place. Try an experiment: meditate daily for at least five minutes for a week. See what your life is like. 20 or 30 minutes works well for many people.</p>
+      <div class="highlight-bar">"Put your meditation first, and adjust the rest of your life around that. This brings tremendous power into your life — you've chosen to honor the depth of your being."</div>
+      <p class="body-para df-body">I hope you enjoy these shortcuts, and find deep peace within.</p>
+      <p class="df-sig">Much love, John</p>
     </div>
   </div>
 
-  <header class="mast">
-    <h1>Shortcuts to Meditation</h1>
-    <p class="thesis">Meditation shortcuts gathered over decades of practice and teaching. Each one works with your own physiology instead of against it.</p>
-  </header>
+  <!-- ===================== PAGE 3: WHAT IS MEDITATION ===================== -->
+  <div class="page what-is" data-page="3">
+    <div class="wi-topbar"></div>
+    <div class="wi-title-row">
+      <h1 class="wi-title">What <span>Is</span> Meditation?</h1>
+    </div>
+    <div class="wi-split">
+      <div class="wi-col isnt">
+        <div class="wi-col-label">Meditation is NOT</div>
+        <div class="wi-item">Making your mind be absolutely still</div>
+        <div class="wi-item">Shutting up the chatterbox in your head</div>
+        <div class="wi-item">Repressing your thoughts and feelings</div>
+        <div class="wi-item">Something you either do perfectly or have failed at</div>
+        <div class="wi-item">Measured by how peaceful you feel during the session</div>
+      </div>
+      <div class="wi-col is">
+        <div class="wi-col-label">Meditation IS</div>
+        <div class="wi-item">Learning to choose where your attention goes</div>
+        <div class="wi-item">Choosing again and again to direct attention where you want it</div>
+        <div class="wi-item">The eventual, effortless cessation of choosing — leaving simple clarity</div>
+        <div class="wi-item">Like physical exercise: struggle and effort are signs of building strength</div>
+        <div class="wi-item">Assessed by how it affects your life — not how it feels during practice</div>
+      </div>
+    </div>
+    <div class="wi-bottom">
+      <p>"Dissatisfaction with your meditation is like the feelings you get while working out — you are building strength and endurance. Assess your practice by how it affects your life."</p>
+    </div>
+  </div>
 
-  <main id="main" tabindex="-1">
+  <!-- ===================== PAGE 4: CAUTION ===================== -->
+  <div class="page caution" data-page="4">
+    <div class="caut-left">
+      <div class="eyebrow warm">Before you begin</div>
+      <h1 class="caut-title">A Few Words<br>of Caution</h1>
+      <p class="caut-left-body">Meditation works beautifully for most people most of the time. These honest notes are offered in the spirit of care — so you can navigate your practice wisely.</p>
+    </div>
+    <div class="caut-right">
+      <div class="caut-section">
+        <h3>Transformation</h3>
+        <p>Meditation can provide peace of mind, strength, and other desirable qualities. However, it is also <em>transformative</em> — and transformation can be uncomfortable, potentially disruptive to life as you've known it. It's not uncommon for people with a dedicated practice to find that former relationships and employment no longer fit them well. Changes in these areas are often ultimately welcome, if sometimes difficult.</p>
+      </div>
+      <div class="caut-section">
+        <h3>Mind-altering Substances</h3>
+        <p>Be very careful about using mind-altering substances in conjunction with your meditation. Alcohol or cannabis, even in small amounts, can negatively affect your practice. I suggest experimenting for a week or more without them — see what your meditation is like, then gradually reintroduce them and observe the effect. Then decide what is best for you.</p>
+      </div>
+      <div class="caut-section">
+        <h3>Taking the Lid Off</h3>
+        <p>Sometimes people feel distress associated with meditation. Old trauma and emotions can arise — sometimes in disturbing detail. Overwhelming feelings of anger, hunger, or lust may surface. Often this passes with perseverance. If it doesn't:</p>
+        <ul class="caut-list">
+          <li>Contact an experienced meditation teacher</li>
+          <li>Reduce practice time, or pause completely</li>
+          <li>Get grounded physically: cold shower, vigorous walk, working out</li>
+          <li>Connect with trusted loved ones and pets</li>
+          <li>Work with a therapist</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-  <div class="keyband" role="presentation"></div>
+  <!-- ===================== PAGE 5: BENEFITS ===================== -->
+  <div class="page benefits" data-page="5">
+    <div class="ben-header">
+      <h1>Benefits of the Shortcuts</h1>
+      <p>In the words of Chris Faison — a friend and long-time practitioner</p>
+    </div>
+    <div class="ben-grid">
+      <div class="ben-card">
+        <div class="ben-icon">🙇</div>
+        <div class="ben-name">The Bow</div>
+        <div class="ben-text">Embodies humility and deference to powers greater than the small self. Regular practice takes tremendous responsibility off our shoulders while opening access to a deep well of innate strength, calm, and wisdom.</div>
+      </div>
+      <div class="ben-card">
+        <div class="ben-icon">🤲</div>
+        <div class="ben-name">Gestures of Release</div>
+        <div class="ben-text">Allows us to let go of attachments and feelings that don't serve us. As surface-level feelings are managed, deeper ones — previously hidden — are gently uncovered and released over time, layer by layer.</div>
+      </div>
+      <div class="ben-card">
+        <div class="ben-icon">🌊</div>
+        <div class="ben-name">Sighing Exhalation</div>
+        <div class="ben-text">Gives a strong, immediate signal to your entire system to relax. Each exhalation is like a wave gently lapping the shore. You can bring that feeling — relaxing by the seashore — to yourself, on command, anywhere.</div>
+      </div>
+      <div class="ben-card">
+        <div class="ben-icon">✨</div>
+        <div class="ben-name">Resting in Stillness</div>
+        <div class="ben-text">Allows us to assimilate the benefits of our other practices and access more deeply who we really are. Our own direct experience — the peace that is you — rather than relying on peace from external sources.</div>
+      </div>
+      <div class="ben-card">
+        <div class="ben-icon">🙏</div>
+        <div class="ben-name">Namaste</div>
+        <div class="ben-text">Helps us see and feel connectedness and unity. The boundary between what we feel as ourselves and everything else begins to blur — and can dissolve completely, opening us to the vastness of who we truly are.</div>
+      </div>
+      <div class="ben-card" style="background:rgba(72,209,204,0.05);border-color:rgba(72,209,204,0.14);">
+        <div class="ben-icon">🌍</div>
+        <div class="ben-name">All Together</div>
+        <div class="ben-text">These simple but powerful shortcuts, practiced regularly, can change how we are in the world — and what we see in it. With your developing discernment, you can expand the benefits to others, and to the world. There is no greater gift.</div>
+      </div>
+    </div>
+    <div class="ben-footer">
+      <p>"When we are relaxed, we reduce the negative effects of stress, make better decisions, and see the world and others for what they are more clearly." — Chris Faison</p>
+    </div>
+  </div>
 
-  <figure class="plate-hero">
-    <img src="/assets/plates/shortcuts.jpg" width="768" height="512" loading="eager" alt="A meditation cushion by a sunlit window, a lit candle on the sill, cover art for Shortcuts to Meditation." />
-  </figure>
+  <!-- ===================== PAGE 6: THE BOW ===================== -->
+  <div class="page bow-page" data-page="6">
+    <div class="bow-header">
+      <div class="bow-header-left">
+        <div class="eyebrow">Shortcut One</div>
+        <h1>The Bow</h1>
+      </div>
+    </div>
+    <div class="bow-body">
+      <div class="bow-left">
+        <p class="body-para" style="color:#3a4a5a;">The first shortcut is the bow — variations are found in Hatha Yoga, Kriya Yoga, Judaism, and Islam. It brings <strong style="color:#254162;">immediate calmness</strong>. The essence: slowly bringing the head down to the level of the knees. This brings blood into the forebrain, helps empty the lungs prior to refilling, and stretches the spinal column.</p>
+        <div class="subsection-label" style="color:#254162;">Step-by-Step Practice (in a chair or on the floor)</div>
+        <div class="step-row"><div class="step-circle">1</div><div class="step-text">Close your eyes (optional but recommended). Start with your spine comfortably erect — <strong>not ramrod straight</strong>. Be comfortable.</div></div>
+        <div class="step-row"><div class="step-circle">2</div><div class="step-text">Notice the tip of your tailbone — mentally feel that area. Exhale, without trying to empty your lungs.</div></div>
+        <div class="step-row"><div class="step-circle">3</div><div class="step-text">Inhale, and as you do, pull your attention from the tip of your tailbone up your spine to the top of your head.</div></div>
+        <div class="step-row"><div class="step-circle">4</div><div class="step-text">Bring your chin toward your chest and <strong>let gravity do the work</strong>. Consciously surrender to gravity. <strong>Do not force it to the point of pain.</strong></div></div>
+        <div class="step-row"><div class="step-circle">5</div><div class="step-text">Move your head down slowly, letting your movement gently support your exhalation. Stop at the point of mild, comfortable stretching.</div></div>
+        <div class="step-row"><div class="step-circle">6</div><div class="step-text">Breathe normally, enjoying the stretch as long as you want. Rest in the bowed position, abiding in peace.</div></div>
+        <div class="step-row"><div class="step-circle">7</div><div class="step-text">Slowly bring your head back to the starting position. <strong>Notice the change in your consciousness and peace of mind.</strong></div></div>
+        <div class="callout-quote">"Let your body surrender to gravity so your bow isn't so much an act of effort as it is letting go."</div>
+        <p class="body-para" style="color:#3a4a5a;">At work? Drop your pen and bow to find it, taking your time. No one's the wiser that you've taken a shortcut to meditation — and who says you can't meditate at your desk?</p>
+      </div>
+      <div class="bow-right">
+        <div class="ref-box">
+          <div class="ref-title">📝 Reflections on the Bow</div>
+          <div class="bow-ref-q">What time of day are you practicing?</div>
+          <div class="bow-ref-q">What change in your consciousness do you notice after the bow? Do you feel calmer?</div>
+          <div class="bow-ref-q">What is it like to rest comfortably in the bowed position, as far forward as is comfortable?</div>
+          <div class="bow-ref-q">Do you notice a stretch in your back and neck? Remember: go only to mild stretch — never to pain. A little at a time, your spine will get more flexible.</div>
+          <div class="bow-ref-q">Have you tried the bow during the day, such as in a chair at work?</div>
+          <div class="bow-ref-q">For about how much time each day are you practicing?</div>
+        </div>
+        <div class="subsection-label" style="color:#254162;margin-top:20px;">Key Principle</div>
+        <div class="callout-quote" style="color:#254162;">"You can do as many bows as you want, but more aren't necessarily better. If your mind is agitated you may need several — but don't do them quickly. Do one, notice how it feels, abide in the peace."</div>
+      </div>
+    </div>
+  </div>
 
-  <p class="leadin">This book is hosted in full &mdash; text and narrated audio &mdash; at its own
-    address so it doesn&rsquo;t depend on this page staying around.</p>
-  <a class="cta" href="https://plush-chant-thza.here.now/">Read Shortcuts to Meditation &rarr;</a>
-  <p class="note">plush-chant-thza.here.now</p>
+  <!-- ===================== PAGE 7: GESTURES OF RELEASE ===================== -->
+  <div class="page gestures-page" data-page="7">
+    <div class="gest-left">
+      <div class="eyebrow rose">Shortcut Two</div>
+      <h1 class="gest-title">Gestures<br>of Release</h1>
+      <p class="gest-intro">Meditation is easier when we are relaxed. Gestures give us immediate relaxation and freedom from distracting feelings — by embodying them first, then releasing them through the body.</p>
+      <div class="gest-card">
+        <div class="gest-card-name">The Open Hand</div>
+        <div class="gest-card-desc">Clench your fist around a feeling — anger, fear, resentment. Hold it fully. Notice where it lives in your body. Then slowly open your hand, palm up. Feel the release spread through your entire body.</div>
+      </div>
+      <div class="gest-card">
+        <div class="gest-card-name">The Full Body Clench</div>
+        <div class="gest-card-desc">Let a feeling tighten your whole body. Clench to the point of trembling — this shows how tiring it is to hold on. Then gradually release, letting the body itself become the gesture of letting go.</div>
+      </div>
+      <div class="gest-card">
+        <div class="gest-card-name">Arms Wide Open</div>
+        <div class="gest-card-desc">Cross arms over your chest for feelings of alienation or closedness. Then spread them wide — releasing distance, opening to connection. Can also be done subtly in social situations.</div>
+      </div>
+      <div class="gest-bg-word">Release</div>
+    </div>
+    <div class="gest-right">
+      <h2>The Practice of Noticing</h2>
+      <p class="body-para">We give the feeling its due — then let it go. We're used to letting go of things with our hands by opening them and dropping what's held. Gestures of release take advantage of this habitual wisdom.</p>
+      <ul class="notice-list">
+        <li>Notice the feeling you'd like to let go of</li>
+        <li>Let the feeling clench your hand or entire body</li>
+        <li>Notice how the feeling shows up in your hand and body</li>
+        <li>Gradually open your hand or unclench your body</li>
+        <li>Notice what you feel in your body as you let go</li>
+      </ul>
+      <div class="gest-pull">"The essence is embodying a feeling, noticing it in the body, and using the body to let go of it while noticing the release. You feel calm in the wake of departing feeling."</div>
+      <p class="body-para">You can also use gestures of release in social situations — just open your hand(s) naturally as part of your expression. Let go of social anxiety or fear of speaking without anyone being the wiser. Be careful about visibly clenching, though — people may misunderstand your intentions!</p>
+      <p class="body-para">Use gestures of release before meditating, or during meditation when distracting thoughts arise, or anytime during your day. You can clench and unclench with awareness of a particular feeling, or without reference to any specific feeling.</p>
+      <div style="font-family:'Lato',sans-serif;font-size:12.5px;letter-spacing:3px;text-transform:uppercase;color:#c4784a;margin-bottom:10px;margin-top:16px;opacity:0.75;">Reflections</div>
+      <div class="bow-ref-q" style="background:rgba(196,120,74,0.08);border-left-color:#c4784a;">Where in your body do you notice the effect of release — your back, belly, face, somewhere else?</div>
+      <div class="bow-ref-q" style="background:rgba(196,120,74,0.08);border-left-color:#c4784a;">Which gesture do you find most effective or natural?</div>
+    </div>
+  </div>
 
-  </main>
+  <!-- ===================== PAGE 8: SIGHING EXHALATION ===================== -->
+  <div class="page sigh-page" data-page="8">
+    <div class="sigh-hero">
+      <div class="sigh-bg-text">Ahhhhh</div>
+      <div class="sigh-hero-content">
+        <div class="eyebrow" style="margin-bottom:12px;text-align:center;">Shortcut Three</div>
+        <h1>Sighing Exhalation</h1>
+        <p>A vocal gesture of release</p>
+      </div>
+    </div>
+    <div class="sigh-body">
+      <div class="sigh-left">
+        <div class="subsection-label">The Practice</div>
+        <p class="body-para">We're always breathing and often don't notice our breath. The sighing exhalation is a variant of gesture of release — made with your vocal apparatus: the epiglottis, throat, tongue, mouth, and lungs.</p>
+        <p class="body-para">Exhale and make a sound like <strong style="color:#48d1cc;">"haaah"</strong> or <strong style="color:#48d1cc;">"whew."</strong> It's not a laugh — experiment and use what feels easy and natural. Practice privately, as others may take your sigh personally.</p>
+        <p class="body-para">You can bring to mind something you'd like to let go of — something that comes up often and that you'd just as soon not carry — and sigh as you release it. This is very much like opening your hand as a gesture of release.</p>
+        <div class="subsection-label">Sighing moments — try these now</div>
+        <div class="sigh-examples">
+          <div class="sigh-ex">Sigh — <em>it's been a long day.</em></div>
+          <div class="sigh-ex">Sigh — <em>I've got a big project.</em></div>
+          <div class="sigh-ex">Sigh — <em>I'm so tired.</em></div>
+          <div class="sigh-ex">Sigh — <em>do we really need to go there again?</em></div>
+          <div class="sigh-ex">And sometimes — <em>Ahhhh!</em> — pure delight and relief.</div>
+        </div>
+      </div>
+      <div class="sigh-right">
+        <div class="subsection-label">Combining with Other Shortcuts</div>
+        <p class="body-para">The sighing exhalation can be included at any point in your practice. Use it while bowing, or while opening a clenched hand. It naturally leads into the next shortcut: Resting in Stillness — because the stillness is found most easily right at the end of the exhalation.</p>
+        <div class="sigh-quote-box">
+          <p>"Each exhalation is like a wave gently lapping the shore. Instead of wishing you were at the beach, you can bring the feeling of relaxing by the seashore to yourself — on command, anywhere, anytime."</p>
+          <cite>— Chris Faison, practitioner</cite>
+        </div>
+        <p class="body-para">We can have different tones and sounds in our sigh. These express our mood, and each can provide relaxation and release. Do it now with a different sound — notice what comes up for you.</p>
+        <div class="subsection-label">Reflections</div>
+        <div class="sigh-ref-q">Do you notice a difference between sighing out loud as you exhale, and not sighing?</div>
+        <div class="sigh-ref-q">Are you comfortable sighing out loud in private? If not, practice to get the full benefit of release.</div>
+        <div class="sigh-ref-q">Have you tried consciously releasing something that has been bothering you as you sigh and exhale?</div>
+      </div>
+    </div>
+  </div>
 
-  <footer data-pagefind-ignore>
-    <span>&copy; John Records &middot; <a href="mailto:john.records@gmail.com">john.records@gmail.com</a></span>
-  </footer>
+  <!-- ===================== PAGE 9: RESTING IN STILLNESS ===================== -->
+  <div class="page stillness-page" data-page="9">
+    <div class="still-header">
+      <div class="rings-wrap">
+        <div class="ring r1"></div>
+        <div class="ring r2"></div>
+        <div class="ring r3"></div>
+        <div class="ring r4"></div>
+      </div>
+      <div class="still-hero-content">
+        <div class="eyebrow" style="text-align:center;margin-bottom:12px;">Shortcut Four</div>
+        <h1>Resting in<br><span>Stillness</span></h1>
+        <p>The ground of all being · always here · always you</p>
+      </div>
+    </div>
+    <div class="still-body">
+      <div class="still-left">
+        <div class="subsection-label">The Portal</div>
+        <p class="body-para">A very simple shortcut to meditation is resting in the stillness at the end of the sighing exhalation, prior to the next inhalation.</p>
+        <p class="body-para">There is a still place after you exhale and before you inhale. It is that moment when the air is no longer leaving your lungs, but has not yet started coming back in. <strong style="color:rgba(255,255,255,0.85);">That pause is a wonderful portal to peace.</strong></p>
+        <div class="callout-quote">"The stillness is <em>always</em> there. You find it most easily at the pause at the end of the exhalation — but it's always there, waiting for you to notice."</div>
+        <div class="subsection-label">The Practice — Step by Step</div>
+        <ol class="practice-ol">
+          <li>Close your eyes (optional). Exhale with a sigh.</li>
+          <li>Find the pause at the end of the exhalation.</li>
+          <li>Feel the stillness in that pause.</li>
+          <li>Let the pause extend naturally — don't force a held breath.</li>
+          <li>Continue to feel the stillness as you inhale.</li>
+          <li>Continue to feel stillness as you exhale and at the end.</li>
+          <li>Let the pause at the end of the exhalation naturally extend.</li>
+          <li>Continue breathing at a natural pace, feeling your stillness.</li>
+          <li>Do this for 10 or more breaths. Notice the peace — <em>your</em> peace.</li>
+        </ol>
+      </div>
+      <div class="still-right">
+        <div class="subsection-label">The Deeper Invitation</div>
+        <p class="body-para">In time you will realize that you're not merely <em>in relationship</em> with the stillness — not any more than you are in relationship with your bones. Just as your bones are part of your body, your stillness is part of your being.</p>
+        <p class="body-para">It's different from bones, though: this stillness is an aspect of the ground of all Being. And that's not other than the foundation of you — your very own Self.</p>
+        <div class="still-big-box">
+          <p>The locus of your identity can shift to include the stillness. Your ups and downs will still arise — but now in the context of your continuing awareness of stillness: the ground of all Being.</p>
+        </div>
+        <p class="body-para">If your mind wanders, simply resume — or do a bow or gesture of release to clear your mind and refocus. It's okay to lose count of breaths. This is not a failure; it is the work itself.</p>
+        <div class="subsection-label">Reflections</div>
+        <div class="still-ref-q">What's it like to rest <em>in</em> stillness? Is it different to rest <em>as</em> stillness?</div>
+        <div class="still-ref-q">If thoughts or feelings arise, try observing them and feeling the stillness <em>from which they arise</em>. That stillness is always present — even while they arise within it.</div>
+        <div class="still-ref-q">Do you feel frustrated when thoughts intrude? Remember: use a bow or gesture of release to settle yourself, and return.</div>
+      </div>
+    </div>
+  </div>
 
+  <!-- ===================== PAGE 10: NAMASTE ===================== -->
+  <div class="page namaste-page" data-page="10">
+    <div class="nam-left">
+      <div class="eyebrow green" style="text-align:center;">Shortcut Five</div>
+      <div class="nam-symbol">🙏</div>
+      <h1 class="nam-title">Namaste</h1>
+      <p class="nam-meaning">The Divine in me<br>honors the Divine in you</p>
+      <div class="nam-steps">
+        <div class="nam-step"><div class="nam-step-n">1</div><div class="nam-step-t">Bring your left and right palms firmly together in the center of your chest, in front of the heart.</div></div>
+        <div class="nam-step"><div class="nam-step-n">2</div><div class="nam-step-t">Let the sides of your thumbs touch your chest. Hold for at least 10 seconds.</div></div>
+        <div class="nam-step"><div class="nam-step-n">3</div><div class="nam-step-t">Notice the feeling in your chest, neck, face, belly, and back.</div></div>
+        <div class="nam-step"><div class="nam-step-n">4</div><div class="nam-step-t">When with another: both do this posture, look into each other's eyes, then bow the head gently.</div></div>
+        <div class="nam-step"><div class="nam-step-n">5</div><div class="nam-step-t">Hold as long as you wish. Think lovingly of any person or creature. Share your wholeness with them.</div></div>
+      </div>
+    </div>
+    <div class="nam-right">
+      <h2>A Gesture of Coming Together</h2>
+      <p class="body-para">While the previous shortcuts were gestures of release — preparation for meditation — namaste is a gesture of <em>coming together</em>. This joins the two palm chakras (energy centers) in front of the heart chakra, creating a felt sense of wholeness.</p>
+      <div class="nam-big-quote">
+        <p>"When we share namaste with another person, we are acknowledging the wholeness, the unity, the Spirit, the Divinity in them. Our wholeness sees and recognizes their wholeness — like a mirror for the Divine to see itself in the form of another."</p>
+      </div>
+      <p class="body-para">It's not a coincidence that when people are depicted praying in the Judeo-Christian tradition, their palms come together. Across traditions, this gesture is a shortcut to meditation and peace.</p>
+      <p class="body-para">I find it best to do namaste at the end of my practice, to reintegrate myself after having let go and abided in stillness. Stay in that position as long as you want, and think lovingly of any person or creature. As you bring more wholeness into your own life, you bring more wholeness into the world.</p>
+      <div class="subsection-label" style="color:#1a4d2e;">Reflections</div>
+      <div class="nam-ref-q">What do you notice as you bring the palms of your hands together slowly over your heart?</div>
+      <div class="nam-ref-q">Is there a difference in your awareness when your hands are in namaste posture versus resting on your thighs?</div>
+      <div class="nam-ref-q">What is it like when you mentally namaste a person who is not present? Have you tried this with people you dislike?</div>
+    </div>
+  </div>
+
+  <!-- ===================== PAGE 11: ALL SHORTCUTS TOGETHER ===================== -->
+  <div class="page all-page" data-page="11">
+    <div class="all-header">
+      <h1>All of the Shortcuts Together</h1>
+      <p>Use any shortcut individually, or stack them all sequentially — looping back to deepen your peace.</p>
+    </div>
+    <div class="all-body">
+      <div class="all-seq">
+        <div class="subsection-label">The Complete Stacked Practice</div>
+        <div class="seq-row"><div class="seq-icon">🪑</div><div class="seq-text"><h4>Settle</h4><p>Sit on the floor with a cushion, or in a chair. Maintain your spine reasonably erect so you don't fall asleep — but not rigid. Close your eyes. Put your attention at the tip of your tailbone.</p></div></div>
+        <div class="seq-row"><div class="seq-icon">🙇</div><div class="seq-text"><h4>The Bow</h4><p>Inhale slowly, pulling attention from the tailbone to the top of the head. Bring the chin to the chest, making a sighing sound as you exhale and bow gently forward — comfortable stretch, never pain.</p>
+          <div class="seq-substeps">
+            <div class="seq-substep"><span class="seq-substep-icon">✨</span><span><strong>Find the Stillness</strong> — While bowed, notice the stillness at the end of your exhalation. Breathe normally, carrying that awareness of stillness through each breath.</span></div>
+            <div class="seq-substep"><span class="seq-substep-icon">⬆️</span><span><strong>Rise and Rest</strong> — Slowly bring your head back up, letting your lungs fill naturally as you sit up. Notice your peace of mind. Stay with the stillness until thoughts or feelings intrude.</span></div>
+          </div>
+        </div></div>
+        <div class="seq-row"><div class="seq-icon">✊</div><div class="seq-text"><h4>Gestures of Release</h4><p>Let any intruding thoughts or feelings clench your hand — or if powerful, your whole body. Unclench and notice your peace. Repeat as needed. Return to the bow if your mind is agitated.</p></div></div>
+        <div class="seq-row"><div class="seq-icon">🙏</div><div class="seq-text"><h4>Namaste</h4><p>When ready, bring your palms together over your heart. Give thanks to all who have ever supported you. Offer blessings to any who come to mind — living or dead. Ask for whatever you need.</p></div></div>
+        <div class="seq-row"><div class="seq-icon">🌅</div><div class="seq-text"><h4>Carry It Forward</h4><p>Sit quietly for a bit. Then, as you continue to feel your peace, go about your day.</p></div></div>
+      </div>
+      <div class="all-tips">
+        <div class="subsection-label">Tips for Your Practice</div>
+        <div class="tip-card">
+          <div class="tip-label">Daily Rhythm</div>
+          <p>Morning is ideal — right after waking, before the phone. Many also practice before dinner or before bed. 20–30 minutes is wonderful; 5 minutes is a genuine start. Meditate first, then adjust the rest of the day around it.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-label">Throughout the Day</div>
+          <p>Each shortcut can be used individually, anytime, anywhere. Drop a pen and bow to find it. Open your hand during a tense moment. Sigh quietly as you release something. The stillness is always available to you.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-label">When Your Mind Wanders</div>
+          <p>It's okay to lose count of breaths. If your mind wanders, simply resume — or use a bow or gesture of release to clear and refocus. This wandering and returning is not a failure. It is the practice itself.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-label">Assessing Your Practice</div>
+          <p>Do not assess your meditation by how you feel during the practice. Assess it by the calmness and resilience you notice in your daily life — even if your sessions feel difficult or scattered.</p>
+        </div>
+        <div class="subsection-label" style="margin-top:20px;">Reflections</div>
+        <div class="all-ref-q">Have you tried all of the shortcuts together? What is that like for you?</div>
+        <div class="all-ref-q">Do you find yourself lingering with any particular shortcut?</div>
+        <div class="all-ref-q">Is there one shortcut that seems more effective for you?</div>
+        <div class="all-ref-q">How long are you practicing daily? Are you practicing morning and evening?</div>
+        <div class="all-ref-q">What benefits do you want from meditation — and are you getting them?</div>
+        <div class="all-ref-q">If you miss sessions, what do you notice in your daily life?</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== PAGE 12: BACK COVER ===================== -->
+  <div class="page back-cover" data-page="12">
+    <div class="back-inner">
+      <div class="back-big">Namaste</div>
+      <div class="back-sub">dear friend</div>
+      <p class="back-body">Thank you for receiving these shortcuts. I encourage you to use any or all of them anytime — and at least once a day. Perhaps in the morning, before you eat. Just sit down in your quiet place and begin. I suggest also practicing in the evening before dinner, or before going to bed.</p>
+      <p class="back-body">My wish and my blessing for you is that these shortcuts support your peace, joy, and fulfillment. As you bring more wholeness into your own life, you bring more wholeness into the world. In our human experience, there is no greater gift than this.</p>
+      <span class="back-dharma">☸</span>
+      <div class="back-pills">
+        <span class="back-pill" onclick="goTo(5)">The Bow</span>
+        <span class="back-pill" onclick="goTo(6)">Gestures of Release</span>
+        <span class="back-pill" onclick="goTo(7)">Sighing Exhalation</span>
+        <span class="back-pill" onclick="goTo(8)">Resting in Stillness</span>
+        <span class="back-pill" onclick="goTo(9)">Namaste</span>
+      </div>
+      <div class="back-divider"></div>
+      <div class="back-author">John Records</div>
+      <div class="back-note">No rights reserved · Share freely · Updated August 2021</div>
+    </div>
+  </div>
+
+</div><!-- /.magazine -->
+
+<!-- FIXED CHROME -->
+<div class="nav-dots" id="navDots"></div>
+
+<div class="sc-nav" id="scNav">
+  <button class="sc-pill" data-target="5" onclick="goTo(5)">The Bow</button>
+  <button class="sc-pill" data-target="6" onclick="goTo(6)">Gestures</button>
+  <button class="sc-pill" data-target="7" onclick="goTo(7)">Sighing</button>
+  <button class="sc-pill" data-target="8" onclick="goTo(8)">Stillness</button>
+  <button class="sc-pill" data-target="9" onclick="goTo(9)">Namaste</button>
 </div>
 
-<script src="/gsearch.js" defer></script>
+<button class="nav-arrow left"  id="prevBtn" onclick="navigate(-1)">&#8592;</button>
+<button class="nav-arrow right" id="nextBtn" onclick="navigate(1)">&#8594;</button>
+
+<a class="nook-home" href="/" aria-label="Return to John's Reading Nook" title="John's Reading Nook">&larr;<span> Nook</span></a>
+<div class="page-num" id="pageNum">1 / 12</div>
+
+<div class="fs-controls">
+  <span class="fs-label">Text</span>
+  <button class="fs-btn" onclick="setFontSize(-1)" title="Smaller text">A−</button>
+  <button class="fs-btn" onclick="setFontSize(1)"  title="Larger text">A+</button>
+</div>
+
 <script>
-(function(){
-  var root = document.documentElement;
-  var btn  = document.getElementById('lamp');
-  var word = document.getElementById('lampword');
-  function evening(){
-    var t = root.getAttribute('data-theme');
-    if (t) return t === 'dark';
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
-  }
-  function paint(){
-    var on = evening();
-    btn.setAttribute('aria-pressed', String(on));
-    btn.setAttribute('aria-label', on ? 'Morning' : 'Light the lamp');
-    word.textContent = on ? 'Morning' : 'Light the lamp';
-  }
-  btn.addEventListener('click', function(){
-    root.setAttribute('data-theme', evening() ? 'light' : 'dark');
-    paint();
+const magazine  = document.getElementById('magazine');
+const pages     = document.querySelectorAll('.page');
+const dotsWrap  = document.getElementById('navDots');
+const pageNumEl = document.getElementById('pageNum');
+const TOTAL     = pages.length;
+let current     = 0;
+
+// Build nav dots
+pages.forEach((_, i) => {
+  const d = document.createElement('div');
+  d.className = 'dot' + (i === 0 ? ' active' : '');
+  d.addEventListener('click', () => goTo(i));
+  dotsWrap.appendChild(d);
+});
+
+function goTo(idx) {
+  current = Math.max(0, Math.min(idx, TOTAL - 1));
+  pages[current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+  updateUI();
+}
+
+function navigate(dir) { goTo(current + dir); }
+
+function updateUI() {
+  // Dots
+  dotsWrap.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  // Page counter
+  pageNumEl.textContent = (current + 1) + ' / ' + TOTAL;
+  // Arrow opacity
+  document.getElementById('prevBtn').style.opacity = current === 0 ? '0.25' : '1';
+  document.getElementById('nextBtn').style.opacity = current === TOTAL - 1 ? '0.25' : '1';
+  // Shortcut pill highlights
+  document.querySelectorAll('.sc-pill').forEach(p => {
+    p.classList.toggle('active', current === parseInt(p.dataset.target));
   });
-  paint();
-})();
+}
+
+// Scroll detection — sync dots when user drags/flicks
+let scrollTimer;
+magazine.addEventListener('scroll', () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    const p = Math.round(magazine.scrollLeft / window.innerWidth);
+    if (p !== current) { current = p; updateUI(); }
+  }, 60);
+});
+
+// Keyboard
+document.addEventListener('keydown', e => {
+  if (['ArrowRight','ArrowDown',' '].includes(e.key)) { e.preventDefault(); navigate(1); }
+  if (['ArrowLeft','ArrowUp'].includes(e.key))        { e.preventDefault(); navigate(-1); }
+  if (e.key === 'Home') { e.preventDefault(); goTo(0); }
+  if (e.key === 'End')  { e.preventDefault(); goTo(TOTAL - 1); }
+});
+
+// Touch swipe
+let tx = 0, ty = 0;
+magazine.addEventListener('touchstart', e => { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
+magazine.addEventListener('touchend',   e => {
+  const dx = tx - e.changedTouches[0].clientX;
+  const dy = Math.abs(ty - e.changedTouches[0].clientY);
+  if (Math.abs(dx) > 50 && Math.abs(dx) > dy) navigate(dx > 0 ? 1 : -1);
+}, { passive: true });
+
+// Font size control
+const fsLevels = [0.82, 1.0, 1.25, 1.44, 1.65];
+let fsIdx = 2; // default = 1.25 (≈19px base)
+
+function setFontSize(delta) {
+  fsIdx = Math.max(0, Math.min(fsLevels.length - 1, fsIdx + delta));
+  document.documentElement.style.setProperty('--fs', fsLevels[fsIdx]);
+}
+
+// Proximity-based nav: show when mouse is near the bottom, hide otherwise
+const scNav = document.getElementById('scNav');
+const NAV_ZONE = 90; // px from bottom to trigger show
+
+function showNav() {
+  scNav.classList.remove('nav-hidden');
+}
+function hideNav() {
+  scNav.classList.add('nav-hidden');
+}
+
+document.addEventListener('mousemove', e => {
+  if (e.clientY > window.innerHeight - NAV_ZONE) {
+    showNav();
+  } else {
+    hideNav();
+  }
+});
+
+// Touch: show briefly then hide
+let touchTimer;
+document.addEventListener('touchstart', () => {
+  showNav();
+  clearTimeout(touchTimer);
+  touchTimer = setTimeout(hideNav, 2000);
+}, { passive: true });
+
+// Keyboard nav: flash the nav so user knows it exists
+document.addEventListener('keydown', e => {
+  if (['ArrowRight','ArrowLeft','ArrowDown','ArrowUp',' '].includes(e.key)) {
+    showNav();
+    clearTimeout(touchTimer);
+    touchTimer = setTimeout(hideNav, 1500);
+  }
+});
+
+hideNav(); // hidden by default; appears on proximity
+
+updateUI();
 </script>
 </body>
 </html>

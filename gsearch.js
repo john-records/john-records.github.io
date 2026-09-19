@@ -79,10 +79,21 @@
           results.innerHTML = datas
             .map(function (d) {
               var title = (d.meta && d.meta.title) || d.url;
+              var href = d.url, excerpt = d.excerpt;
+              // Chaptered books (id="pf-chN" on each chapter heading): link straight to the chapter that matched.
+              var subs = d.sub_results || [];
+              for (var i = 0; i < subs.length; i++) {
+                if (/#pf-ch\d+$/.test(subs[i].url)) {
+                  href = subs[i].url;
+                  excerpt = subs[i].excerpt || excerpt;
+                  if (subs[i].title) title += " \u2014 " + subs[i].title;
+                  break;
+                }
+              }
               return (
-                '<a class="gsearch-hit" href="' + d.url + '">' +
+                '<a class="gsearch-hit" href="' + href + '">' +
                 '<span class="gsearch-hit-title"></span>' +
-                '<span class="gsearch-hit-excerpt">' + d.excerpt + "</span>" +
+                '<span class="gsearch-hit-excerpt">' + excerpt + "</span>" +
                 "</a>"
               ).replace(
                 '<span class="gsearch-hit-title"></span>',

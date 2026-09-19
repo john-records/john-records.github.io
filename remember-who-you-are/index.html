@@ -1,251 +1,1329 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.youtube-nocookie.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';">
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob:; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Remember Who You Are — John Records</title>
-<meta name="description" content="The Creator waking up in and as Creation — in and as you and me. An autobiography of sorts." />
-<meta name="author" content="John Records" />
-<link rel="canonical" href="https://johnrecords.org/remember-who-you-are/" />
-<meta property="og:title" content="Remember Who You Are — John Records" />
-<meta property="og:description" content="The Creator waking up in and as Creation — in and as you and me. An autobiography of sorts." />
-<meta property="og:url" content="https://johnrecords.org/remember-who-you-are/" />
-<meta property="og:type" content="book" />
-<meta property="og:image" content="https://johnrecords.org/assets/plates/remember.jpg" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Remember Who You Are — John Records" />
-<meta name="twitter:description" content="The Creator waking up in and as Creation — in and as you and me. An autobiography of sorts." />
-<meta name="twitter:image" content="https://johnrecords.org/assets/plates/remember.jpg" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="canonical" href="https://johnrecords.org/remember-who-you-are/">
+<meta name="author" content="John Records">
+<meta name="description" content="A poem of the Creator waking up in and as Creation — twenty-six visions, one to a page. John Records, 2004.">
+<meta name="theme-color" content="#0b0b11" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f1e6" media="(prefers-color-scheme: light)">
+<meta property="og:title" content="Remember Who You Are — John Records">
+<meta property="og:description" content="A poem of the Creator waking up in and as Creation — twenty-six visions, one to a page. John Records, 2004.">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://johnrecords.org/remember-who-you-are/">
+<meta property="og:image" content="https://johnrecords.org/remember-who-you-are/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Remember Who You Are — John Records">
+<meta name="twitter:description" content="A poem of the Creator waking up in and as Creation — twenty-six visions, one to a page. John Records, 2004.">
+<meta name="twitter:image" content="https://johnrecords.org/remember-who-you-are/og.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Remember">
 <style>
+
 :root{
-  --room:#EFE3C8; --paper:#FAF5E9; --card:#FFFDF4;
-  --ink:#2A2118; --ink-soft:#6E5F4B; --ink-faint:#93856D;
-  --oak:#7A4E28; --oak-deep:#53341A;
-  --oak-grain:linear-gradient(180deg,#8a5c33,#6b4322 55%,#53341A);
-  --terracotta:#A64B2A; --leaf:#3E5A45; --rose:#A85F62; --tile:#E2BE72;
-  --lamp:#B07A26; --glow:transparent;
-  --line:rgba(83,52,26,.22); --line-faint:rgba(83,52,26,.10);
-  --shadow:0 18px 40px -22px rgba(42,33,24,.45);
-  --display:"IM Fell English","Iowan Old Style",Georgia,serif;
-  --read:"Newsreader",Georgia,"Times New Roman",serif;
-  --data:"DM Mono",ui-monospace,SFMono-Regular,monospace;
+  --serif: "Iowan Old Style","Palatino Linotype",Palatino,"URW Palladio L","Book Antiqua",Georgia,serif;
+  --fs: 1.05rem;
+  --measure: 34rem;
+  --ease: cubic-bezier(.22,.61,.36,1);
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --room:#191008; --paper:#241A0F; --card:#2E2214;
-    --ink:#F0E5CE; --ink-soft:#C4B394; --ink-faint:#94836A;
-    --oak:#B98B54; --oak-deep:#8A5F33;
-    --oak-grain:linear-gradient(180deg,#6b4a26,#4a3117 55%,#33200e);
-    --terracotta:#D2764E; --leaf:#8FB49A; --rose:#D49295; --tile:#B08A3F;
-    --lamp:#F2B94E; --glow:rgba(242,185,78,.16);
-    --line:rgba(240,229,206,.22); --line-faint:rgba(240,229,206,.09);
-    --shadow:0 18px 44px -20px rgba(0,0,0,.7);
-  }
+body[data-theme=night]{
+  --bg:#0b0b11; --bg2:#101017; --ink:#e9e3d6; --dim:#8b877e; --faint:#2a2a34;
+  --gold:#d9ab52; --gold-soft:#8a6d33; --glow:rgba(217,171,82,.14);
 }
-:root[data-theme="dark"]{
-  --room:#191008; --paper:#241A0F; --card:#2E2214;
-  --ink:#F0E5CE; --ink-soft:#C4B394; --ink-faint:#94836A;
-  --oak:#B98B54; --oak-deep:#8A5F33;
-  --oak-grain:linear-gradient(180deg,#6b4a26,#4a3117 55%,#33200e);
-  --terracotta:#D2764E; --leaf:#8FB49A; --rose:#D49295; --tile:#B08A3F;
-  --lamp:#F2B94E; --glow:rgba(242,185,78,.16);
-  --line:rgba(240,229,206,.22); --line-faint:rgba(240,229,206,.09);
-  --shadow:0 18px 44px -20px rgba(0,0,0,.7);
+body[data-theme=day]{
+  --bg:#f6f1e6; --bg2:#efe9dc; --ink:#231f18; --dim:#6d675c; --faint:#ded6c5;
+  --gold:#9a6a14; --gold-soft:#c8ab6e; --glow:rgba(154,106,20,.10);
 }
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%; overflow-x:clip}
+html,body{margin:0;padding:0}
 body{
-  margin:0; background:var(--room); color:var(--ink);
-  font-family:var(--read); font-optical-sizing:auto;
-  font-size:23.125px; line-height:1.62; -webkit-font-smoothing:antialiased;
-  overflow-x:clip;
+  background:var(--bg); color:var(--ink);
+  font-family:var(--serif); font-size:var(--fs); line-height:1.62;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  transition:background .5s var(--ease), color .5s var(--ease);
 }
-a{color:inherit}
-:focus-visible{outline:2px solid var(--terracotta);outline-offset:3px}
-.page{
-  max-width:840px; margin:0 auto; background:var(--paper);
-  padding:0 clamp(22px,4.5vw,64px) clamp(28px,4vw,52px);
-  box-shadow:0 0 0 1px var(--line-faint), 0 30px 80px -40px rgba(42,33,24,.5);
+a{color:inherit; text-decoration-color:var(--gold-soft); text-underline-offset:.18em}
+a:hover{text-decoration-color:var(--gold)}
+em{font-style:italic}
+
+/* ---------------------------------------------------------------- chrome */
+#chrome{
+  position:fixed; z-index:40; top:0; left:0; right:0; height:3rem;
+  display:flex; align-items:center; gap:.5rem; padding:0 .6rem;
+  padding-top:env(safe-area-inset-top);
+  background:linear-gradient(to bottom,var(--bg) 55%,transparent);
+  opacity:.5; transition:opacity .35s var(--ease);
 }
-.strip{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:16px 0; font-family:var(--data); font-size:16.25px;
-  letter-spacing:.04em; color:var(--ink-faint);
+#chrome:hover,#chrome:focus-within,body.chrome-on #chrome{opacity:1}
+#chrome button,#chrome a.home{
+  appearance:none; border:0; background:none; color:var(--dim); cursor:pointer;
+  font:inherit; font-size:1.188rem; line-height:1; padding:.5rem .55rem; border-radius:.4rem;
+  text-decoration:none; display:inline-flex; align-items:center;
 }
-.strip .who{color:var(--ink-soft)}
-.strip a.home{color:var(--oak); text-decoration:none; border-bottom:1px solid var(--line)}
-.strip a.home:hover{color:var(--terracotta); border-color:var(--terracotta)}
-.lampbtn{
-  display:flex; align-items:center; gap:8px; background:none; border:none;
-  color:var(--ink-faint); font-family:var(--data); font-size:16.25px;
-  letter-spacing:.04em; cursor:pointer; padding:4px;
+#chrome button:hover,#chrome button:focus-visible,#chrome a.home:hover,#chrome a.home:focus-visible{color:var(--gold); background:var(--glow); outline:none}
+#chrome .tools{margin-left:auto; display:flex}
+#chrome .where{
+  font-size:0.9rem; letter-spacing:.16em; text-transform:uppercase; color:var(--dim);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
 }
-.lampbtn:hover{color:var(--lamp)}
-.lampbtn svg{display:block; overflow:visible}
-.lampbtn.searchbtn svg{fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round}
-.lampbtn .shade{fill:var(--lamp)}
-.lampbtn .base{fill:var(--oak)}
-.lampbtn .halo{fill:var(--glow)}
-.skip-link{
-  position:absolute; top:-48px; left:12px; z-index:1000;
-  background:var(--card); color:var(--oak);
-  font-family:var(--data); font-size:0.875rem; letter-spacing:.08em;
-  text-transform:uppercase; padding:10px 16px;
-  border:1px solid var(--line); text-decoration:none;
-  transition:top .15s ease;
+#where-n{margin-left:.6em; color:var(--gold-soft)}
+/* In paged mode the bar at the foot says where you are and never fades, so the
+   top would only be saying it twice. Flow mode has no bar, and keeps it. */
+body[data-mode=paged] #chrome .where{display:none}
+body[data-size="1"]{--fs:1.18rem}
+body[data-size="2"]{--fs:1.34rem}
+
+/* ------------------------------------------------------------------- toc */
+#toc{
+  position:fixed; z-index:45; inset:0; background:var(--bg);
+  overflow:auto; padding:4.5rem 1.5rem 4rem;
+  animation:fade .28s var(--ease);
 }
-.skip-link:focus{top:12px}
-header.mast{padding:clamp(18px,4vw,36px) 0 clamp(8px,2vw,16px)}
-header.mast h1{
-  font-family:var(--display); font-weight:400; font-size:clamp(40px,6.75vw,62.5px);
-  line-height:1.08; margin:0 0 14px; letter-spacing:.005em;
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.toc-in{max-width:32rem; margin:0 auto}
+.toc-h{font-size:0.9rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin:0 0 1.4rem}
+#toc ol{list-style:none; margin:0; padding:0}
+#toc > .toc-in > ol > li{margin:0 0 .9rem}
+#toc > .toc-in > ol > li > a{
+  display:block; text-decoration:none; font-size:1.325rem; padding:.15rem 0;
+  border-bottom:1px solid var(--faint);
 }
-header.mast .byline{margin:0 0 6px; color:var(--ink-soft); font-size:20px}
-header.mast .thesis{
-  margin:0; font-size:23.125px; color:var(--ink-soft); max-width:44em;
+#toc > .toc-in > ol > li > a:hover{color:var(--gold)}
+.toc-sub{margin:.5rem 0 1.2rem !important; padding-left:0 !important;
+  columns:2; column-gap:1.6rem}
+.toc-sub li{break-inside:avoid; margin:0}
+.toc-sub a{
+  display:block; text-decoration:none; font-size:1.075rem; line-height:1.5;
+  color:var(--dim); padding:.12rem 0;
 }
-.keyband{
-  height:10px; margin:18px 0 0;
-  background-image:repeating-linear-gradient(45deg, var(--terracotta) 0 6px, transparent 6px 12px);
-  opacity:.5;
-}
-.plate-hero{margin:clamp(20px,4vw,34px) 0 0; border-radius:3px; overflow:hidden; box-shadow:var(--shadow)}
-.plate-hero img{display:block; width:100%; height:auto}
-.leadin{margin:clamp(30px,4.5vw,46px) 0 0; color:var(--ink-soft); font-size:21.875px; max-width:40em}
-.leadin a{color:var(--oak); text-decoration:none; border-bottom:1px solid var(--line)}
-.leadin a:hover{color:var(--terracotta); border-color:var(--terracotta)}
-.cta{
-  display:inline-block; margin:28px 0 0; padding:14px 26px;
-  background:var(--oak); color:var(--paper); font-family:var(--data);
-  font-size:17.5px; letter-spacing:.04em; text-decoration:none; border-radius:4px;
-  box-shadow:var(--shadow);
-}
-.cta:hover{background:var(--oak-deep)}
-.note{margin:16px 0 0; color:var(--ink-faint); font-size:17.5px}
-footer{
-  margin-top:clamp(40px,6vw,64px); padding:20px 0 8px; border-top:1px solid var(--line);
-  font-family:var(--data); font-size:15.625px; color:var(--ink-faint);
-}
-footer a{color:var(--oak); text-decoration:none; border-bottom:1px solid var(--line)}
-footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
-@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
-@media (max-width:600px){
-  .strip{flex-wrap:wrap; row-gap:12px}
-  .strip a.home{flex:0 0 100%}
-  .strip-controls{flex:0 0 100%; justify-content:flex-end}
-  .lampbtn span{display:none}
+.toc-sub a:hover{color:var(--gold)}
+.toc-sub .tn{
+  display:inline-block; width:1.6em; color:var(--gold-soft);
+  font-size:0.9em; letter-spacing:.04em;
 }
 
-/* site-wide search overlay (Pagefind) */
-.strip-controls{display:flex; align-items:center; gap:4px}
-.gsearch-overlay{position:fixed; inset:0; z-index:200; background:rgba(0,0,0,.45);
-  display:flex; align-items:flex-start; justify-content:center; padding:10vh 16px 0}
-.gsearch-overlay.hidden{display:none}
-.gsearch-panel{background:var(--paper); color:var(--ink); border-radius:14px; width:100%;
-  max-width:640px; box-shadow:0 20px 60px rgba(0,0,0,.35); padding:14px; max-height:70vh;
-  display:flex; flex-direction:column}
-.gsearch-panel input{width:100%; padding:12px 14px; font-size:20px; border:1px solid var(--line);
-  border-radius:10px; background:var(--paper); color:var(--ink); box-sizing:border-box}
-.gsearch-results{margin-top:10px; overflow:auto}
-.gsearch-hit{display:block; padding:10px 8px; border-radius:8px; text-decoration:none; color:inherit}
-.gsearch-hit:hover{background:var(--card)}
-.gsearch-hit-title{display:block; font-weight:600; font-size:17.5px}
-.gsearch-hit-excerpt{display:block; font-size:16.25px; color:var(--ink-soft); margin-top:2px}
-.gsearch-hit-excerpt mark{background:#ffe082; color:#333; border-radius:3px; padding:0 2px}
-.gsearch-empty{padding:10px 8px; font-size:16.25px; color:var(--ink-soft)}
+/* ----------------------------------------------------------------- pager */
+#pager{position:fixed; inset:0; overflow:hidden}
+.leaf{
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  padding:5rem 1.5rem 4rem; padding-left:max(1.5rem,env(safe-area-inset-left));
+  padding-right:max(1.5rem,env(safe-area-inset-right));
+  opacity:0; transform:translateX(7%); pointer-events:none;
+  transition:opacity .5s var(--ease), transform .5s var(--ease), visibility 0s .5s;
+  visibility:hidden; overflow:hidden;
+}
+.leaf.is-prev{transform:translateX(-7%)}
+.leaf.is-current{opacity:1; transform:none; pointer-events:auto; visibility:visible; transition-delay:0s}
+.leaf-in{width:100%; max-height:100%; overflow:auto; scrollbar-width:none}
+.leaf-in::-webkit-scrollbar{display:none}
+/* A page with more on it than fits says so, quietly, at its own foot — otherwise
+   the Introduction and the appendices look truncated rather than scrollable. */
+.leaf.has-more::after{
+  content:""; position:absolute; left:0; right:0; bottom:2rem; height:5rem;
+  background:linear-gradient(to top,var(--bg),transparent); pointer-events:none;
+}
+.leaf.has-more .leaf-in{padding-bottom:2.5rem}
+body[data-mode=flow] .leaf::after{display:none}
+@media (prefers-reduced-motion:reduce){
+  .leaf{transform:none !important; transition:opacity .3s linear, visibility 0s .3s}
+}
+
+/* ------------------------------------------------------------------ type */
+.verse,.epigraphs,.ded,.antiphon,.cover,.movement-title,.prose-body{max-width:var(--measure); margin:0 auto}
+.stz{margin:0 0 1.9rem}
+.stz:last-child{margin-bottom:0}
+.l{display:block; line-height:1.55}
+.opener{color:var(--gold); letter-spacing:.06em; margin-bottom:.35em}
+.coda{margin-top:3rem; color:var(--dim); font-style:italic}
+.leaf-verse .verse{font-size:1.525em}
+/* The visions run to short lines. Left-aligned inside a centred measure they
+   hug the left third of a wide screen and leave a hole on the right. In paged
+   mode — one vision, one screen, one composition — centre the block on its own
+   longest line instead; the lines stay flush left to each other. Flow mode
+   keeps the fixed left edge, because there a wandering margin is the thing
+   you'd notice. */
+body[data-mode=paged] .leaf-verse{text-align:center}
+body[data-mode=paged] .leaf-verse .verse{display:inline-block; text-align:left}
+.leaf-title h2{
+  font-size:1.875rem; font-weight:400; letter-spacing:.04em; margin:1.2rem 0; text-align:center;
+}
+.movement-title{text-align:center}
+.mt-rule{height:1px; background:linear-gradient(to right,transparent,var(--gold-soft),transparent)}
+.sec-label{
+  font-size:0.925rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold);
+  font-weight:400; margin:0 0 2rem;
+}
+.endleaf .end-line{font-size:1.688rem; margin:1.6rem 0; letter-spacing:.03em}
+.end-nav{margin-top:2.5rem; font-size:1.125rem}
+.end-nav a,.back-nav a{color:var(--gold); text-decoration:none; border-bottom:1px solid var(--gold-soft)}
+
+.cover{text-align:center}
+.cover h1{
+  font-size:clamp(2.5rem,7.5vw,4.25rem); font-weight:400; line-height:1.12;
+  letter-spacing:.01em; margin:2rem 0;
+}
+.cover-rule{height:1px; background:linear-gradient(to right,transparent,var(--gold),transparent)}
+.byline{margin:1.8rem 0 .3rem; letter-spacing:.14em; text-transform:uppercase; font-size:1rem; color:var(--gold)}
+.pub{margin:0; font-size:0.95rem; letter-spacing:.1em; color:var(--dim)}
+
+.epi{margin:0 0 3rem; padding:0; text-align:center}
+.epi:last-child{margin-bottom:0}
+.epi p{margin:0 0 .8rem; font-style:italic; font-size:1.325em}
+.epi cite{font-style:normal; font-size:0.95rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold)}
+.ded{text-align:center}
+.ded .stz{margin-bottom:1.5rem}
+.sig{margin-top:2.4rem; color:var(--dim); font-size:1.15em; font-style:italic}
+
+.prose-body p{margin:0 0 1.15rem}
+.prose-body blockquote{
+  margin:1.5rem 0; padding-left:1.2rem; border-left:1px solid var(--gold-soft);
+  color:var(--dim); font-style:italic;
+}
+.prose-body blockquote p{margin:0 0 .8rem}
+.prose-body blockquote p:last-child{margin:0}
+.brk{text-align:center; color:var(--gold-soft); letter-spacing:.6em; margin:2.4rem 0}
+.inline-verse{margin:1.6rem 0 1.6rem 1.2rem; color:var(--gold)}
+
+/* antiphon: the two voices keep their sides */
+.antiphon{max-width:40rem; font-size:1.425em}
+.ant{margin:0; width:min(88%,22rem)}
+.ant + .ant{margin-top:3.2rem}
+.ant-earth{text-align:left; margin-right:auto; color:var(--ink)}
+.ant-sky{text-align:right; margin-left:auto; color:var(--gold)}
+.ant-sky .l{display:block}
+
+/* The mark that says "this vision is placed on the Cross". It lives in the
+   chrome rather than inside the leaf: the invisible page-turn zones are fixed
+   and stack above the pager, so a mark drawn inside a leaf can be seen but
+   never clicked. One element, retargeted by where(). */
+#cross-mark{
+  position:fixed; z-index:36; right:1.4rem; bottom:4.6rem; color:var(--gold-soft);
+  text-decoration:none; font-size:1.375rem; line-height:1; padding:.5rem; opacity:.5;
+  transition:opacity .3s,color .3s;
+}
+#cross-mark:hover,#cross-mark:focus-visible{opacity:1; color:var(--gold); outline:none}
+body[data-mode=flow] #cross-mark{display:none}
+
+/* ------------------------------------------------------------- page turns */
+/* These used to be invisible until hover, which on a phone means invisible full
+   stop: the book turned pages and never said it could. They stay faintly drawn
+   now — enough to be found, not enough to sit in the reader's eye beside a
+   vision — and come up to full strength when pointed at. */
+.turn{
+  position:fixed; z-index:30; top:3rem; bottom:4.6rem; width:14vw; max-width:7rem; min-width:2.6rem;
+  border:0; background:none; color:var(--dim); cursor:pointer; opacity:.26;
+  transition:opacity .3s var(--ease); font-size:2.5rem; font-family:var(--serif);
+}
+.turn-prev{left:0}
+.turn-next{right:0}
+.turn:hover,.turn:focus-visible{opacity:.7; outline:none}
+.turn[disabled]{opacity:.07; cursor:default}
+body[data-mode=flow] .turn{display:none}
+
+/* ------------------------------------------------------------- page nav */
+/* This does not fade. The horizontal paging is the one thing about this
+   reader nobody arrives already knowing, so where you are and how to move
+   has to be on the page rather than behind a hover or a gesture. */
+#pagenav{
+  position:fixed; z-index:35; left:0; right:0; bottom:0;
+  padding:0 .4rem calc(.15rem + env(safe-area-inset-bottom));
+  background:linear-gradient(to top,var(--bg) 65%,transparent);
+}
+#pagenav .nav-row{display:flex; align-items:center; gap:.2rem; margin-top:-.1rem}
+#pagenav button{
+  appearance:none; border:0; background:none; color:var(--dim); cursor:pointer;
+  font:inherit; font-family:var(--serif); font-size:1.688rem; line-height:1;
+  padding:.25rem .7rem .4rem; border-radius:.4rem;
+}
+#pagenav button:hover,#pagenav button:focus-visible{color:var(--gold); background:var(--glow); outline:none}
+#pagenav button[disabled]{opacity:.22; cursor:default}
+#pagenav button[disabled]:hover{color:var(--dim); background:none}
+#nav-where{
+  flex:1 1 auto; min-width:0; text-align:center;
+  font-size:0.825rem; letter-spacing:.16em; text-transform:uppercase; color:var(--dim);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+
+/* The old rail was a 2px line that only reported. It is the same line to look
+   at, with a thumb and a 14px hit area, so it can also be dragged — 54 leaves
+   is far enough that scrubbing beats pressing next. */
+#rail{
+  appearance:none; -webkit-appearance:none; display:block; width:100%;
+  height:14px; margin:0; background:none; cursor:pointer;
+}
+#rail::-webkit-slider-runnable-track{height:2px; background:var(--faint)}
+#rail::-moz-range-track{height:2px; background:var(--faint)}
+#rail::-webkit-slider-thumb{
+  -webkit-appearance:none; width:9px; height:9px; margin-top:-3.5px;
+  border-radius:50%; background:var(--gold); border:0;
+}
+#rail::-moz-range-thumb{width:9px; height:9px; border-radius:50%; background:var(--gold); border:0}
+#rail:focus-visible{outline:none}
+#rail:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 4px var(--glow)}
+
+/* Flow mode has the browser's own scrollbar and no pages to turn. */
+body[data-mode=flow] #pagenav{display:none}
+
+/* --------------------------------------------------------------- flow mode */
+#back{display:none}
+body[data-mode=flow] #pager{position:static; overflow:visible; padding-top:3rem}
+body[data-mode=flow] .leaf{
+  position:relative; inset:auto; opacity:1; transform:none; visibility:visible;
+  pointer-events:auto; min-height:auto; padding:3.5rem 1.5rem; overflow:visible;
+  border-top:1px solid transparent;
+}
+body[data-mode=flow] .leaf-in{overflow:visible; max-height:none}
+body[data-mode=flow] .leaf-title,body[data-mode=flow] .leaf-cover{padding:5rem 1.5rem}
+body[data-mode=flow] .cross-mark{position:static; display:inline-block; margin-top:1rem}
+body[data-mode=flow] #back{display:block}
+body[data-mode=flow] .turn{display:none}
+
+#back{padding:2rem 1.5rem 6rem}
+.back-sec{max-width:var(--measure); margin:0 auto 5rem}
+.back-sec h2{
+  font-size:1.65rem; font-weight:400; letter-spacing:.02em; margin:0 0 1.4rem;
+  padding-bottom:.7rem; border-bottom:1px solid var(--faint);
+}
+.lede{color:var(--dim); font-style:italic; margin-bottom:2rem}
+.src-note{font-size:1rem; color:var(--dim); margin-top:2rem}
+
+/* ------------------------------------------------------------------ cross */
+.cross-wrap{margin:2rem auto; max-width:30rem}
+#cross-svg{width:100%; height:auto; overflow:visible}
+.cx-beam{fill:var(--glow); stroke:var(--gold-soft); stroke-width:1; transition:fill .3s}
+.cx-hit{fill:transparent; cursor:pointer}
+.cx-dot{fill:var(--bg); stroke:var(--gold-soft); stroke-width:1.5; transition:all .3s var(--ease); pointer-events:none}
+.cx-label{
+  fill:var(--dim); font-family:var(--serif); font-size:23.75px; pointer-events:none;
+  transition:fill .3s;
+}
+.cx-armlabel{text-anchor:middle}
+.cx-beamlabel{text-anchor:middle; font-size:17.5px; font-style:italic; letter-spacing:.06em}
+.cx-node{cursor:pointer}
+.cx-node:hover .cx-dot,.cx-node:focus-visible .cx-dot{fill:var(--gold); stroke:var(--gold); r:20}
+.cx-node:hover .cx-label,.cx-node:focus-visible .cx-label{fill:var(--gold)}
+.cx-node:focus-visible{outline:none}
+.cx-node.on .cx-dot{fill:var(--gold); stroke:var(--gold)}
+.cx-node.on .cx-label{fill:var(--gold)}
+.cx-whole:hover .cx-beam,.cx-whole.on .cx-beam{fill:var(--glow)}
+.cx-readout{
+  min-height:7rem; padding:1.2rem 1.3rem; border:1px solid var(--faint); border-radius:.4rem;
+  background:var(--bg2);
+}
+.cx-readout .cx-hint{margin:0; color:var(--dim); font-style:italic}
+.cx-readout h3{margin:0 0 .5rem; font-size:0.925rem; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--gold); font-weight:400}
+.cx-readout p{margin:0 0 .9rem}
+.cx-readout a{color:var(--gold); text-decoration:none; border-bottom:1px solid var(--gold-soft); font-size:1.15em}
+.cx-captions{display:grid; gap:1.4rem; margin:2.4rem 0 0; font-size:1.125em; color:var(--dim)}
+@media (min-width:44rem){.cx-captions{grid-template-columns:1fr 1fr}}
+.cx-captions p{margin:0}
+
+@media (max-width:32rem){
+  .cx-label{font-size:30px}
+  .leaf{padding:5.25rem 1.5rem 3.5rem}
+  .leaf-verse .verse{font-size:1.375em}
+  /* On a phone the breath between stanzas has to come out of the same screen
+     as the stanzas. Tighten it rather than let a vision spill onto a scroll. */
+  .stz{margin-bottom:1.812rem}
+  .ded .stz{margin-bottom:1.438rem}
+}
+
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Book","name":"Remember Who You Are","url":"https://johnrecords.org/remember-who-you-are/","author":{"@type":"Person","name":"John Records"}}
-</script>
 </head>
-<body>
-<a class="skip-link" href="#main">Skip to content</a>
-<div class="page" data-pagefind-body>
+<body data-theme="night" data-mode="paged">
 
-  <div class="strip" data-pagefind-ignore>
-    <a class="home" href="/">&larr; John&rsquo;s Reading Nook</a>
-    <div class="strip-controls">
-      <button class="lampbtn searchbtn" type="button" data-gsearch-open aria-label="Search the site" title="Search the site">
-        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="11" cy="11" r="7"/>
-          <path d="M21 21l-4.35-4.35"/>
-        </svg>
-        <span>Search</span>
-      </button>
-      <button class="lampbtn" id="lamp" type="button" aria-pressed="false" aria-label="Light the lamp">
-        <svg width="22" height="22" viewBox="0 0 26 26" aria-hidden="true">
-          <circle class="halo" cx="13" cy="9" r="12"/>
-          <path class="shade" d="M5 11 L9 3 H17 L21 11 Z"/>
-          <rect class="base" x="12" y="11" width="2" height="9"/>
-          <path class="base" d="M8 22 Q13 19 18 22 L18 23 H8 Z"/>
-        </svg>
-        <span id="lampword">Light the lamp</span>
-      </button>
-    </div>
+<header id="chrome">
+  <a class="home" href="https://johnrecords.org/" aria-label="Return to John's Reading Nook" title="John's Reading Nook"><span class="ic">⌂</span></a>
+  <button id="btn-toc" aria-label="Contents" aria-expanded="false"><span class="ic">☰</span></button>
+  <div class="where"><span id="where-mv">Remember Who You Are</span><span id="where-n"></span></div>
+  <div class="tools">
+    <button id="btn-flow" aria-label="Switch to continuous scrolling" aria-pressed="false"><span class="ic">≡</span></button>
+    <button id="btn-size" aria-label="Text size"><span class="ic">A</span></button>
+    <button id="btn-theme" aria-label="Day or night"><span class="ic">☾</span></button>
   </div>
+</header>
 
-  <div id="gsearch-overlay" class="gsearch-overlay hidden" role="dialog" aria-modal="true" aria-label="Search johnrecords.org" data-pagefind-ignore>
-    <div class="gsearch-panel">
-      <input id="gsearch-input" type="search" placeholder="Search johnrecords.org&hellip; (Esc to close)" autocomplete="off" />
-      <div id="gsearch-results" class="gsearch-results"></div>
-    </div>
+<nav id="toc" hidden aria-label="Contents">
+  <div class="toc-in">
+    <p class="toc-h">Contents</p>
+    <ol>
+  <li><a href="#cover" data-goto="cover">Cover</a>
+    
+  </li>
+  <li><a href="#fm-epigraph" data-goto="fm-epigraph">Epigraphs</a>
+    
+  </li>
+  <li><a href="#fm-dedication" data-goto="fm-dedication">Dedication</a>
+    
+  </li>
+  <li><a href="#fm-intro" data-goto="fm-intro">Introduction</a>
+    
+  </li>
+  <li><a href="#t-remember" data-goto="t-remember">Remember</a>
+    
+  </li>
+  <li><a href="#t-before-and-always" data-goto="t-before-and-always">Before and Always</a>
+    
+  </li>
+  <li><a href="#t-creator-creation-and-then" data-goto="t-creator-creation-and-then">Creator Creation and Then</a>
+    
+  </li>
+  <li><a href="#t-jigsaw-puzzle" data-goto="t-jigsaw-puzzle">Jigsaw Puzzle</a>
+    <ol class="toc-sub"><li><a href="#jp-01" data-goto="jp-01"><span class="tn">1</span>a cloud of golden butterflies</a></li><li><a href="#jp-02" data-goto="jp-02"><span class="tn">2</span>the Universe</a></li><li><a href="#jp-03" data-goto="jp-03"><span class="tn">3</span>a caged furious tiger</a></li><li><a href="#jp-04" data-goto="jp-04"><span class="tn">4</span>a girl, age four, Thea by name</a></li><li><a href="#jp-05" data-goto="jp-05"><span class="tn">5</span>a man standing</a></li><li><a href="#jp-06" data-goto="jp-06"><span class="tn">6</span>a boy, ageless</a></li><li><a href="#jp-07" data-goto="jp-07"><span class="tn">7</span>the dragon</a></li><li><a href="#jp-08" data-goto="jp-08"><span class="tn">8</span>kissed by the breeze</a></li><li><a href="#jp-09" data-goto="jp-09"><span class="tn">9</span>what lies beneath</a></li><li><a href="#jp-10" data-goto="jp-10"><span class="tn">10</span>He who suffers</a></li><li><a href="#jp-11" data-goto="jp-11"><span class="tn">11</span>the golden mist</a></li><li><a href="#jp-12" data-goto="jp-12"><span class="tn">12</span>a demon</a></li><li><a href="#jp-13" data-goto="jp-13"><span class="tn">13</span>flow</a></li><li><a href="#jp-14" data-goto="jp-14"><span class="tn">14</span>Apollo</a></li><li><a href="#jp-15" data-goto="jp-15"><span class="tn">15</span>the Grim Reaper</a></li><li><a href="#jp-16" data-goto="jp-16"><span class="tn">16</span>the green realm</a></li><li><a href="#jp-17" data-goto="jp-17"><span class="tn">17</span>the Green Man with wild wooden hair</a></li><li><a href="#jp-18" data-goto="jp-18"><span class="tn">18</span>the giggling</a></li><li><a href="#jp-19" data-goto="jp-19"><span class="tn">19</span>Athena</a></li><li><a href="#jp-20" data-goto="jp-20"><span class="tn">20</span>Thor</a></li><li><a href="#jp-21" data-goto="jp-21"><span class="tn">21</span>Mount Lamborn</a></li><li><a href="#jp-22" data-goto="jp-22"><span class="tn">22</span>the wild</a></li><li><a href="#jp-23" data-goto="jp-23"><span class="tn">23</span>a grass blade</a></li><li><a href="#jp-24" data-goto="jp-24"><span class="tn">24</span>the eternal</a></li><li><a href="#jp-25" data-goto="jp-25"><span class="tn">25</span>the finder of</a></li><li><a href="#jp-26" data-goto="jp-26"><span class="tn">26</span>a wakening near human being</a></li></ol>
+  </li>
+  <li><a href="#t-in-my-world" data-goto="t-in-my-world">I Am In My World and My World Is In Me</a>
+    <ol class="toc-sub"><li><a href="#im-1" data-goto="im-1"><span class="tn">1</span>the slow moist brown</a></li><li><a href="#im-2" data-goto="im-2"><span class="tn">2</span>the ceaseless song</a></li><li><a href="#im-3" data-goto="im-3"><span class="tn">3</span>the click of sparrow’s feet</a></li><li><a href="#im-4" data-goto="im-4"><span class="tn">4</span>my shadow</a></li><li><a href="#im-5" data-goto="im-5"><span class="tn">5</span>the rollicking leaves</a></li><li><a href="#im-6" data-goto="im-6"><span class="tn">6</span>the vast wheeling Universe</a></li><li><a href="#im-7" data-goto="im-7"><span class="tn">7</span>the good horse of my body</a></li></ol>
+  </li>
+  <li><a href="#t-integral-man" data-goto="t-integral-man">The Birth of the Integral Man</a>
+    <ol class="toc-sub"><li><a href="#integral-1-1" data-goto="integral-1-1"><span class="tn">1</span>I am a man</a></li><li><a href="#integral-1-2" data-goto="integral-1-2"><span class="tn">2</span>with a job and a mortgage</a></li><li><a href="#integral-1-3" data-goto="integral-1-3"><span class="tn">3</span>a wife and two kids</a></li><li><a href="#integral-1-4" data-goto="integral-1-4"><span class="tn">4</span>a life much like yours</a></li><li><a href="#integral-1-5" data-goto="integral-1-5"><span class="tn">5</span>This is but one room</a></li><li><a href="#integral-1-6" data-goto="integral-1-6"><span class="tn">6</span>in the mansion I am</a></li><li><a href="#integral-1-7" data-goto="integral-1-7"><span class="tn">7</span>I am</a></li></ol>
+  </li>
+      <li><a href="#the-cross" data-goto="the-cross">The Cross Where the Old Man Hangs Dying</a></li>
+      <li><a href="#energy-process-work" data-goto="energy-process-work">Energy Process Work and Robert Noha Sensei</a></li><li><a href="#hariharananda" data-goto="hariharananda">Paramahamsa Hariharananda and Kriya Yoga</a></li>
+      <li><a href="#colophon" data-goto="colophon">Colophon</a></li>
+    </ol>
   </div>
+</nav>
 
-  <header class="mast">
-    <h1>Remember Who You Are</h1>
-    <p class="byline">A poem</p>
-    <p class="thesis">The Creator waking up in and as Creation — in and as you and me. An autobiography of sorts.</p>
-  </header>
+<main data-pagefind-body data-pagefind-meta="title:Remember Who You Are" id="pager">
+  <article class="leaf leaf-cover" id="cover"
+     
+     
+     
+     >
+    <div class="leaf-in">
+  <div class="cover">
+    <div class="cover-rule"></div>
+    <h1>Remember<br>Who You&nbsp;Are</h1>
+    <div class="cover-rule"></div>
+    <p class="byline">John Records</p>
+    <p class="pub">Petitsa Press · 2004</p>
+  </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="fm-epigraph"
+     
+     
+     
+     >
+    <div class="leaf-in">
+  <div class="epigraphs">
+    
+      <blockquote class="epi">
+        <p>The eye with which I see God is the same eye with which God sees me: my eye and God’s eye are one eye, one seeing, one knowing and one love.</p>
+        <cite>Meister Eckhart</cite>
+      </blockquote>
+      <blockquote class="epi">
+        <p>That Thou Art.</p>
+        <cite>Samveda - Chandogyopanisad</cite>
+      </blockquote>
+  </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="fm-dedication"
+     
+     
+     
+     >
+    <div class="leaf-in">
+  <div class="ded">
+    <h2 class="sec-label">Dedication and Acknowledgements</h2>
+    <div class="stz"><span class="l">To Robert Noha Sensei</span><span class="l">and Paramahamsa Hariharananda</span></div><div class="stz"><span class="l">With appreciation to the lineages that have</span><span class="l">supported and developed me:</span></div><div class="stz"><span class="l">The Kriya Yoga of Babaji, Lahiri Mahasaya,</span><span class="l">Swami Sriyukteshwarji,</span><span class="l">Paramahamsa Yogananda,</span><span class="l">Paramahamsa Hariharananda,</span><span class="l">and Paramahamsa Prajnanananda</span></div><div class="stz"><span class="l">and</span></div><div class="stz"><span class="l">The Aikido That Is Not Seen</span><span class="l">of Morihei Uyeshiba (O Sensei),</span><span class="l">Robert Nadeau Sensei,</span><span class="l">and Robert Noha Sensei</span></div><div class="stz"><span class="l">Thanks to Paramahamsa Prajnanananda and Onye Onyemaechi</span><span class="l">whose prayers are the wind in my sail</span></div><div class="stz"><span class="l">Thanks to John Tarrant Roshi for “the good horse”</span></div>
+  </div></div>
+  </article>
+  <article class="leaf leaf-prose" id="fm-intro"
+     data-chapter="1"
+     
+     
+     >
+    <div class="leaf-in">
+    <div class="prose-body">
+      <h2 class="sec-label">Introduction</h2>
+      <p id="intro-p0">This is a story of the Creator, Creation, and how the Creator is waking up in and as Creation, in and as You.  If you read it aloud, you might better experience the place from which it comes.</p><p id="intro-p1"><em>Remember Who You Are</em> is based on experiences during two and a half years doing Energy Process Work with Robert Noha Sensei, on a foundation of 20 years of meditation and allied disciplines.  It is dedicated to Noha Sensei because he has been my docent in this work, and to Paramahamsa Hariharananda because at critical times he has participated in, supported and emerged more fully through the process.</p><p id="intro-p2">The images in <em>Remember Who You Are</em> are, for the most part, literal.  I am describing things that I actually experienced, things that were quite real to me.  It was amazing and sometimes unsettling to experience myself as this kaleidoscope of beings and places.  It was like a series of incarnations, and my sense of Self, of who I am, remained familiar in every transformation.  The “I” that is looking out through my eyes, the “I” that is the Witness, was the same whether my eyes were those of a little girl or a dragon.  “I am” was the common element in each of these turnings of the kaleidoscope.</p><p id="intro-p3">Who wrote <em>Remember Who You Are</em>?  A man at a time and in a place typed it.  The “I” who is speaking in the poem is the “I” who is listening, who is reading right now, the “I” of you the reader, the only “I” there is.  As Meister Eckhart said 700 years ago, ”The eye with which I see God is the same eye with which God sees me: my eye and God’s eye are one eye, one seeing, one knowing and one love.”  That Thou Art.</p><p id="intro-p4">The descriptions in the poem are abbreviated.  In the Appendices, you’ll find a comprehensive description of a few of the Energy Process Work sessions, as well as more information about Energy Process Work, Noha Sensei, and Paramahamsa Hariharananda.</p>
+      <p class="sig">John Records<br>Petaluma, California<br>October, 2004</p>
+    </div></div>
+  </article>
+  <article class="leaf leaf-title" id="t-remember"
+     data-chapter="2"
+     data-movement="remember"
+     
+     >
+    <div class="leaf-in">
+    <div class="movement-title">
+      <div class="mt-rule"></div>
+      <h2>Remember</h2>
+      <div class="mt-rule"></div>
+    </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="remember-1"
+     data-chapter="2"
+     data-movement="remember"
+     
+     >
+    <div class="leaf-in"><div class="verse" id="remember-1-body"><div class="stz" id="remember-1-b0"><span class="l">The Voice said</span><span class="l">Remember who you are</span><span class="l">Remember who you are</span><span class="l">Remember who you are</span></div></div></div>
+  </article>
+  <article class="leaf leaf-title" id="t-before-and-always"
+     data-chapter="3"
+     data-movement="before-and-always"
+     
+     >
+    <div class="leaf-in">
+    <div class="movement-title">
+      <div class="mt-rule"></div>
+      <h2>Before and Always</h2>
+      <div class="mt-rule"></div>
+    </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="before-1"
+     data-chapter="3"
+     data-movement="before-and-always"
+     
+     data-cross="crown">
+    <div class="leaf-in"><div class="verse" id="before-1-body"><div class="stz" id="before-1-b0"><span class="l">I am  I am  I am</span><span class="l">I</span></div><div class="stz" id="before-1-b1"><span class="l">I am</span></div><div class="stz" id="before-1-b2"><span class="l">Brahman</span><span class="l">Brahman, the formless</span><span class="l">beyond and before</span><span class="l">One without context</span><span class="l">not first, but</span><span class="l">Only</span><span class="l">no one to talk to</span><span class="l">no one to listen</span><span class="l">nothing to say</span><span class="l">to no one</span><span class="l">but Brahman</span></div><div class="stz" id="before-1-b3"><span class="l">I am</span></div><div class="stz" id="before-1-b4"><span class="l">the substrate</span><span class="l">the backdrop</span><span class="l">the stage</span><span class="l">not just the world</span><span class="l">but where the world happens</span></div></div></div>
+  </article>
+  <article class="leaf leaf-title" id="t-creator-creation-and-then"
+     data-chapter="4"
+     data-movement="creator-creation-and-then"
+     
+     >
+    <div class="leaf-in">
+    <div class="movement-title">
+      <div class="mt-rule"></div>
+      <h2>Creator Creation and Then</h2>
+      <div class="mt-rule"></div>
+    </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="creator-1"
+     data-chapter="4"
+     data-movement="creator-creation-and-then"
+     
+     data-cross="forehead">
+    <div class="leaf-in"><div class="verse" id="creator-1-body"><div class="stz" id="creator-1-b0"><span class="l">I am</span></div><div class="stz" id="creator-1-b1"><span class="l">Purusha</span><span class="l">Saguna Brahman</span><span class="l">I am the Christ</span><span class="l">Jism of Brahman</span></div><div class="stz" id="creator-1-b2"><span class="l">I am the Person</span><span class="l">I birthed the Cosmos</span><span class="l">I spun it out</span><span class="l">From the palms of my hands</span><span class="l">I gathered it up</span><span class="l">I held it</span><span class="l">I cupped it</span><span class="l">and blessed it with life</span><span class="l">I gave it my breath</span><span class="l">and then I dove</span><span class="l">into it</span><span class="l">immersed and merging</span><span class="l">pervading</span><span class="l">once fading</span><span class="l">now waking again</span><span class="l">I am</span></div></div></div>
+  </article>
+  <article class="leaf leaf-title" id="t-jigsaw-puzzle"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     
+     >
+    <div class="leaf-in">
+    <div class="movement-title">
+      <div class="mt-rule"></div>
+      <h2>Jigsaw Puzzle</h2>
+      <div class="mt-rule"></div>
+    </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="jp-01"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     data-n="1" data-of="26"
+     >
+    <div class="leaf-in"><div class="verse" id="jp-01-body">
+            <div class="stz" id="jp-01-a"><span class="l opener">I am</span><span class="l">a cloud of golden butterflies</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="jp-02"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     data-n="2" data-of="26"
+     data-cross="throat">
+    <div class="leaf-in"><div class="verse" id="jp-02-body">
+            <div class="stz" id="jp-02-a"><span class="l opener">I am</span><span class="l">the Universe</span><span class="l">turning</span><span class="l">turning</span><span class="l">slow turning</span><span class="l">stars my cells</span><span class="l">gravity my awareness</span><span class="l">deep velvet spaciousness my soul</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="jp-03"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     data-n="3" data-of="26"
+     >
+    <div class="leaf-in"><div class="verse" id="jp-03-body">
+            <div class="stz" id="jp-03-a"><span class="l opener">I am</span><span class="l">a caged furious tiger</span><span class="l">trapped bound shrunken</span><span class="l">then</span><span class="l">released grateful growing</span><span class="l">finally myself and free</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="jp-04"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     data-n="4" data-of="26"
+     >
+    <div class="leaf-in"><div class="verse" id="jp-04-body">
+            <div class="stz" id="jp-04-a"><span class="l opener">I am</span><span class="l">a girl, age four, Thea by name</span><span class="l">hands on my hips</span><span class="l">head cocked</span><span class="l">smiling</span><span class="l">looking the world in the eye</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="jp-05"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     data-n="5" data-of="26"
+     >
+    <div class="leaf-in"><div class="verse" id="jp-05-body">
+            <div class="stz" id="jp-05-a"><span class="l opener">I am</span><span class="l">a man standing</span><span class="l">on a white block on a dark plain</span><span class="l">like an ant on a sugar cube</span><span class="l">facing red rushing Armageddon</span><span class="l">ready to suck it into my blood</span><span class="l">to eat it</span><span class="l">to feast on it</span><span class="l">to prevail</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="jp-06"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     data-n="6" data-of="26"
+     >
+    <div class="leaf-in"><div class="verse" id="jp-06-body">
+            <div class="stz" id="jp-06-a"><span class="l opener">I am</span><span class="l">a boy, ageless</span><span class="l">running forever</span><span class="l">in a sun soaked meadow</span><span class="l">high grass waving in the warm wind</span><span class="l">kissed and tickled by the grass and the wind</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="jp-07"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     data-n="7" data-of="26"
+     data-cross="abdomen">
+    <div class="leaf-in"><div class="verse" id="jp-07-body">
+            <div class="stz" id="jp-07-a"><span class="l opener">I am</span><span class="l">the dragon</span><span class="l">with vast black wings</span><span class="l">rooted in volcanoes aburst with red power</span><span class="l">bones of bronze</span><span class="l">and thick dense hide</span><span class="l">and muscles big as whole horses</span><span class="l">shrouded eyes that are themselves worlds</span><span class="l">green eyes</span><span class="l">green of sunlight filtering through sea</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="jp-08"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     data-n="8" data-of="26"
+     data-cross="heart">
+    <div class="leaf-in"><div class="verse" id="jp-08-body">
+            <div class="stz" id="jp-08-a"><span class="l opener">I am</span><span class="l">kissed by the breeze</span><span class="l">caressed by the zephyr</span><span class="l">opened wide and wanting</span><span class="l">ravished by the wind</span><span class="l">nothing but the wind</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="jp-09"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     data-n="9" data-of="26"
+     data-cross="bottom">
+    <div class="leaf-in"><div class="verse" id="jp-09-body">
+            <div class="stz" id="jp-09-a"><span class="l opener">I am</span><span class="l">what lies beneath</span><span class="l">what comes before</span><span class="l">what emerges as mountain just before thunder</span><span class="l">lightning blasting again and again</span><span class="l">giving my stillness dynamo hum</span><span class="l">then thunder an echo of</span><span class="l">what lies beneath</span><span class="l">what comes before</span><span class="l">what remains as mountain just after thunder</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="jp-10"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     data-n="10" data-of="26"
+     >
+    <div class="leaf-in"><div class="verse" id="jp-10-body">
+            <div class="stz" id="jp-10-a"><span class="l opener">I am</span><span class="l">He who suffers</span><span class="l">pulped maimed sponge blood steps</span><span class="l">torn raw limping agony</span><span class="l">crucified forever on the Cross of all flesh</span><span class="l">hanging there right now</span><span class="l">for love and for justice</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="jp-11"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     data-n="11" data-of="26"
+     data-cross="heaven">
+    <div class="leaf-in"><div class="verse" id="jp-11-body">
+            <div class="stz" id="jp-11-a"><span class="l opener">I am</span><span class="l">the golden mist</span><span class="l">infiltrating Heaven</span><span class="l">relentless gentle gift</span><span class="l">of Morihei Uyeshiba</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="jp-12"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     data-n="12" data-of="26"
+     >
+    <div class="leaf-in"><div class="verse" id="jp-12-body">
+            <div class="stz" id="jp-12-a"><span class="l opener">I am</span><span class="l">a demon</span><span class="l">torqued</span><span class="l">warped</span><span class="l">defiant</span><span class="l">unbreakable</span><span class="l">yearning</span><span class="l">set free and smiling</span><span class="l">emerging then merging</span><span class="l">into one again</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="jp-13"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     data-n="13" data-of="26"
+     data-cross="genital">
+    <div class="leaf-in"><div class="verse" id="jp-13-body">
+            <div class="stz" id="jp-13-a"><span class="l opener">I am</span><span class="l">flow</span><span class="l">supple waves</span><span class="l">that surge through my body</span><span class="l">Poseidon is stirring</span><span class="l">with tsunami power</span><span class="l">compressed in the depths</span><span class="l">of Ocean</span><span class="l">of Being</span><span class="l">the deeper I go</span><span class="l">the stronger I am</span><span class="l">Poseidon is stirring</span><span class="l">in the tide of my blood</span><span class="l">the pulse of my cells</span><span class="l">in the water I am</span><span class="l">Poseidon is stirring</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="jp-14"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     data-n="14" data-of="26"
+     >
+    <div class="leaf-in"><div class="verse" id="jp-14-body">
+            <div class="stz" id="jp-14-a"><span class="l opener">I am</span><span class="l">Apollo</span><span class="l">fine supple and golden</span><span class="l">succulent</span><span class="l">tasty</span><span class="l">seeing</span><span class="l">adoring</span><span class="l">the humble and meek</span><span class="l">the grain of the wood</span><span class="l">the tang of the metal</span><span class="l">the dust from the skin</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="jp-15"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     data-n="15" data-of="26"
+     >
+    <div class="leaf-in"><div class="verse" id="jp-15-body">
+            <div class="stz" id="jp-15-a"><span class="l opener">I am</span><span class="l">the Grim Reaper</span><span class="l">impersonal person</span><span class="l">my impartial gaze</span><span class="l">turns life into vapor</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="jp-16"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     data-n="16" data-of="26"
+     data-cross="cosmos">
+    <div class="leaf-in"><div class="verse" id="jp-16-body">
+            <div class="stz" id="jp-16-a"><span class="l opener">I am</span><span class="l">the green realm</span><span class="l">the sweet matter world</span><span class="l">the world that I made</span><span class="l">where I’m always welcome</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="jp-17"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     data-n="17" data-of="26"
+     >
+    <div class="leaf-in"><div class="verse" id="jp-17-body">
+            <div class="stz" id="jp-17-a"><span class="l opener">I am</span><span class="l">the Green Man with wild wooden hair</span><span class="l">fractaling burgeoning</span><span class="l">squirting sweet offshoots</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="jp-18"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     data-n="18" data-of="26"
+     >
+    <div class="leaf-in"><div class="verse" id="jp-18-body">
+            <div class="stz" id="jp-18-a"><span class="l opener">I am</span><span class="l">the giggling</span><span class="l">quivering quanta</span><span class="l">warm in the jostling hive of my sibs</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="jp-19"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     data-n="19" data-of="26"
+     >
+    <div class="leaf-in"><div class="verse" id="jp-19-body">
+            <div class="stz" id="jp-19-a"><span class="l opener">I am</span><span class="l">Athena</span><span class="l">dangerous and strong</span><span class="l">indifferent to full breasts</span><span class="l">that never give milk</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="jp-20"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     data-n="20" data-of="26"
+     >
+    <div class="leaf-in"><div class="verse" id="jp-20-body">
+            <div class="stz" id="jp-20-a"><span class="l opener">I am</span><span class="l">Thor</span><span class="l">empowered by Odin</span><span class="l">one with Mjolnir</span><span class="l">I always stand ready</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="jp-21"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     data-n="21" data-of="26"
+     >
+    <div class="leaf-in"><div class="verse" id="jp-21-body">
+            <div class="stz" id="jp-21-a"><span class="l opener">I am</span><span class="l">Mount Lamborn</span><span class="l">half-holding the valley</span><span class="l">arms always open</span><span class="l">waiting for yours</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="jp-22"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     data-n="22" data-of="26"
+     >
+    <div class="leaf-in"><div class="verse" id="jp-22-body">
+            <div class="stz" id="jp-22-a"><span class="l opener">I am</span><span class="l">the wild</span><span class="l">the fluid gold corpuscle</span><span class="l">already always abundantly everywhere</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="jp-23"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     data-n="23" data-of="26"
+     >
+    <div class="leaf-in"><div class="verse" id="jp-23-body">
+            <div class="stz" id="jp-23-a"><span class="l opener">I am</span><span class="l">a grass blade</span><span class="l">complete in myself</span><span class="l">crisp curved and erect</span><span class="l">my roots stretch for water</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="jp-24"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     data-n="24" data-of="26"
+     >
+    <div class="leaf-in"><div class="verse" id="jp-24-body">
+            <div class="stz" id="jp-24-a"><span class="l opener">I am</span><span class="l">the eternal</span><span class="l">arm of the Cross</span><span class="l">sweet lingering kiss</span><span class="l">of Heaven and Earth</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="jp-25"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     data-n="25" data-of="26"
+     >
+    <div class="leaf-in"><div class="verse" id="jp-25-body">
+            <div class="stz" id="jp-25-a"><span class="l opener">I am</span><span class="l">the finder of</span><span class="l">all that was lost</span><span class="l">the shards of my Soul</span><span class="l">assembled at last</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="jp-26"
+     data-chapter="5"
+     data-movement="jigsaw-puzzle"
+     data-n="26" data-of="26"
+     data-cross="cross">
+    <div class="leaf-in"><div class="verse" id="jp-26-body">
+            <div class="stz" id="jp-26-a"><span class="l opener">I am</span><span class="l">a wakening near human being</span><span class="l">embodied electric</span><span class="l">stark staring awareness</span><span class="l">the pinpoint eternal infinite juncture</span><span class="l">where lingering kiss of Heaven and Earth</span><span class="l">meets stacked self effulgent</span><span class="l">chakra realms</span><span class="l">forming the Cross</span><span class="l">where the old man hangs dying</span></div>
+            <div class="stz coda" id="jp-26-coda"><span class="l">I</span><span class="l">who am speaking</span><span class="l">don’t make the distinction</span><span class="l">the old man the new man</span><span class="l">are facets of me</span></div>
+          </div></div>
+  </article>
+  <article class="leaf leaf-title" id="t-in-my-world"
+     data-chapter="6"
+     data-movement="in-my-world"
+     
+     >
+    <div class="leaf-in">
+    <div class="movement-title">
+      <div class="mt-rule"></div>
+      <h2>I Am In My World and My World Is In Me</h2>
+      <div class="mt-rule"></div>
+    </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="im-1"
+     data-chapter="6"
+     data-movement="in-my-world"
+     data-n="1" data-of="7"
+     >
+    <div class="leaf-in"><div class="verse" id="im-1-body">
+            <div class="stz" id="im-1-a"><span class="l opener">In me</span><span class="l">the slow moist brown</span><span class="l">green</span><span class="l">being of the trees</span><span class="l">deep earth energy pouring from them</span><span class="l">like the ocean fog rolling in</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="im-2"
+     data-chapter="6"
+     data-movement="in-my-world"
+     data-n="2" data-of="7"
+     >
+    <div class="leaf-in"><div class="verse" id="im-2-body">
+            <div class="stz" id="im-2-a"><span class="l opener">In me</span><span class="l">the ceaseless song</span><span class="l">the golden choir</span><span class="l">whose singing is their being</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="im-3"
+     data-chapter="6"
+     data-movement="in-my-world"
+     data-n="3" data-of="7"
+     >
+    <div class="leaf-in"><div class="verse" id="im-3-body">
+            <div class="stz" id="im-3-a"><span class="l opener">In me</span><span class="l">the click of sparrow’s feet</span><span class="l">as she hops on the asphalt</span><span class="l">her workmanlike pleasure</span><span class="l">as she flutters in her dust bath</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="im-4"
+     data-chapter="6"
+     data-movement="in-my-world"
+     data-n="4" data-of="7"
+     >
+    <div class="leaf-in"><div class="verse" id="im-4-body">
+            <div class="stz" id="im-4-a"><span class="l opener">In me</span><span class="l">my shadow</span><span class="l">as it glides on the ground</span><span class="l">the sweet tinge of tingle</span><span class="l">as they brush together</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="im-5"
+     data-chapter="6"
+     data-movement="in-my-world"
+     data-n="5" data-of="7"
+     >
+    <div class="leaf-in"><div class="verse" id="im-5-body">
+            <div class="stz" id="im-5-a"><span class="l opener">In me</span><span class="l">the rollicking leaves</span><span class="l">as they skritch across</span><span class="l">the pavement</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="im-6"
+     data-chapter="6"
+     data-movement="in-my-world"
+     data-n="6" data-of="7"
+     >
+    <div class="leaf-in"><div class="verse" id="im-6-body">
+            <div class="stz" id="im-6-a"><span class="l opener">In me</span><span class="l">the vast wheeling Universe</span><span class="l">and the spaciousness</span><span class="l">that holds it</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-verse" id="im-7"
+     data-chapter="6"
+     data-movement="in-my-world"
+     data-n="7" data-of="7"
+     >
+    <div class="leaf-in"><div class="verse" id="im-7-body">
+            <div class="stz" id="im-7-a"><span class="l opener">In me</span><span class="l">the good horse of my body</span><span class="l">and how much it loves me</span><span class="l">old aches like crushed glass</span><span class="l">that simply is there</span></div>
+            
+          </div></div>
+  </article>
+  <article class="leaf leaf-title" id="t-integral-man"
+     data-chapter="7"
+     data-movement="integral-man"
+     
+     >
+    <div class="leaf-in">
+    <div class="movement-title">
+      <div class="mt-rule"></div>
+      <h2>The Birth of the Integral Man</h2>
+      <div class="mt-rule"></div>
+    </div></div>
+  </article>
+  <article class="leaf leaf-antiphon" id="integral-1-1"
+     data-chapter="7"
+     data-movement="integral-man"
+     data-n="1" data-of="7"
+     >
+    <div class="leaf-in"><div class="antiphon"><div class="ant ant-earth" id="integral-1-b0"><span class="l">I am a man</span></div><div class="ant ant-sky" id="integral-1-b1"><span class="l">I am true Joy</span><span class="l">infinite, timeless</span><span class="l">laughing in every</span><span class="l">moment and mote</span></div></div></div>
+  </article>
+  <article class="leaf leaf-antiphon" id="integral-1-2"
+     data-chapter="7"
+     data-movement="integral-man"
+     data-n="2" data-of="7"
+     >
+    <div class="leaf-in"><div class="antiphon"><div class="ant ant-earth" id="integral-1-b2"><span class="l">with a job and a mortgage</span></div><div class="ant ant-sky" id="integral-1-b3"><span class="l">I am red Shakti</span><span class="l">first felt as flame</span><span class="l">then sweet silent roaring</span><span class="l">reverberation</span><span class="l">the Big Bang still echoes</span><span class="l">as this I am Om</span></div></div></div>
+  </article>
+  <article class="leaf leaf-antiphon" id="integral-1-3"
+     data-chapter="7"
+     data-movement="integral-man"
+     data-n="3" data-of="7"
+     >
+    <div class="leaf-in"><div class="antiphon"><div class="ant ant-earth" id="integral-1-b4"><span class="l">a wife and two kids</span></div><div class="ant ant-sky" id="integral-1-b5"><span class="l">Joy meeting Om</span><span class="l">again and forever</span><span class="l">love born every instant</span><span class="l">and I am this union</span></div></div></div>
+  </article>
+  <article class="leaf leaf-antiphon" id="integral-1-4"
+     data-chapter="7"
+     data-movement="integral-man"
+     data-n="4" data-of="7"
+     >
+    <div class="leaf-in"><div class="antiphon"><div class="ant ant-earth" id="integral-1-b6"><span class="l">a life much like yours</span></div><div class="ant ant-sky" id="integral-1-b7"><span class="l">As often parting</span><span class="l">let there be Another</span><span class="l">to love, then to merge</span><span class="l">then to part once again</span></div></div></div>
+  </article>
+  <article class="leaf leaf-antiphon" id="integral-1-5"
+     data-chapter="7"
+     data-movement="integral-man"
+     data-n="5" data-of="7"
+     >
+    <div class="leaf-in"><div class="antiphon"><div class="ant ant-earth" id="integral-1-b8"><span class="l">This is but one room</span></div><div class="ant ant-sky" id="integral-1-b9"><span class="l">I am these forces</span><span class="l">I am their playground</span><span class="l">I am their union</span><span class="l">and their dissolution</span></div></div></div>
+  </article>
+  <article class="leaf leaf-antiphon" id="integral-1-6"
+     data-chapter="7"
+     data-movement="integral-man"
+     data-n="6" data-of="7"
+     >
+    <div class="leaf-in"><div class="antiphon"><div class="ant ant-earth" id="integral-1-b10"><span class="l">in the mansion I am</span></div><div class="ant ant-sky" id="integral-1-b11"><span class="l">I am Creator</span><span class="l">and I am Creation</span><span class="l">look into yourself</span><span class="l">and know that</span><span class="l">I am</span></div></div></div>
+  </article>
+  <article class="leaf leaf-antiphon" id="integral-1-7"
+     data-chapter="7"
+     data-movement="integral-man"
+     data-n="7" data-of="7"
+     >
+    <div class="leaf-in"><div class="antiphon"><div class="ant ant-earth" id="integral-1-b12"><span class="l">I am</span></div></div></div>
+  </article>
+  <article class="leaf leaf-title" id="end"
+     
+     
+     
+     >
+    <div class="leaf-in">
+  <div class="movement-title endleaf">
+    <div class="mt-rule"></div>
+    <p class="end-line">That Thou Art.</p>
+    <div class="mt-rule"></div>
+    <p class="end-nav"><a href="#the-cross" data-goback>The Cross, and the appendices &rarr;</a></p>
+  </div></div>
+  </article></main>
 
-  <main id="main" tabindex="-1">
+<div id="back">
+<section class="back-sec" id="the-cross">
+  <h2>The Cross Where the Old Man Hangs Dying</h2>
+  <p class="lede">John’s own map of the poem. Seven centres stacked on the vertical beam, the
+     Cosmos and Heaven at the ends of the horizontal one — and ten of them are visions you have
+     just read. Touch any part of it.</p>
+  <div class="cross-wrap"><svg id="cross-svg" viewBox="0 0 800 780" role="img"
+       aria-label="The Cross where the old man hangs dying: seven stacked centres on the vertical beam, Cosmos and Heaven at the ends of the horizontal beam.">
+    <g class="cx-node cx-whole" data-key="cross" tabindex="0" role="button"
+       aria-label="The Cross itself — the twenty-sixth vision">
+      <rect class="cx-beam" x="378" y="78" width="44" height="646" rx="6"></rect>
+      <rect class="cx-beam" x="108" y="382" width="584" height="44" rx="6"></rect>
+    </g>
+    <text class="cx-label cx-beamlabel" x="400" y="372">The World</text>
+    <g class="cx-node cx-arm" data-key="cosmos" tabindex="0" role="button"
+              aria-label="The green realm, the sweet matter world; the Cosmos">
+        <circle class="cx-hit" cx="152" cy="404" r="42"></circle>
+        <circle class="cx-dot" cx="152" cy="404" r="17"></circle>
+        <text class="cx-label cx-armlabel" x="152" y="470">Cosmos</text>
+      </g><g class="cx-node cx-arm" data-key="heaven" tabindex="0" role="button"
+              aria-label="The golden mist; infiltrating Heaven">
+        <circle class="cx-hit" cx="648" cy="404" r="42"></circle>
+        <circle class="cx-dot" cx="648" cy="404" r="17"></circle>
+        <text class="cx-label cx-armlabel" x="648" y="470">Heaven</text>
+      </g><g class="cx-node" data-key="crown" tabindex="0" role="button"
+              aria-label="Crown (God) — Being the meek, Self-Aware ground of being and everything that arises in It">
+        <circle class="cx-hit" cx="400" cy="118" r="40"></circle>
+        <circle class="cx-dot" cx="400" cy="118" r="17"></circle>
+        <text class="cx-label" x="446" y="124">Crown (God)</text>
+      </g><g class="cx-node" data-key="forehead" tabindex="0" role="button"
+              aria-label="Forehead (Christ) — Being the material realm, being the void, being their offspring and as that exuding the Universe, breathing life into it and entering into that.">
+        <circle class="cx-hit" cx="400" cy="208" r="40"></circle>
+        <circle class="cx-dot" cx="400" cy="208" r="17"></circle>
+        <text class="cx-label" x="446" y="214">Forehead (Christ)</text>
+      </g><g class="cx-node" data-key="throat" tabindex="0" role="button"
+              aria-label="Throat (Vacuum) — Becoming deep velvet spaciousness.">
+        <circle class="cx-hit" cx="400" cy="300" r="40"></circle>
+        <circle class="cx-dot" cx="400" cy="300" r="17"></circle>
+        <text class="cx-label" x="446" y="306">Throat (Vacuum)</text>
+      </g><g class="cx-node" data-key="heart" tabindex="0" role="button"
+              aria-label="Heart — Being ravished by the wind, nothing but the wind.">
+        <circle class="cx-hit" cx="400" cy="404" r="40"></circle>
+        <circle class="cx-dot" cx="400" cy="404" r="17"></circle>
+        <text class="cx-label" x="446" y="370">Heart</text>
+      </g><g class="cx-node" data-key="abdomen" tabindex="0" role="button"
+              aria-label="Abdomen (Fire) — Becoming a dragon, rooted in volcanoes aburst with red power.">
+        <circle class="cx-hit" cx="400" cy="512" r="40"></circle>
+        <circle class="cx-dot" cx="400" cy="512" r="17"></circle>
+        <text class="cx-label" x="446" y="518">Abdomen (Fire)</text>
+      </g><g class="cx-node" data-key="genital" tabindex="0" role="button"
+              aria-label="Genital (Water) — Being flow; in the water I am, Poseidon is stirring with surging irresistible power.">
+        <circle class="cx-hit" cx="400" cy="604" r="40"></circle>
+        <circle class="cx-dot" cx="400" cy="604" r="17"></circle>
+        <text class="cx-label" x="446" y="610">Genital (Water)</text>
+      </g><g class="cx-node" data-key="bottom" tabindex="0" role="button"
+              aria-label="Bottom (Earth) — Becoming what lies beneath; receiving the Earth’s deep strength.">
+        <circle class="cx-hit" cx="400" cy="700" r="40"></circle>
+        <circle class="cx-dot" cx="400" cy="700" r="17"></circle>
+        <text class="cx-label" x="446" y="706">Bottom (Earth)</text>
+      </g>
+  </svg></div>
+  <div class="cx-readout" id="cx-readout" aria-live="polite">
+    <p class="cx-hint">Select a centre.</p>
+  </div>
+  <div class="cx-captions">
+    <p>The stacked chakras represent the individual’s embodiment and participation in the different realms of being.  The horizontal arm of the Cross consists of Heaven (on the right) and Earth broadly construed — the Cosmos — on the left.  In our totality we are the horizontal and vertical elements of the Cross.  We just don’t know it.</p>
+    <p>The unawakened person hangs dying on (as) the Cross, unaware of the depth and breadth of being.  The awakened person would be represented by a circle encompassing the whole thing and that which is within the circle.  This totality is God in human being, human being in God.</p>
+  </div>
+  <p class="src-note">Redrawn from the diagram on page 62 of the 2004 printing; every word of the
+     labels and the two captions is John’s.</p>
+</section><section class="back-sec prose-body" id="energy-process-work" data-chapter="8">
+      <h2>Energy Process Work and Robert Noha Sensei</h2><p id="energy-process-work-b0">As mentioned in the Introduction, <em>Remember Who You Are</em> came out of experiences doing Energy Process Work with Robert Noha Sensei.  According to Noha Sensei:</p><blockquote id="energy-process-work-b1"><p>Energy Process Work is the creation of Robert Nadeau.  It is based on over 40 years of practice and teaching.  He is a direct student of Aikido Founder Morihei Uyeshiba.  Robert Nadeau teaches throughout the United States, Israel, Europe and Russia.  His work is highlighted in numerous books and magazine articles including Michael Murphy’s Golf in the Kingdom and George Leonard’s The Ultimate Athlete.</p></blockquote><blockquote id="energy-process-work-b2"><p>Energy Process Work opens the system to allow us to experience, acknowledge and integrate all aspects of ourselves.  It also includes practices that bring to conscious experience our deeper and higher dimensions.  It is compatible with other practices and does not require knowledge of specialized movements.  This makes it accessible to new students.</p></blockquote><blockquote id="energy-process-work-b3"><p>Energy Process Work promotes spiritual growth and improved functioning in our daily lives.  It also helps to make these two important aspects of life more mutually supportive.</p></blockquote><p id="energy-process-work-b4">Noha Sensei, my friend Bob, was the midwife of the remarkable experiences described in <em>Remember Who You Are</em>.  Bob is an ordinary looking guy, about six feet tall with graying hair.  He works for an insurance company.  But if you were to look at him closely, you might notice some hints of the unusual.  There’s a sense of ease about him, like nothing could rattle him.  His eyes hold a deep, quiet merriment.</p><p id="energy-process-work-b5">Bob’s wrists are the size of some folks’ ankles, perhaps from practicing Aikido for almost 40 years (he has a 5th degree black belt, and has trained with the greatest Aikidoists on the planet).  He also is proficient in T’ai Chi, having trained with Professor Cheng Man-Ching and his senior students.</p><p id="energy-process-work-b6">One of Bob’s Aikido students, no mean martial artist himself, has compared Bob to an Ent, Tolkien’s ancient, giant tree shepherd.  This same student is a triathlete, and is able to bench press almost 300 pounds.  He says that doing Aikido with Bob is like wrestling with an oak tree.  The student adds with awe that despite his own great strength, Bob can at any point in an Aikido technique (such as a throw) effortlessly rewind him to the place an error was made and play the technique forward from there.  Notwithstanding his power, Bob has a very light touch.</p><p id="energy-process-work-b7">Yet for Bob Noha Sensei, physical prowess is just the tip of the iceberg.  In addition to his mastery in the physical realm, he is at ease in what we might call the realm of the transpersonal.  He can, for example, perceive and comment on the internal state of someone with whom he is working.  “What’s going on in your lower back?” he may ask.  You might be unaware of anything going on, but when you cast your attention to that area, you find something, and at the moment you find it he’ll say, “Yes, that, right there.  What does that feel like?”  He claims that the students do all of the work, but if pressed he will acknowledge that now and then he may perceive in the student’s energetic system something that is waiting to happen and unfold, and give it a little nudge—which doesn’t require physical contact.</p><p id="energy-process-work-b8">Bob Noha Sensei will use the student’s perceptions as a gateway to aspects of being and nonbeing that are astonishing in their scope, from the microcosm to the macrocosm, touching now and then on the eternal, infinite stillness that permeates and supports everything, all the while helping the student to accept them all as inputs into his system.  Bob gives each input its turn, welcomes it, helps it grow or shrink to its natural size, and ultimately to integrate into the ever-evolving being of the student.  Time and again, we see that it all is us.</p><p id="energy-process-work-b9">A well-read former philosophy teacher, Sunday school instructor and military policeman, Bob draws on numerous sources to make a point with great good humor.  He might mention the wonderful unkinking freedom the genie in the cartoon Aladdin felt when released from the lamp, then allude to Shakespeare, the Upanishads, the Bible and Captain Marvel.  At the same time, he’s a serious and accomplished martial artist who will explain the lethal application of an innocent-looking T’ai Chi posture.</p><p id="energy-process-work-b10">In practice, Energy Process Work sessions with Bob Noha Sensei often are like being a kid, meeting your best friend after school, and going out into the woods to play.  Bob knows the woods well, and introduces you to the swimming hole, shows you where the fox has his den, stops by the blueberry bush for a snack, and knows the best place to lie in a meadow and watch the clouds amble by overhead.  You might get caught in a thunderstorm or be surprised by a bear, but that’s part of the fun and you know that you’ll get home safe.</p><p id="energy-process-work-b11">To give you more of the flavor of the practice, here are two descriptions of Energy Process Work sessions with Noha Sensei, focused on suffering:</p><p id="energy-process-work-b12">Bob and I talked for a bit about the integration of my spiritual and physical aspects, my mother’s death and its impact on my development and world view, and sexuality.  When he said, “What do you want to work on?” this was the subject.  Before we began the clearing process (an easy way to let the components of one’s system take a break, leaving simple awareness with “no places to go, no promises to keep”), he commented on the amount of tangible “stuff” there was.  I don’t recall that he had ever commented like that before.  As he spoke, I too became aware of the “stuff.”  It was almost like standing in chest-high undergrowth.</p><p id="energy-process-work-b13">The clearing went very quickly.  We simply expressed the desire to clear, and with a few simple physical movements that can, literally, be learned in 10 seconds, we released the various aspects of our systems to rest awhile in whatever is Club Med for them.  My sense of myself was as a somewhat radiant white cylinder which transformed into a blank white field, again somewhat radiant.  Bob asked how I had cleared so quickly.  I said that I was just returning to my default state.</p><p id="energy-process-work-b14">Post clearing, I visited the realm of the core of the earth.  As in the past, I felt nurturance through my pores, a sense of being like a sponge soaking up sustenance from my surroundings which were red and charged with volcanic power (without being hot).  I became this realm.  Unlike past experiences in and with this realm, the feeding through the pores didn’t last long.  I was already “tanked up” so just received a topping off.  There was a sense of the “proprietor” of the realm giving me a friendly pat on the shoulder as I left.  I felt welcome there, a “regular” at this place.  Bob made a funny observation about the alien bar in Star Wars.</p><p id="energy-process-work-b15">I cleared some more.  Then, as I opened myself to a sense of space, I at first sensed a cathedral-like structure, initially behind me.  It was vast, cool, serene, safe, and (as Bob observed) artistic in its implementation.  The artistry of its construction (if that is the right word) made it not cavelike.</p><p id="energy-process-work-b16">I became the cathedral, and as the cathedral explored my attributes and discussed them with Bob.  Among these, I felt myself as a refuge, a haven, for others to enter.  Bob mentioned that this was a theme we had encountered in other sessions, and I agreed.  Bob pointed out that the cathedral had a kind of energy, a charge, and that helped me to experience myself as a vast, safe space in which others could abide, and in which I as the cathedral could offer my energy, my self, to imbue those abiding in me with my peaceful being.</p><p id="energy-process-work-b17">Then something entered me as the cathedral from my left front.  Initially it presented as a kind of angry, blood-drenched semi-human form, with a Tasmanian devil energetic flurry aspect.  With some trepidation I became this, and looked down and saw that my feet left bloody tracks as I walked.  I felt juicy and very raw.  Later in the experience I realized that this form had been squished; I looked and felt like I had been stepped on by a giant.  As this, I was the embodiment of human suffering, of the agony of the flesh, the horror of incarnation.</p><p id="energy-process-work-b18">As I received and more fully became this raw, bleeding being, I sensed another aspect of myself that was pure, unsullied, undamaged.  The sense of self, the “I am,” was the same at all times—while getting fed in and being the red realm, as the cathedral, as the maimed one, as the pure core.</p><p id="energy-process-work-b19">As Bob and I interacted, the juxtaposition of the maimed one and his pristine core was very important.  There was a sense of this being the essence of Christ.  Bob suggested healing for the maimed one, but that was rejected.  He (the aggregate of external maimed one and internal pristine core—actually, the subjective experience was “I” not “He”) insisted on keeping the woundedness, which was at one level both a bridge to the suffering of the world and, if fully experienced, was the suffering of the world.  Spirit wanted the connection to the material realm; it sought to fully embrace it, to be it.</p><p id="energy-process-work-b20">Subsequently, I pondered this in the context of various religions, and appreciated Christianity for offering the embrace of suffering rather than escape from it as some other religions appear to offer.  In terms of the relationship between transcendence and embodiment, which Bob and I have often discussed, and the role of the material realm (of which the human body is what we might call a holographic facet), the willingness to accept suffering, to embrace and be it, seems to me to be essential to the integration of the spiritual and material realms.</p><p id="energy-process-work-b21">There was also the element of juiciness of the maimed one; I/he could be partaken of and provide some kind of sustenance.  “Take, eat…this is my flesh…”</p><p id="energy-process-work-b22">Bob and I as the maimed one discussed various things; there was a palpable and potent energy in the air.  Bob suggested that I as the maimed one could return to the cathedral now and then for replenishment.  The maimed one said that the energy of the cathedral, perhaps the cathedral itself, was an aspect of him, manifesting what we might call a less-refined energetic presence.</p><p id="energy-process-work-b23">I/He said that people need to accept the suffering of the world, and acknowledged that having that suffering wrapped around the pure core, as it were—a package—would make that easier.  Subsequently, I was reminded of Mother Teresa’s prayer that begins, “Dear Jesus, you who suffer…”  She saw Christ, that pure core, in the people she served.</p><p id="energy-process-work-b24">Bob then said, “Is there anything else?”  In response to this, a smiling, distinctly feminine presence, appeared in front of me and merged with me—kind of put me on like a wet suit, but at a cellular level.</p><p id="energy-process-work-b25">I felt a vibrant, gentle blessing at a cellular level percolate through my physical form, like microscopic carbonation.  I identified her as Mary, although she might also be known as the Shekhina, Tara or Quan Yin depending on one’s background.  She was there to comfort us.  Thinking about this, I realized that in addition to the suffering, which must be received, there also is this personalized, loving motherly comfort offered to us.</p><p id="energy-process-work-b26">Asked if she had anything to say, she told Bob that she was very pleased with him as her child.  His “thank you” must have seemed to her a little modest and somehow not fully receptive, so she made clear that she wanted him to fully receive her blessing.  There was then a humble, loving resonance between Mary and Bob, which was how the blessing was provided.</p><p id="energy-process-work-b27">Mary had a message for me, too.  “Don’t give yourself away, even to Me,” she said.</p><p id="energy-process-work-b28">We were done.  “I felt like I’ve been through a wringer,” I told Bob.  “You did all the hard work,” he replied, as he often does when I thank him.  But I know that we did it together.</p><p class="brk" aria-hidden="true">✻</p><p id="energy-process-work-b30">Bob and I met for energy work this morning.  We hadn’t seen each other for a while, and talked for a while about a number of things, including the Vedantic “That Thou Art” and what I am experiencing in that regard, the different “maps” I am working with (and the idea of locating on the meditation “map” the experiences in Energy Process Work, thus bridging these two complementary endeavors), returning to the green realm, and suffering.</p><p id="energy-process-work-b31">I chose to work on suffering today, in follow up of the very interesting work the last time.  I also said that I wanted to work with Christ.  Bob chatted a bit about what Christ represents, and said that he was a good choice for exploring suffering.</p><p id="energy-process-work-b32">Parenthetically, I’ll note that between the last diary entry and this one, I did some energy work on my own in which I felt that something pretty big was going to come through.  After clearing, I did the double spirals and these quickly resolved into a huge vortex that sucked the material and immaterial realms (two realms total) into my chest.  After that there was just me, whoever or whatever that is, just me as limitless space, not even darkness, just awareness that if it could talk could only say, “I am.”</p><p id="energy-process-work-b33">Back to today.  During the clearing, I felt big chunks of the back of my head fall away.  I made a joke about being a blockhead, to which Bob replied “Blockhead no more.”  He reminded me to let the lower back, heels and lower legs clear.  The lower back, particularly, had had a burning sensation in it from a lot of sitting, and the clearing enabled that to ease a lot.</p><p id="energy-process-work-b34">After the clearing, I experienced myself as a nougat-like substance.  I could feel my viscous, creamy, swirled being.  I realized that I was tasty, nourishing.  It felt like a not too advanced form of being.  Bob observed that it didn’t appear to have much relationship to suffering.  He may have asked a question or two, but somehow triggered a self-examination to determine what, if anything I as Mr. Nougat had to do with suffering.</p><p id="energy-process-work-b35">As I experienced my rich, nourishing being (“indescribably delicious!” I joked, recalling the old candy ad), I felt sadness realizing that there are beings who don’t partake of me.  I said I was sad for them.  Bob asked a question or two, and a wave of agony came in on the right half of my body.  It felt somewhat like an electric shock, like one would feel immediately after having one’s skin ripped away over a large portion of the body.  I experienced this in a way that was real, and as I write this, I feel it again.  Yet it is not painful, or I should say the pain is very distant, like this is now happening to a part of me that is very far away.</p><p id="energy-process-work-b36">I interpreted this as the pain God has because there are beings who turn away from Him, who don’t partake of Him.  He suffers greatly from His incompleteness, which is the result of those who turn away.  The suffering I experienced was mostly from the incompleteness itself, not on behalf of the beings who don’t partake.  “How can they do this to me?” I said.  I commented that this is a peculiar way paralleled Jesus’ statement, “Father, why hast thou forsaken me?”  There was a sense of whomever I was at the time becoming more aware of the situation, the plight, in and through my experience.</p><p id="energy-process-work-b37">The torn part of me became recognizable as the maimed one from the prior week.  Yet this time he was not a separate entity, but rather was my right side.  To be him was to feel like the aftermath of a traffic accident, really shredded meat.  It was pretty bad, and is pretty bad as I write this, but somehow tolerable, attenuated as mentioned above.</p><p id="energy-process-work-b38">My left side was comforting my right side.  As my left side I spoke of “him” (that being my right side) and my left arm cradled my right side and I (as my left side) held him (from my left side’s perspective; I was simultaneously my left side and him, the maimed one who was the right side).  So somehow in my one physical body I was two beings.  From one perspective, it was like holding a friend weeping with inconsolable agony, while being in a way that friend.  But the split wasn’t equal.  “I” was more the left, consoling, side than “I” was the right side.  As I write this on my right side I feel grief and wailing, and like crying on my right side.  My left side is more or less “normal.”</p><p id="energy-process-work-b39">Bob and I were running out of time, and I remarked on the splendid oddity of doing this very interesting work, then having to hasten off to a business meeting.  Bob acknowledged that, and wanted if not to complete the whole cycle, then at least to see if there was anything more that needed to happen right then.</p><p id="energy-process-work-b40">Bob observed that Mary had been an important presence last time, and asked if there was anything else, anyone else, who wanted to speak.  When he said this, I felt the presence of Mary again, this time above me.  She was gentle, sweet and kept a respectful distance.  She knew the process needed to be given its head, and did not interfere or console.  Interestingly, both times Mary had the feeling of being someone or something from outside the process, not involved in it in the same way as the other entities.  She had the feeling of coming from a deeper order of being somehow.</p><p class="brk" aria-hidden="true">✻</p><p id="energy-process-work-b42">“As a sensei, I have a sense of obligation to the students, a need to help them interact better with their families and co-workers.  The aim is to instill a feeling they can make more of their life than it currently is,” Bob says.  I deeply appreciate Bob’s friendship, and the humility with which he has walked with me and helped me to open more and more.  You can learn more about Bob’s teaching at <a href="https://www.aikidopetaluma.com" target="_blank" rel="noopener">www.aikidopetaluma.com</a>.</p></section><section class="back-sec prose-body" id="hariharananda" data-chapter="9">
+      <h2>Paramahamsa Hariharananda and Kriya Yoga</h2><p id="hariharananda-b0">Paramahamsa Hariharananda was a monk, a Swami, an ancient yogi with unfathomable spiritual power.  He initiated me into Kriya Yoga, which simultaneously develops body, mind and Soul.  He was very kind to me and to my family, and gave us many blessings.  He died at 95 years of age, after a life devoted to serving God.  I use the past tense advisedly, because I and others have experienced him after his physical death.</p><p id="hariharananda-b1">Paramahamsa Hariharananda, although he left his body during the time covered in <em>Remember Who You Are</em>, participated in and supported the Energy Work Process even after his physical death.  Sometimes he simply was a watchful incorporeal presence.  Once he joined us with such power and presence that Noha Sensei, who is not easily impressed, said “Whoa!  This guy’s got some juice!”  Once Paramahamsa Hariharananda took over the Energy Process Work session, transported it to what I will call the engine room of the Cosmos, became me, and charged himself as me with blasts of lightning, “giving my stillness dynamo hum.”  Finally he revealed himself as myself and more…</p><p id="hariharananda-b2">In Paramahamsa Hariharananda the little, pinched and strained self was perfected, love has been fulfilled in faithfulness, and the mortal has been united with the immortal God.  He was saturated in holiness, from his decades of meditation and immersion in God.  Just as you can smell wonderful fresh bread cooking when you enter a home where baking has been done, the holiness in his vicinity (not just in his presence) was palpable.  It was, in a sense, mouth watering, just like the fresh bread; it awakened a hunger in you.  To mix metaphors, sometimes being with him was soothing, almost as if you were sweaty, sunburned and sore, and slowly slipped into warm, amber-colored water.  Ahhh!  It felt good.</p><p id="hariharananda-b3">His physical appearance was deceptive.  His body had been well-used over the decades, and during most of the time I knew him he had trouble walking.  He lay on his bed most of the time, absorbed in God.  He kept a toehold in that old body, swimming in the Divine, coming back when needed to guide and bless us.  Paramahamsa Hariharananda looked feeble, but was not.</p><p id="hariharananda-b4">Twice, he grabbed me and pulled me with irresistible strength.  Once, he did this to show me a particularly lovely flower.  Another time, it was to move me closer to him.  Both times, I might as well have been tied to a moving car.  His strength was far beyond what his little body could have generated.</p><p id="hariharananda-b5">Paramahamsa Hariharananda could be fierce.  For those who wanted to open themselves fully to the Divine, he would help.  And since what keeps us from the Divine often is parts of ourselves that we cherish or at least comfortably indulge, his rooting out of these things, his placing us in situations in which we were scoured cleaner, was excruciating.</p><p id="hariharananda-b6">He could be extraordinarily tender and loving, too.  Like an adoring mother, he has caressed my face, and pulled my head to rest on his chest as he held it in blessing.  His ferocity was an aspect of his love: sometimes we need a chisel applied to us, sometimes soothing balm.  He gave and gives us what we need to open more fully.</p><p id="hariharananda-b7">In life, Paramahamsa Hariharananda was a master of and taught Kriya Yoga.  “Kriya Yoga” means, roughly, a path for realizing union with God through experiencing that God, the Soul of the universe who is present in all things (not excepting ourselves), is the sole active agent, the sole doer.  As a corollary, he taught that “Work is Worship.”</p><p id="hariharananda-b8">In other words everything that we do or think can be done with awareness of God as the One who is doing the work.  We (what we think of as ourselves) are, in a sense, along for the ride—and that, too, is incorrect because there really is no “we” separate from God.  This concept can be hard to accept, but if God is omniscient and omnipresent, does he not pervade us too?  Doesn’t he breath in our breath, see through our eyes, love and suffer with and through us?  As the Sufis say, God is closer than our jugular vein.</p><p id="hariharananda-b9">A fully developed human being, he taught, is “God in human being, human being in God.”  Paramahamsa Hariharananda gave thousands of hours of lectures to tens of thousands of people.  Here are a few drops of nectar from him:</p><blockquote id="hariharananda-b10"><p>Through sight you see the seer.  It is all coming from Soul.  Who is seeing but God?  You practice it, when you will walk, how God is walking.  You are not realizing this; apply it in your daily life.  When you walk, feel that God is walking.  When you stand, feel the divine vibration of God’s presence within you.</p></blockquote><blockquote id="hariharananda-b11"><p>Watch how the power of God is moving in you.  You are forgetting, and deviated from truth.  If you remember that you and He are one, and always have been, you are the immortal Soul.  He is doing work through you.  He loves you.</p></blockquote><blockquote id="hariharananda-b12"><p>The power of God is within you.  Your blood is the blood of Jesus, your face is the face of Jesus, and the power of Jesus is within you.  Remain in God, then all the time you will perceive the presence of Jesus within you.  This is religion.  (In other words, this is both the path and the result of following the path).</p></blockquote><blockquote id="hariharananda-b13"><p>Walk and feel that He is walking, eat and feel that He is eating, laugh and feel that He is laughing.  If you forget, it is your death.  You are advancing toward immortality.  If death dies, then who will die?  Practice it.  Who can say who will die earlier, you or I?  So just complete your course.  Mistake is not mistake, it is for correction.  We learn from mistakes.  God is giving you time to change your mistakes.  Constant alertness, constant perception of Self.  This is Kriya Yoga.  Seer, sight, seen are one.  Feel that at any moment you can die.</p></blockquote><p id="hariharananda-b14">It is said that someone like Paramahamsa Hariharananda can grant any wish that is in accord with our destiny, and as I was walking to have a moment with him toward the end of my visit to his ashram, I thought about Ansari of Heart, an early Sufi master.  On the one hand, Ansari surrendered to God: “I know not what to ask of thee, thou art the knower…give that which thou deemest best.”  Yet he also demanded the gift of God’s fullness: “…intoxicate me with the wine of thy love, place the chains of thy slavery on my feet; make me empty of all but thy love…”  I concluded that I would ask Paramahamsa Hariharananda, at least mentally, for the gift of God-intoxication.</p><p id="hariharananda-b15">With this in mind as I walked toward his home to say goodbye, I found myself pausing, looking at a garden outside his house and feeling insights unfolding.  In his vicinity, this kind of thing happens: he seems to communicate in a nonverbal way through what happens in the physical world.</p><p id="hariharananda-b16">I stood looking at the garden, and reflected that the entire multi-acre ashram had been planned by Paramahamsa Hariharananda.  He gave ample evidence of knowing every single one of the hundreds or even thousands of plants and trees that he had directed be placed in definite locations, and which he visited regularly, pushed in his wheelchair by strong assistants.  “I know what I’m doing,” is the message I received in a nonverbal way from this master gardener as I looked at the lush garden, bursting from the earth, trembling in the breeze.  And I was given to know that the master gardener knew what he was doing with me, as well as with the garden.  He prunes me, weeds me, waters and feeds me; he knows what my potential is and ensures that I get what I need, when I need it.</p><p id="hariharananda-b17">As I continued walking toward his home, I let fall my wish for God intoxication.  Enough to offer my love to him, and let what was to come, come in its own time.  He was lying on his bed, very still.  I touched my head tenderly to his sock-clad feet, and stood up, my hands clasped in front of my chest.</p><p id="hariharananda-b18">“Come here,” he said.  I carefully walked over and knelt beside his bed.  He looked at me from his pillow and smiled.  He reached up with his hand and made a small gesture to come near.  I did so, and he stroked the side of my face.  Then he pulled my head to his chest and held it.  “I am very happy that you have come.  It is very cold in your place.  But it is very warm here.”</p><p id="hariharananda-b19">Held close by this ancient yogi, a being from another culture, almost a century old, a being who roams in realms as yet unknown to me, I rang with gratitude like a gong struck by love, and the words “Thank you, thank you, thank you” reverberated within me.  He had the wisdom, and the wish, to love me in a way that I could understand and respond to.  It was a deeply human intimacy, God-in-Hariharananda holding me close to his heart, caressing me, blessing me, inviting me to return.</p><p id="hariharananda-b20">He gently released me, and I stood up, looking at him.  Another small gesture of his hand meant it was time for me to go.  I walked to the bedroom door, then turned back to look at him.  His eyes were open as he lay on his side, facing me.  His eyes were unseeing as he swam again in the Infinite, his body waiting for the next time it was needed.</p><p class="brk" aria-hidden="true">✻</p><p id="hariharananda-b22">If you saw The Matrix, you may remember how at the end Neo leapt into Smith and burst forth in him as light, shattering Smith and becoming him.  While doing the Energy Process Work, I realized that Paramahamsa Hariharananda has permeated me and in some way become me.  The process has been thankfully slower and somewhat less traumatic than the demolition of Smith.  Rather than presenting this in <em>Remember Who You Are</em>, I’ll offer the after-the-fact realization here:</p><div class="stz inline-verse" id="hariharananda-b23"><span class="l">I am</span></div><div class="stz inline-verse" id="hariharananda-b24"><span class="l">The old monk, Hariharananda</span></div><div class="stz inline-verse" id="hariharananda-b25"><span class="l">Not other than our lineage</span><span class="l">Not other than the finger</span><span class="l">of the One Person</span><span class="l">not other than the One Person</span><span class="l">Himself</span></div><p id="hariharananda-b26">Paramahamsa Hariharananda’s successor, Paramahamsa Prajnanananda, continues his work.  You can learn more about them and Kriya Yoga at <a href="https://www.kriya.org" target="_blank" rel="noopener">www.kriya.org</a>.</p></section>
+<section class="back-sec" id="colophon">
+  <h2>Colophon</h2>
+  <p><em>Remember Who You Are</em> was written by John Records and published in
+     2004 by Petitsa Press. Copyright © 2004 by John Records.
+     This edition sets the poem one vision to a page, as the printing did.
+     <em>If you read it aloud, you might better experience the
+     place from which it comes.</em></p>
+  <p>The cover of the printed book carried NASA’s Chandra X-ray Observatory image of the galaxy M87
+     on the front and Leonardo’s Vitruvian Man on the back; neither is reproduced here. The Cross
+     diagram is redrawn from the author’s original.</p>
+  <p class="back-nav"><a href="#cover" data-tostart>Back to the beginning &uarr;</a></p>
+</section></div>
 
-  <div class="keyband" role="presentation"></div>
+<button class="turn turn-prev" id="turn-prev" aria-label="Previous page"><span>‹</span></button>
+<button class="turn turn-next" id="turn-next" aria-label="Next page"><span>›</span></button>
 
-  <figure class="plate-hero">
-    <img src="/assets/plates/remember.jpg" width="768" height="512" loading="eager" alt="Warm light streaming through an open wooden doorway into a dark room, cover art for Remember Who You Are." />
-  </figure>
+<a id="cross-mark" href="#the-cross" data-goto="the-cross" hidden
+   title="This vision is placed on the Cross diagram">✚</a>
 
-  <p class="leadin">This book is hosted in full &mdash; text &mdash; at its own
-    address so it doesn&rsquo;t depend on this page staying around.</p>
-  <a class="cta" href="https://floral-mirage-avqw.here.now/#fm-epigraph">Read Remember Who You Are &rarr;</a>
-  <p class="note">floral-mirage-avqw.here.now</p>
+<nav id="pagenav" aria-label="Move through the book">
+  <input id="rail" type="range" min="0" max="53" step="1" value="0"
+         aria-label="Position in the book">
+  <div class="nav-row">
+    <button id="nav-prev" aria-label="Previous page"><span class="ic">&lsaquo;</span></button>
+    <span id="nav-where"></span>
+    <button id="nav-next" aria-label="Next page"><span class="ic">&rsaquo;</span></button>
+  </div>
+</nav>
 
-  </main>
-
-  <footer data-pagefind-ignore>
-    <span>&copy; John Records &middot; <a href="mailto:john.records@gmail.com">john.records@gmail.com</a></span>
-  </footer>
-
-</div>
-
-<script src="/gsearch.js" defer></script>
+<script id="meta" type="application/json">{"marks":{"1":["intro-p0","intro-p1","intro-p2","intro-p3","intro-p4"],"2":["remember-1-b0"],"3":["before-1-b0",null,"before-1-b1",null,"before-1-b2",null,"before-1-b3",null,"before-1-b4"],"4":["creator-1-b0",null,"creator-1-b1",null,"creator-1-b2"],"5":["jp-01-a",null,"jp-02-a",null,"jp-03-a",null,"jp-04-a",null,"jp-05-a",null,"jp-06-a",null,"jp-07-a",null,"jp-08-a",null,"jp-09-a",null,"jp-10-a",null,"jp-11-a",null,"jp-12-a",null,"jp-13-a",null,"jp-14-a",null,"jp-15-a",null,"jp-16-a",null,"jp-17-a",null,"jp-18-a",null,"jp-19-a",null,"jp-20-a",null,"jp-21-a",null,"jp-22-a",null,"jp-23-a",null,"jp-24-a",null,"jp-25-a",null,"jp-26-a",null,"jp-26-coda"],"6":["im-1-a",null,"im-2-a",null,"im-3-a",null,"im-4-a",null,"im-5-a",null,"im-6-a",null,"im-7-a"],"7":["integral-1-b0",null,"integral-1-b1",null,"integral-1-b2",null,"integral-1-b3",null,"integral-1-b4",null,"integral-1-b5",null,"integral-1-b6",null,"integral-1-b7",null,"integral-1-b8",null,"integral-1-b9",null,"integral-1-b10",null,"integral-1-b11",null,"integral-1-b12"],"8":["energy-process-work-b0","energy-process-work-b1","energy-process-work-b2","energy-process-work-b3","energy-process-work-b4","energy-process-work-b5","energy-process-work-b6","energy-process-work-b7","energy-process-work-b8","energy-process-work-b9","energy-process-work-b10","energy-process-work-b11","energy-process-work-b12","energy-process-work-b13","energy-process-work-b14","energy-process-work-b15","energy-process-work-b16","energy-process-work-b17","energy-process-work-b18","energy-process-work-b19","energy-process-work-b20","energy-process-work-b21","energy-process-work-b22","energy-process-work-b23","energy-process-work-b24","energy-process-work-b25","energy-process-work-b26","energy-process-work-b27","energy-process-work-b28",null,"energy-process-work-b30","energy-process-work-b31","energy-process-work-b32","energy-process-work-b33","energy-process-work-b34","energy-process-work-b35","energy-process-work-b36","energy-process-work-b37","energy-process-work-b38","energy-process-work-b39","energy-process-work-b40",null,"energy-process-work-b42"],"9":["hariharananda-b0","hariharananda-b1","hariharananda-b2","hariharananda-b3","hariharananda-b4","hariharananda-b5","hariharananda-b6","hariharananda-b7","hariharananda-b8","hariharananda-b9","hariharananda-b10","hariharananda-b11","hariharananda-b12","hariharananda-b13","hariharananda-b14","hariharananda-b15","hariharananda-b16","hariharananda-b17","hariharananda-b18","hariharananda-b19","hariharananda-b20",null,"hariharananda-b22","hariharananda-b23","hariharananda-b24","hariharananda-b25","hariharananda-b26"]},"leaves":[{"id":"cover","ch":null,"mv":null,"n":null,"of":null,"title":"Cover"},{"id":"fm-epigraph","ch":null,"mv":null,"n":null,"of":null,"title":"Epigraphs"},{"id":"fm-dedication","ch":null,"mv":null,"n":null,"of":null,"title":"Dedication"},{"id":"fm-intro","ch":1,"mv":null,"n":null,"of":null,"title":"Introduction"},{"id":"t-remember","ch":2,"mv":"remember","n":null,"of":null,"title":"Remember"},{"id":"remember-1","ch":2,"mv":"remember","n":null,"of":null,"title":null},{"id":"t-before-and-always","ch":3,"mv":"before-and-always","n":null,"of":null,"title":"Before and Always"},{"id":"before-1","ch":3,"mv":"before-and-always","n":null,"of":null,"title":null},{"id":"t-creator-creation-and-then","ch":4,"mv":"creator-creation-and-then","n":null,"of":null,"title":"Creator Creation and Then"},{"id":"creator-1","ch":4,"mv":"creator-creation-and-then","n":null,"of":null,"title":null},{"id":"t-jigsaw-puzzle","ch":5,"mv":"jigsaw-puzzle","n":null,"of":null,"title":"Jigsaw Puzzle"},{"id":"jp-01","ch":5,"mv":"jigsaw-puzzle","n":1,"of":26,"title":null},{"id":"jp-02","ch":5,"mv":"jigsaw-puzzle","n":2,"of":26,"title":null},{"id":"jp-03","ch":5,"mv":"jigsaw-puzzle","n":3,"of":26,"title":null},{"id":"jp-04","ch":5,"mv":"jigsaw-puzzle","n":4,"of":26,"title":null},{"id":"jp-05","ch":5,"mv":"jigsaw-puzzle","n":5,"of":26,"title":null},{"id":"jp-06","ch":5,"mv":"jigsaw-puzzle","n":6,"of":26,"title":null},{"id":"jp-07","ch":5,"mv":"jigsaw-puzzle","n":7,"of":26,"title":null},{"id":"jp-08","ch":5,"mv":"jigsaw-puzzle","n":8,"of":26,"title":null},{"id":"jp-09","ch":5,"mv":"jigsaw-puzzle","n":9,"of":26,"title":null},{"id":"jp-10","ch":5,"mv":"jigsaw-puzzle","n":10,"of":26,"title":null},{"id":"jp-11","ch":5,"mv":"jigsaw-puzzle","n":11,"of":26,"title":null},{"id":"jp-12","ch":5,"mv":"jigsaw-puzzle","n":12,"of":26,"title":null},{"id":"jp-13","ch":5,"mv":"jigsaw-puzzle","n":13,"of":26,"title":null},{"id":"jp-14","ch":5,"mv":"jigsaw-puzzle","n":14,"of":26,"title":null},{"id":"jp-15","ch":5,"mv":"jigsaw-puzzle","n":15,"of":26,"title":null},{"id":"jp-16","ch":5,"mv":"jigsaw-puzzle","n":16,"of":26,"title":null},{"id":"jp-17","ch":5,"mv":"jigsaw-puzzle","n":17,"of":26,"title":null},{"id":"jp-18","ch":5,"mv":"jigsaw-puzzle","n":18,"of":26,"title":null},{"id":"jp-19","ch":5,"mv":"jigsaw-puzzle","n":19,"of":26,"title":null},{"id":"jp-20","ch":5,"mv":"jigsaw-puzzle","n":20,"of":26,"title":null},{"id":"jp-21","ch":5,"mv":"jigsaw-puzzle","n":21,"of":26,"title":null},{"id":"jp-22","ch":5,"mv":"jigsaw-puzzle","n":22,"of":26,"title":null},{"id":"jp-23","ch":5,"mv":"jigsaw-puzzle","n":23,"of":26,"title":null},{"id":"jp-24","ch":5,"mv":"jigsaw-puzzle","n":24,"of":26,"title":null},{"id":"jp-25","ch":5,"mv":"jigsaw-puzzle","n":25,"of":26,"title":null},{"id":"jp-26","ch":5,"mv":"jigsaw-puzzle","n":26,"of":26,"title":null},{"id":"t-in-my-world","ch":6,"mv":"in-my-world","n":null,"of":null,"title":"I Am In My World and My World Is In Me"},{"id":"im-1","ch":6,"mv":"in-my-world","n":1,"of":7,"title":null},{"id":"im-2","ch":6,"mv":"in-my-world","n":2,"of":7,"title":null},{"id":"im-3","ch":6,"mv":"in-my-world","n":3,"of":7,"title":null},{"id":"im-4","ch":6,"mv":"in-my-world","n":4,"of":7,"title":null},{"id":"im-5","ch":6,"mv":"in-my-world","n":5,"of":7,"title":null},{"id":"im-6","ch":6,"mv":"in-my-world","n":6,"of":7,"title":null},{"id":"im-7","ch":6,"mv":"in-my-world","n":7,"of":7,"title":null},{"id":"t-integral-man","ch":7,"mv":"integral-man","n":null,"of":null,"title":"The Birth of the Integral Man"},{"id":"integral-1-1","ch":7,"mv":"integral-man","n":1,"of":7,"title":null},{"id":"integral-1-2","ch":7,"mv":"integral-man","n":2,"of":7,"title":null},{"id":"integral-1-3","ch":7,"mv":"integral-man","n":3,"of":7,"title":null},{"id":"integral-1-4","ch":7,"mv":"integral-man","n":4,"of":7,"title":null},{"id":"integral-1-5","ch":7,"mv":"integral-man","n":5,"of":7,"title":null},{"id":"integral-1-6","ch":7,"mv":"integral-man","n":6,"of":7,"title":null},{"id":"integral-1-7","ch":7,"mv":"integral-man","n":7,"of":7,"title":null},{"id":"end","ch":null,"mv":null,"n":null,"of":null,"title":null}],"movements":{"remember":"Remember","before-and-always":"Before and Always","creator-creation-and-then":"Creator Creation and Then","jigsaw-puzzle":"Jigsaw Puzzle","in-my-world":"I Am In My World and My World Is In Me","integral-man":"The Birth of the Integral Man"},"chapters":{"1":"Introduction","2":"Remember","3":"Before and Always","4":"Creator Creation and Then","5":"Jigsaw Puzzle","6":"I Am In My World and My World Is In Me","7":"The Birth of the Integral Man","8":"Energy Process Work and Robert Noha Sensei","9":"Paramahamsa Hariharananda and Kriya Yoga"},"cross":{"targets":{"crown":{"name":"Crown (God)","text":"Being the meek, Self-Aware ground of being and everything that arises in It","target":"before-1"},"forehead":{"name":"Forehead (Christ)","text":"Being the material realm, being the void, being their offspring and as that exuding the Universe, breathing life into it and entering into that.","target":"creator-1"},"throat":{"name":"Throat (Vacuum)","text":"Becoming deep velvet spaciousness.","target":"jp-02"},"heart":{"name":"Heart","text":"Being ravished by the wind, nothing but the wind.","target":"jp-08"},"abdomen":{"name":"Abdomen (Fire)","text":"Becoming a dragon, rooted in volcanoes aburst with red power.","target":"jp-07"},"genital":{"name":"Genital (Water)","text":"Being flow; in the water I am, Poseidon is stirring with surging irresistible power.","target":"jp-13"},"bottom":{"name":"Bottom (Earth)","text":"Becoming what lies beneath; receiving the Earth’s deep strength.","target":"jp-09"},"cosmos":{"name":"Cosmos","text":"The green realm, the sweet matter world; the Cosmos","target":"jp-16"},"heaven":{"name":"Heaven","text":"The golden mist; infiltrating Heaven","target":"jp-11"},"cross":{"name":"The Cross itself","text":"The twenty-sixth vision — the wakening near human being, forming the Cross where the old man hangs dying.","target":"jp-26"}}},"ns":"rwya"}</script>
 <script>
+
 (function(){
-  var root = document.documentElement;
-  var btn  = document.getElementById('lamp');
-  var word = document.getElementById('lampword');
-  function evening(){
-    var t = root.getAttribute('data-theme');
-    if (t) return t === 'dark';
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
-  }
-  function paint(){
-    var on = evening();
-    btn.setAttribute('aria-pressed', String(on));
-    btn.setAttribute('aria-label', on ? 'Morning' : 'Light the lamp');
-    word.textContent = on ? 'Morning' : 'Light the lamp';
-  }
-  btn.addEventListener('click', function(){
-    root.setAttribute('data-theme', evening() ? 'light' : 'dark');
-    paint();
+"use strict";
+var M = JSON.parse(document.getElementById("meta").textContent);
+var body = document.body;
+var pager = document.getElementById("pager");
+var leaves = Array.prototype.slice.call(pager.querySelectorAll(".leaf"));
+var ids = leaves.map(function(l){return l.id});
+var idx = 0, K = M.ns + ":";
+
+var rail = document.getElementById("rail"), railHeld = false;
+var navWhere = document.getElementById("nav-where");
+var navPrev = document.getElementById("nav-prev"), navNext = document.getElementById("nav-next");
+var turnPrev = document.getElementById("turn-prev"), turnNext = document.getElementById("turn-next");
+
+/* ---------------------------------------------------------------- state */
+function save(k,v){ try{ localStorage.setItem(K+k, v) }catch(e){} }
+function load(k){ try{ return localStorage.getItem(K+k) }catch(e){ return null } }
+
+var t = load("theme"); if (t) body.dataset.theme = t;
+var s = load("size");  if (s) body.dataset.size = s;
+var m = load("mode");  if (m === "flow") setMode("flow");
+
+/* ----------------------------------------------------------- page turns */
+function show(i, opts){
+  opts = opts || {};
+  i = Math.max(0, Math.min(leaves.length-1, i));
+  var was = idx; idx = i;
+  leaves.forEach(function(l,j){
+    l.classList.toggle("is-current", j === i);
+    l.classList.toggle("is-prev", j < i);
+    l.setAttribute("aria-hidden", j === i ? "false" : "true");
   });
-  paint();
+  var L = leaves[i];
+  var in_ = L.querySelector(".leaf-in");
+  in_.scrollTop = 0;
+  requestAnimationFrame(function(){
+    L.classList.toggle("has-more", in_.scrollHeight - in_.clientHeight > 8);
+  });
+  where(L);
+  /* Not while a finger is on it: writing the value back mid-drag fights the
+     drag and the thumb sticks. */
+  if (!railHeld) rail.value = i;
+  navPrev.disabled = turnPrev.disabled = i === 0;
+  navNext.disabled = turnNext.disabled = i === leaves.length - 1;
+  if (!opts.silent && history.replaceState) history.replaceState(null,"","#"+L.id);
+  if (was !== i) flashChrome();
+}
+
+function where(L){
+  var mv = L.dataset.movement;
+  var mvName = mv ? M.movements[mv] : "Remember Who You Are";
+  var n = L.dataset.n ? L.dataset.n + " / " + L.dataset.of : "";
+  document.getElementById("where-mv").textContent = mvName;
+  document.getElementById("where-n").textContent = n;
+  /* The bar has one line to say where you are, so it says the most specific
+     true thing: the vision and its movement on a poem page, and the name of
+     the section on a page of prose that has no number. */
+  var li = M.leaves[ids.indexOf(L.id)] || {};
+  navWhere.textContent = n ? (mv ? mvName + " — " + n : n) : (li.title || mvName);
+  var cm = document.getElementById("cross-mark");
+  cm.hidden = !L.dataset.cross;
+  cm.dataset.cross = L.dataset.cross || "";
+}
+
+function go(d){
+  if (body.dataset.mode === "flow") return;
+  show(idx + d);
+}
+
+/* In continuous mode nothing calls show(), so the header would keep naming
+   whatever page you were on when you switched. Track what's in view instead. */
+var seen = new IntersectionObserver(function(es){
+  if (body.dataset.mode !== "flow") return;
+  var best = null;
+  es.forEach(function(e){
+    if (!e.isIntersecting) return;
+    if (!best || e.intersectionRatio > best.intersectionRatio) best = e;
+  });
+  if (best){
+    var i = ids.indexOf(best.target.id);
+    if (i >= 0) idx = i;
+    where(best.target);
+  }
+}, {rootMargin:"-45% 0px -45% 0px"});
+leaves.forEach(function(l){ seen.observe(l) });
+
+/* Down/space scroll a long page first and only turn at the foot of it, which is
+   what a reader expects and what makes the Introduction and the appendices
+   usable without a second set of keys. */
+function scrolledOut(dir){
+  var in_ = leaves[idx].querySelector(".leaf-in");
+  if (in_.scrollHeight - in_.clientHeight < 4) return true;
+  return dir > 0 ? in_.scrollTop + in_.clientHeight >= in_.scrollHeight - 4
+                 : in_.scrollTop <= 4;
+}
+
+turnNext.onclick = navNext.onclick = function(){ go(1) };
+turnPrev.onclick = navPrev.onclick = function(){ go(-1) };
+
+/* Dragging the rail moves the book under your finger. The leaf transition is
+   half a second long, so a drag across 54 leaves would queue fifty of them;
+   show() is cheap enough to call per input, and the transition simply gets
+   interrupted, which is what a scrub should look like. */
+rail.oninput = function(){ show(+rail.value) };
+/* The flag is raised by the gesture and lowered by its end, never by the input
+   event itself — a stuck flag would leave the thumb behind the book for the
+   rest of the session, which is worse than a thumb that jitters once. */
+rail.addEventListener("pointerdown", function(){ railHeld = true });
+["pointerup","pointercancel","blur","change"].forEach(function(ev){
+  rail.addEventListener(ev, function(){ railHeld = false });
+});
+
+document.addEventListener("keydown", function(e){
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  var tag = (e.target.tagName||"").toLowerCase();
+  if (tag === "input" || tag === "textarea") return;
+  if (e.key === "Escape") { closeToc(); return; }
+  if (body.dataset.mode === "flow") return;
+  switch(e.key){
+    case "ArrowRight": case "PageDown": e.preventDefault(); go(1); break;
+    case "ArrowLeft":  case "PageUp":   e.preventDefault(); go(-1); break;
+    case " ": case "ArrowDown":
+      if (scrolledOut(1)) { e.preventDefault(); go(1); } break;
+    case "ArrowUp":
+      if (scrolledOut(-1)) { e.preventDefault(); go(-1); } break;
+    case "Home": e.preventDefault(); show(0); break;
+    case "End":  e.preventDefault(); show(leaves.length-1); break;
+  }
+});
+
+/* Swipe. 40px of horizontal travel, and clearly more horizontal than vertical,
+   so a thumb scrolling the Introduction doesn't turn the page by accident. */
+var tx=0, ty=0, tracking=false;
+pager.addEventListener("touchstart", function(e){
+  if (e.touches.length !== 1) return;
+  tx = e.touches[0].clientX; ty = e.touches[0].clientY; tracking = true;
+}, {passive:true});
+pager.addEventListener("touchend", function(e){
+  if (!tracking || body.dataset.mode === "flow") return;
+  tracking = false;
+  var dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty;
+  if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)*1.6) go(dx < 0 ? 1 : -1);
+}, {passive:true});
+
+/* A horizontal wheel gesture (trackpad) turns pages; a vertical one scrolls the
+   page it is on, and turns only when there is nothing left to scroll. */
+var wheelLock = 0;
+pager.addEventListener("wheel", function(e){
+  if (body.dataset.mode === "flow") return;
+  var now = Date.now();
+  if (now < wheelLock) return;
+  if (Math.abs(e.deltaX) > Math.abs(e.deltaY) && Math.abs(e.deltaX) > 24){
+    wheelLock = now + 450; go(e.deltaX > 0 ? 1 : -1);
+  } else if (Math.abs(e.deltaY) > 24 && scrolledOut(e.deltaY > 0 ? 1 : -1)){
+    wheelLock = now + 450; go(e.deltaY > 0 ? 1 : -1);
+  }
+}, {passive:true});
+
+/* ------------------------------------------------------------------ chrome */
+var chromeT;
+function flashChrome(){
+  body.classList.add("chrome-on");
+  clearTimeout(chromeT);
+  chromeT = setTimeout(function(){ body.classList.remove("chrome-on") }, 1800);
+}
+
+document.getElementById("btn-theme").onclick = function(){
+  var n = body.dataset.theme === "night" ? "day" : "night";
+  body.dataset.theme = n; save("theme", n);
+  this.querySelector(".ic").textContent = n === "night" ? "☾" : "☀";
+};
+document.getElementById("btn-theme").querySelector(".ic").textContent =
+  body.dataset.theme === "night" ? "☾" : "☀";
+
+document.getElementById("btn-size").onclick = function(){
+  var n = String((parseInt(body.dataset.size||"0",10) + 1) % 3);
+  body.dataset.size = n; save("size", n);
+};
+
+/* quiet: the reader didn't ask for this mode, we needed it to show something
+   that only exists in the continuous document. Don't remember it as a choice. */
+function setMode(mode, quiet){
+  body.dataset.mode = mode;
+  var b = document.getElementById("btn-flow");
+  if (b){
+    b.setAttribute("aria-pressed", mode === "flow" ? "true" : "false");
+    b.setAttribute("aria-label", mode === "flow"
+      ? "Switch back to one vision a page" : "Switch to continuous scrolling");
+    b.querySelector(".ic").textContent = mode === "flow" ? "❐" : "≡";
+  }
+  if (!quiet) save("mode", mode);
+}
+var borrowedFlow = false;   // in flow only to reach the back matter
+document.getElementById("btn-flow").onclick = function(){
+  var to = body.dataset.mode === "flow" ? "paged" : "flow";
+  borrowedFlow = false;
+  var anchor = leaves[idx];
+  setMode(to);
+  if (to === "flow") {
+    requestAnimationFrame(function(){ anchor.scrollIntoView({block:"start"}) });
+  } else {
+    show(idx);
+  }
+};
+
+/* contents */
+var toc = document.getElementById("toc"), btnToc = document.getElementById("btn-toc");
+function openToc(){ toc.hidden = false; btnToc.setAttribute("aria-expanded","true"); }
+function closeToc(){ toc.hidden = true; btnToc.setAttribute("aria-expanded","false"); }
+btnToc.onclick = function(){ toc.hidden ? openToc() : closeToc() };
+
+document.addEventListener("click", function(e){
+  var a = e.target.closest && e.target.closest("a[data-goto],a[data-goback],a[data-tostart],a[href^='#']");
+  if (!a) return;
+  var id = (a.dataset.goto) || (a.getAttribute("href")||"").slice(1);
+  if (!id) return;
+  var i = ids.indexOf(id);
+  e.preventDefault();
+  closeToc();
+  if (i >= 0){
+    // Coming back out of the appendices to a page of the poem: give the reader
+    // the mode they were actually reading in, not the one we borrowed.
+    if (borrowedFlow){ borrowedFlow = false; setMode("paged", true); show(i); return; }
+    if (body.dataset.mode === "flow") leaves[i].scrollIntoView({block:"start", behavior:"smooth"});
+    else show(i);
+  } else {
+    // back matter: only exists in flow mode
+    var jumped = body.dataset.mode !== "flow";
+    if (jumped){ setMode("flow", true); borrowedFlow = true; }
+    scrollToBack(id, jumped);
+  }
+});
+
+/* Switching to flow re-lays-out all 54 leaves from absolute to relative, and the
+   back matter sits ~19,000px down a document that was one screen tall a moment
+   ago. A smooth scroll queued in the same frame animates toward the position the
+   target had BEFORE that relayout, so it stops a few pixels below the top and
+   looks like the link did nothing. After a mode change: land instantly, then
+   correct once more when layout has actually settled. */
+function scrollToBack(id, jumped){
+  var el = document.getElementById(id); if (!el) return;
+  var go = function(b){ el.scrollIntoView({block:"start", behavior:b}) };
+  if (!jumped){ go("smooth"); return }
+  // Land instantly (scrollIntoView flushes layout, so this already uses the new
+  // one), then correct twice as things settle. Both a frame callback and a timer,
+  // because a document that isn't being painted never gets a frame — and the
+  // link still has to have worked when it comes back.
+  go("auto");
+  requestAnimationFrame(function(){ go("auto") });
+  setTimeout(function(){ go("auto") }, 150);
+}
+
+/* ------------------------------------------------------------- the Cross */
+var svg = document.getElementById("cross-svg");
+var readout = document.getElementById("cx-readout");
+function pickCross(key){
+  var t = M.cross.targets[key]; if (!t) return;
+  svg.querySelectorAll(".cx-node").forEach(function(n){ n.classList.toggle("on", n.dataset.key === key) });
+  readout.innerHTML = '<h3>' + t.name + '</h3><p>' + t.text + '</p>' +
+    '<a href="#' + t.target + '" data-goto="' + t.target + '">Go to the vision &rarr;</a>';
+}
+if (svg){
+  svg.addEventListener("click", function(e){
+    var n = e.target.closest(".cx-node"); if (n) pickCross(n.dataset.key);
+  });
+  svg.addEventListener("keydown", function(e){
+    if (e.key !== "Enter" && e.key !== " ") return;
+    var n = e.target.closest(".cx-node");
+    if (n){ e.preventDefault(); pickCross(n.dataset.key) }
+  });
+}
+document.addEventListener("click", function(e){
+  var m = e.target.closest && e.target.closest("#cross-mark");
+  if (m && m.dataset.cross) {
+    var k = m.dataset.cross;
+    setTimeout(function(){ pickCross(k) }, 350);
+  }
+});
+
+/* --------------------------------------------------------------- start up */
+var start = ids.indexOf((location.hash||"").slice(1));
+show(start >= 0 ? start : 0, {silent:true});
+if (body.dataset.mode === "flow"){ setMode("flow"); }
+flashChrome();
 })();
+
 </script>
 </body>
 </html>

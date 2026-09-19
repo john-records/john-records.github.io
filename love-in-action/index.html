@@ -1,250 +1,1452 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="day">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.youtube-nocookie.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';">
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob:; media-src 'self' blob: https://archive.org https://*.archive.org https://*.here.now; connect-src 'self' https://archive.org https://*.archive.org https://*.here.now; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-<title>Love in Action (Original Edition) — John Records</title>
-<meta name="description" content="Heal the world, heal yourself. This book distills a simple approach to loving more fully. As you read and reflect, you’ll learn how to be more loving with your family, in the workplace, and as a volunteer. You’ll learn about the simple spiritual practice of offering your entire being to love, and..." />
-<meta name="author" content="John Records" />
-<link rel="canonical" href="https://johnrecords.org/love-in-action/" />
-<meta property="og:title" content="Love in Action (Original Edition) — John Records" />
-<meta property="og:description" content="Heal the world, heal yourself. This book distills a simple approach to loving more fully. As you read and reflect, you’ll learn how to be more loving with your family, in the workplace, and as a volunteer. You’ll learn about the simple spiritual practice of offering your entire being to love, and..." />
-<meta property="og:url" content="https://johnrecords.org/love-in-action/" />
-<meta property="og:type" content="book" />
-<meta property="og:image" content="https://johnrecords.org/assets/plates/love.jpg" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Love in Action (Original Edition) — John Records" />
-<meta name="twitter:description" content="Heal the world, heal yourself. This book distills a simple approach to loving more fully. As you read and reflect, you’ll learn how to be more loving with your family, in the workplace, and as a volunteer. You’ll learn about the simple spiritual practice of offering your entire being to love, and..." />
-<meta name="twitter:image" content="https://johnrecords.org/assets/plates/love.jpg" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Love in Action</title>
+<meta name="description" content="Heal the world, heal yourself — reflections on love, service, and spiritual practice.">
+<meta name="theme-color" content="#f6f1e7">
+<meta name="author" content="John Records">
+<link rel="canonical" href="https://johnrecords.org/love-in-action/">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Love in Action">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --room:#EFE3C8; --paper:#FAF5E9; --card:#FFFDF4;
-  --ink:#2A2118; --ink-soft:#6E5F4B; --ink-faint:#93856D;
-  --oak:#7A4E28; --oak-deep:#53341A;
-  --oak-grain:linear-gradient(180deg,#8a5c33,#6b4322 55%,#53341A);
-  --terracotta:#A64B2A; --leaf:#3E5A45; --rose:#A85F62; --tile:#E2BE72;
-  --lamp:#B07A26; --glow:transparent;
-  --line:rgba(83,52,26,.22); --line-faint:rgba(83,52,26,.10);
-  --shadow:0 18px 40px -22px rgba(42,33,24,.45);
-  --display:"IM Fell English","Iowan Old Style",Georgia,serif;
-  --read:"Newsreader",Georgia,"Times New Roman",serif;
-  --data:"DM Mono",ui-monospace,SFMono-Regular,monospace;
+  --display-font:"Cormorant Garamond",Georgia,serif;
+  --chrome-font:true;
+  --body-font:"Cormorant Garamond",Georgia,"Times New Roman",serif;
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --room:#191008; --paper:#241A0F; --card:#2E2214;
-    --ink:#F0E5CE; --ink-soft:#C4B394; --ink-faint:#94836A;
-    --oak:#B98B54; --oak-deep:#8A5F33;
-    --oak-grain:linear-gradient(180deg,#6b4a26,#4a3117 55%,#33200e);
-    --terracotta:#D2764E; --leaf:#8FB49A; --rose:#D49295; --tile:#B08A3F;
-    --lamp:#F2B94E; --glow:rgba(242,185,78,.16);
-    --line:rgba(240,229,206,.22); --line-faint:rgba(240,229,206,.09);
-    --shadow:0 18px 44px -20px rgba(0,0,0,.7);
-  }
-}
-:root[data-theme="dark"]{
-  --room:#191008; --paper:#241A0F; --card:#2E2214;
-  --ink:#F0E5CE; --ink-soft:#C4B394; --ink-faint:#94836A;
-  --oak:#B98B54; --oak-deep:#8A5F33;
-  --oak-grain:linear-gradient(180deg,#6b4a26,#4a3117 55%,#33200e);
-  --terracotta:#D2764E; --leaf:#8FB49A; --rose:#D49295; --tile:#B08A3F;
-  --lamp:#F2B94E; --glow:rgba(242,185,78,.16);
-  --line:rgba(240,229,206,.22); --line-faint:rgba(240,229,206,.09);
-  --shadow:0 18px 44px -20px rgba(0,0,0,.7);
-}
+html[data-theme="day"]{--bg:#f6f1e7;--page:#fdfbf5;--ink:#2c2a24;--muted:#6b6557;--gold:#9a6b3f;--gold-2:#d9a441;--accent:#b46a2e;--olive:#6c7a44;--rule:rgba(154,107,63,.20);--rule-2:rgba(154,107,63,.38);--shadow:rgba(60,45,25,.16);--bar:rgba(253,251,245,.88);--sel:rgba(217,164,65,.25)}
+html[data-theme="night"]{--bg:#171410;--page:#1e1a14;--ink:#ddd4c2;--muted:#9b9180;--gold:#d3a35f;--gold-2:#e0b06f;--accent:#e0b06f;--olive:#93a563;--rule:rgba(211,163,95,.20);--rule-2:rgba(211,163,95,.38);--shadow:rgba(0,0,0,.55);--bar:rgba(30,26,20,.88);--sel:rgba(224,176,111,.22)}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%; overflow-x:clip}
+html,body{margin:0;padding:0}
 body{
-  margin:0; background:var(--room); color:var(--ink);
-  font-family:var(--read); font-optical-sizing:auto;
-  font-size:23.125px; line-height:1.62; -webkit-font-smoothing:antialiased;
-  overflow-x:clip;
+  background:var(--bg);color:var(--ink);
+  font-family:var(--body-font);
+  font-size:calc(clamp(1.5rem,1.325rem + 0.8vw,1.825rem) * var(--reader-scale,1));
+  line-height:1.78;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;transition:background .5s ease,color .5s ease;
 }
-a{color:inherit}
-:focus-visible{outline:2px solid var(--terracotta);outline-offset:3px}
-.page{
-  max-width:840px; margin:0 auto; background:var(--paper);
-  padding:0 clamp(22px,4.5vw,64px) clamp(28px,4vw,52px);
-  box-shadow:0 0 0 1px var(--line-faint), 0 30px 80px -40px rgba(42,33,24,.5);
-}
-.strip{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:16px 0; font-family:var(--data); font-size:16.25px;
-  letter-spacing:.04em; color:var(--ink-faint);
-}
-.strip .who{color:var(--ink-soft)}
-.strip a.home{color:var(--oak); text-decoration:none; border-bottom:1px solid var(--line)}
-.strip a.home:hover{color:var(--terracotta); border-color:var(--terracotta)}
-.lampbtn{
-  display:flex; align-items:center; gap:8px; background:none; border:none;
-  color:var(--ink-faint); font-family:var(--data); font-size:16.25px;
-  letter-spacing:.04em; cursor:pointer; padding:4px;
-}
-.lampbtn:hover{color:var(--lamp)}
-.lampbtn svg{display:block; overflow:visible}
-.lampbtn.searchbtn svg{fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round}
-.lampbtn .shade{fill:var(--lamp)}
-.lampbtn .base{fill:var(--oak)}
-.lampbtn .halo{fill:var(--glow)}
-.skip-link{
-  position:absolute; top:-48px; left:12px; z-index:1000;
-  background:var(--card); color:var(--oak);
-  font-family:var(--data); font-size:0.875rem; letter-spacing:.08em;
-  text-transform:uppercase; padding:10px 16px;
-  border:1px solid var(--line); text-decoration:none;
-  transition:top .15s ease;
-}
-.skip-link:focus{top:12px}
-header.mast{padding:clamp(18px,4vw,36px) 0 clamp(8px,2vw,16px)}
-header.mast h1{
-  font-family:var(--display); font-weight:400; font-size:clamp(40px,6.75vw,62.5px);
-  line-height:1.08; margin:0 0 14px; letter-spacing:.005em;
-}
-header.mast .byline{margin:0 0 6px; color:var(--ink-soft); font-size:20px}
-header.mast .thesis{
-  margin:0; font-size:23.125px; color:var(--ink-soft); max-width:44em;
-}
-.keyband{
-  height:10px; margin:18px 0 0;
-  background-image:repeating-linear-gradient(45deg, var(--terracotta) 0 6px, transparent 6px 12px);
-  opacity:.5;
-}
-.plate-hero{margin:clamp(20px,4vw,34px) 0 0; border-radius:3px; overflow:hidden; box-shadow:var(--shadow)}
-.plate-hero img{display:block; width:100%; height:auto}
-.leadin{margin:clamp(30px,4.5vw,46px) 0 0; color:var(--ink-soft); font-size:21.875px; max-width:40em}
-.leadin a{color:var(--oak); text-decoration:none; border-bottom:1px solid var(--line)}
-.leadin a:hover{color:var(--terracotta); border-color:var(--terracotta)}
-.cta{
-  display:inline-block; margin:28px 0 0; padding:14px 26px;
-  background:var(--oak); color:var(--paper); font-family:var(--data);
-  font-size:17.5px; letter-spacing:.04em; text-decoration:none; border-radius:4px;
-  box-shadow:var(--shadow);
-}
-.cta:hover{background:var(--oak-deep)}
-.note{margin:16px 0 0; color:var(--ink-faint); font-size:17.5px}
-footer{
-  margin-top:clamp(40px,6vw,64px); padding:20px 0 8px; border-top:1px solid var(--line);
-  font-family:var(--data); font-size:15.625px; color:var(--ink-faint);
-}
-footer a{color:var(--oak); text-decoration:none; border-bottom:1px solid var(--line)}
-footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
-@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
-@media (max-width:600px){
-  .strip{flex-wrap:wrap; row-gap:12px}
-  .strip a.home{flex:0 0 100%}
-  .strip-controls{flex:0 0 100%; justify-content:flex-end}
-  .lampbtn span{display:none}
-}
+::selection{background:var(--sel)}
+svg{display:block}
 
-/* site-wide search overlay (Pagefind) */
-.strip-controls{display:flex; align-items:center; gap:4px}
-.gsearch-overlay{position:fixed; inset:0; z-index:200; background:rgba(0,0,0,.45);
-  display:flex; align-items:flex-start; justify-content:center; padding:10vh 16px 0}
-.gsearch-overlay.hidden{display:none}
-.gsearch-panel{background:var(--paper); color:var(--ink); border-radius:14px; width:100%;
-  max-width:640px; box-shadow:0 20px 60px rgba(0,0,0,.35); padding:14px; max-height:70vh;
-  display:flex; flex-direction:column}
-.gsearch-panel input{width:100%; padding:12px 14px; font-size:20px; border:1px solid var(--line);
-  border-radius:10px; background:var(--paper); color:var(--ink); box-sizing:border-box}
-.gsearch-results{margin-top:10px; overflow:auto}
-.gsearch-hit{display:block; padding:10px 8px; border-radius:8px; text-decoration:none; color:inherit}
-.gsearch-hit:hover{background:var(--card)}
-.gsearch-hit-title{display:block; font-weight:600; font-size:17.5px}
-.gsearch-hit-excerpt{display:block; font-size:16.25px; color:var(--ink-soft); margin-top:2px}
-.gsearch-hit-excerpt mark{background:#ffe082; color:#333; border-radius:3px; padding:0 2px}
-.gsearch-empty{padding:10px 8px; font-size:16.25px; color:var(--ink-soft)}
+/* top bar */
+.bar{position:fixed;top:0;left:0;right:0;z-index:40;height:52px;display:flex;align-items:center;
+  justify-content:space-between;padding:0 max(14px,env(safe-area-inset-right)) 0 max(14px,env(safe-area-inset-left));
+  padding-top:env(safe-area-inset-top);background:var(--bar);backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.bar .mid{display:flex;flex-direction:column;align-items:center;justify-content:center;
+  max-width:55vw;overflow:hidden;text-align:center;line-height:1.15}
+.bar-book{font-family:var(--chrome-font);font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  font-size:1.125rem;color:var(--gold);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.bar-ch{font-family:var(--chrome-font);font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+  font-size:0.75rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;min-height:.8em}
+.iconbtn{appearance:none;border:0;background:none;color:var(--ink);cursor:pointer;width:40px;height:40px;
+  display:grid;place-items:center;border-radius:50%;padding:0;transition:background .2s}
+.iconbtn:hover{background:var(--sel)}
+.iconbtn svg{width:22px;height:22px}
+.progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:50;
+  background:linear-gradient(90deg,var(--gold),var(--gold-2));transition:width .35s ease}
+.barright{display:flex;align-items:center;gap:2px}
+
+/* reading-progress ring — scroll fraction within the active chapter, mirrors
+   the linear .progress bar but reads at a glance without leaving the page */
+.ring{display:flex;align-items:center;gap:3px;margin-right:2px;cursor:default}
+.ring svg{transform:rotate(-90deg);width:26px;height:26px}
+.ring .ring-bg{fill:none;stroke:var(--rule-2);stroke-width:3}
+.ring .ring-fg{fill:none;stroke:var(--gold);stroke-width:3;stroke-linecap:round;transition:stroke-dashoffset .25s ease}
+.ring-pct{font-family:var(--chrome-font);font-size:0.75rem;color:var(--muted);min-width:2.3em;
+  text-align:center;font-variant-numeric:tabular-nums}
+
+/* text-size popover */
+.fontpop{position:fixed;z-index:45;top:calc(52px + env(safe-area-inset-top) + 6px);
+  right:max(10px,env(safe-area-inset-right));background:var(--page);border:1px solid var(--rule-2);
+  border-radius:14px;box-shadow:0 10px 34px var(--shadow);padding:8px;display:flex;align-items:center;gap:6px;
+  opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .2s,transform .2s,visibility .2s}
+.fontpop.open{opacity:1;visibility:visible;transform:none}
+.fontpop .fbtn{appearance:none;border:0;background:var(--sel);color:var(--ink);cursor:pointer;
+  font-family:var(--chrome-font);font-weight:600;width:44px;height:44px;border-radius:11px;
+  display:grid;place-items:center;line-height:1;transition:background .2s,color .2s}
+.fontpop .fbtn:hover:not(:disabled){background:var(--gold-2);color:var(--page)}
+.fontpop .fbtn:disabled{opacity:.32;cursor:default}
+.fontpop .fbtn.small{font-size:1.188rem}.fontpop .fbtn.large{font-size:1.775rem}
+.fontpop .fval{font-family:var(--chrome-font);letter-spacing:.06em;font-size:1.025rem;color:var(--muted);
+  min-width:3.6em;text-align:center;font-variant-numeric:tabular-nums}
+
+/* search panel — a full-width popover under the bar rather than a drawer, so
+   results stay reachable without covering the reading column on mobile */
+.searchpop{position:fixed;z-index:46;top:calc(52px + env(safe-area-inset-top));left:0;right:0;
+  background:var(--page);border-bottom:1px solid var(--rule-2);box-shadow:0 10px 34px var(--shadow);
+  padding:14px max(14px,env(safe-area-inset-right)) 16px max(14px,env(safe-area-inset-left));
+  opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .2s,transform .2s,visibility .2s}
+.searchpop.open{opacity:1;visibility:visible;transform:none}
+.searchpop .swrap{max-width:39rem;margin:0 auto}
+.searchpop input{width:100%;padding:10px 14px;font-family:var(--body-font);font-size:1.25rem;
+  border:1px solid var(--rule-2);border-radius:10px;background:var(--bg);color:var(--ink)}
+.sresults{margin-top:8px;max-height:44vh;overflow:auto}
+.sresults .sr{padding:8px 10px;border-radius:8px;cursor:pointer;font-family:var(--chrome-font);
+  font-size:1rem;line-height:1.55;color:var(--ink)}
+.sresults .sr:hover{background:var(--sel)}
+.sresults .sr b{color:var(--gold-2);font-style:normal}
+.sresults .count{font-family:var(--chrome-font);font-size:0.85rem;color:var(--muted);padding:2px 4px;
+  text-transform:uppercase;letter-spacing:.08em}
+mark{background:var(--sel);color:inherit;border-radius:3px;padding:0 2px}
+
+/* contents drawer */
+.scrim{position:fixed;inset:0;z-index:60;background:rgba(15,12,8,.45);opacity:0;visibility:hidden;transition:opacity .3s}
+.scrim.open{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;bottom:0;left:0;z-index:61;width:min(86vw,360px);background:var(--page);
+  border-right:1px solid var(--rule);box-shadow:0 0 60px var(--shadow);transform:translateX(-102%);
+  transition:transform .34s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top)}
+.drawer.open{transform:translateX(0)}
+.drawer h2{font-family:var(--chrome-font);font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  font-size:1rem;color:var(--gold);margin:22px 26px 4px}
+.toc{list-style:none;margin:0;padding:8px 0 26px;overflow-y:auto;flex:1}
+.toc li{margin:0}
+.toc button{width:100%;text-align:left;background:none;border:0;cursor:pointer;color:var(--ink);
+  font-family:var(--body-font);font-size:1.275rem;padding:9px 26px;display:flex;gap:12px;align-items:baseline;
+  line-height:1.3;transition:background .15s}
+.toc button:hover{background:var(--sel)}
+.toc button .n{font-family:var(--chrome-font);color:var(--gold);font-size:1.025rem;letter-spacing:.1em;
+  min-width:1.6em;font-variant-numeric:tabular-nums}
+.toc button.active{background:var(--sel)}
+.toc button.active .t{color:var(--gold-2)}
+.toc .cover-link button{font-style:italic;color:var(--muted)}
+
+/* pages */
+main{max-width:39rem;margin:0 auto;padding:52px 22px 120px;
+  padding-left:max(22px,env(safe-area-inset-left));padding-right:max(22px,env(safe-area-inset-right))}
+.page{display:none;animation:fade .6s ease both}
+.page.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* cover */
+.cover{min-height:calc(100vh - 52px);flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:34px 6px 60px}
+.page.cover.active{display:flex}
+.cover .art{width:min(72vw,278px);margin:0 auto 6px}
+.cover.has-cover h1{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.cover .cover-img{width:min(72vw,360px);height:auto;border-radius:5px;box-shadow:0 18px 50px rgba(0,0,0,.45);margin:0 auto 22px}
+.cover h1{font-family:var(--display-font);font-weight:600;font-size:clamp(3.125rem,2.5rem + 6vw,5.25rem);
+  line-height:1.04;letter-spacing:.04em;margin:.1em 0 0;color:var(--ink)}
+.cover .amp{display:block;font-style:italic;font-weight:500;color:var(--gold);font-size:0.575em;
+  letter-spacing:.06em;margin:.18em 0}
+.cover .ded{font-style:italic;color:var(--muted);font-size:1.3rem;margin:26px 0 2px;letter-spacing:.02em}
+.cover .kind{font-family:var(--chrome-font);text-transform:uppercase;letter-spacing:.42em;font-size:0.825rem;
+  color:var(--muted);margin-top:30px;padding-left:.42em}
+.begin{margin-top:34px;appearance:none;cursor:pointer;font-family:var(--chrome-font);text-transform:uppercase;
+  letter-spacing:.28em;font-size:0.975rem;color:var(--ink);background:none;border:1px solid var(--rule-2);
+  border-radius:999px;padding:13px 30px 13px 32px;transition:all .25s}
+.begin:hover{border-color:var(--gold);color:var(--gold-2);letter-spacing:.32em}
+.cover-actions{display:flex;flex-direction:column;align-items:center}
+/* The narration is the one thing on the cover a reader can't guess at, so it
+   gets its own sentence — sentence case, soft ink: an invitation, not a banner.
+   Hidden by default and revealed only once chapter 1's audio is confirmed to
+   exist (see the HEAD-probe below), so a book with no narration yet shows nothing. */
+.cover-audio{font-family:var(--chrome-font);font-size:0.9rem;letter-spacing:.02em;line-height:1.75;
+  color:var(--muted);max-width:29em;margin:18px auto 0;text-transform:none}
+.resumeBtn{margin-top:14px;appearance:none;cursor:pointer;font-family:var(--chrome-font);text-transform:uppercase;
+  letter-spacing:.22em;font-size:0.9rem;color:var(--gold-2);background:none;border:1px solid var(--gold);
+  border-radius:999px;padding:11px 26px;transition:all .25s}
+.resumeBtn:hover{background:var(--sel)}
+.resetBtn{appearance:none;border:0;background:none;color:var(--muted);font-family:var(--chrome-font);
+  font-size:0.825rem;letter-spacing:.05em;cursor:pointer;text-decoration:underline;margin-top:10px}
+.resetBtn:hover{color:var(--ink)}
+.toc li.resume-row button{font-style:italic;color:var(--gold-2)}
+.dlwrap{margin-top:20px;min-height:1px}
+.dlbook{display:inline-flex;align-items:center;gap:9px;color:var(--muted);font-family:var(--chrome-font);
+  text-transform:uppercase;letter-spacing:.2em;font-size:0.825rem;text-decoration:none;transition:color .25s}
+.dlbook svg{width:17px;height:17px;color:var(--gold);opacity:.85}
+.dlbook:hover{color:var(--gold-2)}
+
+/* read-aloud: per-chapter download link. The hint text and the persistent
+   bottom bar itself are styled further down, under "narration". */
+.chdl{display:block;text-align:center;margin-top:10px;font-family:var(--chrome-font);text-transform:uppercase;
+  letter-spacing:.18em;font-size:0.75rem;color:var(--muted);text-decoration:none;opacity:.72;
+  transition:color .25s,opacity .25s}
+.chdl svg{display:inline-block;width:12px;height:12px;vertical-align:-2px;margin-right:5px;color:var(--gold);opacity:.85}
+.chdl:hover{color:var(--gold-2);opacity:1}
+
+/* chapter */
+.chead{text-align:center;margin:14px 0 30px}
+.chead .num{font-family:var(--chrome-font);text-transform:uppercase;letter-spacing:.4em;font-size:0.875rem;
+  color:var(--gold);padding-left:.4em}
+.chead .ttl{font-family:var(--display-font);font-weight:600;font-size:clamp(2.875rem,2.125rem + 5vw,4.75rem);
+  line-height:1.05;margin:.18em 0 0;color:var(--ink)}
+.headpiece{width:min(88vw,460px);height:auto;margin:24px auto 8px}
+.page p{margin:0 0 1.05em}
+.page p.first{text-indent:0}
+.page p:not(.first){text-indent:1.4em}
+.page p.brk{text-indent:0;text-align:center;letter-spacing:.8em;text-indent:.8em;
+  color:var(--gold);margin:1.9em 0;font-size:1.062em;user-select:none}
+.page p.first::first-letter{font-family:var(--display-font);font-weight:600;color:var(--gold);float:left;
+  font-size:4.375em;line-height:.74;padding:.04em .12em 0 0;margin-top:.04em}
+.page em{font-style:italic}
+
+/* read-along: the paragraph currently being spoken. A wash of the selection
+   colour rather than a border or a bar -- it has to be findable at a glance
+   from across a room without turning the page into a checklist. */
+.page p.speaking{background:var(--sel);box-shadow:0 0 0 .34em var(--sel);border-radius:3px;
+  transition:background .25s ease,box-shadow .25s ease}
+
+/* annotations: a marker in the text, and the panel it opens. The marker is a
+   <button> inside the <p>, which leaves the paragraph count -- the contract the
+   highlighting depends on -- untouched. */
+.note-ref{appearance:none;border:0;padding:0 .12em;margin:0;background:none;cursor:pointer;
+  font-family:var(--body-font);font-size:0.9em;vertical-align:super;line-height:0;
+  color:var(--gold);text-indent:0}
+.note-ref:hover{color:var(--gold-2)}
+.noted{border-bottom:1px dotted var(--gold);cursor:pointer}
+.notepanel{position:fixed;left:50%;transform:translate(-50%,120%);bottom:0;z-index:40;width:min(680px,94vw);
+  background:var(--page);border:1px solid var(--rule-2);border-bottom:0;border-radius:14px 14px 0 0;
+  box-shadow:0 -10px 40px var(--shadow);padding:20px 22px calc(22px + env(safe-area-inset-bottom));
+  transition:transform .3s cubic-bezier(.22,.9,.3,1);max-height:60vh;overflow:auto}
+.notepanel.open{transform:translate(-50%,0)}
+.notepanel .nt{font-family:var(--chrome-font);letter-spacing:.16em;text-transform:uppercase;
+  font-size:0.825rem;color:var(--muted);margin-bottom:8px}
+.notepanel .nb{font-size:1.175rem;line-height:1.62}
+.notepanel .nx{position:absolute;top:10px;right:12px;appearance:none;border:0;background:none;
+  color:var(--muted);font-size:1.375rem;cursor:pointer;line-height:1}
+.notepanel .nx:hover{color:var(--ink)}
+
+/* foot nav */
+.endmark{text-align:center;margin:46px 0 8px}
+.endmark svg{width:46px;height:46px;margin:0 auto;opacity:.9}
+.pgnav{display:flex;justify-content:space-between;gap:14px;margin-top:30px;padding-top:24px;border-top:1px solid var(--rule)}
+.pgnav button{flex:1;background:none;border:1px solid var(--rule-2);border-radius:12px;cursor:pointer;
+  color:var(--ink);font-family:var(--chrome-font);text-transform:uppercase;letter-spacing:.14em;
+  font-size:0.9rem;padding:14px 10px;transition:all .22s;line-height:1.3}
+.pgnav button:hover:not(:disabled){border-color:var(--gold);color:var(--gold-2)}
+.pgnav button:disabled{opacity:.32;cursor:default}
+.pgnav button .lbl{display:block;font-style:normal;font-size:0.775rem;color:var(--muted);letter-spacing:.2em;margin-bottom:3px}
+.pgnav button.next{text-align:right}.pgnav button.prev{text-align:left}
+
+/* floating footer */
+.foot{position:fixed;left:0;right:0;bottom:0;z-index:30;height:54px;padding-bottom:env(safe-area-inset-bottom);
+  display:flex;align-items:center;justify-content:center;gap:20px;background:var(--bar);backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);border-top:1px solid var(--rule)}
+.foot .arrow{appearance:none;border:0;background:none;cursor:pointer;color:var(--ink);width:42px;height:42px;
+  display:grid;place-items:center;border-radius:50%;transition:background .2s}
+.foot .arrow:hover:not(:disabled){background:var(--sel)}
+.foot .arrow:disabled{opacity:.28;cursor:default}
+.foot .arrow svg{width:22px;height:22px}
+.foot .pos{font-family:var(--chrome-font);letter-spacing:.2em;font-size:0.925rem;color:var(--muted);
+  text-transform:uppercase;min-width:5.4em;text-align:center;font-variant-numeric:tabular-nums}
+.foot.cover-hide{transform:translateY(110%)}
+
+/* persistent narration bar — floats above the chapter-nav footer */
+.player{position:fixed;left:50%;transform:translateX(-50%);
+  bottom:calc(54px + env(safe-area-inset-bottom) + 14px);z-index:35;
+  display:flex;align-items:center;gap:9px;max-width:min(640px,calc(100vw - 24px));
+  padding:8px 14px;background:var(--page);color:var(--ink);border:1px solid var(--rule-2);
+  border-radius:30px;box-shadow:0 8px 28px var(--shadow);font-family:var(--chrome-font);
+  transition:transform .3s ease,opacity .3s ease}
+.player.hidden{opacity:0;pointer-events:none;transform:translateX(-50%) translateY(12px)}
+.pl-btn{width:32px;height:32px;flex:0 0 auto;display:grid;place-items:center;font-size:16.25px;
+  background:var(--gold);color:var(--page);border:none;border-radius:50%;cursor:pointer;padding:0}
+.pl-btn svg{width:16px;height:16px}
+.pl-btn:hover{filter:brightness(1.08)}
+.pl-small{width:26px;height:26px;background:none;color:var(--muted);border:1px solid var(--rule-2)}
+.pl-small.on{color:var(--gold);border-color:var(--gold)}
+.pl-time{font-size:13.75px;color:var(--muted);font-variant-numeric:tabular-nums;min-width:34px;text-align:center}
+.pl-seek{flex:1 1 110px;min-width:70px;accent-color:var(--gold)}
+.pl-rate{font-family:var(--chrome-font);font-size:13.75px;padding:2px 4px;cursor:pointer;
+  background:var(--page);color:var(--ink);border:1px solid var(--rule-2);border-radius:10px}
+/* instructions under the chapter title, only on a chapter that has narration */
+.ch-audio-hint{font-family:var(--chrome-font);font-size:0.85rem;letter-spacing:.02em;line-height:1.6;
+  color:var(--muted);max-width:30em;margin:14px auto 0;text-transform:none}
+
+@media (max-width:480px){main{padding-left:18px;padding-right:18px}.page p:not(.first){text-indent:1.2em}
+  .player{gap:6px;padding:6px 10px}.pl-rate,.pl-time{display:none}
+  .ring-pct{display:none}.ring svg{width:22px;height:22px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Book","name":"Love in Action (Original Edition)","url":"https://johnrecords.org/love-in-action/","author":{"@type":"Person","name":"John Records"}}
+<meta property="og:title" content="Love in Action" />
+<meta property="og:description" content="A spiritual guide on the practice of love and service as a means to heal ourselves and the world." />
+<meta property="og:url" content="https://johnrecords.org/love-in-action/" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://johnrecords.org/assets/plates/love.jpg" />
+<meta name="twitter:image" content="https://johnrecords.org/assets/plates/love.jpg" />
+<meta name="twitter:card" content="summary_large_image" /><script>
+/* Audio hosting: mp3s live on the Internet Archive (permanent), with the here.now mirror as fallback.
+   auUrl(name) -> URL to use;  auHead(name) -> HEAD probe that also picks the base that answered;
+   auSwap(el)  -> on a media error, flip an IA src to the mirror and resume (returns true if it did). */
+(function(){
+  var IA='https://archive.org/download/love-in-action-original-john-records/', HN='https://rosy-truffle-2d7p.here.now/audio/', src={};
+  window.auUrl=function(n){return (src[n]||IA)+n;};
+  window.auHead=function(n){
+    function t(b){return fetch(b+n,{method:'HEAD'}).then(function(r){if(r.ok)src[n]=b;return r;});}
+    return t(IA).catch(function(){return {ok:false};}).then(function(r){
+      return r.ok?r:t(HN).catch(function(){return {ok:false};});});
+  };
+  window.auSwap=function(el){
+    var u=el.getAttribute('src')||''; if(u.indexOf(IA)!==0) return false;
+    var n=u.slice(IA.length), t=el.currentTime||0, was=!el.paused;
+    src[n]=HN; el.src=HN+n;
+    el.addEventListener('loadedmetadata',function f(){el.removeEventListener('loadedmetadata',f);
+      if(t>0)try{el.currentTime=t;}catch(e){}
+      if(was){var p=el.play(); if(p&&p.catch)p.catch(function(){});}});
+    el.load(); return true;
+  };
+})();
 </script>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-<div class="page" data-pagefind-body>
 
-  <div class="strip" data-pagefind-ignore>
-    <a class="home" href="/">&larr; John&rsquo;s Reading Nook</a>
-    <div class="strip-controls">
-      <button class="lampbtn searchbtn" type="button" data-gsearch-open aria-label="Search the site" title="Search the site">
-        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="11" cy="11" r="7"/>
-          <path d="M21 21l-4.35-4.35"/>
-        </svg>
-        <span>Search</span>
-      </button>
-      <button class="lampbtn" id="lamp" type="button" aria-pressed="false" aria-label="Light the lamp">
-        <svg width="22" height="22" viewBox="0 0 26 26" aria-hidden="true">
-          <circle class="halo" cx="13" cy="9" r="12"/>
-          <path class="shade" d="M5 11 L9 3 H17 L21 11 Z"/>
-          <rect class="base" x="12" y="11" width="2" height="9"/>
-          <path class="base" d="M8 22 Q13 19 18 22 L18 23 H8 Z"/>
-        </svg>
-        <span id="lampword">Light the lamp</span>
-      </button>
+<!-- reusable ornaments (replace with bespoke art per book; all inherit theme via currentColor) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="wb-seal" viewBox="0 0 420 420">
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="210" cy="210" r="201" stroke-width="2.6"/>
+      <circle cx="210" cy="210" r="190" stroke-width="1"/>
+      <circle cx="210" cy="210" r="196" stroke-width="4.4" stroke-dasharray="0.1 13.2"/>
+      <g transform="translate(210,210)" stroke-width="2">
+        <path d="M0,-92 L21,-30 L86,-30 L33,9 L53,71 L0,33 L-53,71 L-33,9 L-86,-30 L-21,-30 Z" stroke-width="1.6"/>
+        <circle r="50" stroke-width="1.4"/>
+        <circle r="6" fill="currentColor" stroke="none"/>
+      </g>
+    </g>
+  </symbol>
+  <symbol id="wb-rule" viewBox="0 0 560 120">
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <g stroke-width="1.4"><path d="M40,60 H222"/><path d="M338,60 H520"/></g>
+      <g stroke-width="1.3" opacity=".5"><path d="M40,64 H205"/><path d="M355,64 H520"/></g>
+      <g transform="translate(280,60)">
+        <circle r="30" stroke-width="2.2"/>
+        <circle r="26" stroke-width="3" stroke-dasharray="0.1 9"/>
+        <circle r="5" fill="currentColor" stroke="none"/>
+      </g>
+    </g>
+  </symbol>
+  <symbol id="wb-fin" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M50 16 L62 38 L86 38 L66 54 L74 78 L50 64 L26 78 L34 54 L14 38 L38 38 Z" stroke-width="1.6"/>
+      <circle cx="50" cy="50" r="5" fill="currentColor" stroke="none"/>
+    </g>
+  </symbol>
+</defs></svg>
+
+<div class="progress" id="progress"></div>
+
+<header class="bar">
+  <button class="iconbtn" id="menuBtn" aria-label="Contents"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <span class="mid">
+    <span class="bar-book">Love in Action</span>
+    <span class="bar-ch" id="barTitle"></span>
+  </span>
+  <div class="barright">
+    <div class="ring" id="ringWrap" title="Reading progress" style="display:none">
+      <svg viewBox="0 0 36 36" width="26" height="26" aria-hidden="true">
+        <circle class="ring-bg" cx="18" cy="18" r="15.5"/>
+        <circle id="ringFg" class="ring-fg" cx="18" cy="18" r="15.5"/>
+      </svg>
+      <span id="ringPct" class="ring-pct">0%</span>
     </div>
+    <button class="iconbtn" id="searchBtn" aria-label="Search text" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.4-4.4"/></svg></button>
+    <button class="iconbtn" id="fontBtn" aria-label="Text size" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19l5-13 5 13M5.5 15h7"/><path d="M14 19l3.5-9 3.5 9M15 16h5"/></svg></button>
+    <button class="iconbtn" id="themeBtn" aria-label="Day / night">
+      <svg id="sunIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:none"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.4 1.4M17.6 17.6 19 19M19 5l-1.4 1.4M6.4 17.6 5 19"/></svg>
+      <svg id="moonIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.4 6.4 0 0 0 10.5 10.5z"/></svg>
+    </button>
   </div>
+</header>
 
-  <div id="gsearch-overlay" class="gsearch-overlay hidden" role="dialog" aria-modal="true" aria-label="Search johnrecords.org" data-pagefind-ignore>
-    <div class="gsearch-panel">
-      <input id="gsearch-input" type="search" placeholder="Search johnrecords.org&hellip; (Esc to close)" autocomplete="off" />
-      <div id="gsearch-results" class="gsearch-results"></div>
-    </div>
-  </div>
-
-  <header class="mast">
-    <h1>Love in Action (Original Edition)</h1>
-    <p class="byline">Read by the author</p>
-    <p class="thesis">Heal the world, heal yourself. This book distills a simple approach to loving more fully. As you read and reflect, you’ll learn how to be more loving with your family, in the workplace, and as a volunteer. You’ll learn about the simple spiritual practice of offering your entire being to love, and gradually being transformed into a vehicle for love’s expression.</p>
-  </header>
-
-  <main id="main" tabindex="-1">
-
-  <div class="keyband" role="presentation"></div>
-
-  <figure class="plate-hero">
-    <img src="/assets/plates/love.jpg" width="768" height="512" loading="eager" alt="Two hands gently cupping a small warm flame, cover art for Love in Action." />
-  </figure>
-
-  <p class="leadin">This book is hosted in full &mdash; text and narrated audio &mdash; at its own
-    address so it doesn&rsquo;t depend on this page staying around.</p>
-  <a class="cta" href="https://rosy-truffle-2d7p.here.now/#ch1">Read Love in Action (Original Edition) &rarr;</a>
-  <p class="note">rosy-truffle-2d7p.here.now</p>
-
-  </main>
-
-  <footer data-pagefind-ignore>
-    <span>&copy; John Records &middot; <a href="mailto:john.records@gmail.com">john.records@gmail.com</a></span>
-  </footer>
-
+<div class="fontpop" id="fontPop" role="group" aria-label="Text size">
+  <button class="fbtn small" id="fDown" aria-label="Smaller">A</button>
+  <span class="fval" id="fVal">100%</span>
+  <button class="fbtn large" id="fUp" aria-label="Larger">A</button>
 </div>
 
-<script src="/gsearch.js" defer></script>
+<div class="searchpop" id="searchPop" role="search">
+  <div class="swrap">
+    <input id="searchInput" type="search" placeholder="Search the text&hellip; (Enter &#8629;)" aria-label="Search the text">
+    <div class="sresults" id="searchResults"></div>
+  </div>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<nav class="drawer" id="drawer" aria-label="Contents"><h2>Contents</h2><ul class="toc" id="toc"></ul></nav>
+
+<main data-pagefind-body data-pagefind-meta="title:Love in Action (original edition)" id="main">
+  <section class="page cover active" data-i="0">
+    <svg class="art gold" viewBox="0 0 420 420" aria-hidden="true"><use href="#wb-seal"/></svg>
+    <h1>Love in Action</h1>
+    <p class="ded">To all who love, to all who serve</p>
+    <div class="kind">A Spiritual Guide</div>
+    <p class="cover-audio" id="coverAudio" style="display:none">Every chapter is narrated. Open one and press play in the bar at the foot of the page. While it plays, click any paragraph to jump the reading there.</p>
+    <div class="cover-actions" id="coverActions">
+      <button class="begin" id="beginBtn">Begin Reading</button>
+    </div>
+      <div class="dlwrap"><a class="dlbook" id="dlBook" href="https://archive.org/download/love-in-action-original-john-records/audiobook.mp3" download="rosy-truffle-2d7p.mp3" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M5 21h14"/></svg>Download audiobook (MP3)</a></div>
+  </section>
+  <section class="page" data-i="1">
+    <div class="chead"><div class="num">Chapter One</div><h2 class="ttl" id="pf-ch1">Preface</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">My name is John. During 21 years building centers and programs to help homeless people in the Bay Area, I realized that love is the key element, and sometimes the missing ingredient, for helping people in need. I've found the same to be true while working in hospice supporting dying people and their families.</p>
+    <p>This lack of love pervades our society, and makes inevitable the overwhelming suffering described daily in the media, and the increasing hatred and lies that no longer are hidden in shame.</p>
+    <p>Love in Action is my response. This book distills what I've learned helping over 20,000 people, and through decades of spiritual practice.</p>
+    <p>As you read and reflect, you'll learn how to be more loving with your family, in the workplace, and as a volunteer. You'll learn about the simple spiritual practice of offering your entire being to love, and gradually being transformed into a vehicle for love's expression.</p>
+    <p>These lessons will help you to stay strong whatever comes your way, and to offer your love in action more and more to heal the world and yourself.</p>
+    <p>If Love in Action helps you, please share it with others so they too can benefit, as well as those they will help.</p>
+    <p><a href="https://johnrecords.org/">johnrecords.org</a> has all the info you'll need.</p>
+    <p>Together we can touch thousands or even millions of lives.</p>
+    <p>With my best wishes and appreciation, John Records, October 26, 2017, Paonia, Colorado.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="2">
+    <div class="chead"><div class="num">Chapter Two</div><h2 class="ttl" id="pf-ch2">What Is Love?</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">Love is to the spiritual world as gravity is to the material world: all pervading, holding us together, grounding, and reliable.</p>
+    <p>Love is connectedness, union, in which we see and respond to a person, creature, or situation in a deep and appropriate way, intuitively knowing what is best for all concerned.</p>
+    <p>Our love can expand to include all of creation, and the locus of our identity can shift so that we are not limited by our small sense of self, but feel the entire cosmos as our own being.</p>
+    <p>If we really see any person or creature, we love them. While we may tend to focus on those closest to us, for whom we may feel special responsibility and care, we can be open to loving all beings.</p>
+    <p>Loving them, we want to open our hearts to them and to share whatever we have that they might need, and to receive the same from them. Our love is not passive, but active. Love becomes love in action.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="3">
+    <div class="chead"><div class="num">Chapter Three</div><h2 class="ttl" id="pf-ch3">A Lot of Good, Yet</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">There's a lot of good in the world. Just visit a food bank or animal shelter (or better yet, volunteer there) if you want to see people at their best.</p>
+    <p>Yet despite the good in the world, we must acknowledge that our world is full of suffering. Just read the news if you doubt this.</p>
+    <p>The suffering is not just "elsewhere." I found it in my own community.</p>
+    <p>I was driving my old Volvo on a rainy, cold night and saw a man huddled at the side of the road, with his thumb out. I don't usually pick up hitchhikers, but the blasting warm air from the heater as the windshield wipers whipped back and forth reminded me of my good fortune. I wanted to share my comfort, so I pulled over and picked him up.</p>
+    <p>I opened the door and he climbed into the car. We shook hands and traded names. Joe said he needed a ride to the homeless shelter.</p>
+    <p>Once a well-to-do contractor, Joe had lost his home, his family, and his business. His lined face and his worn clothes told how hard his life was now. He spoke about living on the street – where to find work, food, and shelter.</p>
+    <p>Suddenly, I realized that Joe – the homeless person – was trying to instruct and help me – the middle class, employed person to whom such a thing as being homeless was unthinkable.</p>
+    <p>But Joe knew that anyone can lose their home, and that many are just a paycheck away from the street. So he told me what to do if the unthinkable should ever happen.</p>
+    <p>As Joe left the car at the shelter, I pondered his kindness and decided to follow him in. As the proverbial "fly on the wall" I watched as he spoke with the man at the check-in table.</p>
+    <p>"Can I get some dinner?"</p>
+    <p>"Gee, you're too late. We ate at the church tonight."</p>
+    <p>Joe's face fell. A withered man, sitting on a bench nearby, reached into his shirt pocket.</p>
+    <p>"Hey! I've got a hard-boiled egg you can have. How 'bout that?"</p>
+    <p>An egg. The carefully saved egg was a meal for a man who couldn't be sure he'd have enough to eat tomorrow. That egg was his savings account, his pension. It was all of his wealth. Never had I given anything as valuable as that egg.</p>
+    <p>This was love in action. The egg man's gift and service to his fellow human being inspired me to want to volunteer with the shelter, and that began over 20 years of passionate work for me, serving people without homes.</p>
+    <p>Really, you could stop reading right here. Just remember the egg man's answer to the suffering and despair right in front of him. He gave what he had to help another. He became love in action.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="4">
+    <div class="chead"><div class="num">Chapter Four</div><h2 class="ttl" id="pf-ch4">The Easy Way Out</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">How do we respond to the suffering in the world, including in our own lives? One solution is to turn away from it all, ignore it, and pretend it's not there. We can go numb and pursue our own pleasure.</p>
+    <p>This is the easy way out. Our culture offers many distractions to keep us cocooned from the pain all around us and within.</p>
+    <p>Yet it can be a blessing to really feel and acknowledge our own suffering and the suffering of others. It's a blessing because it means engaging with the truth of our lives.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="5">
+    <div class="chead"><div class="num">Chapter Five</div><h2 class="ttl" id="pf-ch5">Be the Change You Want to See in the World</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">Many religions suggest that the world's immense pain and injustice are acceptable somehow: there is a loving God whose ways we don't know but must trust; or that it's all an illusion; or that we're reaping the karma we've sown. Yet religions still encourage us to help those in need.</p>
+    <p>But suppose you don't have faith, and for you all of humanity's suffering is heartbreakingly, horribly real, and there's absolutely no sense to any of it. Then the blessing is that you still get to choose how you are going to live in the world.</p>
+    <p>You can change the world from one that is senselessly horrible to one in which there is compassion with your choice about how to live. You can choose that, to the extent of your ability, the people whose lives touch yours will be treated with love.</p>
+    <p>If you feel that the world is unloving, follow Gandhi's advice and be the change you want to see in the world.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="6">
+    <div class="chead"><div class="num">Chapter Six</div><h2 class="ttl" id="pf-ch6">One Word Is Whispered</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">I love parables and stories from different times and traditions. Here is one of my favorites.</p>
+    <p>For every soul, there is an angel. The angel works with the soul before it is ready to take embodiment, before it is ready to be born into life on earth.</p>
+    <p>The angel talks with the soul about what to expect from life, and how to be ready for life on earth. And then, just before the soul is ready to be born, its angel whispers one word into its ear: Give.</p>
+    <p>In this one word, our angel tells us all we really need to know. Implicit in the angel's directive, give, is a way to heal the fragmentation of our lives, and to establish wholeness.</p>
+    <p>Service, love in action, is one expression of this giving. To give freely of ourselves, without regard to our own benefit, is love in action.</p>
+    <p>Only a life lived for others is worth living. — Albert Einstein</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="7">
+    <div class="chead"><div class="num">Chapter Seven</div><h2 class="ttl" id="pf-ch7">Until Our Hearts Are Broken</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">Until our hearts are broken, we're less-than-complete human beings. Perhaps sometimes we have to ignore the pain of others, just to function.</p>
+    <p>But if we're incapable of recognizing others' pain, then we're fragmented and cut off from ourselves. We all have the capacity to love and to care, but it has to develop, and that process usually involves some breaking, some pain.</p>
+    <p>The cold stone of our hearts is painfully excavated, which makes room for kindness to enter. Our hearts become a cup that overflows with love, and we enjoy a sense of connectedness with others.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="8">
+    <div class="chead"><div class="num">Chapter Eight</div><h2 class="ttl" id="pf-ch8">Are You Worthy of Love?</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">Our own suffering, including experiences in which we've been hurt by others (often while children) can cause us to feel unlovable and unworthy of love.</p>
+    <p>This feeling of unworthiness can limit our ability to lovingly support others. Moreover, even if we are able to support others, our own healing and ability to receive love is just as important as that of others.</p>
+    <p>Here is good medicine for you if you feel unworthy of love, in the form of a quote attributed to the Buddha:</p>
+    <p>Wherever you go, wherever you look, you'll never find anyone more worthy of love than you.</p>
+    <p>In a workshop I facilitated, we experimented with saying this to each other.</p>
+    <p>Wherever you go, wherever you look, you'll never find anyone more worthy of love than you.</p>
+    <p>What do you say? Is this true?</p>
+    <p>Wherever you go, wherever you look, you'll never find anyone more worthy of love than you.</p>
+    <p>Some in the workshop cried as they heard this, and some felt resistance to hearing it, not believing it to be true or even possible.</p>
+    <p>Wherever you go, wherever you look, you'll never find anyone more worthy of love than you.</p>
+    <p>There is no one more worthy of love than you.</p>
+    <p>Most seemed to feel that it's easier to tell this to someone than to hear it said to oneself.</p>
+    <p>Wherever you go, wherever you look, you'll never find anyone more worthy of love than you.</p>
+    <p>Why do we resist being told this? People in the workshop offered that many of us have had experiences as children in which we were taught that we are unworthy of love, bad, stupid.</p>
+    <p>It hurts to write this, as I think of all the needless pain adults cause children for a lifetime with such thoughtless and sometimes intentionally cruel statements. And yet,</p>
+    <p>There is no one more worthy of love than you.</p>
+    <p>In 1990, the columnist Sharon Salzberg discussed this with the Dalai Lama. Here's an excerpt from her essay:</p>
+    <p>"Your Holiness, what do you think about self-hatred?"</p>
+    <p>He looked at me seeming somewhat confused and asked in response:</p>
+    <p>"What's that?"</p>
+    <p>... While I came to meditation at 18 as a result of dealing with feelings of inadequacy and self-judgment for my entire young adult life, the Dalai Lama didn't even know what the meaning of self-hatred was. When I explained to him what I meant by the term -- talking about the cycle of self-judgment, guilt, unproductive thought patterns -- he asked me, "How could you think of yourself that way?" and explained that we all have "Buddha nature."</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="9">
+    <div class="chead"><div class="num">Chapter Nine</div><h2 class="ttl" id="pf-ch9">Learning to Love Ourselves</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">How do we heal from these old wounds and self-hatred? If untreated these wounds persist into adulthood and can profoundly affect our happiness, and how we treat others and ourselves. Just hearing that "no one is more worthy of love than you" is not enough for many of us.</p>
+    <p>Through experiments in the workshop mentioned in the prior chapter, we found that being physically touched while hearing this made it easier to hear and accept.</p>
+    <p>Wherever you go, wherever you look, you'll never find anyone more worthy of love than you.</p>
+    <p>Even light touch helped, and that feels safer for people who have experienced abusive or harmful touching. We did this by working in pairs with each person extending an index finger so the finger tips of each person touched, then the statement "no one is more worthy of love than you" was offered. Wonderful, tearful, healing occurred.</p>
+    <p>You can try this for yourself, right now. Hug yourself and say:</p>
+    <p>Wherever you go, wherever you look, you'll never find anyone more worthy of love than you.</p>
+    <p>Or try it while touching another (use the fingertip method mentioned above), or have them touch you and say it.</p>
+    <p>Wherever you go, wherever you look, you'll never find anyone more worthy of love than you.</p>
+    <p>Often, we are told that meditation, which supports the realization of what the Dalai Lama calls our Buddha Nature, is the cure for all of our ailments. That may be, but my experience is that genuine, healthy connection with another human being can greatly support this realization. Therapy can help too, and can be based on this kind of healthy connection.</p>
+    <p>What happens when we learn to love ourselves? One of the workshop participants offered this poem:</p>
+    <p>The time will come / when, with elation / you will greet yourself arriving / at your own door, in your own mirror / and each will smile at the other's welcome, / and say, sit here. Eat. / You will love again the stranger who was yourself. / Give wine. Give bread. Give back your heart / to itself, to the stranger who has loved you / all your life, whom you ignored / for another, who knows you by heart. / Take down the love letters from the bookshelf, / the photographs, the desperate notes, / peel your own image from the mirror. / Sit. Feast on your life. — Derek Walcott</p>
+    <p>Having learned to love ourselves, we can better love and serve others, and participate in healing the world.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="10">
+    <div class="chead"><div class="num">Chapter Ten</div><h2 class="ttl" id="pf-ch10">Tikkun Olam</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">If your heart is broken by suffering, you might participate in tikkun olam, a Hebrew phrase that means, "mending the world."</p>
+    <p>The unity that can manifest and express in our own lives is part of tikkun olam. We have the opportunity to increasingly, consciously participate in mending the world. We start with ourselves.</p>
+    <p>We mend ourselves through practices like meditation, prayer and sometimes psychotherapy. In addition to our inner work, tikkun olam is served when people come together in love, service, respect and mutual support. This can happen in the family, among neighbors, in the workplace, and in spiritual communities, to name just a few.</p>
+    <p>Usually when we are engaged in loving service we don't think about what's going on at a deeper level. We are probably immersed in the needs of the moment, whether it be talking to a client, reading to a child, or feeding a hungry person.</p>
+    <p>We are simply involved in the act, and that's a good thing; it's better that we are not self-conscious, analyzing our motivation and our response as we do these things.</p>
+    <p>But nonetheless, something is happening on a deeper level. People invariably say that they feel good when they render service (and by this I mean selfless service, in which we help to meet the need of another without seeking what's in it for us).</p>
+    <p>I think I know why we feel good when we offer selfless service. Suppose, for the sake of discussion, that there is something in which we live and move and have our being, and of which we are often unaware. I'd like to call it Spirit here; please use whatever words you like.</p>
+    <p>For the most part we don't remember our relationship to Spirit, but it feels good when we do feel more connected to it, and act and express ourselves in accordance with this connection. The great wisdom traditions encourage service as a path to connection with Spirit.</p>
+    <p>For example, Jesus tells us that he is present when we feed the hungry, give a drink to the thirsty, when a stranger is received into our homes, when we clothe the naked, when we take care of the sick. He tells us that by performing selfless service, by giving, we enter into connection with Spirit.</p>
+    <p>In St. Francis' famous prayer, he states, "It is in giving that we receive." It is not "in grabbing that we receive!" By giving, we keep making room for more receiving. Moreover, our capacity to give, and hence what we receive, increases with practice.</p>
+    <p>If we let our hearts open to the need of another being (or the needs of a situation), that will itself tell us what we must do, and how we must serve. For example, if our baby is crying we can decide to change the baby's diaper with love for our little one rather than with resentment over the task. By this simple change of attitude, responding to the baby's cry with love, we are drawn into alignment with Spirit.</p>
+    <p>More is going on than meets the eye when we participate in tikkun olam, mending the world. What was sundered in the Creation process is coming back together and being made whole again. It's our responsibility to be part of this, so that the world is mended in and through us. This is the path of love in action.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="11">
+    <div class="chead"><div class="num">Chapter Eleven</div><h2 class="ttl" id="pf-ch11">Offer Your Life</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">You can heal your pain and help to mend the world if you offer your life in love and service. This is the bodhisattva way, as described in the prayer below from Shantideva, an 8th century Buddhist monk.</p>
+    <p>We might imperfectly live this way, but to even try to live like this aligns us with the power of love, which acts through us, supports us and develops us. Love can accomplish what we alone cannot, and presently we become love in action, love incarnate.</p>
+    <p>You may already be inclined to live in love and service. Shantideva's prayer might help you to do so even more:</p>
+    <p>May I become at all times, both now and forever / A protector of those without protection / A guide for those who have lost their way / A ship for those with oceans to cross / A bridge for those with rivers to cross / A sanctuary for those in danger / A lamp for those without light / A place of refuge for those who lack shelter / And a servant to all in need / For as long as space endures, / And for as long as living beings remain, / Until then may I, too, abide / To dispel the misery of the world.</p>
+    <p>Try saying this aloud, and see how it makes you feel. If it feels good, say it daily, and let this prayer guide your choices and behavior.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="12">
+    <div class="chead"><div class="num">Chapter Twelve</div><h2 class="ttl" id="pf-ch12">The Prayer of St. Francis</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">The bodhisattva way is not exclusive to any faith or worldview. There are many contemporary bodhisattvas who have no belief system or code of conduct, whose lives are simple expressions of love. You don't have to adopt a belief system or bow to dogma to live this way.</p>
+    <p>That said, the prayer of St. Francis is a great example of the perspective of a Christian bodhisattva. However, some don't like the words "Lord" and "Divine Master". You can ignore them, or substitute words that work better for you--perhaps Higher Self, Great Mystery, or Spirit.</p>
+    <p>Here's the prayer:</p>
+    <p>Lord, make me an instrument of your peace / Where there is hatred, let me sow love / Where there is injury, pardon / Where there is doubt, faith / Where there is despair, hope / Where there is darkness, light / Where there is sadness, joy / Oh Divine Master, / Grant that I may not so much seek / To be consoled as to console / To be understood as to understand / To be loved as to love / For it is in giving that we receive / It is in pardoning that we are pardoned / It is in dying (to our selfishness) that we are / Born to eternal life.</p>
+    <p>You can work with this prayer in three ways, described in the next chapters.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="13">
+    <div class="chead"><div class="num">Chapter Thirteen</div><h2 class="ttl" id="pf-ch13">Meditation on the Prayer of St. Francis</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">The first way to work with the prayer of St. Francis comes from one of my teachers, Eknath Easwaran. He suggests that we memorize it and use it for meditation. This helps to internalize the words and even the consciousness of St. Francis.</p>
+    <p>Here are instructions in this practice, taken from the website of Easwaran's Blue Mountain Center of Meditation, www.bmcm.org.</p>
+    <p>In passage meditation, you concentrate on the words of an inspirational text or passage from one of the great wisdom traditions.</p>
+    <p>You start by choosing an inspirational passage [like the prayer of St. Francis] and memorizing it. The passage should be positive, practical and uplifting, and there are lots of passages you can choose from. Some are short, others longer, and they're from all different traditions.</p>
+    <p>Once you're ready with your passage, then</p>
+    <p>Sit in a chair, or on a cushion on the floor.</p>
+    <p>Sit upright and close your eyes.</p>
+    <p>Go through the words of your memorized passage slowly and silently in the mind.</p>
+    <p>Do your best to concentrate on the passage – when distractions come, just bring your mind back to the words.</p>
+    <p>At the end of the passage, go back to the beginning, or start a new one.</p>
+    <p>Do this for 30 minutes every morning.</p>
+    <p>If this attracts you, check out Easwaran's classic book Meditation, which provides more guidance on this way to meditate, and sets forth his eight-step program for spiritual development.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="14">
+    <div class="chead"><div class="num">Chapter Fourteen</div><h2 class="ttl" id="pf-ch14">Counteracting Our Own Painful Feelings</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">The second way to work with the prayer of St. Francis is to use the stanzas literally. For instance, when we notice hatred in ourselves, the antidote is to feel love. It's a matter of catching ourselves in a thought or feeling, and counteracting that with the opposite.</p>
+    <p>So if we feel hatred for someone who harmed us, we might be able to find some love for that person as we think of the good things they have done for us or for others, and how they have been injured themselves and act in a hateful way because of that.</p>
+    <p>This doesn't mean condoning someone's harmful behavior, including our own. The point is to find a way to escape the trap of hatred, doubt, despair, darkness, or sadness. We can counteract this suffering by intentionally evoking the opposite feelings.</p>
+    <p>It helps to really consciously feel the painful emotion and how it expresses in your body. For instance, if I am feeling hatred and anger in my body, I notice tension in my shoulders and a sensation of being poorly connected to the ground. I might say to myself, "These are the feelings of anger and hatred I have toward whomever."</p>
+    <p>We're not suppressing the feeling or turning away from it, but rather welcoming it honestly and authentically. We are not pretending it isn't there. This immediately takes away some of its power, and can get us unstuck from the feeling.</p>
+    <p>Then, we can think of something good that the person did. In fairness, whatever they did or didn't do that has evoked our feeling, there is more to them than just that. So, having acknowledged our feeling, we take the antidote of appreciating something the person did that evokes a positive feeling like love.</p>
+    <p>When the feeling of hatred (and its partner anger) is met with the feeling of love, we can feel a shift into a more neutral place, not caught in hatred or love. We can apply this practice to all the painful emotions listed in Francis' prayer. What a relief!</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="15">
+    <div class="chead"><div class="num">Chapter Fifteen</div><h2 class="ttl" id="pf-ch15">Strategies for Supporting Others</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">The third way to work with the prayer of St. Francis is to apply the stanzas when we notice negative thoughts and actions in others. As an example, if someone is full of despair, it might be possible for us to support him or her in finding hope.</p>
+    <p>I'm not suggesting a mindlessly Pollyanna approach, nor swooping in for a quick fix when someone's life has been shattered. Rather, genuinely listening to a person in despair is in itself healing and provides hope, for it demonstrates that they are not alone, and that someone cares about them. At the right time, it may be possible to offer other forms of tangible support.</p>
+    <p>To people in pain, we can be the tangible expression of the positive qualities mentioned in the prayer of St. Francis: love, faith, hope, light and joy. Offering ourselves in this way gradually transforms us more and more into the living expression of love.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="16">
+    <div class="chead"><div class="num">Chapter Sixteen</div><h2 class="ttl" id="pf-ch16">The Second Stanza</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">So far we've just looked at the first stanza of the prayer of St. Francis. Here's the second stanza:</p>
+    <p>Oh Divine Master, / Grant that I may not so much seek / To be consoled as to console / To be understood as to understand / To be loved as to love.</p>
+    <p>Again, if you don't care for "Divine Master" feel free to substitute words more to your liking.</p>
+    <p>The orientation here is clear: we're not seeking the benefits of consolation, understanding and love for ourselves, but rather are offering these to others. The purpose is to get us out of our seemingly endless cultivation of self-centeredness that, in extreme cases, leads us to try to reshape the entire world to serve our sometimes infantile neediness.</p>
+    <p>There are times that we need and want consolation, understanding and love. If we are living the prayer of St. Francis, these will generally come to us without having to seek them.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="17">
+    <div class="chead"><div class="num">Chapter Seventeen</div><h2 class="ttl" id="pf-ch17">Fruit For You</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">Without trying to attain a benefit for ourselves, simply by living the prayer of St. Francis in accord with the first two stanzas, we can enjoy marvelous fruit.</p>
+    <p>For it is in giving that we receive / It is in pardoning that we are pardoned / It is in dying (to our selfishness) that we are / Born to eternal life. / What goes around, comes around.</p>
+    <p>As you sow, so shall you reap.</p>
+    <p>We get back what we give, and in my experience much more than that.</p>
+    <p>When we are able to pardon (forgive) others, we greatly heal our own pain.</p>
+    <p>When we let go of our striving to benefit ourselves, when we die to our selfishness, we enter into the timeless freedom that is called "eternal life" in the prayer.</p>
+    <p>Tikkun olam: as we mend the world, we mend ourselves.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="18">
+    <div class="chead"><div class="num">Chapter Eighteen</div><h2 class="ttl" id="pf-ch18">Let Love Be Our Compass</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">Let love be our compass. One way we experience the ground of being, Spirit, is as love. The subjective feeling of love arises when Spirit is active in us. Action that comes out of that love, that stirring of Spirit, is service, compassion, kindness, and healthy connection.</p>
+    <p>So love is a reliable compass, and when we act guided by love we bring more love and harmony to the world. Conversely, if we are in hate rather than love, we are increasing the fragmentation of the world.</p>
+    <p>If we are aligned with Spirit, if we are full of love, then that acts through us, motivates us, and expresses in blessing and action in the world. This includes the normal activities of our daily lives – our work (particularly if not harmful to others), and our relationships with family, friends, and colleagues.</p>
+    <p>For most kinds of service we can imagine, a machine could perform the task. For example, a vending machine can provide hot stew to a customer. But a crucial ingredient is missing, and that ingredient is, of course, love.</p>
+    <p>The Talmud says, "The whole worth of a kind deed is the love that inspires it." This underscores that service of the kind discussed in this book is not merely a mechanical act. Rather, as Sarah Patton Boyle, a U.S. civil rights activist, said, "Service...is love in action, love made flesh; service is the body, the incarnation of love. Love is the impetus, service the act, and creativity the result with many byproducts."</p>
+    <p>When Patton Boyle says, "Love is the impetus," we see again the tug of Spirit inviting us to participate in the flow. The pull of love, its invitation to us, can take many forms: a sense of connection with someone in need, the inspiration to give something we have just because somebody else might need it, the desire to help someone who's in a situation that sparks a memory of some old pain or a loss of our own.</p>
+    <p>The "many byproducts" Ms. Boyle mentions are diverse and unpredictable; they range from a warm glowing feeling in the giver and receiver to the utter transformation of either or both, and perhaps even of those around them.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="19">
+    <div class="chead"><div class="num">Chapter Nineteen</div><h2 class="ttl" id="pf-ch19">Offering Ourselves Into the Wounded World</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">A young friend said to me, "I'm trying to figure out what to do with my life. Do you have any thoughts on this?" I pondered as we walked through a beautiful park, just strolling and chatting.</p>
+    <p>Knowing that my friend pushes herself pretty hard, I said, "Well, I'd give a different answer to a different person. But my answer for you is to first give yourself permission to have fun."</p>
+    <p>"But I can't do that," she said, "when the world is in such trouble. People are starving. A war is looming. And women and children are being abused every day. How can you tell me to have a good time?"</p>
+    <p>"I just want you to be able to enjoy yourself," I said, "even though there is a lot of pain in the world. We've both seen grim, desperate, fearful activists who feel driven and angry, and who are doing their level best to save something that they see as hanging by a thread. I myself have been like that. I don't know how effective we really are when we're coming from that place. We're running on a corrosive fuel that doesn't feed us and that in fact eats away at us and those around us."</p>
+    <p>I continued, "I'm not putting people like that down--they have the guts to confront what they see is wrong. And it's true that terrible things are always going on. But it's also true that there is always cause for joy and for celebration. We have to find some kind of accommodation between the wounds and the joy of our world. I think that to the extent our engagement with the wounds of the world can come from our joy and strength, we will be more effective than if we come from the place of desperation and fear."</p>
+    <p>I concluded by urging her to root herself in what she finds to be true, good and loving, to have a positive vision of the future, and to engage the world from that place. I'm happy to report that she has found a way to do this, most of the time.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="20">
+    <div class="chead"><div class="num">Chapter Twenty</div><h2 class="ttl" id="pf-ch20">Be Like a Bird</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">The balancing act between the wonder and wounds of our world is expressed beautifully by the women's singing group Libana in its song, "Be Like a Bird," based on Victor Hugo's "Wings." As Libana puts it:</p>
+    <p>Be like a bird, who pausing in her flight / on a limb too slight, / feels it give way beneath her, / yet sings, sings, knowing she has wings; / yet sings, sings, knowing she has wings.</p>
+    <p>We can take the risk of alighting on the ever-unreliable branches of the world, engaging with the pain and fragmentation, because we know that our wings will bear us up until we choose to alight again.</p>
+    <p>The wounds, the various kinds of pain and suffering that we see in the world, are manifestations of our disconnectedness from Spirit; they are part of the way we experience ourselves as separate from other beings, other creatures, and from the world itself. It is important to understand that the wounds of the world are our own wounds.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="21">
+    <div class="chead"><div class="num">Chapter Twenty-One</div><h2 class="ttl" id="pf-ch21">Healing Ourselves, Healing the World</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">If we open ourselves to the wounds we see in the world, if we let our hearts be broken by it so that we must act, we become love in action. We accept the invitation to participate in the healing of the wounds of the world, which are our own wounds.</p>
+    <p>This is the healing of ourselves. By the same token, the joy of the world is our own joy, and is not different from ourselves. We can rejoice in the triumphs of others, and surf on the waves of their happiness.</p>
+    <p>I emphasize the wounds more than the joy because the wounds are more frightening and challenging to connect with. Opening to joy generally is easier!</p>
+    <p>But as Spirit expresses itself more fully in our fragmented worldview, as we offer ourselves in service to the wounds of the world, a healing occurs that encompasses us as well as those we serve.</p>
+    <p>For instance, if we are inspired to help a woman who has been abused, that within us which responds to her need is part of her need, part of the world's wound which she and we suffer together. The recognition of her suffering, along with the effort and intention to help heal it, are part and parcel of the healing itself. And as her personal healing begins, the universal wound is also addressed.</p>
+    <p>As a corollary, beginning to heal ourselves, making ourselves more whole, bringing ourselves into alignment with Spirit, enjoying our lives and expressing and developing our gifts--all this helps to heal the wounds of the world. Another way to say this is that our individual blossoming and our natural healthy, joyous expression are part of the world's healing.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="22">
+    <div class="chead"><div class="num">Chapter Twenty-Two</div><h2 class="ttl" id="pf-ch22">Love in Action in the Family</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">One of the easiest places to offer love in action is in our families and in our friendships by putting others' needs ahead of our desires. Opportunities to do this may arise at unexpected times.</p>
+    <p>For example, a friend returned from work and was sitting on the couch reviewing the day's mail. Her 18-year-old daughter came to sit by her and she put the mail down, turning her attention to the young woman. "You know, Mom," she said, "I really appreciate it that you're ready for me whenever I'm ready for you. There's never been a time that I needed you that you weren't there for me."</p>
+    <p>In this case, it was a simple, natural thing for the mother to drop what she was doing to be present for her daughter. It's good to take advantage of these opportunities when we can.</p>
+    <p>Eventually, we go our separate ways. We are wise to provide love and support in the moment, and not put it off for another time that may never come.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="23">
+    <div class="chead"><div class="num">Chapter Twenty-Three</div><h2 class="ttl" id="pf-ch23">Love in Action at Work</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">"I can't be servile. I give service. There is a difference." — Dolores Dante, U.S. waitress, quoted in Working, Book 5, by Studs Terkel (1973)</p>
+    <p>We can picture "tiers" of love in action outside the family. Someone might progress from having a regular, off-the-shelf job, to doing such a job with a loving and serviceful attitude, to volunteering now and then in an environment overtly dedicated to service, to having a job that's completely dedicated to love in action.</p>
+    <p>In some ways it's much easier working in a helping profession, because we don't have to struggle to make room for real love in action and we get a lot of support in living and behaving this way. For most of us, full-time employment in a recognized service profession is hard to come by, so our work-a-day job becomes our primary arena for love in action.</p>
+    <p>Offering love in action is possible in any context or environment. Whether we are working in a homeless shelter or in a tech company, whether we are reading to the neighbors' kids or volunteering at the hospice, we can offer love in action to the people and the work at hand.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="24">
+    <div class="chead"><div class="num">Chapter Twenty-Four</div><h2 class="ttl" id="pf-ch24">Volunteering</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">"We make a living by what we get, but we make a life by what we give." — Winston Churchill</p>
+    <p>I know many people who live out love in action in the business world, but they also sometimes seem worn out when their work environments are dollar-driven and dehumanizing. They tell me that volunteering is refreshing and revitalizing.</p>
+    <p>Take for example the viewpoint of Jim, a real estate broker who volunteered in a homeless shelter:</p>
+    <p>To me this place is an oasis. Here I can get fulfilled. It's an island in the middle of this turmoil that I can find refuge in. This is real for me and I treasure it. I talk it up all the time. It is an oasis for me. And when I go in there, the staff and volunteers are concerned about me and I'm concerned about them. It's a nice, nice feeling.</p>
+    <p>As volunteers, we should take small steps and have patience. Look at all the residents, all the people who are homeless, look for that personal pure essence. And have no expectations, none.</p>
+    <p>If you get involved you'll be happier and you'll be more fulfilled than in anything you've ever done. It won't make you rich in material things, but it'll make you wealthy in friends, relationships and personal well-being. You'll go to bed every night and you'll say, 'That was a good day. That was a cool day today.'</p>
+    <p>You won't have that plaque on the wall for being the outstanding car salesman or whatever, but you'll have it in your head. And you'll sleep well. The inner joy you get is great. You'll find all those other important things will still get done but they won't be as big a deal any more. They're just not that important.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="25">
+    <div class="chead"><div class="num">Chapter Twenty-Five</div><h2 class="ttl" id="pf-ch25">Celeste</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">There are many challenges in offering love in action, in offering ourselves into the wounds of the world. Now and then we encounter something we aren't ready for.</p>
+    <p>Some years ago in my work in homeless services, I met a mother whom I'll call Yvonne, and her 10 year-old daughter whom I'll call Celeste. (These are not their real names.) Yvonne was worn by her years on the street. She was used up, but not yet disposed of by our uncaring culture.</p>
+    <p>Yvonne lived with her daughter Celeste in the nooks and crannies of our community, in the homeless shelter when possible, in the back of an old car when she had one, in the bushes when she didn't.</p>
+    <p>Celeste was someone special. At age 10 she was years behind in school (when she had the opportunity to attend), trusting enough to be always ready to laugh, with an expectant sweetness behind her usually hesitant and puzzled eyes.</p>
+    <p>I had daughters a little younger than Celeste, and that opened me to her. Thinking of their brightness and competence, appreciating how they were ensconced in our happy family life, I sadly watched Celeste at the shelter.</p>
+    <p>Seeing her trusting sweetness and the unlikelihood of her life being a happy one, I reached out to her, and Celeste and I made a deep connection. When I saw her in the shelter, I was able to use my Daddy-of-daughters skills to elicit a special smile from her, letting her know that I knew who she was and that I liked her.</p>
+    <p>After about a month, it was time for Celeste and Yvonne to leave the shelter, and I lost track of their whereabouts after about a year. Many years later, Celeste and Yvonne appeared again in our community. I was told that Yvonne's boyfriend had been pimping Celeste, selling her on the street.</p>
+    <p>The image of Celeste as a clouded, innocent child dominated my inner vision and I was torn to pieces. I sobbed, unable to bear the thought of her being repeatedly molested by harsh men, her trust broken again and again and again.</p>
+    <p>In the course of a phone discussion with a clergy member about an unrelated matter, I mentioned my anguish and asked him to pray for me. "Of course," he said. "And wouldn't you like to pray together for her, too?"</p>
+    <p>I had never thought of that. My response to Celeste's situation was all about me, although it purported to be about her. I was wrapped up in my vicarious agony and somehow it wasn't about Celeste any more; it was about me and my response to a world in which this could happen to an innocent, and by implication to my own daughters.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="26">
+    <div class="chead"><div class="num">Chapter Twenty-Six</div><h2 class="ttl" id="pf-ch26">Risk the Broken Heart</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">We may be afraid to love and help people in need because we don't want our hearts broken. This is a natural feeling, but when we allow our hearts to break, we also open ourselves to a powerful force that can transform our own lives. We realize that we must help. And then we find a way to help.</p>
+    <p>If we don't work with people and creatures in need, then who will do it? We really have no alternative but to courageously face the pain in the world, a world in which thousands of children die daily from preventable causes.</p>
+    <p>We must risk the broken heart, embrace the pain, ask for help, rest when needed, and never give up. To turn away in order to protect our own comfort is to reject the call to participate in the healing of those in need, as well as our own healing, and the world's.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="27">
+    <div class="chead"><div class="num">Chapter Twenty-Seven</div><h2 class="ttl" id="pf-ch27">Our Responsibility Is Limited</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">In addition to the risk of heartbreak, to really become love in action is to risk feeling overwhelmed. How can we prevent nuclear war, house all of the homeless, feed all of the hungry, heal all of the sick? If we can't help all of those in need, if we can't cure the problem, then the temptation, the cop-out, is to do nothing.</p>
+    <p>Mother Teresa had good answers for that one.</p>
+    <p>Never worry about numbers. Help one person at a time, and always start with the person nearest you. If you can't feed a hundred people, then feed just one.</p>
+    <p>Our responsibility is limited. All we have to do is make ourselves available, show up, and do our best. To remind me of this, I've had these signs on the wall of my office:</p>
+    <p>Full effort is full victory. — Gandhi</p>
+    <p>Don't feel totally, absolutely, irrevocably responsible for everything. That's my job. — God</p>
+    <p>Offering love and help in this spirit, just showing up and doing our best, realizing that the outcome is not in our hands, makes it easier. When it feels hard, when we have feelings of desperation, fear, or even pride, we have temporarily lost our way, and have become focused on ourselves.</p>
+    <p>When loving service feels hard and challenging, we can find our way again by opening ourselves to the needs of the people and the situation in which we're offering service, thus re-establishing the connection that is part of the healing. We can also engage in other practices that support deep connection, such as meditation and prayer.</p>
+    <p>If we can face the challenges of service, overcome our fear, dare to love, dare to alight on the branches that we know will give way beneath us, we will share Mother Teresa's experience:</p>
+    <p>I have found the paradox that if I love until it hurts, then there is no hurt, but only more love.</p>
+    <p>What we give, we receive; we are healing ourselves as we heal the world and its wounded.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="28">
+    <div class="chead"><div class="num">Chapter Twenty-Eight</div><h2 class="ttl" id="pf-ch28">Difficult People and Situations</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">Sometimes when we are offering love in action, we encounter difficult and even demeaning situations. Books and courses are offered on how to deal with difficult people, and I won't dwell on this subject here, except to mention that, in such situations, we must keep in mind the wounds we all share, just by being human beings.</p>
+    <p>When we remember this fundamental reality, we try to be patient with unpleasant or inappropriate behavior and we try to help others regain their balance and perspective, setting boundaries as needed so that we feel our integrity is preserved.</p>
+    <p>You don't have to be a doormat or to accept abuse, and yet we are less prone to be concerned about this if love has taken us over. We might see only the beauty of any wounded human being, despite their external and inner wounds.</p>
+    <p>When love has taken us over we don't need to try to be patient with other people. The aspect of our character that gets impatient, annoyed or frustrated is deactivated when love has its way with us.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="29">
+    <div class="chead"><div class="num">Chapter Twenty-Nine</div><h2 class="ttl" id="pf-ch29">Enabling</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">There can be an artful balance between providing loving support and enabling harmful behavior. If we are acting under the influence of love, most likely we will do the right thing.</p>
+    <p>When my head comes into the picture along with my loving heart, I find it useful to keep in mind what I'm trying to accomplish, which usually is to help someone to feel cared about, respected and supported as they take their next steps, without encouraging dependency.</p>
+    <p>As an example, if someone on the street asks me for money to buy food, I might say, "Let's have a meal together instead. My treat." Sometimes the person will reject this because he wanted the money, not the food.</p>
+    <p>Pope Francis suggests a different approach. As reported in the New York Times (March 3, 2017), the Pope says give money to panhandlers and don't worry about it.</p>
+    <p>But what if the money is used to buy a glass of wine? If "a glass of wine is the only happiness he has in life, that's O.K. Instead, ask yourself, what do you do on the sly? What 'happiness' do you seek in secret?"</p>
+    <p>According to the Times, the Pope said:</p>
+    <p>…the way of giving is as important as the gift. You should not simply drop a bill into a cup and walk away. You must stop, look the person in the eyes, and touch his or her hands. The reason is to preserve dignity, to see another person not as a pathology or a social condition, but as a human, with a life whose value is equal to your own.</p>
+    <p>I think I understand and appreciate the Pope's perspective. We agree that such an encounter is an opportunity to engage with genuine, nonjudgmental love and respect, and that it's better to give freely than to turn away. There is a transformational opportunity for both parties if there is genuine connection.</p>
+    <p>Yet I think it's also important to assess whether our intended help is really a good thing for the person. We should not use this concern as an excuse to turn away from the person.</p>
+    <p>The desire to provide genuine help may require us to understand at a deep level why the person needs help and to address root causes. If we strive to really connect with those in need and to provide life-changing support, our lives may be transformed. This was my path to over 20 years working with homeless people, which was one of the great blessings of my life.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="30">
+    <div class="chead"><div class="num">Chapter Thirty</div><h2 class="ttl" id="pf-ch30">Mistakes Are Inevitable</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">Because of our imperfect humanity, mistakes are inevitable. We might be doing our best for someone close to us and find that, despite our loving intentions, we have failed to meet their needs, or even worse have hurt them.</p>
+    <p>Speaking from experience, I can say that this feels horrible. However, we all have our own baggage, wounds and blind spots that can undermine our relationships, and we are not in control of how people respond to us.</p>
+    <p>Sometimes there is no apparent way to reconcile conflict, to heal misunderstandings. In these times, the best we can do is to:</p>
+    <p>act with loving kindness</p>
+    <p>realize that not everyone will recognize our good intentions</p>
+    <p>accept that we will make mistakes and do our best to learn from them</p>
+    <p>correct our mistakes when possible</p>
+    <p>find whatever help may be available to support reconciliation</p>
+    <p>recognize that we each have our own work to do, and that painful interactions may lead to growth and healing for all concerned</p>
+    <p>keep in mind that our lives and struggles are held and supported by an awakening Love that is bigger than any person, and trust that this Love will eventually heal all suffering.</p>
+    <p>My own practice of love in action is imperfect and I stumble more often than I like. I imagine it's like that for you, too. It's ok to stumble, and important to get back up and try again.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="31">
+    <div class="chead"><div class="num">Chapter Thirty-One</div><h2 class="ttl" id="pf-ch31">Parting Ways</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">Sometimes we need to part ways with others whom we have loved. We might learn that a relationship is not good for us, or for another person. Or there may have been loving connection in a relationship at one time, and that may have faded.</p>
+    <p>If and when the time comes to part, we can do our best to do so lovingly. Too, even though we may part in this life, we do remain connected at a deeper level, and united in the oneness of Spirit.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="32">
+    <div class="chead"><div class="num">Chapter Thirty-Two</div><h2 class="ttl" id="pf-ch32">The Bodhisattva Way</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">I've had the unimaginable blessing of knowing and being loved by a fully developed bodhisattva, my teacher Paramahamsa Hariharananda. Through a lifetime of service and meditation, he became a luminous incarnation of Love. Just to be in his presence was uplifting. His example shows that this growth is possible for us, too.</p>
+    <p>If you dare to love fully with a broken heart, you might open and grow more and more until you become an inexhaustible treasure as described in this prayer.</p>
+    <p>May I be the doctor and the medicine / And may I be the nurse / For all sick beings in the world / Until everyone is healed / To clear away the pain of thirst and hunger / And during the aeon of famine / May I myself change into food and drink. / May I become an inexhaustible treasure / For those who are poor and destitute; / May I turn into all things they could need / And may these be placed close beside them. — Shantideva, Guide to the Bodhisattva's Way of Life</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="33">
+    <div class="chead"><div class="num">Chapter Thirty-Three</div><h2 class="ttl" id="pf-ch33">Being in Love</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">Often, we think of "being in love" as head over heels infatuation. Here, I'm offering "being in love" as a state of consciousness in which love--without an object-- pervades our awareness. And if there is no object, no particular beloved, there also may not be a subject: we may dissolve into the love.</p>
+    <p>St. Paul wrote about being in love in this way, when he said:</p>
+    <p>Love is patient and kind / Love is not jealous or boastful / It is not arrogant or rude / Love does not insist on its own way / It is not irritable or resentful / It rejoices not in the wrong, but in the right / ... / Love bears all things / Believes all things / Hopes all things / Endures all things / Love never ends</p>
+    <p>These are the qualities expressed when we become Love. It's not that we're trying to behave in this way, but that Love has overtaken us and the expression of these qualities is the most natural thing for us.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="34">
+    <div class="chead"><div class="num">Chapter Thirty-Four</div><h2 class="ttl" id="pf-ch34">Becoming Love</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">We can become Love, or perhaps it's more accurate to say that Love can become us. We might not become Love for all beings all of the time, but initially at least for some people and creatures some of the time we represent Love in their lives.</p>
+    <p>We learn to enter into and be transformed by this love a little at a time, often first with our immediate family. If we say "yes" to greater opportunities to love, the family we love will grow to include all that is. Love will consume our smaller constricted sense of self and we will dissolve into Love.</p>
+    <p>The path is simply to offer all of yourself to Love. To paraphrase St. Teresa of Avila:</p>
+    <p>Love has no body but yours, / No hands, no feet on earth but yours, / Yours are the eyes with which Love looks / Compassion on this world. / Yours are the feet with which Love walks to do good, / Yours are the hands with which Love blesses all the world. / Yours are the hands, yours are the feet, / Yours are the eyes, you are Love's body. / Love has no body but yours, / No hands, no feet on earth but yours, / Yours are the eyes with which Love looks / compassion on this world.</p>
+    <p>A tremendously powerful spiritual practice is to offer in service to Love your eyes, your ears, your mouth, your mind, your heart, your hands, your feet...and more.</p>
+    <p>Here's an example of offering oneself in service to Love, from my own practice:</p>
+    <p>I sit in a quiet place where I won't be disturbed.</p>
+    <p>Then I exhale deeply several times with an audible sigh. This helps me to let go of whatever may be on my mind.</p>
+    <p>I rest in the stillness that I feel at the end of the final exhalation. There's no hurry, so I take my time and really feel the stillness.</p>
+    <p>Looking at my hands, I say "I offer my hands in the service of Love."</p>
+    <p>Touching the top of my head, I say "I offer my mind in the service of Love."</p>
+    <p>Going slowly, I continue touching various parts of my body (eyes, ears, nose, mouth, heart, belly, legs, feet) offering those in service of Love and feeling the body part as I say the words.</p>
+    <p>I might sit a bit and bask in Love. Then I get up and let Love move my hands, and then let Love move my entire body through swaying as I stand or through walking. This provides practice in letting Love live in and act through my life.</p>
+    <p>The important thing is to invite Love to take over your life, and to be the living channel for and expression of this Love. Become Love in Action.</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="35">
+    <div class="chead"><div class="num">Chapter Thirty-Five</div><h2 class="ttl" id="pf-ch35">Thanks and Request</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">Thanks very much for reading Love in Action. The world needs what you have to give. May you stay strong, and offer your special gifts with love to those in need.</p>
+    <p>If Love in Action makes any difference in your life, please share it with others.</p>
+    <p>Reviews are very helpful. I'd love it if you would go to <a href="https://www.amazon.com/Love-Action-Heal-World-Yourself/dp/1976826284#customerReviews" target="_blank" rel="noopener">Amazon</a> to leave a review, and to share it with others.</p>
+    <p>With appreciation, John Records</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <section class="page" data-i="36">
+    <div class="chead"><div class="num">Afterword</div><h2 class="ttl" id="pf-ch36">Acknowledgments</h2></div>
+    <svg class="headpiece gold" viewBox="0 0 560 200" aria-hidden="true"><use href="#wb-rule"/></svg>
+    <p class="first">Thanks to Glena Records for reading drafts, and commenting on cover designs.</p>
+    <p>Thanks to Teresa Shishim for the cover.</p>
+    <p>Portions of Love in Action appeared in my book Invitation to Service: Stories from COTS.</p>
+    <p>John Records lives in Paonia, Colorado.</p>
+    <p>john.records@gmail.com</p>
+    <div class="endmark"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#wb-fin"/></svg></div>
+  </section>
+  <div class="pgnav" id="pgnav" style="display:none">
+    <button class="prev" id="pgPrev"><span class="lbl">Previous</span><span class="pt" id="pgPrevT"></span></button>
+    <button class="next" id="pgNext"><span class="lbl">Next</span><span class="pt" id="pgNextT"></span></button>
+  </div>
+</main>
+
+<footer class="foot cover-hide" id="foot">
+  <button class="arrow" id="fPrev" aria-label="Previous chapter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <span class="pos" id="pos">1 / 1</span>
+  <button class="arrow" id="fNext" aria-label="Next chapter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+</footer>
+
 <script>
 (function(){
-  var root = document.documentElement;
-  var btn  = document.getElementById('lamp');
-  var word = document.getElementById('lampword');
-  function evening(){
-    var t = root.getAttribute('data-theme');
-    if (t) return t === 'dark';
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var CFG={"notes":[],"title":"Love in Action","titles":["Preface","What Is Love?","A Lot of Good, Yet","The Easy Way Out","Be the Change You Want to See in the World","One Word Is Whispered","Until Our Hearts Are Broken","Are You Worthy of Love?","Learning to Love Ourselves","Tikkun Olam","Offer Your Life","The Prayer of St. Francis","Meditation on the Prayer of St. Francis","Counteracting Our Own Painful Feelings","Strategies for Supporting Others","The Second Stanza","Fruit For You","Let Love Be Our Compass","Offering Ourselves Into the Wounded World","Be Like a Bird","Healing Ourselves, Healing the World","Love in Action in the Family","Love in Action at Work","Volunteering","Celeste","Risk the Broken Heart","Our Responsibility Is Limited","Difficult People and Situations","Enabling","Mistakes Are Inevitable","Parting Ways","The Bodhisattva Way","Being in Love","Becoming Love","Thanks and Request"],"words":["One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Nineteen","Twenty","Twenty-One","Twenty-Two","Twenty-Three","Twenty-Four","Twenty-Five","Twenty-Six","Twenty-Seven","Twenty-Eight","Twenty-Nine","Thirty","Thirty-One","Thirty-Two","Thirty-Three","Thirty-Four","Thirty-Five"],"fore":"","after":"Acknowledgments","ns":"LIA","defaultMode":"day","dayColor":"#f6f1e7","nightColor":"#1e1a14","dlName":"rosy-truffle-2d7p.mp3","icon":"icons/icon-512.png"};
+  var titles=CFG.titles, words=CFG.words, afterTitle=CFG.after, foreTitle=CFG.fore, NS=CFG.ns;
+  var pages=Array.prototype.slice.call(document.querySelectorAll('.page'));
+  var N=pages.length-1;                 // last navigable page index
+  var CH=titles.length;                 // true chapter count (foreword/afterword excluded)
+  var hasAfter=!!afterTitle;
+  var hasFore=!!foreTitle;
+  var FORE=hasFore?1:0;                 // DOM/audio index offset every chapter shifts by
+  var cur=0;
+  function pageTitle(i){
+    if(hasFore&&i<=FORE)return foreTitle;
+    if(hasAfter&&i>CH+FORE)return afterTitle;
+    return titles[i-1-FORE];
   }
-  function paint(){
-    var on = evening();
-    btn.setAttribute('aria-pressed', String(on));
-    btn.setAttribute('aria-label', on ? 'Morning' : 'Light the lamp');
-    word.textContent = on ? 'Morning' : 'Light the lamp';
+
+  // TOC
+  var toc=document.getElementById('toc');
+  var li=document.createElement('li'); li.className='cover-link';
+  var cb=document.createElement('button'); cb.innerHTML='<span class="n"></span><span class="t">Cover</span>';
+  cb.onclick=function(){go(0);closeDrawer();}; li.appendChild(cb); toc.appendChild(li);
+  if(hasFore){
+    var fl=document.createElement('li');
+    var fb=document.createElement('button'); fb.dataset.i=1;
+    fb.innerHTML='<span class="n">&middot;</span><span class="t">'+foreTitle+'</span>';
+    fb.onclick=function(){go(1);closeDrawer();}; fl.appendChild(fb); toc.appendChild(fl);
   }
-  btn.addEventListener('click', function(){
-    root.setAttribute('data-theme', evening() ? 'light' : 'dark');
-    paint();
+  titles.forEach(function(t,idx){
+    var l=document.createElement('li');
+    var b=document.createElement('button'); b.dataset.i=idx+1+FORE;
+    b.innerHTML='<span class="n">'+(idx+1)+'</span><span class="t">'+t+'</span>';
+    b.onclick=function(){go(idx+1+FORE);closeDrawer();};
+    l.appendChild(b); toc.appendChild(l);
   });
-  paint();
+  if(hasAfter){
+    var al=document.createElement('li');
+    var ab=document.createElement('button'); ab.dataset.i=CH+1+FORE;
+    ab.innerHTML='<span class="n">&middot;</span><span class="t">'+afterTitle+'</span>';
+    ab.onclick=function(){go(CH+1+FORE);closeDrawer();}; al.appendChild(ab); toc.appendChild(al);
+  }
+  var tocBtns=toc.querySelectorAll('button[data-i]');
+
+  var foot=document.getElementById('foot'), pos=document.getElementById('pos');
+  var barTitle=document.getElementById('barTitle');
+  var pgnav=document.getElementById('pgnav');
+  var pgPrev=document.getElementById('pgPrev'), pgNext=document.getElementById('pgNext');
+  var pgPrevT=document.getElementById('pgPrevT'), pgNextT=document.getElementById('pgNextT');
+
+  function go(i,noScroll){
+    i=Math.max(0,Math.min(N,i));
+    pages[cur].classList.remove('active');
+    cur=i; pages[cur].classList.add('active');
+    if(!noScroll)window.scrollTo(0,0);
+    update();
+    // Leaving the cover means starting a chapter's narration; landing back on it
+    // means there is nothing to play. Switching between chapters, though,
+    // carries the intention across — see loadChapterAudio's wasPlaying.
+    if(cur===0){audioEl.pause();audioEl.removeAttribute('src');clearHl();hideBar();}
+    else loadChapterAudio(cur);
+    try{location.hash=i===0?'':('ch'+i);}catch(e){}
+  }
+  function update(){
+    document.getElementById('progress').style.width=(N?cur/N*100:0)+'%';
+    if(cur===0){foot.classList.add('cover-hide');pgnav.style.display='none';barTitle.textContent='';}
+    else{
+      foot.classList.remove('cover-hide');
+      var fore=(hasFore&&cur<=FORE);
+      var after=(hasAfter&&cur>CH+FORE);
+      pos.textContent=after?'Afterword':fore?'Foreword':((cur-FORE)+' / '+CH);
+      barTitle.textContent=after?afterTitle:fore?foreTitle:(words[cur-1-FORE]+' · '+titles[cur-1-FORE]);
+      pgnav.style.display='flex';
+      if(cur<=1){pgPrev.disabled=true;pgPrevT.textContent='Cover';}
+      else{pgPrev.disabled=false;pgPrevT.textContent=pageTitle(cur-1);}
+      if(cur>=N){pgNext.disabled=true;pgNext.querySelector('.lbl').textContent='';pgNextT.textContent='Cover';}
+      else{pgNext.disabled=false;pgNext.querySelector('.lbl').textContent='Next';pgNextT.textContent=pageTitle(cur+1);}
+    }
+    document.getElementById('fPrev').disabled=(cur<=1);
+    document.getElementById('fNext').disabled=(cur>=N);
+    tocBtns.forEach(function(b){b.classList.toggle('active',+b.dataset.i===cur);});
+    updateRing();
+  }
+
+  // ---- reading-progress ring + scroll-depth resume ------------------------
+  // Chapter + scroll depth, not just which page was open, so "Resume" lands
+  // where the reader actually stopped rather than at the top of the chapter.
+  // Explicit and visible (a cover button, a TOC row) rather than a silent
+  // jump on load — mirrors the AOY reader's resume model.
+  var PROG_KEY=NS+'_progress';
+  var ringWrap=document.getElementById('ringWrap'), ringFg=document.getElementById('ringFg'),
+      ringPct=document.getElementById('ringPct');
+  var RING_C=2*Math.PI*15.5;
+  var progSaveTimer=null;
+  function getProgress(){try{return JSON.parse(localStorage.getItem(PROG_KEY)||'null');}catch(e){return null;}}
+  function saveProgress(y){
+    if(cur<=0)return;
+    try{
+      localStorage.setItem(PROG_KEY,JSON.stringify({i:cur,y:Math.max(0,Math.round(y||0)),t:Date.now()}));
+    }catch(e){}
+    updateTocResume();
+  }
+  function clearProgress(){try{localStorage.removeItem(PROG_KEY);}catch(e){}updateTocResume();}
+  function updateRing(){
+    if(cur<=0){ringWrap.style.display='none';return;}
+    ringWrap.style.display='';
+    var docH=document.documentElement.scrollHeight-window.innerHeight;
+    var frac=docH>0?Math.min(1,Math.max(0,window.scrollY/docH)):0;
+    ringFg.style.strokeDasharray=RING_C.toFixed(1);
+    ringFg.style.strokeDashoffset=(RING_C*(1-frac)).toFixed(1);
+    ringPct.textContent=Math.round(frac*100)+'%';
+    if(progSaveTimer)clearTimeout(progSaveTimer);
+    progSaveTimer=setTimeout(function(){saveProgress(window.scrollY);},400);
+  }
+  window.addEventListener('scroll',updateRing,{passive:true});
+
+  function updateTocResume(){
+    var existing=document.getElementById('tocResumeRow');
+    if(existing)existing.parentNode.removeChild(existing);
+    var p=getProgress();
+    if(!p||p.i<1||p.i>N)return;
+    var li=document.createElement('li'); li.id='tocResumeRow'; li.className='resume-row';
+    var b=document.createElement('button');
+    b.innerHTML='<span class="n">↻</span><span class="t">'+pageTitle(p.i)+'</span>';
+    b.onclick=function(){go(p.i,true);requestAnimationFrame(function(){window.scrollTo(0,p.y||0);});closeDrawer();};
+    li.appendChild(b);
+    var coverLi=toc.querySelector('.cover-link');
+    if(coverLi)coverLi.parentNode.insertBefore(li,coverLi.nextSibling); else toc.insertBefore(li,toc.firstChild);
+  }
+
+  // Cover-only affordances: the explicit resume/reset buttons. Built once,
+  // at startup, from whatever progress already exists — never re-run per
+  // navigation, since leaving and returning to the cover shouldn't re-offer
+  // a resume for the chapter the reader is now looking at.
+  function renderCoverExtras(){
+    updateTocResume();
+    var actions=document.getElementById('coverActions');
+    var p=getProgress();
+    if(!actions||!p||p.i<1||p.i>N||document.getElementById('resumeBtn'))return;
+    var rb=document.createElement('button'); rb.className='resumeBtn'; rb.id='resumeBtn';
+    rb.textContent='↻ Resume — '+pageTitle(p.i);
+    rb.onclick=function(){go(p.i,true);requestAnimationFrame(function(){window.scrollTo(0,p.y||0);});};
+    actions.appendChild(rb);
+    var xb=document.createElement('button'); xb.className='resetBtn'; xb.id='resetBtn';
+    xb.textContent='Start over';
+    xb.onclick=function(){clearProgress();rb.parentNode.removeChild(rb);xb.parentNode.removeChild(xb);};
+    actions.appendChild(xb);
+  }
+
+  var beginBtn=document.getElementById('beginBtn'); if(beginBtn)beginBtn.onclick=function(){go(1);};
+  document.getElementById('fPrev').onclick=function(){if(cur>1)go(cur-1);};
+  document.getElementById('fNext').onclick=function(){if(cur<N)go(cur+1);};
+  pgPrev.onclick=function(){go(cur-1);};
+  pgNext.onclick=function(){if(cur>=N)go(0);else go(cur+1);};
+
+  // drawer
+  var drawer=document.getElementById('drawer'), scrim=document.getElementById('scrim');
+  function openDrawer(){drawer.classList.add('open');scrim.classList.add('open');}
+  function closeDrawer(){drawer.classList.remove('open');scrim.classList.remove('open');}
+  document.getElementById('menuBtn').onclick=openDrawer; scrim.onclick=closeDrawer;
+
+  // theme
+  var html=document.documentElement, sun=document.getElementById('sunIcon'), moon=document.getElementById('moonIcon');
+  function setTheme(t){
+    html.setAttribute('data-theme',t);
+    sun.style.display=t==='day'?'block':'none';
+    moon.style.display=t==='day'?'none':'block';
+    document.querySelector('meta[name=theme-color]').setAttribute('content',t==='day'?CFG.dayColor:CFG.nightColor);
+    try{localStorage.setItem(NS+'_theme',t);}catch(e){}
+  }
+  document.getElementById('themeBtn').onclick=function(){setTheme(html.getAttribute('data-theme')==='day'?'night':'day');};
+  try{var savedT=localStorage.getItem(NS+'_theme');setTheme(savedT==='day'||savedT==='night'?savedT:CFG.defaultMode);}catch(e){setTheme(CFG.defaultMode);}
+
+  // text size
+  var STEPS=[0.85,0.92,1,1.1,1.22,1.35,1.5], fIdx=2;
+  var fontBtn=document.getElementById('fontBtn'), fontPop=document.getElementById('fontPop');
+  var fUp=document.getElementById('fUp'), fDown=document.getElementById('fDown'), fVal=document.getElementById('fVal');
+  function applyScale(){var s=STEPS[fIdx];html.style.setProperty('--reader-scale',s);fVal.textContent=Math.round(s*100)+'%';
+    fDown.disabled=(fIdx<=0);fUp.disabled=(fIdx>=STEPS.length-1);try{localStorage.setItem(NS+'_fscale',fIdx);}catch(e){}}
+  fUp.onclick=function(){if(fIdx<STEPS.length-1){fIdx++;applyScale();}};
+  fDown.onclick=function(){if(fIdx>0){fIdx--;applyScale();}};
+  function closeFont(){fontPop.classList.remove('open');fontBtn.setAttribute('aria-expanded','false');}
+  fontBtn.onclick=function(e){e.stopPropagation();if(fontPop.classList.contains('open'))closeFont();else{fontPop.classList.add('open');fontBtn.setAttribute('aria-expanded','true');}};
+  fontPop.onclick=function(e){e.stopPropagation();};
+  document.addEventListener('click',function(){if(fontPop.classList.contains('open'))closeFont();});
+  try{var sf=localStorage.getItem(NS+'_fscale');if(sf!==null){var n=+sf;if(n>=0&&n<STEPS.length)fIdx=n;}}catch(e){}
+  applyScale();
+
+  // read-aloud: audio/ch{N}.mp3, with a persistent bar fixed at the foot of
+  // the page (mirrors the AOY reader). Three things layer on top of plain
+  // playback, each optional at runtime: read-along highlighting (needs
+  // audio/ch{N}.json timings), rolling on into the next chapter (needs only
+  // the next mp3 to exist), and lock-screen metadata. A book with none of
+  // those still plays exactly as it always did.
+  var audioEl=new Audio(); audioEl.preload='metadata';
+  var marks=null;        // [{start,dur}] per paragraph of the chapter playing
+  var hlParas=[];        // that chapter's <p> elements, same order as marks
+  var active=-1;         // index of the highlighted paragraph
+  var playingCh=0;       // chapter number the audio element is loaded with
+  var follow=true;       // scroll to keep the spoken paragraph in view
+  var advancing=false;   // rolling on into the next chapter, so play on arrival
+  var rate=1; try{var sr=localStorage.getItem(NS+'_rate');if(sr)rate=parseFloat(sr)||1;}catch(e){}
+
+  // The paragraphs the narrator saw. Direct children only: an annotation panel
+  // or a hint line nested deeper must never shift the count, because the count
+  // IS the contract between the timings file and the page.
+  function paraList(sec){return Array.prototype.slice.call(sec.querySelectorAll(':scope > p'));}
+
+  function fmt(t){if(!isFinite(t))return'0:00';var m=Math.floor(t/60),s=Math.floor(t%60);return m+':'+(s<10?'0':'')+s;}
+
+  // Binary search: timeupdate fires ~4x a second and a chapter can run to 200
+  // paragraphs.
+  function indexAt(t){
+    var lo=0,hi=marks.length-1,best=-1;
+    while(lo<=hi){var mid=(lo+hi)>>1;if(marks[mid].start<=t){best=mid;lo=mid+1;}else hi=mid-1;}
+    return best;
+  }
+  function highlight(i){
+    if(i===active)return;
+    if(active>=0&&hlParas[active])hlParas[active].classList.remove('speaking');
+    active=i;
+    if(i<0||!hlParas[i])return;
+    hlParas[i].classList.add('speaking');
+    if(!follow||audioEl.paused)return;
+    var r=hlParas[i].getBoundingClientRect();
+    // Only scroll once the paragraph has left the comfortable band — scrolling
+    // on every paragraph makes the page twitch.
+    if(r.top<80||r.bottom>window.innerHeight-160)
+      window.scrollTo({top:window.scrollY+r.top-window.innerHeight*0.32,behavior:'smooth'});
+  }
+  function clearHl(){if(active>=0&&hlParas[active])hlParas[active].classList.remove('speaking');
+    active=-1;marks=null;hlParas=[];}
+
+  /* ---- the bar ------------------------------------------------------------
+   * Built once, lazily, and reused across every chapter — the same element the
+   * reader learns the position of, rather than a new one per page. */
+  var barEl=null;
+  function playerBar(){
+    if(barEl)return barEl;
+    barEl=document.createElement('div'); barEl.id='player'; barEl.className='player hidden';
+    barEl.innerHTML=
+      '<button id="plPlay" class="pl-btn" aria-label="Play narration" '+
+        'title="Play / pause the narration (space). Option-click any paragraph to read from there.">'+
+        '<svg class="pl-play-i" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'+
+        '<svg class="pl-pause-i" viewBox="0 0 24 24" fill="currentColor" style="display:none">'+
+          '<rect x="6" y="5" width="4" height="14" rx="1.3"/><rect x="14" y="5" width="4" height="14" rx="1.3"/></svg></button>'+
+      '<button id="plBack" class="pl-btn pl-small" aria-label="Back 15 seconds" title="Back 15s">'+
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+
+          '<path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg></button>'+
+      '<span id="plTime" class="pl-time">0:00</span>'+
+      '<input id="plSeek" class="pl-seek" type="range" min="0" max="1000" value="0" aria-label="Position in chapter">'+
+      '<span id="plDur" class="pl-time">0:00</span>'+
+      '<select id="plRate" class="pl-rate" aria-label="Speed" title="Speed">'+
+        '<option value="0.75">0.75x</option><option value="1">1x</option>'+
+        '<option value="1.15">1.15x</option><option value="1.3">1.3x</option>'+
+        '<option value="1.5">1.5x</option></select>'+
+      '<button id="plFollow" class="pl-btn pl-small on" aria-label="Follow along" title="Scroll to follow the narration">'+
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+
+          '<path d="M12 4v16M6 10l6-6 6 6M6 14l6 6 6-6"/></svg></button>'+
+      '<button id="plClose" class="pl-btn pl-small" aria-label="Hide player" title="Hide">'+
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+
+          '<path d="M6 6l12 12M18 6L6 18"/></svg></button>';
+    document.body.appendChild(barEl);
+    barEl.querySelector('#plPlay').onclick=toggle;
+    barEl.querySelector('#plBack').onclick=function(){audioEl.currentTime=Math.max(0,audioEl.currentTime-15);};
+    barEl.querySelector('#plSeek').addEventListener('input',function(e){
+      if(audioEl.duration)audioEl.currentTime=audioEl.duration*e.target.value/1000;});
+    var sel=barEl.querySelector('#plRate'); sel.value=String(rate);
+    sel.addEventListener('change',function(e){
+      rate=parseFloat(e.target.value)||1;
+      try{localStorage.setItem(NS+'_rate',String(rate));}catch(er){}
+      audioEl.playbackRate=rate;});
+    barEl.querySelector('#plFollow').addEventListener('click',function(e){
+      follow=!follow; e.currentTarget.classList.toggle('on',follow);});
+    barEl.querySelector('#plClose').addEventListener('click',function(){audioEl.pause();hideBar();});
+    return barEl;
+  }
+  function showBar(){playerBar().classList.remove('hidden');}
+  function hideBar(){if(barEl)barEl.classList.add('hidden');}
+  function toggle(){
+    if(!barEl||barEl.classList.contains('hidden'))return;
+    if(audioEl.paused){audioEl.playbackRate=rate;var r=audioEl.play();if(r&&r.catch)r.catch(playBlocked);}
+    else audioEl.pause();
+  }
+  // A source that's genuinely missing/broken fires the element's own 'error'
+  // event — that's the only case worth hiding the bar for. A rejected play()
+  // promise is usually WebKit being stricter about what counts as a user
+  // gesture (Safari has rejected a same-click play() before now); hiding the
+  // bar on that would strand the listener on a control they can't get back,
+  // so leave it up and let them just press play again.
+  function noAudio(){hideBar();}
+  function playBlocked(){}
+
+  // playbackState mirrors here too: without it, iOS/macOS will still draw a
+  // Now Playing card from the bare <audio> but its pause button silently does
+  // nothing — the OS believes the session is in whatever state it last set.
+  audioEl.addEventListener('play',function(){
+    if(barEl){barEl.querySelector('.pl-play-i').style.display='none';barEl.querySelector('.pl-pause-i').style.display='';}
+    if('mediaSession'in navigator)try{navigator.mediaSession.playbackState='playing';}catch(e){}
+  });
+  audioEl.addEventListener('pause',function(){
+    if(barEl){barEl.querySelector('.pl-play-i').style.display='';barEl.querySelector('.pl-pause-i').style.display='none';}
+    if('mediaSession'in navigator)try{navigator.mediaSession.playbackState='paused';}catch(e){}
+  });
+  audioEl.addEventListener('timeupdate',function(){
+    if(barEl){
+      barEl.querySelector('#plTime').textContent=fmt(audioEl.currentTime);
+      if(audioEl.duration)barEl.querySelector('#plSeek').value=String(Math.round(audioEl.currentTime/audioEl.duration*1000));
+    }
+    if(marks)highlight(indexAt(audioEl.currentTime));
+  });
+  audioEl.addEventListener('loadedmetadata',function(){if(barEl)barEl.querySelector('#plDur').textContent=fmt(audioEl.duration);});
+  // Reaching the end just rolls to the next chapter; clearHl() first so a
+  // chapter with nothing after it doesn't strand a highlighted paragraph.
+  audioEl.addEventListener('ended',function(){clearHl();rollOn();});
+  audioEl.addEventListener('error',function(e){if(auSwap(audioEl))e.stopImmediatePropagation();});
+  audioEl.addEventListener('error',noAudio);
+  // In the document rather than a bare `new Audio()`: an unattached element
+  // still plays, but the tab shows no sound indicator and nothing — including a
+  // future maintainer's querySelectorAll('audio') — can find it to stop it.
+  audioEl.id='wb-audio'; document.body.appendChild(audioEl);
+
+  /* A line under the chapter title saying the chapter is narrated and how to
+   * drive it. Inserted only once per chapter, and only on a chapter that
+   * really has audio. A <div>, deliberately not a <p>: paraList() counts every
+   * <p> a section owns, and a stray one would throw the timings off by one. */
+  function hint(sec){
+    var head=sec.querySelector('.chead');
+    if(!head||sec.querySelector('.ch-audio-hint'))return;
+    var touch=window.matchMedia&&window.matchMedia('(hover: none)').matches;
+    var el=document.createElement('div'); el.className='ch-audio-hint';
+    el.textContent=touch
+      ?'Narrated · press play in the bar at the foot of the screen. The text follows along, '
+        +'and the reading carries on into the next chapter.'
+      :'Narrated · press play in the bar at the foot of the page, or the space bar. '
+        +'While it plays, click any paragraph to jump the reading there; hold Option and click '
+        +'to start from a paragraph at any time. The text follows along, and the reading carries on into the next chapter.';
+    head.parentNode.insertBefore(el,head.nextSibling);
+  }
+
+  // download THIS chapter only, placed right after the hint; revealed only
+  // once loadChapterAudio has confirmed the file exists.
+  function chapterDl(sec,i){
+    if(sec.querySelector('.chdl'))return;
+    var anchor=sec.querySelector('.ch-audio-hint')||sec.querySelector('.chead');
+    if(!anchor)return;
+    var cdl=document.createElement('a'); cdl.className='chdl'; cdl.href=auUrl('ch'+i+'.mp3');
+    cdl.setAttribute('download',(CFG.dlName||'chapter.mp3').replace(/\.mp3$/,'')+'-ch'+i+'.mp3');
+    cdl.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M5 21h14"/></svg>Download this chapter (MP3)';
+    anchor.parentNode.insertBefore(cdl,anchor.nextSibling);
+  }
+
+  // Timings are advisory: a chapter with none simply plays without highlighting.
+  // But a count that disagrees with the page is NOT advisory — every highlight
+  // after the first difference would land on the wrong text, so refuse to guess.
+  function loadMarks(i,sec){
+    var want=i;
+    fetch('audio/ch'+i+'.json',{cache:'force-cache'}).then(function(r){return r.ok?r.json():null;})
+      .then(function(d){
+        if(!d||playingCh!==want)return;
+        var list=d.paragraphs||d, ps=paraList(sec);
+        if(list.length!==ps.length){
+          console.warn('[narration] ch'+i+': '+list.length+' timed paragraphs but '+ps.length+
+                       ' rendered; highlighting disabled.');
+          return;
+        }
+        marks=list; hlParas=ps;
+      }).catch(function(){});
+  }
+
+  function mediaMeta(i){
+    if(!('mediaSession'in navigator))return;
+    try{
+      var fore=(hasFore&&i<=FORE), after=(hasAfter&&i>CH+FORE);
+      var name=after?afterTitle:fore?foreTitle:(words[i-1-FORE]+' · '+titles[i-1-FORE]);
+      navigator.mediaSession.metadata=new MediaMetadata({
+        title:name,artist:CFG.title,album:CFG.title,
+        artwork:CFG.icon?[{src:CFG.icon,sizes:'512x512',type:'image/png'}]:[]});
+      navigator.mediaSession.setActionHandler('previoustrack',function(){if(cur>1)go(cur-1);});
+      navigator.mediaSession.setActionHandler('nexttrack',function(){if(cur<N)go(cur+1);});
+      // The lock-screen/Control-Center play & pause buttons call these
+      // directly — without them the OS still shows a Now Playing card but its
+      // controls are inert, which is what was actually happening.
+      navigator.mediaSession.setActionHandler('play',function(){
+        audioEl.playbackRate=rate;var p=audioEl.play();if(p&&p.catch)p.catch(playBlocked);});
+      navigator.mediaSession.setActionHandler('pause',function(){audioEl.pause();});
+    }catch(e){}
+  }
+
+  /* Called by go() whenever a chapter page becomes active. Loads that
+   * chapter's narration into the single, page-wide audio element and bar.
+   * Someone listening who jumps to another chapter means "read me that one",
+   * not "stop reading" — wasPlaying carries the intention across, the same
+   * way `advancing` carries it across a natural roll-on. A chapter with no
+   * audio yet simply shows no player: the normal state during a partial
+   * render, not an error. */
+  function loadChapterAudio(i){
+    var sec=pages[i];
+    playingCh=i; clearHl();
+    var wasPlaying=!audioEl.paused||advancing;
+    advancing=false;
+    auHead('ch'+i+'.mp3').then(function(r){
+      if(playingCh!==i)return;               // navigated again before this resolved
+      if(!r.ok){audioEl.pause();audioEl.removeAttribute('src');hideBar();return;}
+      audioEl.src=auUrl('ch'+i+'.mp3');
+      audioEl.playbackRate=rate;
+      loadMarks(i,sec); mediaMeta(i); hint(sec); chapterDl(sec,i);
+      showBar();
+      if(wasPlaying){var p=audioEl.play();if(p&&p.catch)p.catch(function(){});}
+    }).catch(function(){});
+  }
+
+  /* ---- rolling on into the next chapter -----------------------------------
+   * Someone listening in the car cannot reach over and pick the next chapter,
+   * so the end of one is the start of the next. An un-narrated chapter is
+   * stepped over rather than stopping the run, which keeps this working while
+   * a book is only partly rendered. Reaching the end of the book just stops. */
+  function rollOn(){rollTo(playingCh+1,cur);}
+  function rollTo(n,from){
+    if(n>N)return;                 // end of the book
+    if(cur!==from)return;          // the reader has taken over
+    // HEAD, not GET: this only asks whether the chapter is narrated. The real
+    // fetch happens a moment later, inside go() -> loadChapterAudio, and
+    // comes from cache.
+    auHead('ch'+n+'.mp3').then(function(r){
+      if(!r.ok)return rollTo(n+1,from);   // not narrated yet: step over it
+      if(cur!==from)return;               // navigated during the probe
+      advancing=true;
+      go(n);
+    })
+    // A rejected fetch is the network failing, not a missing chapter. Asking the
+    // same dead connection about the other 40 chapters helps nobody.
+    .catch(function(){});
+  }
+
+  // While the narration is playing, a plain click on a paragraph jumps the
+  // reading there. Option-click starts reading from a paragraph at any time
+  // (a plain click on a paused book stays a plain click, so selecting text or
+  // focusing the page never starts audio by surprise).
+  document.addEventListener('click',function(e){
+    if(!marks)return;
+    if(!e.altKey&&audioEl.paused)return;
+    if(e.target.closest&&e.target.closest('a,button,sup,.note-marker'))return;
+    var sel=window.getSelection&&window.getSelection(); if(sel&&String(sel).length)return;
+    var p=e.target.closest&&e.target.closest('.page.active > p');
+    if(!p)return;
+    var i=hlParas.indexOf(p); if(i<0)return;
+    e.preventDefault();
+    showBar();
+    audioEl.currentTime=marks[i].start;
+    if(audioEl.paused){audioEl.playbackRate=rate;var r=audioEl.play();if(r&&r.catch)r.catch(playBlocked);}
+  },true);
+
+  // reveal the cover's "download audiobook" link only if the file is actually served
+  var dlBook=document.getElementById('dlBook');
+  if(dlBook){try{auHead('audiobook.mp3').then(function(r){if(r.ok)dlBook.style.display='';}).catch(function(){});}catch(e){}}
+
+  // reveal the cover's "how to listen" sentence only once chapter 1 is
+  // confirmed narrated — a book with no audio yet (or not yet) shows nothing.
+  var coverAudio=document.getElementById('coverAudio');
+  if(coverAudio){try{auHead('ch1.mp3').then(function(r){if(r.ok)coverAudio.style.display='';}).catch(function(){});}catch(e){}}
+
+  /* annotations. build-reader.mjs puts the markers in the paragraphs and the
+   * note bodies in CFG.notes; nothing here writes inside a paragraph, so the
+   * paragraph count the narration depends on cannot drift. A book with no
+   * notes never builds the panel at all. */
+  var notePanel=null;
+  function noteEl(){
+    if(notePanel)return notePanel;
+    notePanel=document.createElement('div'); notePanel.className='notepanel';
+    notePanel.innerHTML='<button class="nx" aria-label="Close note">&times;</button>'+
+      '<div class="nt"></div><div class="nb"></div>';
+    notePanel.querySelector('.nx').onclick=closeNote;
+    document.body.appendChild(notePanel);
+    return notePanel;
+  }
+  function closeNote(){if(notePanel)notePanel.classList.remove('open');
+    var m=document.querySelector('.noted.on');if(m)m.classList.remove('on');}
+  function openNote(idx,label){
+    var n=(CFG.notes||[])[idx]; if(n===undefined)return;
+    var el=noteEl();
+    el.querySelector('.nt').textContent=label||'Note';
+    el.querySelector('.nb').innerHTML=n;    // built by build-reader, already escaped
+    el.classList.add('open');
+  }
+  document.addEventListener('click',function(e){
+    var t=e.target.closest&&e.target.closest('.note-ref,.noted');
+    if(!t){if(notePanel&&notePanel.classList.contains('open')&&!e.target.closest('.notepanel'))closeNote();return;}
+    e.preventDefault(); e.stopPropagation();
+    openNote(+t.dataset.n,t.dataset.label||t.textContent.trim());
+  });
+
+  // ---- full-text search ----------------------------------------------------
+  // Built from the already-rendered <p> elements, lazily and once: the page is
+  // static once built, so the index never goes stale between searches.
+  var searchBtn=document.getElementById('searchBtn'), searchPop=document.getElementById('searchPop');
+  var searchInput=document.getElementById('searchInput'), searchResults=document.getElementById('searchResults');
+  function openSearch(){searchPop.classList.add('open');searchBtn.setAttribute('aria-expanded','true');searchInput.focus();}
+  function closeSearch(){searchPop.classList.remove('open');searchBtn.setAttribute('aria-expanded','false');}
+  searchBtn.onclick=function(e){e.stopPropagation();if(searchPop.classList.contains('open'))closeSearch();else openSearch();};
+  searchPop.onclick=function(e){e.stopPropagation();};
+  document.addEventListener('click',function(){if(searchPop.classList.contains('open'))closeSearch();});
+  searchInput.addEventListener('keydown',function(e){if(e.key==='Enter')doSearch();else if(e.key==='Escape')closeSearch();});
+
+  var SEARCH=null;
+  function rx(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
+  function hesc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function buildSearchIndex(){
+    if(SEARCH)return SEARCH;
+    SEARCH=[];
+    for(var i=1;i<=N;i++){
+      var sec=pages[i], title=pageTitle(i), ps=sec.querySelectorAll(':scope > p');
+      for(var b=0;b<ps.length;b++){
+        var text=ps[b].textContent||'';
+        if(text.trim())SEARCH.push({i:i,b:b,text:text,title:title});
+      }
+    }
+    return SEARCH;
+  }
+  function highlightSnippet(text,q){
+    var re=new RegExp(rx(q),'gi'), out='', last=0, m;
+    while((m=re.exec(text))!==null){
+      out+=hesc(text.slice(last,m.index))+'<b>'+hesc(m[0])+'</b>';
+      last=m.index+m[0].length;
+      if(m.index===re.lastIndex)re.lastIndex++;
+    }
+    return out+hesc(text.slice(last));
+  }
+  function doSearch(){
+    var q=searchInput.value.trim().toLowerCase();
+    if(!q){searchResults.innerHTML='';return;}
+    var html='<div class="count">Results for “'+hesc(q)+'”</div>', n=0;
+    var idx=buildSearchIndex();
+    for(var k=0;k<idx.length&&n<40;k++){
+      var item=idx[k], foundAt=item.text.toLowerCase().indexOf(q);
+      if(foundAt<0)continue;
+      n++;
+      var start=Math.max(0,foundAt-60), end=Math.min(item.text.length,foundAt+q.length+80);
+      var snippet=highlightSnippet(item.text.slice(start,end),q);
+      var ns=start>0?'…':'', ne=end<item.text.length?'…':'';
+      html+='<div class="sr" data-i="'+item.i+'" data-b="'+item.b+'">'+hesc(item.title)+' — '+ns+snippet+ne+'</div>';
+    }
+    if(!n)html+='<div class="count">No matches.</div>';
+    searchResults.innerHTML=html;
+    Array.prototype.forEach.call(searchResults.querySelectorAll('.sr'),function(el){
+      el.onclick=function(){goToParagraph(+el.dataset.i,+el.dataset.b,q);};
+    });
+  }
+  function textNodesIn(root,rejectSel){
+    var walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(node){
+      if(rejectSel&&node.parentNode&&node.parentNode.closest(rejectSel))return NodeFilter.FILTER_REJECT;
+      var t=node.nodeValue; if(!t||!t.trim())return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }});
+    var nodes=[],n; while(n=walker.nextNode())nodes.push(n); return nodes;
+  }
+  function highlightIn(target,re){
+    textNodesIn(target,'mark, .note-ref').forEach(function(node){
+      var text=node.nodeValue, m, parts=[], last=0;
+      re.lastIndex=0;
+      while((m=re.exec(text))!==null){
+        parts.push(document.createTextNode(text.slice(last,m.index)));
+        var mk=document.createElement('mark'); mk.textContent=m[0]; parts.push(mk);
+        last=m.index+m[0].length;
+        if(m.index===re.lastIndex)re.lastIndex++;
+      }
+      if(parts.length){
+        parts.push(document.createTextNode(text.slice(last)));
+        var frag=document.createDocumentFragment();
+        parts.forEach(function(p){frag.appendChild(p);});
+        node.parentNode.replaceChild(frag,node);
+      }
+    });
+  }
+  function goToParagraph(i,b,q){
+    go(i,true);
+    closeSearch();
+    var ps=pages[i].querySelectorAll(':scope > p'), target=ps[b];
+    if(!target)return;
+    highlightIn(target,new RegExp(rx(q),'gi'));
+    setTimeout(function(){
+      var y=target.getBoundingClientRect().top+window.scrollY-90;
+      window.scrollTo({top:y,behavior:'smooth'});
+    },30);
+  }
+
+  // keyboard + swipe
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'&&cur<N&&e.target!==searchInput)go(cur+1);
+    else if(e.key==='ArrowLeft'&&cur>1&&e.target!==searchInput)go(cur-1);
+    else if(e.key==='Escape'){closeDrawer();closeFont();closeSearch();closeNote();}
+    else if(e.key===' '&&!e.metaKey&&!e.ctrlKey&&!e.altKey){
+      var t=e.target;
+      if(t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.tagName==='SELECT'))return;
+      e.preventDefault(); toggle();
+    }
+  });
+  var x0=null,y0=null;
+  document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;y0=e.touches[0].clientY;},{passive:true});
+  document.addEventListener('touchend',function(e){
+    if(x0===null)return;
+    var dx=e.changedTouches[0].clientX-x0, dy=e.changedTouches[0].clientY-y0;
+    if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.6){
+      if(dx<0&&cur<N&&cur>0)go(cur+1); else if(dx>0&&cur>1)go(cur-1);
+    }
+    x0=y0=null;
+  },{passive:true});
+
+  // initial position: a hash deep-link jumps straight in; otherwise land on
+  // the cover and offer an explicit resume rather than silently jumping back
+  // into the last chapter — the reader decides, the page doesn't.
+  var startHash=(location.hash||'').match(/ch(\d+)/);
+  go(startHash?+startHash[1]:0,true);
+  if(cur===0)renderCoverExtras();
 })();
 </script>
 </body>

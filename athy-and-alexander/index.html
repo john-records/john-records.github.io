@@ -1,250 +1,1064 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="night">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.youtube-nocookie.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';">
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob:; media-src 'self' blob: https://archive.org https://*.archive.org https://*.here.now; connect-src 'self' https://archive.org https://*.archive.org https://*.here.now; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-<title>Athy and Alexander — John Records</title>
-<meta name="description" content="Twins born eleven minutes apart divide the world between them — Athy takes the daylight, Alexander takes the dark — until an old coin with an owl struck on it puts them in the path of a goddess who was never quite finished with the world." />
-<meta name="author" content="John Records" />
-<link rel="canonical" href="https://johnrecords.org/athy-and-alexander/" />
-<meta property="og:title" content="Athy and Alexander — John Records" />
-<meta property="og:description" content="Twins born eleven minutes apart divide the world between them — Athy takes the daylight, Alexander takes the dark — until an old coin with an owl struck on it puts them in the path of a goddess who was never quite finished with the world." />
-<meta property="og:url" content="https://johnrecords.org/athy-and-alexander/" />
-<meta property="og:type" content="book" />
-<meta property="og:image" content="https://johnrecords.org/assets/plates/athy.jpg" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Athy and Alexander — John Records" />
-<meta name="twitter:description" content="Twins born eleven minutes apart divide the world between them — Athy takes the daylight, Alexander takes the dark — until an old coin with an owl struck on it puts them in the path of a goddess who was never quite finished with the world." />
-<meta name="twitter:image" content="https://johnrecords.org/assets/plates/athy.jpg" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Athy and Alexander</title>
+<meta name="description" content="A novelette — the warrior and the wise one, the day and the night.">
+<meta name="author" content="John Records">
+<meta name="theme-color" content="#0f1219">
+<link rel="canonical" href="https://johnrecords.org/athy-and-alexander/">
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!-- social share card -->
+<meta property="og:type" content="book">
+<meta property="og:title" content="Athy and Alexander">
+<meta property="og:description" content="An owl, a warrior, and a coin — a myth retold as a children's story. To Emerald Shakti, in All Her Forms.">
+<meta property="og:image" content="https://johnrecords.org/assets/plates/athy.jpg">
+<meta property="og:image:alt" content="Athy & Alexander — a gold owl medallion on parchment">
+<meta property="og:url" content="https://johnrecords.org/athy-and-alexander/">
+<meta property="og:site_name" content="Athy and Alexander">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Athy and Alexander">
+<meta name="twitter:description" content="An owl, a warrior, and a coin — a myth retold as a children's story.">
+<meta name="twitter:image" content="https://johnrecords.org/assets/plates/athy.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
-  --room:#EFE3C8; --paper:#FAF5E9; --card:#FFFDF4;
-  --ink:#2A2118; --ink-soft:#6E5F4B; --ink-faint:#93856D;
-  --oak:#7A4E28; --oak-deep:#53341A;
-  --oak-grain:linear-gradient(180deg,#8a5c33,#6b4322 55%,#53341A);
-  --terracotta:#A64B2A; --leaf:#3E5A45; --rose:#A85F62; --tile:#E2BE72;
-  --lamp:#B07A26; --glow:transparent;
-  --line:rgba(83,52,26,.22); --line-faint:rgba(83,52,26,.10);
-  --shadow:0 18px 40px -22px rgba(42,33,24,.45);
-  --display:"IM Fell English","Iowan Old Style",Georgia,serif;
-  --read:"Newsreader",Georgia,"Times New Roman",serif;
-  --data:"DM Mono",ui-monospace,SFMono-Regular,monospace;
+  --bg:#e9dcc4; --page:#f4ecdb; --ink:#2c2620; --muted:#73664f;
+  --gold:#9a7837; --gold-2:#b8924d; --accent:#586a76; --olive:#6c7a44;
+  --rule:rgba(120,92,52,.22); --rule-2:rgba(120,92,52,.40);
+  --shadow:rgba(60,45,25,.18); --bar:rgba(244,236,219,.86); --sel:rgba(184,146,77,.25);
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --room:#191008; --paper:#241A0F; --card:#2E2214;
-    --ink:#F0E5CE; --ink-soft:#C4B394; --ink-faint:#94836A;
-    --oak:#B98B54; --oak-deep:#8A5F33;
-    --oak-grain:linear-gradient(180deg,#6b4a26,#4a3117 55%,#33200e);
-    --terracotta:#D2764E; --leaf:#8FB49A; --rose:#D49295; --tile:#B08A3F;
-    --lamp:#F2B94E; --glow:rgba(242,185,78,.16);
-    --line:rgba(240,229,206,.22); --line-faint:rgba(240,229,206,.09);
-    --shadow:0 18px 44px -20px rgba(0,0,0,.7);
-  }
-}
-:root[data-theme="dark"]{
-  --room:#191008; --paper:#241A0F; --card:#2E2214;
-  --ink:#F0E5CE; --ink-soft:#C4B394; --ink-faint:#94836A;
-  --oak:#B98B54; --oak-deep:#8A5F33;
-  --oak-grain:linear-gradient(180deg,#6b4a26,#4a3117 55%,#33200e);
-  --terracotta:#D2764E; --leaf:#8FB49A; --rose:#D49295; --tile:#B08A3F;
-  --lamp:#F2B94E; --glow:rgba(242,185,78,.16);
-  --line:rgba(240,229,206,.22); --line-faint:rgba(240,229,206,.09);
-  --shadow:0 18px 44px -20px rgba(0,0,0,.7);
+html[data-theme="night"]{
+  --bg:#0f1219; --page:#161b25; --ink:#e7dfcd; --muted:#9b977f;
+  --gold:#c9a44e; --gold-2:#e3c570; --accent:#93a0ad; --olive:#93a563;
+  --rule:rgba(201,164,78,.20); --rule-2:rgba(201,164,78,.38);
+  --shadow:rgba(0,0,0,.5); --bar:rgba(22,27,37,.86); --sel:rgba(201,164,78,.22);
 }
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%; overflow-x:clip}
+html,body{margin:0;padding:0}
 body{
-  margin:0; background:var(--room); color:var(--ink);
-  font-family:var(--read); font-optical-sizing:auto;
-  font-size:23.125px; line-height:1.62; -webkit-font-smoothing:antialiased;
-  overflow-x:clip;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"EB Garamond",Georgia,"Times New Roman",serif;
+  font-size:calc(clamp(1.5rem,1.325rem + 0.8vw,1.825rem) * var(--reader-scale,1));
+  line-height:1.78;
+  -webkit-text-size-adjust:100%;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  transition:background .5s ease,color .5s ease;
 }
-a{color:inherit}
-:focus-visible{outline:2px solid var(--terracotta);outline-offset:3px}
-.page{
-  max-width:840px; margin:0 auto; background:var(--paper);
-  padding:0 clamp(22px,4.5vw,64px) clamp(28px,4vw,52px);
-  box-shadow:0 0 0 1px var(--line-faint), 0 30px 80px -40px rgba(42,33,24,.5);
-}
-.strip{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:16px 0; font-family:var(--data); font-size:16.25px;
-  letter-spacing:.04em; color:var(--ink-faint);
-}
-.strip .who{color:var(--ink-soft)}
-.strip a.home{color:var(--oak); text-decoration:none; border-bottom:1px solid var(--line)}
-.strip a.home:hover{color:var(--terracotta); border-color:var(--terracotta)}
-.lampbtn{
-  display:flex; align-items:center; gap:8px; background:none; border:none;
-  color:var(--ink-faint); font-family:var(--data); font-size:16.25px;
-  letter-spacing:.04em; cursor:pointer; padding:4px;
-}
-.lampbtn:hover{color:var(--lamp)}
-.lampbtn svg{display:block; overflow:visible}
-.lampbtn.searchbtn svg{fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round}
-.lampbtn .shade{fill:var(--lamp)}
-.lampbtn .base{fill:var(--oak)}
-.lampbtn .halo{fill:var(--glow)}
-.skip-link{
-  position:absolute; top:-48px; left:12px; z-index:1000;
-  background:var(--card); color:var(--oak);
-  font-family:var(--data); font-size:0.875rem; letter-spacing:.08em;
-  text-transform:uppercase; padding:10px 16px;
-  border:1px solid var(--line); text-decoration:none;
-  transition:top .15s ease;
-}
-.skip-link:focus{top:12px}
-header.mast{padding:clamp(18px,4vw,36px) 0 clamp(8px,2vw,16px)}
-header.mast h1{
-  font-family:var(--display); font-weight:400; font-size:clamp(40px,6.75vw,62.5px);
-  line-height:1.08; margin:0 0 14px; letter-spacing:.005em;
-}
-header.mast .byline{margin:0 0 6px; color:var(--ink-soft); font-size:20px}
-header.mast .thesis{
-  margin:0; font-size:23.125px; color:var(--ink-soft); max-width:44em;
-}
-.keyband{
-  height:10px; margin:18px 0 0;
-  background-image:repeating-linear-gradient(45deg, var(--terracotta) 0 6px, transparent 6px 12px);
-  opacity:.5;
-}
-.plate-hero{margin:clamp(20px,4vw,34px) 0 0; border-radius:3px; overflow:hidden; box-shadow:var(--shadow)}
-.plate-hero img{display:block; width:100%; height:auto}
-.leadin{margin:clamp(30px,4.5vw,46px) 0 0; color:var(--ink-soft); font-size:21.875px; max-width:40em}
-.leadin a{color:var(--oak); text-decoration:none; border-bottom:1px solid var(--line)}
-.leadin a:hover{color:var(--terracotta); border-color:var(--terracotta)}
-.cta{
-  display:inline-block; margin:28px 0 0; padding:14px 26px;
-  background:var(--oak); color:var(--paper); font-family:var(--data);
-  font-size:17.5px; letter-spacing:.04em; text-decoration:none; border-radius:4px;
-  box-shadow:var(--shadow);
-}
-.cta:hover{background:var(--oak-deep)}
-.note{margin:16px 0 0; color:var(--ink-faint); font-size:17.5px}
-footer{
-  margin-top:clamp(40px,6vw,64px); padding:20px 0 8px; border-top:1px solid var(--line);
-  font-family:var(--data); font-size:15.625px; color:var(--ink-faint);
-}
-footer a{color:var(--oak); text-decoration:none; border-bottom:1px solid var(--line)}
-footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
-@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
-@media (max-width:600px){
-  .strip{flex-wrap:wrap; row-gap:12px}
-  .strip a.home{flex:0 0 100%}
-  .strip-controls{flex:0 0 100%; justify-content:flex-end}
-  .lampbtn span{display:none}
-}
+::selection{background:var(--sel)}
+svg{display:block}
+.gold{stroke:var(--gold);fill:none}
 
-/* site-wide search overlay (Pagefind) */
-.strip-controls{display:flex; align-items:center; gap:4px}
-.gsearch-overlay{position:fixed; inset:0; z-index:200; background:rgba(0,0,0,.45);
-  display:flex; align-items:flex-start; justify-content:center; padding:10vh 16px 0}
-.gsearch-overlay.hidden{display:none}
-.gsearch-panel{background:var(--paper); color:var(--ink); border-radius:14px; width:100%;
-  max-width:640px; box-shadow:0 20px 60px rgba(0,0,0,.35); padding:14px; max-height:70vh;
-  display:flex; flex-direction:column}
-.gsearch-panel input{width:100%; padding:12px 14px; font-size:20px; border:1px solid var(--line);
-  border-radius:10px; background:var(--paper); color:var(--ink); box-sizing:border-box}
-.gsearch-results{margin-top:10px; overflow:auto}
-.gsearch-hit{display:block; padding:10px 8px; border-radius:8px; text-decoration:none; color:inherit}
-.gsearch-hit:hover{background:var(--card)}
-.gsearch-hit-title{display:block; font-weight:600; font-size:17.5px}
-.gsearch-hit-excerpt{display:block; font-size:16.25px; color:var(--ink-soft); margin-top:2px}
-.gsearch-hit-excerpt mark{background:#ffe082; color:#333; border-radius:3px; padding:0 2px}
-.gsearch-empty{padding:10px 8px; font-size:16.25px; color:var(--ink-soft)}
+/* ---------- top bar ---------- */
+.bar{
+  position:fixed;top:0;left:0;right:0;z-index:40;
+  height:52px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 max(14px,env(safe-area-inset-left)) 0 max(14px,env(safe-area-inset-right));
+  padding-top:env(safe-area-inset-top);
+  background:var(--bar);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--rule);
+}
+.bar .mid{display:flex;flex-direction:column;align-items:center;justify-content:center;
+  max-width:55vw;overflow:hidden;text-align:center;line-height:1.15}
+.bar-book{font-family:"Cormorant Garamond",serif;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;font-size:1.125rem;color:var(--gold);white-space:nowrap;
+  overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.bar-ch{font-family:"Cormorant Garamond",serif;font-weight:500;letter-spacing:.16em;
+  text-transform:uppercase;font-size:0.75rem;color:var(--muted);white-space:nowrap;
+  overflow:hidden;text-overflow:ellipsis;max-width:100%;min-height:.8em}
+.iconbtn{appearance:none;border:0;background:none;color:var(--ink);cursor:pointer;
+  width:40px;height:40px;display:grid;place-items:center;border-radius:50%;padding:0;
+  transition:background .2s}
+.iconbtn:hover{background:var(--sel)}
+.iconbtn svg{width:22px;height:22px}
+.progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:50;
+  background:linear-gradient(90deg,var(--gold),var(--gold-2));transition:width .35s ease}
+.barright{display:flex;align-items:center;gap:2px}
+
+/* ---------- text-size popover ---------- */
+.fontpop{position:fixed;z-index:45;
+  top:calc(52px + env(safe-area-inset-top) + 6px);right:max(10px,env(safe-area-inset-right));
+  background:var(--page);border:1px solid var(--rule-2);border-radius:14px;
+  box-shadow:0 10px 34px var(--shadow);padding:8px;display:flex;align-items:center;gap:6px;
+  opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .2s,transform .2s,visibility .2s}
+.fontpop.open{opacity:1;visibility:visible;transform:none}
+.fontpop .fbtn{appearance:none;border:0;background:var(--sel);color:var(--ink);cursor:pointer;
+  font-family:"Cormorant Garamond",serif;font-weight:600;width:44px;height:44px;border-radius:11px;
+  display:grid;place-items:center;line-height:1;transition:background .2s,color .2s}
+.fontpop .fbtn:hover:not(:disabled){background:var(--gold-2);color:var(--page)}
+.fontpop .fbtn:disabled{opacity:.32;cursor:default}
+.fontpop .fbtn.small{font-size:1.188rem}
+.fontpop .fbtn.large{font-size:1.775rem}
+.fontpop .fval{font-family:"Cormorant Garamond",serif;letter-spacing:.06em;font-size:1.025rem;
+  color:var(--muted);min-width:3.6em;text-align:center;font-variant-numeric:tabular-nums}
+
+/* ---------- contents drawer ---------- */
+.scrim{position:fixed;inset:0;z-index:60;background:rgba(15,12,8,.45);
+  opacity:0;visibility:hidden;transition:opacity .3s}
+.scrim.open{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;bottom:0;left:0;z-index:61;width:min(86vw,360px);
+  background:var(--page);border-right:1px solid var(--rule);box-shadow:0 0 60px var(--shadow);
+  transform:translateX(-102%);transition:transform .34s cubic-bezier(.4,0,.2,1);
+  display:flex;flex-direction:column;padding-top:env(safe-area-inset-top)}
+.drawer.open{transform:translateX(0)}
+.drawer h2{font-family:"Cormorant Garamond",serif;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;font-size:1rem;color:var(--gold);margin:22px 26px 4px}
+.toc{list-style:none;margin:0;padding:8px 0 26px;overflow-y:auto;flex:1}
+.toc li{margin:0}
+.toc button{width:100%;text-align:left;background:none;border:0;cursor:pointer;color:var(--ink);
+  font-family:"EB Garamond",serif;font-size:1.275rem;padding:9px 26px;display:flex;gap:12px;
+  align-items:baseline;line-height:1.3;transition:background .15s}
+.toc button:hover{background:var(--sel)}
+.toc button .n{font-family:"Cormorant Garamond",serif;color:var(--gold);font-size:1.025rem;
+  letter-spacing:.1em;min-width:1.6em;font-variant-numeric:tabular-nums}
+.toc button.active{background:var(--sel)}
+.toc button.active .t{color:var(--gold-2)}
+.toc .cover-link button{font-style:italic;color:var(--muted)}
+
+/* ---------- pages ---------- */
+main{max-width:39rem;margin:0 auto;padding:52px 22px 120px;
+  padding-left:max(22px,env(safe-area-inset-left));padding-right:max(22px,env(safe-area-inset-right))}
+.page{display:none;animation:fade .6s ease both}
+.page.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ---------- cover ---------- */
+.cover{min-height:calc(100vh - 52px);flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;padding:34px 6px 60px}
+.page.cover.active{display:flex}
+.cover .art{width:min(72vw,278px);margin:0 auto 6px}
+.cover .meander{width:min(70vw,260px);height:16px;opacity:.8;margin:14px auto}
+.cover h1{font-family:"Cormorant Garamond",serif;font-weight:600;
+  font-size:clamp(3.125rem,2.5rem + 6vw,5.25rem);line-height:1.02;letter-spacing:.04em;
+  margin:.1em 0 0;color:var(--ink)}
+.cover .amp{display:block;font-style:italic;font-weight:500;color:var(--gold);
+  font-size:0.575em;letter-spacing:.06em;margin:.18em 0}
+.cover .ded{font-style:italic;color:var(--muted);font-size:1.3rem;margin:26px 0 2px;
+  letter-spacing:.02em}
+.cover .kind{font-family:"Cormorant Garamond",serif;text-transform:uppercase;
+  letter-spacing:.42em;font-size:0.825rem;color:var(--muted);margin-top:30px;padding-left:.42em}
+.begin{margin-top:34px;appearance:none;cursor:pointer;
+  font-family:"Cormorant Garamond",serif;text-transform:uppercase;letter-spacing:.28em;
+  font-size:0.975rem;color:var(--ink);background:none;
+  border:1px solid var(--rule-2);border-radius:999px;padding:13px 30px 13px 32px;
+  transition:all .25s}
+.begin:hover{border-color:var(--gold);color:var(--gold-2);letter-spacing:.32em}
+.dlwrap{margin-top:20px}
+.dlbook{display:inline-flex;align-items:center;gap:9px;color:var(--muted);
+  font-family:"Cormorant Garamond",serif;text-transform:uppercase;letter-spacing:.2em;
+  font-size:0.825rem;text-decoration:none;transition:color .25s}
+.dlbook svg{width:17px;height:17px;color:var(--gold);opacity:.85}
+.dlbook .dlmeta{opacity:.7}
+.dlbook:hover{color:var(--gold-2)}
+
+/* ---------- listen / read-aloud ---------- */
+.listen-wrap{text-align:center;margin:-8px 0 30px}
+.chdl{display:block;margin-top:10px;font-family:"Cormorant Garamond",serif;text-transform:uppercase;letter-spacing:.18em;font-size:0.75rem;color:var(--muted);text-decoration:none;opacity:.72;transition:color .25s,opacity .25s}
+.chdl svg{display:inline-block;width:12px;height:12px;vertical-align:-2px;margin-right:5px;color:var(--gold);opacity:.85}
+.chdl:hover{color:var(--gold-2);opacity:1}
+.listen{display:inline-flex;align-items:center;gap:9px;
+  font-family:"Cormorant Garamond",serif;text-transform:uppercase;letter-spacing:.2em;
+  font-size:0.875rem;color:var(--gold-2);background:none;cursor:pointer;
+  border:1px solid var(--rule-2);border-radius:999px;padding:9px 20px 9px 17px;transition:all .25s}
+.listen:hover{border-color:var(--gold);color:var(--gold)}
+.listen svg{width:14px;height:14px;flex:0 0 auto}
+.listen .ico-stop{display:none}
+.listen.playing{border-color:var(--gold);color:var(--gold)}
+.listen.playing .ico-play{display:none}
+.listen.playing .ico-stop{display:inline-block}
+.listen.loading{opacity:.6;pointer-events:none}
+
+/* ---------- chapter ---------- */
+.chead{text-align:center;margin:14px 0 30px}
+.chead .num{font-family:"Cormorant Garamond",serif;text-transform:uppercase;
+  letter-spacing:.4em;font-size:0.875rem;color:var(--gold);padding-left:.4em}
+.chead .ttl{font-family:"Cormorant Garamond",serif;font-weight:600;
+  font-size:clamp(2.375rem,1.875rem + 3vw,3.375rem);line-height:1.08;margin:.18em 0 0;color:var(--ink)}
+.headpiece{width:min(82vw,330px);height:auto;margin:24px auto 6px}
+.page p{margin:0 0 1.05em}
+.page p.first{text-indent:0}
+.page p:not(.first){text-indent:1.4em}
+.page p.first::first-letter{
+  font-family:"Cormorant Garamond",serif;font-weight:600;color:var(--gold);
+  float:left;font-size:4.375em;line-height:.74;padding:.04em .12em 0 0;margin-top:.04em}
+.page em{font-style:italic}
+.divider{width:120px;height:34px;margin:30px auto;opacity:.85}
+
+/* ---------- chapter foot nav ---------- */
+.endmark{text-align:center;margin:46px 0 8px}
+.endmark svg{width:46px;height:46px;margin:0 auto;opacity:.9}
+.pgnav{display:flex;justify-content:space-between;gap:14px;margin-top:30px;
+  padding-top:24px;border-top:1px solid var(--rule)}
+.pgnav button{flex:1;background:none;border:1px solid var(--rule-2);border-radius:12px;
+  cursor:pointer;color:var(--ink);font-family:"Cormorant Garamond",serif;
+  text-transform:uppercase;letter-spacing:.14em;font-size:0.9rem;padding:14px 10px;
+  transition:all .22s;line-height:1.3}
+.pgnav button:hover:not(:disabled){border-color:var(--gold);color:var(--gold-2)}
+.pgnav button:disabled{opacity:.32;cursor:default}
+.pgnav button .lbl{display:block;font-style:normal;font-size:0.775rem;color:var(--muted);
+  letter-spacing:.2em;margin-bottom:3px}
+.pgnav button.next{text-align:right}
+.pgnav button.prev{text-align:left}
+
+/* ---------- floating bottom bar ---------- */
+.foot{position:fixed;left:0;right:0;bottom:0;z-index:30;height:54px;
+  padding-bottom:env(safe-area-inset-bottom);
+  display:flex;align-items:center;justify-content:center;gap:20px;
+  background:var(--bar);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-top:1px solid var(--rule)}
+.foot.hidden{transform:translateY(110%);transition:transform .4s}
+.foot .arrow{appearance:none;border:0;background:none;cursor:pointer;color:var(--ink);
+  width:42px;height:42px;display:grid;place-items:center;border-radius:50%;transition:background .2s}
+.foot .arrow:hover:not(:disabled){background:var(--sel)}
+.foot .arrow:disabled{opacity:.28;cursor:default}
+.foot .arrow svg{width:22px;height:22px}
+.foot .pos{font-family:"Cormorant Garamond",serif;letter-spacing:.2em;font-size:0.925rem;
+  color:var(--muted);text-transform:uppercase;min-width:5.4em;text-align:center;
+  font-variant-numeric:tabular-nums}
+.foot.cover-hide{transform:translateY(110%)}
+
+@media (max-width:480px){
+  main{padding-left:18px;padding-right:18px}
+  .page p:not(.first){text-indent:1.2em}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+.iconbtn.home{width:auto;border-radius:20px;padding:0 13px 0 10px;gap:6px}
+.iconbtn.home svg{width:18px;height:18px}
+.iconbtn.home span{font-family:"Cormorant Garamond",serif;font-size:0.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Book","name":"Athy and Alexander","url":"https://johnrecords.org/athy-and-alexander/","author":{"@type":"Person","name":"John Records"}}
+<script>
+/* Audio hosting: mp3s live on the Internet Archive (permanent), with the here.now mirror as fallback.
+   auUrl(name) -> URL to use;  auHead(name) -> HEAD probe that also picks the base that answered;
+   auSwap(el)  -> on a media error, flip an IA src to the mirror and resume (returns true if it did). */
+(function(){
+  var IA='https://archive.org/download/athy-and-alexander-john-records/', HN='https://happy-canyon-38dp.here.now/audio/', src={};
+  window.auUrl=function(n){return (src[n]||IA)+n;};
+  window.auHead=function(n){
+    function t(b){return fetch(b+n,{method:'HEAD'}).then(function(r){if(r.ok)src[n]=b;return r;});}
+    return t(IA).catch(function(){return {ok:false};}).then(function(r){
+      return r.ok?r:t(HN).catch(function(){return {ok:false};});});
+  };
+  window.auSwap=function(el){
+    var u=el.getAttribute('src')||''; if(u.indexOf(IA)!==0) return false;
+    var n=u.slice(IA.length), t=el.currentTime||0, was=!el.paused;
+    src[n]=HN; el.src=HN+n;
+    el.addEventListener('loadedmetadata',function f(){el.removeEventListener('loadedmetadata',f);
+      if(t>0)try{el.currentTime=t;}catch(e){}
+      if(was){var p=el.play(); if(p&&p.catch)p.catch(function(){});}});
+    el.load(); return true;
+  };
+})();
 </script>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-<div class="page" data-pagefind-body>
 
-  <div class="strip" data-pagefind-ignore>
-    <a class="home" href="/">&larr; John&rsquo;s Reading Nook</a>
-    <div class="strip-controls">
-      <button class="lampbtn searchbtn" type="button" data-gsearch-open aria-label="Search the site" title="Search the site">
-        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="11" cy="11" r="7"/>
-          <path d="M21 21l-4.35-4.35"/>
-        </svg>
-        <span>Search</span>
-      </button>
-      <button class="lampbtn" id="lamp" type="button" aria-pressed="false" aria-label="Light the lamp">
-        <svg width="22" height="22" viewBox="0 0 26 26" aria-hidden="true">
-          <circle class="halo" cx="13" cy="9" r="12"/>
-          <path class="shade" d="M5 11 L9 3 H17 L21 11 Z"/>
-          <rect class="base" x="12" y="11" width="2" height="9"/>
-          <path class="base" d="M8 22 Q13 19 18 22 L18 23 H8 Z"/>
-        </svg>
-        <span id="lampword">Light the lamp</span>
-      </button>
-    </div>
+<!-- ====== shared SVG symbols ====== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <!-- owl, facing forward, coin-style -->
+  <symbol id="s-owl" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M50 14c-13 0-22 7-22 7s-6-9-13-9c0 8 4 13 4 13-5 6-7 14-7 24 0 22 16 35 38 35s38-13 38-35c0-10-2-18-7-24 0 0 4-5 4-13-7 0-13 9-13 9s-9-7-22-7z"/>
+      <circle cx="36" cy="48" r="11"/><circle cx="64" cy="48" r="11"/>
+      <circle cx="36" cy="48" r="3.4" fill="currentColor" stroke="none"/>
+      <circle cx="64" cy="48" r="3.4" fill="currentColor" stroke="none"/>
+      <path d="M47 52l3 6 3-6"/>
+      <path d="M38 70c4 4 8 4 12 0 4 4 8 4 12 0"/>
+    </g>
+  </symbol>
+  <!-- olive sprig -->
+  <symbol id="s-olive" viewBox="0 0 120 40">
+    <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+      <path d="M10 20h100"/>
+      <g stroke-width="1.5">
+        <path d="M34 20c-6-7-16-7-20-3 6 5 15 5 20 3z"/>
+        <path d="M58 20c-6-7-16-7-20-3 6 5 15 5 20 3z"/>
+        <path d="M82 20c6-7 16-7 20-3-6 5-15 5-20 3z"/>
+      </g>
+      <circle cx="30" cy="14" r="2.4" fill="currentColor" stroke="none"/>
+      <circle cx="54" cy="26" r="2.4" fill="currentColor" stroke="none"/>
+      <circle cx="86" cy="26" r="2.4" fill="currentColor" stroke="none"/>
+    </g>
+  </symbol>
+  <!-- meander / greek key strip -->
+  <symbol id="s-meander" viewBox="0 0 240 16" preserveAspectRatio="xMidYMid meet">
+    <g fill="none" stroke="currentColor" stroke-width="1.6">
+      <path d="M0 13h12V3h-7v6h3V5"/>
+      <path d="M24 13h12V3h-7v6h3V5"/>
+      <path d="M48 13h12V3h-7v6h3V5"/>
+      <path d="M72 13h12V3h-7v6h3V5"/>
+      <path d="M96 13h12V3h-7v6h3V5"/>
+      <path d="M120 13h12V3h-7v6h3V5"/>
+      <path d="M144 13h12V3h-7v6h3V5"/>
+      <path d="M168 13h12V3h-7v6h3V5"/>
+      <path d="M192 13h12V3h-7v6h3V5"/>
+      <path d="M216 13h12V3h-7v6h3V5"/>
+    </g>
+  </symbol>
+  <!-- hero owl medallion (cover) -->
+  <symbol id="s-medallion" viewBox="0 0 420 470">
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="210" cy="210" r="201" stroke-width="2.6"/>
+      <circle cx="210" cy="210" r="190" stroke-width="1"/>
+      <circle cx="210" cy="210" r="196" stroke-width="4.4" stroke-dasharray="0.1 13.2"/>
+      <g fill="currentColor" stroke="none" opacity=".55">
+        <circle cx="92" cy="120" r="2"/><circle cx="330" cy="116" r="2"/>
+        <circle cx="70" cy="250" r="1.7"/><circle cx="350" cy="250" r="1.7"/>
+        <circle cx="120" cy="78" r="1.5"/><circle cx="300" cy="80" r="1.5"/>
+      </g>
+      <g transform="translate(210,196)">
+        <path stroke-width="3.2" d="M-70,-70 C-95,-40 -92,-5 -78,18 C-88,40 -80,95 -40,120 C-15,135 15,135 40,120 C80,95 88,40 78,18 C92,-5 95,-40 70,-70 C45,-92 -45,-92 -70,-70 Z"/>
+        <path stroke-width="2.4" d="M-70,-68 C-80,-86 -78,-92 -62,-88 M70,-68 C80,-86 78,-92 62,-88"/>
+        <path stroke-width="2.2" d="M0,-58 C-34,-74 -66,-44 -52,-6 C-44,18 -16,28 0,9 C16,28 44,18 52,-6 C66,-44 34,-74 0,-58 Z"/>
+        <path stroke-width="2" d="M-44,-40 C-30,-50 -14,-50 -2,-40 M44,-40 C30,-50 14,-50 2,-40"/>
+        <g stroke-width="2.4">
+          <circle cx="-26" cy="-22" r="22"/><circle cx="26" cy="-22" r="22"/>
+          <circle cx="-26" cy="-22" r="14" stroke-width="1.6"/><circle cx="26" cy="-22" r="14" stroke-width="1.6"/>
+          <circle cx="-26" cy="-22" r="6" fill="currentColor" stroke="none"/>
+          <circle cx="26" cy="-22" r="6" fill="currentColor" stroke="none"/>
+          <g stroke-width="1.1" opacity=".75">
+            <path d="M-26,-36v-5M-12,-22h5M-26,-8v5M-40,-22h-5M-16,-32l3,-4M-36,-32l-3,-4M-16,-12l3,4M-36,-12l-3,4"/>
+            <path d="M26,-36v-5M40,-22h5M26,-8v5M12,-22h-5M36,-32l3,-4M16,-32l-3,-4M36,-12l3,4M16,-12l-3,4"/>
+          </g>
+        </g>
+        <path stroke-width="2.2" d="M0,-8 C-7,2 -6,14 0,18 C6,14 7,2 0,-8 Z"/>
+        <g stroke-width="1.5" opacity=".9">
+          <path d="M-50,40 q8.3,-12 16.6,0 q8.3,-12 16.6,0 q8.3,-12 16.6,0 q8.3,-12 16.6,0 q8.3,-12 16.6,0 q8.3,-12 16.6,0"/>
+          <path d="M-46,58 q7.7,-12 15.3,0 q7.7,-12 15.3,0 q7.7,-12 15.3,0 q7.7,-12 15.3,0 q7.7,-12 15.3,0 q7.7,-12 15.3,0"/>
+          <path d="M-40,76 q8,-11 16,0 q8,-11 16,0 q8,-11 16,0 q8,-11 16,0 q8,-11 16,0"/>
+          <path d="M-32,94 q8,-11 16,0 q8,-11 16,0 q8,-11 16,0 q8,-11 16,0"/>
+        </g>
+        <g stroke-width="1.8">
+          <path d="M-78,16 C-92,46 -86,86 -56,112"/>
+          <path d="M78,16 C92,46 86,86 56,112"/>
+        </g>
+        <g stroke-width="1.2" opacity=".75">
+          <path d="M-80,40 C-72,44 -64,46 -56,46 M-82,58 C-73,62 -64,64 -55,64 M-80,76 C-72,80 -63,82 -54,82 M-76,94 C-69,98 -61,99 -53,100"/>
+          <path d="M80,40 C72,44 64,46 56,46 M82,58 C73,62 64,64 55,64 M80,76 C72,80 63,82 54,82 M76,94 C69,98 61,99 53,100"/>
+        </g>
+        <path stroke-width="2" d="M-58,128 C-20,140 20,140 58,128"/>
+        <g stroke-width="1.8">
+          <path d="M-14,122 l-3,12 M-7,124 l-1,12 M0,124 l0,12 M7,124 l1,12 M14,122 l3,12"/>
+        </g>
+        <g stroke-width="1.4" opacity=".9">
+          <path d="M-58,128 C-78,124 -92,130 -100,140"/>
+          <path d="M-82,127 c-6,-7 -16,-7 -20,-3 6,5 15,4 20,3z"/>
+          <path d="M-95,138 c-5,-7 -15,-8 -19,-4 6,5 14,5 19,4z"/>
+          <circle cx="-74" cy="123" r="2.2" fill="currentColor" stroke="none"/>
+        </g>
+      </g>
+      <text x="210" y="392" text-anchor="middle" fill="currentColor" stroke="none" font-family="Cormorant Garamond, serif" font-size="34" letter-spacing="10" font-weight="600">ΑΘΕ</text>
+    </g>
+  </symbol>
+  <!-- engraved chapter-head frame: flanking rules, leaf terminals, struck roundel -->
+  <symbol id="vframe" viewBox="0 0 560 220">
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <g stroke-width="1.4">
+        <path d="M40,110 H190"/><path d="M370,110 H520"/>
+        <path d="M40,114 H170" opacity=".5"/><path d="M390,114 H520" opacity=".5"/>
+      </g>
+      <g stroke-width="1.3" opacity=".9">
+        <path d="M190,110 c10,-8 22,-7 27,-3 -6,6 -18,8 -27,3z"/>
+        <path d="M370,110 c-10,-8 -22,-7 -27,-3 6,6 18,8 27,3z"/>
+      </g>
+      <g transform="translate(280,110)">
+        <circle r="72" stroke-width="2.4"/>
+        <circle r="64" stroke-width="1"/>
+        <circle r="68" stroke-width="3.4" stroke-dasharray="0.1 11.5"/>
+      </g>
+    </g>
+    <g fill="currentColor" stroke="none">
+      <circle cx="30" cy="110" r="2.6"/><circle cx="530" cy="110" r="2.6"/>
+    </g>
+  </symbol>
+ </defs>
+</svg>
+
+<div class="progress" id="progress"></div>
+
+<header class="bar">
+  <a class="iconbtn home" href="https://johnrecords.org/" aria-label="Return to John's Reading Nook" title="John's Reading Nook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9.5a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1V15a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4.5a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1V10"/></svg><span>Nook</span></a>
+  <button class="iconbtn" id="menuBtn" aria-label="Contents">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+  <div class="mid">
+    <span class="bar-book">Athy &amp; Alexander</span>
+    <span class="bar-ch" id="barTitle"></span>
   </div>
-
-  <div id="gsearch-overlay" class="gsearch-overlay hidden" role="dialog" aria-modal="true" aria-label="Search johnrecords.org" data-pagefind-ignore>
-    <div class="gsearch-panel">
-      <input id="gsearch-input" type="search" placeholder="Search johnrecords.org&hellip; (Esc to close)" autocomplete="off" />
-      <div id="gsearch-results" class="gsearch-results"></div>
-    </div>
+  <div class="barright">
+    <button class="iconbtn" id="fontBtn" aria-label="Text size" aria-haspopup="true" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><text x="1.5" y="19" font-family="'Cormorant Garamond',serif" font-weight="600" font-size="15">A</text><text x="13" y="19" font-family="'Cormorant Garamond',serif" font-weight="600" font-size="10">a</text></svg>
+    </button>
+    <button class="iconbtn" id="themeBtn" aria-label="Toggle day and night">
+      <svg id="sunIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4"/></svg>
+      <svg id="moonIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg>
+    </button>
   </div>
+</header>
 
-  <header class="mast">
-    <h1>Athy and Alexander</h1>
-    <p class="byline">A novelette</p>
-    <p class="thesis">Twins born eleven minutes apart divide the world between them — Athy takes the daylight, Alexander takes the dark — until an old coin with an owl struck on it puts them in the path of a goddess who was never quite finished with the world.</p>
-  </header>
-
-  <main id="main" tabindex="-1">
-
-  <div class="keyband" role="presentation"></div>
-
-  <figure class="plate-hero">
-    <img src="/assets/plates/athy.jpg" width="768" height="512" loading="eager" alt="Twin children on an ancient Greek shore among olive trees, a ship on the horizon, cover art for Athy and Alexander." />
-  </figure>
-
-  <p class="leadin">This book is hosted in full &mdash; text and narrated audio &mdash; at its own
-    address so it doesn&rsquo;t depend on this page staying around.</p>
-  <a class="cta" href="https://happy-canyon-38dp.here.now/#ch1">Read Athy and Alexander &rarr;</a>
-  <p class="note">happy-canyon-38dp.here.now</p>
-
-  </main>
-
-  <footer data-pagefind-ignore>
-    <span>&copy; John Records &middot; <a href="mailto:john.records@gmail.com">john.records@gmail.com</a></span>
-  </footer>
-
+<!-- text-size control -->
+<div class="fontpop" id="fontPop" role="dialog" aria-label="Text size">
+  <button class="fbtn small" id="fDown" aria-label="Smaller text">A</button>
+  <div class="fval" id="fVal">100%</div>
+  <button class="fbtn large" id="fUp" aria-label="Larger text">A</button>
 </div>
 
-<script src="/gsearch.js" defer></script>
+<!-- contents -->
+<div class="scrim" id="scrim"></div>
+<nav class="drawer" id="drawer" aria-label="Contents">
+  <h2>Contents</h2>
+  <ul class="toc" id="toc"></ul>
+</nav>
+
+<main data-pagefind-body data-pagefind-meta="title:Athy and Alexander" id="main">
+
+<!-- ===== COVER ===== -->
+<section class="page cover active" data-i="0">
+  <div class="art" style="color:var(--gold)">
+    <svg viewBox="0 0 420 470" aria-hidden="true"><use href="#s-medallion"/></svg>
+  </div>
+  <svg class="meander" style="color:var(--gold-2)" aria-hidden="true"><use href="#s-meander"/></svg>
+  <h1>Athy<span class="amp">&amp;</span>Alexander</h1>
+  <p class="ded">To Emerald Shakti, in All Her Forms</p>
+  <div style="color:var(--olive);width:150px;margin:18px auto 0"><svg viewBox="0 0 120 40" aria-hidden="true"><use href="#s-olive"/></svg></div>
+  <p class="kind">A Novelette</p>
+  <button class="begin" id="beginBtn">Begin Reading</button>
+  <div class="dlwrap"><a class="dlbook" href="https://archive.org/download/athy-and-alexander-john-records/Athy-and-Alexander-Audiobook.mp3" download>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
+    Download audiobook <span class="dlmeta">(MP3)</span>
+  </a></div>
+</section>
+
+<!-- ===== CH 1 ===== -->
+<section class="page" data-i="1">
+  <div class="chead">
+    <div class="num">Chapter One</div>
+    <h1 class="ttl" id="pf-ch1">The Twins</h1>
+    <div class="headpiece" style="color:var(--gold)"><svg viewBox="0 0 560 220" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#vframe"/><g transform="translate(280,110)"><g stroke-width="2.2" transform="translate(-26,0)"><circle r="15"/><g stroke-width="1.5"><path d="M0,-27 V-21 M0,27 V21 M-27,0 H-21 M27,0 H21 M-19,-19 l4.2,4.2 M19,-19 l-4.2,4.2 M-19,19 l4.2,-4.2 M19,19 l-4.2,-4.2"/></g></g><g stroke-width="2.2" transform="translate(30,0)"><path d="M8,-23 A24,24 0 1 0 8,23 A18,18 0 1 1 8,-23 Z"/></g><g fill="currentColor" stroke="none"><circle cx="40" cy="-16" r="1.6"/><circle cx="47" cy="6" r="1.3"/><circle cx="37" cy="22" r="1.4"/></g></g></svg></div>
+  </div>
+  <p class="first">Athy and Alexander were born eleven minutes apart, and in those eleven minutes — or so their father liked to tell it — they quietly divided the whole world between them.</p>
+  <p>Athy took the daylight. She took the bright, loud middle of things, the part of the world where you run fast and climb high and say exactly what you mean. Alexander took the night. He took the hush after the lights go out, the part of the world where the interesting things hide in the dark and wait, very patiently, to be found.</p>
+  <p>They were twins, but you would never have guessed it to look at them. Athy was tall for the fifth grade, with long dark hair she mostly forgot to brush and a way of standing — feet planted, chin up — that made even grown-ups think twice before crossing her. Alexander was quiet and watchful, the kind of boy who noticed the one thing in a room that everybody else had walked right past. Athy charged at the world. Alexander studied it. And somehow, between the two of them, they had the whole thing covered.</p>
+  <p>They were also, as it happened, best friends. This is rarer between a brother and sister than you might think, and they knew it, and they were careful with it, the way you are careful with something you know is precious.</p>
+  <p>Athy had a habit of playing with his name. She had done it since they were small. <em>Alexander</em> was too long for everyday use, so she had taken it apart one afternoon and put it back together wrong on purpose — <em>Alexander</em>, she'd said, <em>Owl-exander</em>, because he could see in the dark like one — and then, because even that was too long for a girl in a hurry, she'd filed it down to a single bright syllable.</p>
+  <p>"Owl," she'd said, trying it out.</p>
+  <p>And it had stuck. By the time they were ten it was simply his name, the one only she used, and it fit him better than the one on his birth certificate.</p>
+  <p>On Saturdays they made lunch.</p>
+  <p>This was a serious business, with rules. One twin cooked, and the other was the guest — and the next Saturday they switched. Today was Athy's turn to cook, which meant Alexander sat at the kitchen table with his hands folded like a customer at a fine restaurant while his sister made grilled cheese with the edges crisped exactly the way he liked them, too dark for anyone else in the family to stand. She set the plate down in front of him with both hands, the way you'd present a crown on a cushion.</p>
+  <p>"Madam is too kind," said Alexander.</p>
+  <p>"Madam knows," said Athy, and bowed.</p>
+  <p>Their mother, Maggie, smiled as she watched this from the sink and said nothing, because she had learned long ago that the lunch ritual was sacred and outsiders were not to interfere. Their father, Theo, looked up from the newspaper.</p>
+  <p>"You two," he said, "are extremely strange children."</p>
+  <p>"We learned it from you," said Athy, which was true.</p>
+  <p>It was Theo who had read them the old Greek stories, back when they were small enough to fit one on each of his knees. The book still lived on the low shelf in the front room — a fat, battered thing with a gold spine, full of gods who threw lightning and turned people into spiders and were almost never, the twins had noticed, very nice. Athy had loved the goddess with the gray eyes and the spear, the one who was wiser than the war gods and fiercer than the wise ones. Alexander had loved the owl that sat on her shoulder and saw in the dark what no one else could see.</p>
+  <p>They had read that book so many times the cover had come loose. They still read together most nights, shoulder to shoulder, one lamp between them, until their mother came in and turned it off.</p>
+  <p>After lunch they went up the ridge.</p>
+  <p>This was the other thing they did, and they did it in every kind of weather: they walked the trail behind the house, up through the firs to the high meadow where Homer was. Homer was a horse — a big, gentle, gray-dappled gelding who belonged technically to the neighbors but who had decided, years ago, that he belonged to Athy. He came to the fence the moment he saw her, every time, ears forward, and pressed his great soft nose into her hands.</p>
+  <p>"He says hello," Athy reported. "He says you smell like grilled cheese."</p>
+  <p>"He did not say that."</p>
+  <p>"He absolutely said that."</p>
+  <p>The strange thing was that nobody in the family really doubted her anymore. Athy had a way with animals that went past being good with them. She seemed to know what they were thinking, and — stranger still — they seemed to know that she knew. Sophie, their golden Lab, would not so much as eat her dinner until Athy had looked her in the eye and told her it was all right. Birds let Athy come closer than they should. Once, on this same trail, a deer had stood and looked at her for a long, still minute, the way one person looks at another, before it turned and walked away unhurried into the trees.</p>
+  <p>Today Sophie trotted at their heels, gray around the muzzle now but still game for a climb. The afternoon was going soft and gold the way late afternoons do, the light coming sideways through the firs in long bright bars.</p>
+  <p>It was the light, in fact, that did it — or rather, it was the way Alexander saw the light.</p>
+  <p>Because Alexander saw differently. He always had. In a dark room he could find the door when everyone else was groping at the walls. At the movies he was the one who whispered what was about to happen, not because he'd seen it before but because he'd caught the small thing in the corner of the frame that gave it away. Where his sister looked at the whole bright world all at once, Alexander looked at the edges, the shadows, the place just past where you were supposed to be looking.</p>
+  <p>So when something off the path caught the low gold light and threw back the faintest, dullest gleam — a gleam that anyone else, including Athy, walked straight past — Alexander stopped.</p>
+  <p>"Wait," he said.</p>
+  <p>Athy was already six steps ahead. "What."</p>
+  <p>"There's something there." He was looking at the base of an old fir, a little way off the trail, at a spot where the earth had washed away from the roots. "Down by the tree. Something gray."</p>
+  <p>"It's a rock, Owl."</p>
+  <p>"It's not a rock," said Alexander.</p>
+  <p>He left the path and crouched, and after a moment Athy sighed and came back and crouched beside him, because that was the other rule between them, older than the lunch ritual and never once spoken aloud: where one of them went, the other went too.</p>
+  <p>The thing in the dirt was small and round and the dull no-color of old metal. Alexander worked it loose with one finger. It came up out of the cold ground heavier than it looked, caked in earth, and the twins leaned their two heads together over his open palm to see it.</p>
+  <p>It was a coin.</p>
+  <p>Sophie, behind them, gave one low note in her throat — not quite a bark — and went very still.</p>
+  <p>Neither twin noticed. They were looking at the coin, and the coin, it seemed, in the last gold light of that ordinary Saturday, was looking back.</p>
+  <div class="divider" style="color:var(--olive)"><svg viewBox="0 0 120 40" aria-hidden="true"><use href="#s-olive"/></svg></div>
+</section>
+
+<!-- ===== CH 2 ===== -->
+<section class="page" data-i="2">
+  <div class="chead">
+    <div class="num">Chapter Two</div>
+    <h1 class="ttl" id="pf-ch2">The Coin</h1>
+    <div class="headpiece" style="color:var(--gold)"><svg viewBox="0 0 560 220" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#vframe"/><g transform="translate(280,110)"><g transform="translate(0,-6) scale(.62)" stroke-width="2.6"><path d="M-46,-40 C-62,-22 -60,18 -30,40 C-10,52 10,52 30,40 C60,18 62,-22 46,-40 C30,-56 -30,-56 -46,-40 Z"/><circle cx="-20" cy="-12" r="15"/><circle cx="20" cy="-12" r="15"/><circle cx="-20" cy="-12" r="5" fill="currentColor" stroke="none"/><circle cx="20" cy="-12" r="5" fill="currentColor" stroke="none"/><path d="M0,-2 C-5,6 -4,16 0,20 C4,16 5,6 0,-2Z" stroke-width="2.4"/><path d="M-30,18 q10,-10 20,0 q10,-10 20,0 q10,-10 20,0" stroke-width="2" opacity=".8"/></g><text x="0" y="56" text-anchor="middle" fill="currentColor" stroke="none" font-family="Cormorant Garamond, serif" font-size="16" letter-spacing="5" font-weight="600">ΑΘΕ</text></g></svg></div>
+  </div>
+  <p class="first">They carried it home cupped in both of Alexander's hands, as though it were a baby bird, and they did not say much on the way down. Sophie kept close the whole walk, pressed against Athy's leg, which was not like her at all.</p>
+  <p>At the kitchen sink they cleaned it. Athy ran the water warm and Alexander held the coin under it and rubbed at the caked dirt with his thumb, gently, the way you'd wipe a sleeping child's cheek. The grime came away in dark curls and ran down the drain, and underneath it the metal began to show — not gold, not quite silver, but a deep soft gray that seemed to hold the light instead of throwing it back.</p>
+  <p>It was thick. It was heavier than any coin they had ever held, and its edges weren't round so much as roughly round, as if it had been made by a hand and a hammer rather than a machine. On one face was a woman in profile, stern and beautiful, wearing a helmet pushed back on her brow. On the other face was an owl.</p>
+  <p>The owl stood square and solemn, facing straight out, as owls in real life almost never do. Beside it was a sprig of olive and three small letters in an alphabet neither twin could read.</p>
+  <p>"Okay," said Athy, very quietly. "That's a little bit amazing."</p>
+  <p>They took it up to Alexander's room, where the curtains were always half drawn the way he liked them, and they photographed it on the windowsill in the last of the daylight — the helmet side, then the owl side. Then they sat on the floor with their backs against the bed and the phone between them and searched.</p>
+  <p>It did not take long. The internet, whatever its faults, is very good at owls on coins.</p>
+  <p><em>Athenian Owl,</em> the page said. <em>Silver tetradrachm. Athens, fifth century BCE.</em> The woman in the helmet was the goddess Athena. The owl was her owl, her companion and her sign, the creature that saw in the dark what the bright day hid. The coin was roughly two thousand five hundred years old.</p>
+  <p>The twins looked at each other.</p>
+  <p>"Two thousand five hundred years," said Alexander.</p>
+  <p>"In the dirt," said Athy. "By a tree. On our hill."</p>
+  <p>Neither of them said the obvious thing, which was that coins like this belonged in glass cases in museums with little lights on them, and not in the root-wash of a fir on the ridge behind an ordinary house in an ordinary town. They had both already had the same thought and set it aside, not able to wrap their minds around it.</p>
+  <p>Alexander scrolled. He was the reader, the one who followed a thread of mystery down into the dark to see where it went, and there was a great deal here to follow. He read about the silver mines that paid for the Athenian fleet. He read about how the goddess had sprung full-grown from her father's head, already wearing her armor, already shouting her war cry, so that the sky rang with it. He read that she was the goddess of two things at once that did not seem to go together at all: wisdom, and war.</p>
+  <p>"That's the part I don't get," he said. "How are you the goddess of being wise <em>and</em> the goddess of fighting? Those are opposites."</p>
+  <p>"They're not opposites," said Athy, without quite knowing how she knew it. "A wise person knows when to fight. And a good fighter knows when to stop." She turned the coin over in her fingers. "That's the hard part. The stopping."</p>
+  <p>Alexander gave her a look — his careful, sidelong, what-do-you-know-that-I-don't look — and went back to the screen.</p>
+  <p>Near the bottom of the page, in a list of the old names the poets had used for the goddess, he found a word that snagged him the way the gleam in the dirt had snagged him on the trail.</p>
+  <p>"Glaukôpis," he read aloud, sounding it out. <em>Glow-KOH-pis.</em> "It says it's what the Homer called her. Like, the actual ancient poet Homer, not the horse." He squinted. "It means <em>gray-eyed</em>. Or — huh. It can also mean <em>owl-eyed</em>, or <em>owl-faced</em>. The word has an owl hiding inside it."</p>
+  <p>Athy looked up from the coin. "Say it again."</p>
+  <p>"Glaukôpis."</p>
+  <p>The word sat in the dim room for a moment, round and old, and something about it made the back of Athy's neck go cool — not with fear exactly, but the way the air goes cool right before weather. She didn't say so. She filed it away instead, the way Alexander filed away the gleam of things at the edge of sight, and the way the word seemed to file itself away inside both of them, waiting.</p>
+  <p>It was Alexander who broke the quiet.</p>
+  <p>"We have to give it back," he said. "Tomorrow. We'll tell Mom and Dad and they'll know who to call. A coin like this — it belongs to somebody. A museum, or Greece, or —"</p>
+  <p>"Tomorrow," Athy agreed.</p>
+  <p>But she did not put the coin in a drawer or a box. She set it on the windowsill between them, owl-side up, where the streetlight could reach it, and the two of them lay on the floor of Alexander's room with their feet up on the bed and looked at it until their mother called them down to dinner.</p>
+  <p>The owl looked back, square and solemn and patient, the way it had been looking out at the world for two and a half thousand years, waiting, it seemed, for exactly the right two pairs of hands.</p>
+  <div class="divider" style="color:var(--olive)"><svg viewBox="0 0 120 40" aria-hidden="true"><use href="#s-olive"/></svg></div>
+</section>
+
+<!-- ===== CH 3 ===== -->
+<section class="page" data-i="3">
+  <div class="chead">
+    <div class="num">Chapter Three</div>
+    <h1 class="ttl" id="pf-ch3">Glaukôpis</h1>
+    <div class="headpiece" style="color:var(--gold)"><svg viewBox="0 0 560 220" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#vframe"/><g transform="translate(280,110)"><g stroke-width="2.4"><circle r="34"/><circle r="20" stroke-width="1.6"/><circle r="8" fill="currentColor" stroke="none"/><g stroke-width="1.2" opacity=".8"><path d="M21,0 L30,0 M19.4,8 L27.7,11.5 M14.8,14.8 L21.2,21.2 M8,19.4 L11.5,27.7 M0,21 L0,30 M-8,19.4 L-11.5,27.7 M-14.8,14.8 L-21.2,21.2 M-19.4,8 L-27.7,11.5 M-21,0 L-30,0 M-19.4,-8 L-27.7,-11.5 M-14.8,-14.8 L-21.2,-21.2 M-8,-19.4 L-11.5,-27.7 M0,-21 L0,-30 M8,-19.4 L11.5,-27.7 M14.8,-14.8 L21.2,-21.2 M19.4,-8 L27.7,-11.5"/></g><path d="M-46,-12 C-22,-40 22,-40 46,-12" stroke-width="2" opacity=".7"/><path d="M-42,16 C-18,36 18,36 42,16" stroke-width="1.5" opacity=".5"/></g></g></svg></div>
+  </div>
+  <p class="first">It was Alexander, of all people, who said the word out loud — Alexander, who was careful, who looked before he leapt, who had spent his whole short life being the one who didn't.</p>
+  <p>It happened the next morning, before anyone had decided anything.</p>
+  <p>The twins woke early, like you do when something has changed in the night and your body knows it before your mind catches up. They met in the hall without planning to. They went into Alexander's room together and stood at the windowsill, and there was the coin, owl-side up, exactly where they'd left it, glowing very faintly in the gray dawn light as if it had been awake all night and was glad to see them.</p>
+  <p>"We should hold it," said Athy. "Both of us. Before we give it back. Just once."</p>
+  <p>So they did. Alexander picked it up and Athy laid her hand over his, the way they'd held things together since they were babies, and the coin was warm — warmer than a thing left on a cold sill all night had any right to be.</p>
+  <p>And Alexander, looking at the owl, sounding it out the way he had the night before, said softly: "Glaukôpis."</p>
+  <p>The word came apart.</p>
+  <p>That was how it felt, afterward, when they tried to describe it to each other — that the word <em>glaukôpis</em> split clean down the middle like a seed, and inside it were the two of them, and each half went where it belonged. The gray and the owl. The goddess and her companion. The day and the night.</p>
+  <p>Light poured up out of the coin.</p>
+  <p>It did not flash and vanish like lightning. It rose, slow and enormous, the gray-gold color of the inside of a storm cloud, and it wrapped around the two of them where they stood, and the small ordinary bedroom filled to its corners with the smell of cold stone and old olive groves and the sea.</p>
+  <p>Athy grew.</p>
+  <p>She felt it happen and could not have stopped it and did not want to. She felt herself stand up out of herself, taller, stronger, the long dark hair lifting around her shoulders, and where her pajamas had been there was a long pale tunic and over it the cold weight of bronze. A helmet pushed back on her brow. A spear, grounded against the floor, fit her hand as if her hand had been made waiting for it. And on her chest, on a broad bright collar of metal, a face — a terrible woman's face ringed with snakes, mouth open, that she would learn the name of later. She did not feel like a fifth-grade girl wearing a costume. She felt like the costume had been the girl, and this was what had been underneath the whole time.</p>
+  <p>She looked down at her brother to tell him, and her brother was gone.</p>
+  <p>In his place, on the windowsill, square and solemn, was an owl.</p>
+  <p>He was the soft brown-gold of dead leaves and lamplight, with a round pale face and two huge dark eyes, and the eyes were looking at her with an expression she knew as well as her own — careful, sidelong, <em>what-do-you-know-that-I-don't.</em> It was unmistakably, absolutely, her brother.</p>
+  <p>"Owl," she breathed. "<em>Owl-exander.</em>"</p>
+  <p>The owl opened his beak, and what came out was not a hoot. It was Alexander's voice, smaller and rounder but his.</p>
+  <p>"Athy," he said, "you have a <em>spear.</em>"</p>
+  <p>What followed was the best hour of their lives.</p>
+  <p>They figured out the rules the way children figure out everything, which is by doing the thing first and understanding it second. They learned that Athy was strong — gloriously, impossibly strong, strong enough to lift the foot of Alexander's bed with one hand while he flapped in alarmed circles near the ceiling. They learned that Owl-exander could fly, badly at first and then beautifully, out the window in long silent swoops that made no more sound than a thought, then smoothly back into the room. They learned that he could see — that the dim drawn-curtain room was bright as noon to him, that he could read the title of a book across the room in the dark, that a moth on the far wall was as plain to him as a streetlamp.</p>
+  <p>And they learned the clock.</p>
+  <p>It was Athy who felt it first, a kind of tug, low and certain, like the feeling of a held breath that wants to be let go. As the hour wore on, the tug grew. She understood it the way she understood Homer and Sophie, without being told: <em>you have until the hour is up. Then you come home.</em></p>
+  <p>They had flown out the window — Owl-exander first, Athy after him in a single bounding leap from the sill to the lawn that should have broken both her ankles and instead felt like stepping off a curb — and they were up over the ridge in the early light, the boy-owl wheeling in the air and the goddess-girl running along the high meadow fence so fast that Homer threw up his head and galloped beside her, mane flying, for the sheer wild joy of it. Sophie tore along below, barking the high delighted bark of a dog who has decided this is the finest morning in the history of mornings.</p>
+  <p>And then the tug became a pull, and the pull became a fist closing, and Athy understood with a lurch of cold that they had cut it too fine — that they were a long way up the ridge with only seconds left.</p>
+  <p>"Owl!" she shouted. "<em>Now!</em>"</p>
+  <p>She caught him out of the air against her chest and <em>ran</em>, downhill, faster than the wind, leapt up to the bedroom window and they fell through the window in a tangle of light and bronze and feathers exactly as the hour closed —</p>
+  <p>— and they were two children again, ordinary, eleven and eleven, lying on the floor of Alexander's room, gasping, with the coin warm on the carpet between them and the whole impossible morning ringing in their ears.</p>
+  <p>For a long moment neither of them spoke.</p>
+  <p>Then Athy started to laugh, and Alexander started to laugh, and they lay there on the floor and laughed until they couldn't breathe, the way you laugh when the thing that happened is far too big to do anything else with.</p>
+  <p>But later — much later, after breakfast, after they had agreed in fierce whispers that no, they were absolutely not going to tell anyone, and no, they were absolutely not going to give the coin back, not yet, not now — Athy lay on her own bed and held her hand up in the air above her and remembered the weight of the spear in it.</p>
+  <p>And remembered, too, the very end of that wild run down the ridge. The moment she'd caught her brother against her chest and turned downhill and felt, just for an instant, something rise up in her that had nothing to do with joy. Something that had looked at the whole bright world and the wind and the speed and the bronze on her arm and thought, in a voice that was hers and was not hers, low and certain and a little hungry:</p>
+  <p><em>I could do anything. Anyone who stood in my way, I could move.</em></p>
+  <p>It had lasted half a heartbeat. Then it was gone, and she was just Athy, catching her brother, running home.</p>
+  <p>She didn't tell Alexander about that part.</p>
+  <p>She wasn't sure, yet, that she wanted to know what it was.</p>
+  <div class="divider" style="color:var(--olive)"><svg viewBox="0 0 120 40" aria-hidden="true"><use href="#s-olive"/></svg></div>
+</section>
+
+<!-- ===== CH 4 ===== -->
+<section class="page" data-i="4">
+  <div class="chead">
+    <div class="num">Chapter Four</div>
+    <h1 class="ttl" id="pf-ch4">The Goddess Unleashed</h1>
+    <div class="headpiece" style="color:var(--gold)"><svg viewBox="0 0 560 220" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#vframe"/><g transform="translate(280,110)"><g stroke-width="2.2"><path d="M-30,-40 C-18,-52 18,-52 30,-40 C20,-46 -20,-46 -30,-40 Z"/><g stroke-width="1.1" opacity=".7"><path d="M-22,-44 C-18,-50 -14,-50 -12,-45 M-10,-46 C-6,-52 -2,-52 0,-46 M2,-46 C6,-52 10,-52 12,-45 M14,-45 C18,-50 22,-50 24,-44"/></g><path d="M-30,-40 C-31,-14 -22,8 -22,8 L22,8 C22,8 31,-14 30,-40"/><path d="M0,-34 L0,30"/><path d="M-19,-14 C-13,-20 -5,-18 -3,-9 C-9,-7 -15,-9 -19,-14 Z"/><path d="M19,-14 C13,-20 5,-18 3,-9 C9,-7 15,-9 19,-14 Z"/><path d="M-22,8 C-25,22 -18,34 -9,36 L-7,12" stroke-width="1.8"/><path d="M22,8 C25,22 18,34 9,36 L7,12" stroke-width="1.8"/></g></g></svg></div>
+  </div>
+  <p class="first">For nine days they were the two happiest children in the world, and they were careful, and nothing went wrong.</p>
+  <p>They worked out a system. They only changed when they were sure they couldn't be seen — at dawn, mostly, up on the ridge where no one came. They learned to watch the hour like sailors watching weather, and they always, always left themselves time to get home. Owl-exander grew strong on the wing. Athy learned the spear was not just for throwing but also for standing, a thing to plant in the earth and stand beside. They were, in their way, in training, though for what they could not have said.</p>
+  <p>It was on the tenth day that Athy found out what she was for.</p>
+  <p>They had changed early and flown down off the ridge to the river, where the old stone bridge crossed the water at the bottom of the road. Owl-exander was up high, riding the cold morning air, when he saw — because he was the one who always saw — the thing happening below.</p>
+  <p>There were two big men on the bridge, local toughs, who were known to menace and hit for no reason at all. And on the bridge with them was a child, about the age of the twins, on her way to somewhere with a backpack too big for her, and a dog. The dog was small and old and gray-faced and frightened, and one of the toughs had it by the collar and was holding it out over the railing, over the long drop to the cold water, while the child screamed and grabbed at his arm and could not reach.</p>
+  <p>The big man was laughing.</p>
+  <p>Owl-exander cried out — a thin warning hoot, lost in the wind — and dove. But he was an owl. He weighed less than a loaf of bread. There was nothing he could do but fall toward them and shout.</p>
+  <p>He never had to.</p>
+  <p>Because Athy had heard the child scream, and Athy had heard the old dog's terror — heard it the way only she could hear it, straight into the heart behind her ribs — and something in her that had been folded up small and quiet her whole life came open all at once, like a fist becoming a hand becoming a blow.</p>
+  <p>She did not decide to do it. The grayness simply rose.</p>
+  <p>It came up out of the earth and out of the coin and out of her, and it was nothing like the joyful light of the first morning. The gray-gold of a storm became the gray-black of the storm's heart. The air went heavy. The river itself seemed to hush. And Athy — Athy <em>unfolded</em>, taller than the bridge railing, taller than the tough men, her dark hair lifting straight out from her head as if she stood in a wind that touched nothing else, the snake-ringed face on her chest seeming to open its bronze mouth wider, and her eyes —</p>
+  <p>Her eyes had gone the flat, pale, terrible gray of a giant bird of prey that has chosen you.</p>
+  <p>She did not shout. What came out of her was worse than a shout. It was a single word in a voice that came up from somewhere under the world, a war cry older than the bridge, older than the town, and as it struck the two men like lightning every hair on their bodies stood on end. The one holding the dog dropped it — and Owl-exander, who had not stopped diving, followed the little dog to the water and led it, panting and trembling to the bank of the river where it huddled shivering.</p>
+  <p>The men ran screaming. They ran the way you run from a thunderstorm that has, for reasons of its own, decided to hate you specifically. Each had soiled his pants. One of them was crying. Athy took a single step after them, and the step cracked the old stone of the bridge under her foot, and the seething gray energy was singing in her now, high and jagged and raging, and that low hungry voice was back, the one from the end of the first morning, and it was no longer a whisper.</p>
+  <p><em>Run,</em> it said, delighted. <em>Yes. Run. I will give you something to run from. I will teach this whole bridge, this whole river, this whole town what it means to —</em></p>
+  <p>"Athy."</p>
+  <p>A small sound. A round, careful, sidelong sound, from very close to her ear.</p>
+  <p>Owl-exander had come back. He had landed on her shoulder — on the bronze collar, right beside the terrible snake-ringed face — and he was so light she could barely feel him, and he said her name again, just her name, quietly.</p>
+  <p>"Athy. They're gone. The kid's safe. The dog's safe." A pause. "You can stop now."</p>
+  <p>And it was the strangest thing. The gray energy did not <em>want</em> to stop. The energy wanted, more than she had ever wanted anything, to go on — to chase, to terrify, to <em>win,</em> to feel that high furious ragged singing forever. It would have been so easy. It would have felt so good. And it would have been, she understood much later, exactly, precisely wrong, in a way she would not have been able to undo.</p>
+  <p>But the owl was on her shoulder, light as a thought, saying <em>you can stop now.</em> And because it was him — because it was her Owl, who saw in the dark what she could not see, who had been telling her the truth in that careful sidelong voice since before they were born — she listened.</p>
+  <p>She let the breath out. The gray energy drained down out of her, slowly, like flood water going down, and left her shaking.</p>
+  <p>By the time the hour closed and they fell home through the window, she was crying.</p>
+  <p>"I liked it," she whispered, into the carpet, ashamed. "Owl, I <em>liked</em> it. I wanted to keep going. I wanted to —"</p>
+  <p>"I know," he said. He was a boy again, sitting beside her, and he put his hand on her back the way she set down a plate, with both hands and all his care. "I know. But you didn't. That's the whole thing, Athy. You didn't." He was quiet a moment. "That's why it has to be both of us. You're the part that can do it. I'm the part that knows when to stop."</p>
+  <p>She turned her wet face toward him. "What if you're not there?"</p>
+  <p>He didn't have an answer for that, and he was too honest to pretend he did, so he just sat with her, which was its own kind of answer, until she stopped shaking.</p>
+  <p>Neither of them saw what their unfolding had done.</p>
+  <p>When the unearthly gray energy rose like a thundercloud off the bridge that morning, it had not stayed at the bridge. It had rolled outward across the whole valley like a tidal wave from an explosion in the ocean — a single pulse of something vast and ancient waking up — and it had passed, among ten thousand sleeping things, through the high front window of a tall narrow building at the edge of town, a building full of looms.</p>
+  <p>And in the dim spinning-room at the top of that building, something that had been weaving in the dark for three thousand years lifted its head.</p>
+  <p>It had felt that exact jagged gray energy before. Once. Long ago, in another country, on the worst day of its very long life. It knew that war cry. It knew those flat pale terrible eyes.</p>
+  <p><em>She's back,</em> the thing in the dark thought, and its many hands went still on the threads.</p>
+  <p><em>The goddess is back. And this time, I'll be ready.</em></p>
+  <div class="divider" style="color:var(--olive)"><svg viewBox="0 0 120 40" aria-hidden="true"><use href="#s-olive"/></svg></div>
+</section>
+
+<!-- ===== CH 5 ===== -->
+<section class="page" data-i="5">
+  <div class="chead">
+    <div class="num">Chapter Five</div>
+    <h1 class="ttl" id="pf-ch5">The Silver Thread</h1>
+    <div class="headpiece" style="color:var(--gold)"><svg viewBox="0 0 560 220" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#vframe"/><g transform="translate(280,110)"><path d="M0,-58 L0,2" stroke-width="1.3"/><g transform="translate(0,22)" stroke-width="1.6"><ellipse cx="0" cy="8" rx="9" ry="13"/><circle cx="0" cy="-6" r="5.5"/><g stroke-width="1.3" opacity=".95"><path d="M-4,-7 C-18,-14 -24,-8 -31,-16 M-4,-2 C-19,-3 -27,1 -33,-4 M-4,3 C-17,7 -25,14 -31,15 M-3,8 C-13,15 -19,24 -24,28"/><path d="M4,-7 C18,-14 24,-8 31,-16 M4,-2 C19,-3 27,1 33,-4 M4,3 C17,7 25,14 31,15 M3,8 C13,15 19,24 24,28"/></g></g></g></svg></div>
+  </div>
+  <p class="first">The trouble started so softly that for a while nobody called it trouble at all.</p>
+  <p>It started with the new arts center downtown — the tall narrow building that had stood empty for years and then, over one strange quick season, filled up with light and looms and a single famous name. The artist was called Arden. Everyone said <em>Arden</em> the way you say the name of someone you've decided to love before you've met them. Arden made tapestries. Arden's tapestries were, by universal agreement, the most beautiful things anyone in the town had ever seen.</p>
+  <p>The grand one hung in the center's front window, where the whole street could see it: an enormous woven cloth, taller than a house, shimmering silver-gray, showing the town itself — the bridge, the ridge, the river, the church, all of it, every street and rooftop stitched in thread so fine it seemed to move. People stopped on the sidewalk to look at it. People stood looking for a long time. People came back to look again.</p>
+  <p>"It's like looking in a mirror," Maggie said at dinner, one of the soft new quiet evenings. "Only better. Only — finished, somehow. Like the real town is just a rough draft of the one in the picture." She smiled at nothing. "I think I'll go and look at it again tomorrow."</p>
+  <p>Theo said he thought he might come too.</p>
+  <p>Athy put down her fork.</p>
+  <p>She couldn't have said what was wrong, only that something was, the way she always knew when an animal was sick before it showed. Her mother's voice had the wrong weather in it. Her father was nodding along, and her father never simply nodded along; he was the man who called them strange children and meant it as the highest praise. And Sophie, under the table, had her chin on Athy's foot and was not asleep. She was watching the grown-ups. She was, Athy realized, <em>guarding.</em></p>
+  <p>That night the twins went up to Alexander's room and Athy told him, and Alexander — who had been feeling it too, at the edges, in the place where he saw the things other people missed — got very still.</p>
+  <p>"Show me the tapestry," he said. "Tomorrow. Before school. I want to see it in the dark."</p>
+  <p>So before dawn they walked downtown, two ordinary children in coats, and they stood on the empty sidewalk in front of the arts center while the streetlights were still on, and Alexander looked at the great silver cloth in the window.</p>
+  <p>In the daytime, for everyone else, it was beautiful. But Alexander did not see in the daytime way. He saw the edges. He saw the thing just past where you were supposed to look.</p>
+  <p>And what he saw made him take his sister's hand.</p>
+  <p>"Athy," he said quietly. "It's not a picture of the town."</p>
+  <p>"What is it?"</p>
+  <p>"It's a <em>plan</em>." He was tracing it with his eyes, following the silver threads out from the center, and now that he saw it he couldn't unsee it. "Look. It comes out of the cloth. The threads. They don't stop at the frame." He pointed, and once he pointed she could see it too, faint as breath on a cold window: a single silver thread, finer than spider silk, running out from the bottom corner of the great tapestry, down the wall, across the sidewalk, off into the dark streets of the sleeping town. And another. And another. Hundreds of them, thousands, a whole gossamer web spreading out block by block from the tall narrow building, so fine that in daylight no one would ever see it, reaching toward every house, every window, every quiet nodding grown-up who had stopped to look and stood a little too long.</p>
+  <p>The thread nearest them ran straight up their own street. Toward their own house. Toward the warm upstairs window where their mother and father were sleeping.</p>
+  <p>"It's reaching for them," Athy whispered. "It's reaching for everybody."</p>
+  <p>"It's <em>weaving</em> them," said Alexander, and the word came out of him cold, because it was the right word, and somewhere down in the place where he kept the old stories he had a terrible feeling he knew exactly whose word it was. "Athy. It's weaving the whole town into the picture. One thread at a time. Until everyone's in it." He looked at the silver cloth, so beautiful, so still, so <em>finished.</em> "Until everyone matches."</p>
+  <p>High up in the tall narrow building, in the topmost window, something moved behind the glass.</p>
+  <p>It was only there for a moment — a tall shape, very thin, with too many arms, watching them watch it. Then it was gone.</p>
+  <p>Sophie, who had followed them all the way downtown without being told, stood between the children and the building with her gray muzzle low and every hair on her back standing straight up, and growled at the dark window a sound that Athy had never once, in all the dog's long gentle life, heard her make.</p>
+  <div class="divider" style="color:var(--olive)"><svg viewBox="0 0 120 40" aria-hidden="true"><use href="#s-olive"/></svg></div>
+</section>
+
+<!-- ===== CH 6 ===== -->
+<section class="page" data-i="6">
+  <div class="chead">
+    <div class="num">Chapter Six</div>
+    <h1 class="ttl" id="pf-ch6">The Maker</h1>
+    <div class="headpiece" style="color:var(--gold)"><svg viewBox="0 0 560 220" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#vframe"/><g transform="translate(280,110)"><g stroke-width="2"><path d="M-40,-46 H40 M-40,46 H40" stroke-width="2.6"/><path d="M-36,-50 V50 M36,-50 V50" stroke-width="2.6"/><g stroke-width="1" opacity=".7"><path d="M-28,-46 V46 M-20,-46 V46 M-12,-46 V46 M-4,-46 V46 M4,-46 V46 M12,-46 V46 M20,-46 V46 M28,-46 V46"/></g><g stroke-width="1.5"><path d="M-30,30 H30 M-30,36 H30 M-30,42 H30"/></g><path d="M-30,22 l7.5,-6 7.5,6 7.5,-6 7.5,6 7.5,-6 7.5,6 7.5,-6 7.5,6" stroke-width="1.2" opacity=".85"/><path d="M40,6 l16,-3.5 -16,-3.5 z" stroke-width="1.5"/></g></g></svg></div>
+  </div>
+  <p class="first">They should have run home. Instead, because they were who they were — because Athy charged at the world and Alexander followed the mystery down into the dark — they came back the next afternoon, in daylight, as themselves, and they went inside.</p>
+  <p>The arts center was warm and dim and smelled of wool and something underneath the wool, something dry and old, like the inside of a very long-closed room. Looms stood everywhere, tall as doorways, strung with silver-gray thread, and on every loom a portion of the great work grew — a face here, a street there, a church, a ridge, a horse in a meadow. The twins moved through it slowly and did not touch anything.</p>
+  <p>And then they came to the back of the long room, where a single great loom stood taller than all the rest, and at it, weaving, was Arden.</p>
+  <p>She was beautiful, in the way the tapestries were beautiful — finished, somehow, perfect, with not one hair out of place. She wore gray. Her hands moved over the threads faster than hands should move, faster than the eye could follow, and there were, Athy thought with a lurch, somehow <em>too many</em> of them, though every time she tried to count them they resolved back into two. When Arden turned and saw the children, she smiled, and her smile was lovely and there was nothing behind it at all.</p>
+  <p>"Visitors," she said. Her voice was soft and even and went on a little too long, like the tail of the great tapestry. "How nice. Do you like my work?"</p>
+  <p>"It's beautiful," said Athy honestly, because it was, and because she could feel it pulling at her even now — the wish to stop, to stand, to look at the lovely finished world and let herself be drawn smooth into it. She set her feet the way she did. She did not move toward the loom.</p>
+  <p>"It's almost done," said Arden, and her flat lovely eyes moved over Athy's face slowly, hungrily, the way the gray energy had wanted to move over the fleeing toughs on the bridge. "Just a few more. Just everyone, really, and then it will be finished, and then it will be <em>perfect</em>, and nothing in it will ever have to change again, or grow old, or be afraid, or be <em>wrong</em> — ever, ever again." The smile widened. "Wouldn't you like that? To be perfect? To match?"</p>
+  <p>"No," said Alexander.</p>
+  <p>It was so quiet, and so certain, that Arden's hands stopped on the threads.</p>
+  <p>"No," he said again. He had been doing what he did, all this time — looking at the edges, looking past where he was supposed to look — and he was looking now not at the beautiful woman but at the great loom behind her, and at the cloth on it, and at the one figure in the very center of the whole vast woven town that all the silver threads ran toward and away from. A small figure. A woman in gray at a loom, woven into her own tapestry, weaving. Trapped in the center of the thing she'd made.</p>
+  <p>"You're not in the picture just because you made it," Alexander said slowly, working it out aloud, following the thread down into the dark the way he always did. "You're in the <em>middle</em> of the picture. You can't get out of it either. You're caught in it too. You've <em>been</em> caught in it. For —" His eyes went wide. "For a really long time. Haven't you."</p>
+  <p>The lovely smile fell off Arden's face like a dropped plate, and underneath it was something so old and so tired and so sad that Athy felt her own fierce heart turn over.</p>
+  <div class="divider" style="color:var(--olive)"><svg viewBox="0 0 120 40" aria-hidden="true"><use href="#s-olive"/></svg></div>
+  <p>That night they read.</p>
+  <p>They read until very late, the two of them shoulder to shoulder under the one lamp, with the old gold-spined book open and the phone glowing beside it, and they found her. Of course they found her. Alexander had known the moment he'd said the word <em>weaving</em> on the cold sidewalk, and the book did not soften it.</p>
+  <p>Her name was Arachne. Long ago, in a country far away, she had been a mortal girl — only a girl — with hands so gifted at the loom that people came from everywhere to watch her work. And she had been proud of her gift, too proud, proud enough to boast that she could weave better than the goddess herself.</p>
+  <p>So the goddess came down.</p>
+  <p>The goddess of wisdom and of war, gray-eyed, terrible, came down to the mortal girl's house and challenged her to a contest at the loom. And the girl — brave or foolish or both — wove a cloth so beautiful and so true that even the goddess could find no flaw in it. The girl had won.</p>
+  <p>And the goddess, who was wise, and who was fierce, and who in that one moment was not wise enough to bear being beaten by a mortal child — the goddess flew into a rage. She struck the girl. She tore the beautiful cloth to pieces. And then, in her fury and her wounded pride, she cursed the girl to weave forever, and shrank her down, and changed her into a spider, to spin and spin and spin to the end of time and never once be free.</p>
+  <p>The twins sat for a long while without speaking.</p>
+  <p>"Three thousand years," Athy said finally, in a very small voice. "She's been weaving for three thousand years. Because she <em>won.</em> Because she was good at the one thing she loved, and the goddess couldn't stand it." She looked at her own hands, the hands that knitted, the hands that made things. "And nobody ever let her stop. Nobody ever — nobody ever said sorry. Nobody ever set her free."</p>
+  <p>"Athy," said Alexander carefully. "We have to stop her. She's going to take the whole town. She's going to take Mom and Dad."</p>
+  <p>"I know." Athy's jaw set in the way that made grown-ups think twice. "We will." And then, more quietly, the thing that surprised them both: "But Owl — when we do — I don't want to <em>hurt</em> her. She's already been hurt for three thousand years." She swallowed. "The goddess hurt her. And I'm the goddess now."</p>
+  <p>Alexander looked at his sister for a long moment, his careful sidelong look, and something in his round dark eyes was proud of her in a way he didn't have words for.</p>
+  <p>"Then we'd better figure out the other way," he said. "The way the first goddess never did."</p>
+  <div class="divider" style="color:var(--olive)"><svg viewBox="0 0 120 40" aria-hidden="true"><use href="#s-olive"/></svg></div>
+</section>
+
+<!-- ===== CH 7 ===== -->
+<section class="page" data-i="7">
+  <div class="chead">
+    <div class="num">Chapter Seven</div>
+    <h1 class="ttl" id="pf-ch7">Caught</h1>
+    <div class="headpiece" style="color:var(--gold)"><svg viewBox="0 0 560 220" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#vframe"/><g transform="translate(280,110)"><g stroke-width="1.3" opacity=".95"><path d="M0,0 L0,-58 M0,0 L41,-41 M0,0 L58,0 M0,0 L41,41 M0,0 L0,58 M0,0 L-41,41 M0,0 L-58,0 M0,0 L-41,-41"/></g><g stroke-width="1" opacity=".85"><path d="M0,-18 Q5.2,-12.6 12.7,-12.7 Q12.6,-5.2 18,0 Q12.6,5.2 12.7,12.7 Q5.2,12.6 0,18 Q-5.2,12.6 -12.7,12.7 Q-12.6,5.2 -18,0 Q-12.6,-5.2 -12.7,-12.7 Q-5.2,-12.6 0,-18 Z"/><path d="M0,-34 Q9.8,-23.8 24,-24 Q23.8,-9.8 34,0 Q23.8,9.8 24,24 Q9.8,23.8 0,34 Q-9.8,23.8 -24,24 Q-23.8,9.8 -34,0 Q-23.8,-9.8 -24,-24 Q-9.8,-23.8 0,-34 Z"/><path d="M0,-50 Q14.4,-34.9 35,-35 Q34.9,-14.4 50,0 Q34.9,14.4 35,35 Q14.4,34.9 0,50 Q-14.4,34.9 -35,35 Q-34.9,14.4 -50,0 Q-34.9,-14.4 -35,-35 Q-14.4,-34.9 0,-50 Z"/></g><g transform="translate(30,-30) rotate(20)" stroke-width="1"><ellipse cx="0" cy="3" rx="4.5" ry="6"/><circle cx="0" cy="-4" r="3"/><g stroke-width="0.9" opacity=".9"><path d="M-2,-4 C-8,-8 -12,-6 -16,-10 M-3,-1 C-10,-2 -14,1 -18,-2 M-3,2 C-9,5 -13,9 -17,10"/><path d="M2,-4 C8,-8 12,-6 16,-10 M3,-1 C10,-2 14,1 18,-2 M3,2 C9,5 13,9 17,10"/></g></g></g></svg></div>
+  </div>
+  <p class="first">They did not get to choose the time. Arachne chose it for them.</p>
+  <p>She came for them the very next morning, before dawn, before they had transformed, while they were still two ordinary children walking up the empty street toward the ridge with the coin in Alexander's coat pocket and Sophie at their heels — because Arachne was three thousand years old and full of patience and cunning, and she was not about to wait for the goddess to put her armor on.</p>
+  <p>The silver threads were everywhere by now. They came down off the rooftops and across the road in the gray light, and the twins, who could see them since the morning at the tapestry, picked their way through as carefully as they could. But you cannot win at a spider's own game on the spider's own web. They were halfway up the street when the thread under Athy's foot was not a thread to step over but a tripwire, and the whole street came alive.</p>
+  <p>It rose up around them out of the dark — a great soft silver net, falling from the wires, springing up from the gutters, thousands of fine strong threads at once — and before either twin could shout it had them.</p>
+  <p>It did exactly what a web is built to do. It did the thing Arachne had learned in three thousand years of patience. It <em>separated them,</em> and it <em>silenced them.</em></p>
+  <p>Athy was snatched up and back against the trunk of the street tree, her arms bound to her sides, a strand of silk drawn fast across her mouth so that the word — the word, <em>glaukôpis,</em> the word that would have unfolded the goddess in a single breath — died behind it as a muffled cry. And Alexander was carried the other way, six feet, ten, across the street to the far wall, his arms pinned, his mouth bound, the coin trapped uselessly in the pocket he could not reach.</p>
+  <p>Six feet apart. It might as well have been the whole world. The coin needs two hands and one word, and they had neither, and high above them at the top of the tall narrow building a window opened and the thin many-armed shape came down the silver threads toward them, unhurried, the way a spider crosses its web toward the thing that is already caught.</p>
+  <p>This is the part of the story where, if you have been hoping all along that the coin would save them, you find out that it cannot. The magic was never in the coin. The magic was in the two of them, together, and Arachne — wise in her terrible patient way — had understood that better than they had. Keep the warrior from the wise one. Keep the day from the night. Keep the word unspoken. And the goddess can no more appear than a struck match can light underwater.</p>
+  <p>Athy strained against the silk until her vision went white at the edges, and could not break it. Alexander twisted and kicked and could not reach his pocket. Arachne came down and down, and her face in the gray light was almost kind, almost sorry, and that was the most frightening thing of all.</p>
+  <p>"Don't be afraid," she said softly, to the two bound children. "It doesn't hurt. You'll match, and then you'll be perfect, and then you'll never be afraid again." She reached out one long thin hand toward Athy's bright struggling face. "It's a mercy, really. It's the only mercy anyone ever —"</p>
+  <p>She never finished.</p>
+  <p>Because down the gray street, low to the ground and faster than the children had ever seen her move, came a streak of gold.</p>
+  <p>Sophie hit the web at a dead run.</p>
+  <p>She was old, and gray around the muzzle, and gentle her whole life long, and she did not care about any of that now. She hit the silver threads with the whole weight of her body and her teeth, and where a child's hands had failed, the old dog's jaws closed and <em>tore</em> — because Sophie had been guarding these two since before they could walk, and there is a strength that comes up in a creature defending the ones it loves that no spider, however ancient, ever quite plans for. The threads started to part. Sophie ripped through them, snarling, snapping, shaking her old graying head, and the strand across Athy's mouth pulled loose —</p>
+  <p>— and from up the ridge, where Homer had heard, came his answer: a high wild whinny and the thump of hooves, and Homer came down off the meadow at a full gallop, cleared the fence, and hit the silver net broadside, scattering it like fog.</p>
+  <p>In the half a second of chaos that bought them, Athy got one arm free.</p>
+  <p>She lunged across the broken web, across the six feet that had been the whole world between them, and caught her brother's bound hand in hers — and Alexander, his mouth pulling loose from the parting silk, dragged in one breath, and together the warrior goddess and her wise owl, day and night, the two halves of the one bright word, said the word:</p>
+  <p>"<em>Glaukôpis!</em>"</p>
+  <p>The street went white.</p>
+  <p>When the light cleared, Arachne was alone on her broken web in the gray dawn, and where two bound children had been there now stood a goddess with a spear, gray-eyed and terrible, with an owl on her shoulder haloed by the brightening sky — and on either side of the glimmering goddess were the loyal gray horse and golden dog, both of them looking at her, both of them waiting to see what she would do next.</p>
+  <p>Arachne looked at the predatory gray eyes she had not seen in three thousand years.</p>
+  <p>And for the first time in three thousand years, the spider was afraid.</p>
+  <div class="divider" style="color:var(--olive)"><svg viewBox="0 0 120 40" aria-hidden="true"><use href="#s-olive"/></svg></div>
+</section>
+
+<!-- ===== CH 8 ===== -->
+<section class="page" data-i="8">
+  <div class="chead">
+    <div class="num">Chapter Eight</div>
+    <h1 class="ttl" id="pf-ch8">The Stairway</h1>
+    <div class="headpiece" style="color:var(--gold)"><svg viewBox="0 0 560 220" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#vframe"/><g transform="translate(280,110)"><g stroke-width="2.2"><path d="M-52,42 H-34 V26 H-16 V10 H2 V-6 H20 V-22 H38 V-38 H54"/><g stroke-width="1" opacity=".45"><path d="M-34,42 V26 M-16,26 V10 M2,10 V-6 M20,-6 V-22 M38,-22 V-38"/></g></g><g stroke-width="1.3" opacity=".7"><path d="M46,-44 V-54 M46,-44 L56,-49 M46,-44 L36,-51 M58,-34 L67,-37 M34,-50 L31,-59"/></g><circle cx="46" cy="-42" r="3.4" fill="currentColor" stroke="none"/></g></svg></div>
+  </div>
+  <p class="first">The goddess could have ended it there. That was the terrible thing, the thing Athy felt the moment she unfolded — that all the strength in the world was in her arm, and the spider was small and old and right in front of her, and the seething gray energy was rising, singing, <em>now, now, finish it.</em></p>
+  <p>But Owl-exander was already on her shoulder, light as a thought, and his round voice was already in her ear: "Not yet. Not like this. Athy — we don't know how to free her. If we only know how to <em>hurt</em> her, we're just the first goddess all over again."</p>
+  <p>Athy stood with the spear in her hand and the gray roaring in her, and held still. It was the hardest thing she had ever done. Holding still, it turned out, was much harder than charging.</p>
+  <p>"Then where do we learn the other way?" she said through her teeth.</p>
+  <p>The owl turned his round pale face up to the sky, where the dawn was breaking gold over the ridge, and Athy followed his gaze, and understood. There was only one place to ask. There was only one person old enough, and high enough, and — for all his thunder — wise enough, to know the answer.</p>
+  <p>She lifted the coin, warm in her hand, and she did not say the word that brought the goddess. She said the other thing — the thing she felt rather than knew, the way she felt everything — she said, looking up: "<em>Father. We need to come up.</em>"</p>
+  <p>And the dazzling gray light came up out of the coin again, but this time it did not wrap around them. This time it poured <em>upward,</em> out and up into the brightening sky, and where it touched the air it hardened, and became steps.</p>
+  <p>A stairway. A long curving stairway of cloud and gray-gold light, rising up off the ridge and into the morning, up past the tops of the firs, up past where the birds flew, up to a high bright place where the dawn came from.</p>
+  <p>"We climb," said Athy.</p>
+  <p>They left Homer and Sophie to guard the foot of the stair — the horse and the dog standing watch over the broken web and the small old spider who, strangely, did not run, but only sat and watched them go with an expression no one could read — and the goddess and the owl began to climb.</p>
+  <p>It was a trial, that stair, and it was meant to be. The wind came up the higher they went, cold and enormous, a wind that wanted to peel them off the steps and fling them down. The stair was steep, and in places it was thin as a ribbon, and below them the whole valley fell away until the town was a toy and the river a thread of silver — and Athy did not like, at all, how much that silver thread reminded her of the web.</p>
+  <p>Twice she nearly fell. The first time, it was strength that saved her: she caught the edge of a cloud-step and hauled herself back with the goddess's arm, and laughed, fierce and breathless, into the wind. But the second time, higher up, where the wind was worst, it was not a thing strength could fix. The stair simply vanished ahead of her into white cloud, and she could not see the next step, and she froze, because you cannot charge at a thing you cannot see.</p>
+  <p>"Owl," she called, over the wind. "I can't see the way."</p>
+  <p>And the owl, who could always see in the dark, who saw the edges and the thing just past where you were supposed to look, lifted off her shoulder and flew a little way ahead into the white, and came back, and landed, and said: "There. Half a step to your left, and then it's solid for a long way. I'll go in front. Put your foot where I land."</p>
+  <p>So they climbed the rest of the way like that — the warrior and the seer, his eyes finding the path her strength could not, her strength carrying them up the path his eyes had found. Neither of them could have done it alone. That was, Athy was beginning to understand, the entire point.</p>
+  <p>And at the top of the stair, where the wind fell suddenly to nothing and the light was the soft gold of the very first morning of the world, Somebody was waiting for them.</p>
+  <p>He was sitting down, which was somehow the most surprising thing about Him. He was enormous — so enormous that "enormous" stopped meaning anything — and He was old, and His beard was the gray of storm clouds, and there was lightning sleeping in His hands the way a cat sleeps in a lap, and His eyes, when they turned on the two small climbers, were kind, and were also, very plainly, dangerous.</p>
+  <p>He looked at the goddess-girl, and the owl-boy, and he smiled, and it was the smile of a father who has been watching the whole time.</p>
+  <p>"Well," said Zeus. "You took the stairs. Most people pray." He patted the cloud beside him with one vast hand. "Sit down, both of you. You've come a long way to ask Me something, and I expect it's the hard one."</p>
+  <div class="divider" style="color:var(--olive)"><svg viewBox="0 0 120 40" aria-hidden="true"><use href="#s-olive"/></svg></div>
+</section>
+
+<!-- ===== CH 9 ===== -->
+<section class="page" data-i="9">
+  <div class="chead">
+    <div class="num">Chapter Nine</div>
+    <h1 class="ttl" id="pf-ch9">Zeus</h1>
+    <div class="headpiece" style="color:var(--gold)"><svg viewBox="0 0 560 220" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#vframe"/><g transform="translate(280,110)"><g stroke-width="2.2"><path d="M8,-52 L-18,-6 L0,-6 L-16,52 L30,-12 L10,-12 L26,-52 Z"/></g><g stroke-width="1.3" opacity=".7"><path d="M-30,-30 L-40,-34 M-28,-44 L-36,-50 M34,30 L44,34 M30,44 L38,50 M-34,8 L-46,8 M40,-8 L52,-8"/></g></g></svg></div>
+  </div>
+  <p class="first">They sat down on the cloud beside the father of the gods, a goddess the size of a fifth-grade girl and an owl the size of a fifth-grade boy's idea of an owl, and for a moment none of them said anything, and it was not uncomfortable. It was the most comfortable Athy had felt since the morning by the river. Up here the gray did not roar in her. Up here it was just quiet.</p>
+  <p>"You want to know how to free the weaver," Zeus said at last. It was not a question.</p>
+  <p>"Yes," said Athy. "Arachne. The spider. She's been weaving for three thousand years because — because the goddess cursed her. Because she won, and the goddess couldn't stand it." She lifted her chin. "I'm the goddess now. And I don't want to do what the goddess did. I want to set her free. But I don't know how."</p>
+  <p>Zeus was quiet for a while, looking out over the edge of the world.</p>
+  <p>"First," He said, "a thing you have not asked, but should. You think the coin gave you your power. It did not." He turned His great kind dangerous eyes on her. "The coin gave you <em>nothing,</em> child. It only opened a door to what was already inside you. The strength was always yours. The fierceness was always yours. That is why the coin lay in the dirt for two and a half thousand years and did nothing — because it was waiting. Not for any hands. For the <em>right</em> hands." He nodded at the owl. "Two who already loved each other well enough to be trusted with it. A warrior who already had a wise one at her shoulder. The coin did not make you the goddess and the owl. You were always the goddess and the owl. The coin only let you and the rest of the world see it."</p>
+  <p>Athy thought about the bridge, and the gray rising in her, and the low hungry voice. "But the goddess is — she's dangerous. <em>I'm</em> dangerous. On the bridge I almost —"</p>
+  <p>"Yes," said Zeus simply. "You are. My daughter always was. That is what it means to carry that much power — it can save a child on a bridge, and it can curse a girl into a spider, and it is the <em>same power.</em>" He looked at her steadily. "The only difference, the only difference there has ever been, is whether there is a wise one at your shoulder when the gray energy rises. My daughter, on the day she met the weaver —" He paused, and there was three thousand years of an old grief in it — "had no owl. There was no one to say <em>you can stop now.</em> And so she did not stop. And a girl became a spider, and has been a spider ever since, and that is on my daughter's head, and on mine, for raising her without teaching her the stopping."</p>
+  <p>He turned to Alexander then, the small solemn owl, and dipped His enormous head, almost a bow.</p>
+  <p>"You are no less important than is she," He told the owl gravely. "The strength is loud and the strength is bright and everyone will look at the strength. But it is the quiet voice at the shoulder that decides whether the strength is a blessing or a curse. You are the stopping. Guard her well."</p>
+  <p>"I will," said Owl-exander, in his small round voice, and meant it with his whole heart.</p>
+  <p>Then Zeus reached into the light beside Him and drew out a thing and laid it across Athy's knees, and it was heavy, and round, and bright.</p>
+  <p>It was a shield.</p>
+  <p>"This is the aegis," He said. "It was hers. On its face is the Gorgon — the snake-haired one, whose look turned men to stone. In the old days it was a weapon. Whoever looked upon it was destroyed by what they saw." He looked at Athy. "But I have changed it, for you, because you are trying to do a thing the old goddess never tried. Look."</p>
+  <p>Athy looked into the face of the shield, and it was not a snake-haired monster that looked back. It was <em>her.</em> Her own face, her own gray eyes, her own fierce frightened loving heart — the whole truth of her, the warrior and the girl and the gray-hungry thing and the one who set down plates with both hands, all of it at once, with nothing hidden and nothing left out.</p>
+  <p>"It is a mirror now," said Zeus. "It does not destroy what looks into it. It <em>shows</em> — it shows whoever looks their own true self, all of it, the dark and the bright, with nothing hidden. That is the only weapon that can free your weaver, child, and it is not really a weapon at all." He folded His vast hands. "She has spent three thousand years unseen. No one ever truly looked at her — not the goddess who only saw a rival, not the world that only saw a spider. Show her herself. Let her be <em>seen,</em> all of her, in all her forms. And see her yourself, with the eyes that see the animals — really see her — and then do the thing my daughter could not."</p>
+  <p>"What thing?" Athy whispered, though she already knew.</p>
+  <p>"Forgive her," said Zeus. "And mean it. Mercy is the only thing in all the worlds strong enough to unmake a curse that old." He smiled, and the lightning stirred and settled in His hands. "It is also, I will tell you plainly, far harder than fighting. Anyone can swing a spear. Almost no one can lower one." He stood, and the whole sky stood with Him. "Now go back down. Your hour up here does not count against you — even gods bend the rules for their grandchildren, once — but the weaver's work goes on while we talk, and the cloth is very nearly full."</p>
+  <p>They turned to go. At the top of the stair, Athy looked back.</p>
+  <p>"Why an hour?" she asked. "Down there. Why do we only get an hour?"</p>
+  <p>Zeus looked at her with great gentleness.</p>
+  <p>"Because you are children," he said, "and children must always be able to come home. The hour is not a cage, daughter. The hour is a promise — that no matter how bright you burn, you will always, always come back to being small, and warm, and held, and <em>loved.</em> I built that in on purpose." He smiled. "Be grateful for your hour. My daughter never had one. That was half her trouble."</p>
+  <p>And the goddess and the owl went down the long stairway into the gold, toward the town, and the web, and the weaver, and the hardest hour of their lives.</p>
+  <div class="divider" style="color:var(--olive)"><svg viewBox="0 0 120 40" aria-hidden="true"><use href="#s-olive"/></svg></div>
+</section>
+
+<!-- ===== CH 10 ===== -->
+<section class="page" data-i="10">
+  <div class="chead">
+    <div class="num">Chapter Ten</div>
+    <h1 class="ttl" id="pf-ch10">In All Her Forms</h1>
+    <div class="headpiece" style="color:var(--gold)"><svg viewBox="0 0 560 220" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#vframe"/><g transform="translate(280,110)"><g stroke-width="1.5"><g transform="rotate(0)"><path d="M0,-13 C-6,-27 -6,-42 0,-52 C6,-42 6,-27 0,-13 Z"/></g><g transform="rotate(30)"><path d="M0,-13 C-6,-27 -6,-42 0,-52 C6,-42 6,-27 0,-13 Z"/></g><g transform="rotate(60)"><path d="M0,-13 C-6,-27 -6,-42 0,-52 C6,-42 6,-27 0,-13 Z"/></g><g transform="rotate(90)"><path d="M0,-13 C-6,-27 -6,-42 0,-52 C6,-42 6,-27 0,-13 Z"/></g><g transform="rotate(120)"><path d="M0,-13 C-6,-27 -6,-42 0,-52 C6,-42 6,-27 0,-13 Z"/></g><g transform="rotate(150)"><path d="M0,-13 C-6,-27 -6,-42 0,-52 C6,-42 6,-27 0,-13 Z"/></g><g transform="rotate(180)"><path d="M0,-13 C-6,-27 -6,-42 0,-52 C6,-42 6,-27 0,-13 Z"/></g><g transform="rotate(210)"><path d="M0,-13 C-6,-27 -6,-42 0,-52 C6,-42 6,-27 0,-13 Z"/></g><g transform="rotate(240)"><path d="M0,-13 C-6,-27 -6,-42 0,-52 C6,-42 6,-27 0,-13 Z"/></g><g transform="rotate(270)"><path d="M0,-13 C-6,-27 -6,-42 0,-52 C6,-42 6,-27 0,-13 Z"/></g><g transform="rotate(300)"><path d="M0,-13 C-6,-27 -6,-42 0,-52 C6,-42 6,-27 0,-13 Z"/></g><g transform="rotate(330)"><path d="M0,-13 C-6,-27 -6,-42 0,-52 C6,-42 6,-27 0,-13 Z"/></g></g><circle r="12" stroke-width="1.6"/><circle r="6.5" stroke-width="1"/><circle r="3" fill="currentColor" stroke="none"/></g></svg></div>
+  </div>
+  <p class="first">The spun and shimmering cloth was nearly fully made.</p>
+  <p>The twins came down off the last cloud-step into a town gone silver and still. The web had spread everywhere while they climbed — over every street, into every window — and where it had touched, the people had gone quiet and smooth and <em>finished,</em> standing in their doorways and on their lawns with the same gentle empty smile, all of them, every one, matching. Athy saw her own mother at their own front gate, silver-threaded, smiling at nothing, and the gray rose up in her so fast and so hot that the spear cracked in her grip.</p>
+  <p>"Soon," said the owl at her shoulder, quietly. "Hold it. Soon."</p>
+  <p>At the foot of the tall narrow building, Homer and Sophie still stood their watch — and around them now, drawn by something they could feel but not see, had gathered every animal in the town, free because the web could not take them. Athy understood it the moment she saw them: dogs and cats and the deer down from the ridge and crows and the neighbor's goats and a hundred sparrows, all of them free in their own particular ways, none of them able to be made to match, because that is the one thing a wild living creature will not do. The animals had refused the pattern. And they were waiting, every one, for the goddess girl who heard them.</p>
+  <p>She did not even have to call. She only had to <em>want</em> it, and they came — a flood of fur and feather and hoof pouring up the silver street and into the arts center ahead of her, tearing at the threads, snapping the strands, unweaving with tooth and claw and beak the work it had taken the spider weeks to lay, clearing the goddess her road to the center of the web.</p>
+  <p>And at the center of the web, at the great loom, with the last few threads in her many hands and the whole woven town shimmering almost-complete before her, Arachne turned to face the goddess come to finish her at last.</p>
+  <p>"Do it, then," said the spider. She was not afraid anymore. She was so tired. Three thousand years was in her voice. "Strike me. Tear the cloth. Curse me again — what's one more curse. It is all the goddess has ever done. It is all anyone has ever done." Her many hands spread wide, baring herself to the spear. "Go on. Be what you are."</p>
+  <p>The gray energy was a tornado in Athy now. The spear was lifted. Every part of her that was the goddess wanted, with a voracious clamoring yearning, to bring the spider down — and it would have been <em>justified,</em> that was the unbearable thing, the web, the stolen town, her vacuous smiling silver parents at the gate, all of it screaming that the spider deserved whatever came —</p>
+  <p>"Athy." The small round voice. The careful sidelong love of it. "<em>You can stop now.</em>"</p>
+  <p>And she stopped.</p>
+  <p>She lowered the spear. It cost her more than climbing the stair had cost her, more than anything ever had, and she did it, because there was a wise one at her shoulder and she was not, she would not be, the goddess who had no owl.</p>
+  <p>Instead of the spear, she raised the shield.</p>
+  <p>"I'm not going to curse you," Athy said, and her voice shook, and it was her own voice, an eleven-year-old girl's voice, underneath all the thunder. "I'm not going to hurt you. I'm sorry. I'm sorry for what she did to you — what <em>I</em> did, three thousand years ago, because I couldn't stand to lose. You were just a girl who was good at something. You won, and you were right to win, and she should have told you so." She turned the bright face of the shield toward the spider. "Nobody ever really looked at you. So look. <em>Please.</em> Look at who you actually are."</p>
+  <p>And Arachne looked into the mirror-shield.</p>
+  <p>She had not seen herself in three thousand years. She braced for the monster — the spider, the cursed thing, the rival, the loser, all the names she had been called and had called herself in the long dark. But that is not what the mirror showed her. The mirror showed her <em>all of it,</em> with nothing hidden and nothing left out: the proud bright young woman who had loved her craft enough to dare the gods; the gifted hands; the grief; the loneliness of thirty centuries; the terrible thing she had been about to do to a whole town full of people only because she could not bear to be the only one who had to live unfinished and afraid — and underneath all of it, still there, never lost, the woman who simply, more than anything, had wanted to make something beautiful and be loved for it.</p>
+  <p>The mirror showed her that she was not one thing. The mirror showed her that she never had been. She was the proud young woman and the tired spider and the grieving artist and a hundred other things all at once, in all her forms, and every one of them was real, and every one of them was — the word broke open in her like the coin had broken open the word, like light out of long dark — every one of them was <em>allowed.</em></p>
+  <p>Arachne began to weep.</p>
+  <p>Her many hands came up to her face, and as they did, the great cloth on the loom — the perfect, finished, terrible cloth, the one where everyone matched — began, very gently, to come undone. Thread by thread it unwove itself, and as each silver strand released, somewhere out in the town a person took a sudden breath and blinked and was <em>themselves</em> again, rough and unfinished and gloriously un-matching: an old man laughing too loud, a child crying, a mother throwing open a gate and running, not smiling at nothing now but weeping with joy and calling her children's names.</p>
+  <p>And the spider unwove too.</p>
+  <p>The curse came apart with the cloth. Three thousand years of spinning unspooled in the gray-gold light, and where the thin many-armed thing had crouched at the loom there stood, at the very last, only a blossoming woman — an ordinary mortal woman with astonishingly clever hands and a tear-streaked face, blinking in the morning, free.</p>
+  <p>"You set me down," she whispered, wondering, looking at her own two hands. "After all this time. You just — set me down." She looked at Athy with something that was not fear and was not hate, something the spider had not felt in three thousand years. "Gently. With both hands. Like —"</p>
+  <p>"Like a plate," said Athy, and laughed, and the laugh had tears in it, and beside her Owl-exander laughed his round owl laugh, and the morning rang with it.</p>
+  <p>The hour was nearly up. Athy felt the tug, the old certain pull — <em>come home now</em> — and for the first time she was not sad to feel it. She had never been so glad of anything. She caught it just in time, the way Zeus had taught her without teaching her: she let the gray energy slip down out of her, all the way down, gently, like flood water receding, and as the last of it drained away she was already turning toward home, toward small, toward warm, toward held.</p>
+  <p>The light folded up. The spear and the shield and the bronze and the wings dissolved into morning.</p>
+  <p>And two children stood in the middle of a waking town, in the ruins of a silver web that was already blowing away like cobweb in a spring wind, with an old golden dog and a gray horse beside them and a freed woman from three thousand years ago staring up at the ordinary sky as if she had never seen anything so beautiful in her life — which, in a way, she had not.</p>
+  <div class="divider" style="color:var(--olive)"><svg viewBox="0 0 120 40" aria-hidden="true"><use href="#s-olive"/></svg></div>
+</section>
+
+<!-- ===== CH 11 ===== -->
+<section class="page" data-i="11">
+  <div class="chead">
+    <div class="num">Chapter Eleven</div>
+    <h1 class="ttl" id="pf-ch11">Home</h1>
+    <div class="headpiece" style="color:var(--gold)"><svg viewBox="0 0 560 220" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#vframe"/><g transform="translate(280,110)"><g stroke-width="2.2"><path d="M-34,4 L0,-26 L34,4"/><path d="M-26,-2 V34 H26 V-2"/><rect x="-9" y="10" width="18" height="24"/><path d="M0,10 V34 M-9,22 H9" stroke-width="1.2" opacity=".7"/></g><g transform="translate(0,-30) scale(.34)" stroke-width="3.4"><path d="M-30,-26 C-42,-12 -40,14 -20,28 C-6,36 6,36 20,28 C40,14 42,-12 30,-26 C16,-38 -16,-38 -30,-26 Z"/><circle cx="-13" cy="-8" r="10"/><circle cx="13" cy="-8" r="10"/><circle cx="-13" cy="-8" r="3.4" fill="currentColor" stroke="none"/><circle cx="13" cy="-8" r="3.4" fill="currentColor" stroke="none"/></g><path d="M22,-6 C30,-14 22,-20 30,-28" stroke-width="1.4" opacity=".7"/></g></svg></div>
+  </div>
+  <p class="first">They never did tell anyone.</p>
+  <p>Oh, the town talked for a while — about the strange beautiful tapestries that had all somehow come unraveled in a single night, and about the famous artist Arden who had closed up the arts center and gone away just as suddenly as she'd come. But people forget the things they can't explain, gently, the way the web blew away, and by summer it was as if none of it had happened at all.</p>
+  <p>Almost none of it.</p>
+  <p>The woman who had been Arden, who had been Arachne, did not go far. She took a small shop on the river side of town and she filled it with looms, and she taught — anyone who wanted to learn, children mostly, the clumsy and the gifted alike — and the things that came off her looms now were not perfect and were not finished and were not all the same. They were full of mistakes and surprises and odd bright colors that should not have gone together and somehow did. They were, everyone agreed, the most <em>alive</em> things anyone in the town had ever seen. She and Athy became friends, the kind who do not have to say much. Sometimes they knitted together in the evenings, making things that did not match on purpose.</p>
+  <p>Homer went back to his meadow and his fence, and Athy came up the ridge to him every day as she always had, and if he remembered the morning he had cleared the fence at a dead gallop to break a spider's web, he kept it to himself, the way horses keep most things. Sophie grew older and grayer and slept more in the sun, and Athy never once forgot, not for the rest of the dog's long gentle life, that when the hands of two children and the whole strength of a goddess had not been enough, it was an old gold dog and graying horse who had come at a dead run and torn the web apart. Some strength does not look like strength until the moment it is needed. Athy had learned that. She had learned it about Sophie and Homer, and about her quiet watching brother, and — more and more — about herself.</p>
+  <p>The coin they kept.</p>
+  <p>They put it in a small wooden box that Athy made and carved, owl on the lid, and they kept it on the shelf in Alexander's room, and they did not use it very often, because they had learned that the power was never really in the coin — and besides, they were in no hurry. They had the whole rest of their lives to be the goddess and the owl. For now they were mostly content to be a girl and a boy, which, it turned out, was its own kind of magic, and lasts longer.</p>
+  <p>On Saturdays they still made lunch.</p>
+  <p>It was Alexander's turn, the Saturday this story ends on. Athy sat at the kitchen table with her hands folded like a customer at a fine restaurant, and her brother made grilled cheese with the edges crisped exactly the way she liked them — not too dark; that was his trick, not hers — and set the plate down in front of her with both hands, gently, the way you present a crown on a cushion, the way you set down something you know is precious, the way, it turns out, you might one day set down a whole cursed and weeping soul to let it stand up free.</p>
+  <p>"Madam is too kind," said Athy.</p>
+  <p>"Madam knows," said Owl-exander, and bowed.</p>
+  <p>Outside, the afternoon was going gold the way afternoons do. Up on the ridge Homer lifted his head. In the warm kitchen Sophie thumped her tail. And the two of them sat and ate their lunch, the warrior and the wise one, the day and the night, the spear and the owl — two halves of one bright-eyed whole, who had never, not for one single moment, been powerful because of a coin.</p>
+  <p>They had been powerful because they were never, ever alone.</p>
+  <p>And that, in every form it ever took, was the whole of the magic.</p>
+  <div class="endmark" style="color:var(--gold)">
+    <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#s-owl"/></svg>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;letter-spacing:.24em;text-transform:uppercase;font-size:1rem;color:var(--muted);margin-top:14px">The End</p>
+  </div>
+</section>
+
+<section class="page" data-i="12">
+  <div class="chead">
+    <div class="num">Afterword</div>
+    <h1 class="ttl" id="pf-ch12">A Note on the Myth</h1>
+    <div class="headpiece" style="color:var(--gold)"><svg viewBox="0 0 560 220" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><use href="#vframe"/><g transform="translate(280,110)"><use href="#s-olive" x="-50" y="-16" width="100" height="33"/><use href="#s-olive" x="-50" y="-16" width="100" height="33" transform="scale(-1,1)"/></g></svg></div>
+  </div>
+  <p class="first">Long before this story, there was another one.</p>
+  <p>The Greeks told of <em>Athena</em> — goddess of wisdom and of war, born not as a baby but full-grown and already in her armor, straight out of the head of her father, Zeus. She was the clever one, the maker of useful things, the friend of anyone who thinks before they strike. Her city was Athens, and the gift she gave it was the olive tree. Her bird was the little owl, whose wide unblinking eyes seemed to hold every secret of the dark; the old poems called her <em>glaukôpis</em> — "bright-eyed," "owl-eyed" — and her owl was struck, with the three letters ΑΘΕ, onto the silver coins this book keeps returning to.</p>
+  <p>And there was <em>Arachne</em> — a mortal girl so gifted at the loom that she dared to say she could weave better than the goddess herself. They held a contest. Arachne's weaving was flawless, and proud, and it mocked the gods; and in the tangle of what came next she was changed into the first spider, condemned to spin forever. It is one of the old stories about pride, and punishment, and a gift that curdled into a curse.</p>
+  <p>This book borrows those threads — the owl and the warrior, the olive and the coin, the weaver and her web — and tries to tie them, gently, into a kinder knot. The myths warn what wisdom and power can become when they stand alone. Athy and Alexander are the quiet answer to that warning: that they were never meant to.</p>
+  <div class="endmark" style="color:var(--gold)">
+    <svg viewBox="0 0 120 40" aria-hidden="true" style="width:120px;height:40px"><use href="#s-olive"/></svg>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;letter-spacing:.22em;text-transform:uppercase;font-size:0.925rem;color:var(--muted);margin-top:14px">Athena &middot; Arachne</p>
+  </div>
+</section>
+
+  <!-- per-page bottom nav -->
+  <div class="pgnav" id="pgnav" style="display:none">
+    <button class="prev" id="pgPrev"><span class="lbl">Previous</span><span class="pt" id="pgPrevT"></span></button>
+    <button class="next" id="pgNext"><span class="lbl">Next</span><span class="pt" id="pgNextT"></span></button>
+  </div>
+</main>
+
+<!-- floating footer -->
+<footer class="foot cover-hide" id="foot">
+  <button class="arrow" id="fPrev" aria-label="Previous chapter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <span class="pos" id="pos">1 / 11</span>
+  <button class="arrow" id="fNext" aria-label="Next chapter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+</footer>
+
 <script>
 (function(){
-  var root = document.documentElement;
-  var btn  = document.getElementById('lamp');
-  var word = document.getElementById('lampword');
-  function evening(){
-    var t = root.getAttribute('data-theme');
-    if (t) return t === 'dark';
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
-  }
-  function paint(){
-    var on = evening();
-    btn.setAttribute('aria-pressed', String(on));
-    btn.setAttribute('aria-label', on ? 'Morning' : 'Light the lamp');
-    word.textContent = on ? 'Morning' : 'Light the lamp';
-  }
-  btn.addEventListener('click', function(){
-    root.setAttribute('data-theme', evening() ? 'light' : 'dark');
-    paint();
+  var titles=["The Twins","The Coin","Glaukôpis","The Goddess Unleashed","The Silver Thread",
+    "The Maker","Caught","The Stairway","Zeus","In All Her Forms","Home"];
+  var roman=["One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven"];
+  var afterTitle="A Note on the Myth";
+  var pages=Array.prototype.slice.call(document.querySelectorAll('.page'));
+  var N=pages.length-1;      // last navigable page (the afterword)
+  var CH=titles.length;      // number of true chapters (afterword excluded)
+  var cur=0;
+  function pageTitle(i){return i>CH?afterTitle:titles[i-1];}
+
+  // build TOC
+  var toc=document.getElementById('toc');
+  var li=document.createElement('li'); li.className='cover-link';
+  var cb=document.createElement('button'); cb.innerHTML='<span class="n"></span><span class="t">Cover &amp; Dedication</span>';
+  cb.onclick=function(){go(0);closeDrawer();}; li.appendChild(cb); toc.appendChild(li);
+  titles.forEach(function(t,idx){
+    var l=document.createElement('li');
+    var b=document.createElement('button'); b.dataset.i=idx+1;
+    b.innerHTML='<span class="n">'+(idx+1)+'</span><span class="t">'+t+'</span>';
+    b.onclick=function(){go(idx+1);closeDrawer();};
+    l.appendChild(b); toc.appendChild(l);
   });
-  paint();
+  var al=document.createElement('li'); al.className='after-link';
+  var ab=document.createElement('button'); ab.dataset.i=CH+1;
+  ab.innerHTML='<span class="n">&middot;</span><span class="t">'+afterTitle+'</span>';
+  ab.onclick=function(){go(CH+1);closeDrawer();};
+  al.appendChild(ab); toc.appendChild(al);
+  var tocBtns=toc.querySelectorAll('button[data-i]');
+
+  var foot=document.getElementById('foot'), pos=document.getElementById('pos');
+  var barTitle=document.getElementById('barTitle');
+  var pgnav=document.getElementById('pgnav');
+  var pgPrev=document.getElementById('pgPrev'), pgNext=document.getElementById('pgNext');
+  var pgPrevT=document.getElementById('pgPrevT'), pgNextT=document.getElementById('pgNextT');
+
+  function go(i,noScroll){
+    i=Math.max(0,Math.min(N,i));
+    if(typeof stopAudio==='function')stopAudio();
+    pages[cur].classList.remove('active');
+    cur=i; pages[cur].classList.add('active');
+    if(!noScroll){window.scrollTo(0,0);}
+    update();
+    try{location.hash = i===0?'':('ch'+i);}catch(e){}
+    try{localStorage.setItem('aa_pos',i);}catch(e){}
+  }
+  function update(){
+    // progress bar
+    document.getElementById('progress').style.width=(cur/N*100)+'%';
+    // footer
+    if(cur===0){foot.classList.add('cover-hide');pgnav.style.display='none';barTitle.textContent='';}
+    else{
+      foot.classList.remove('cover-hide');
+      var after=(cur>CH);
+      pos.textContent= after ? 'Afterword' : (cur+' / '+CH);
+      barTitle.textContent= after ? afterTitle : (roman[cur-1]+' · '+titles[cur-1]);
+      // bottom page nav
+      pgnav.style.display='flex';
+      if(cur<=1){pgPrev.disabled=true;pgPrevT.textContent='Cover';}
+      else{pgPrev.disabled=false;pgPrevT.textContent=pageTitle(cur-1);}
+      if(cur>=N){pgNext.disabled=true;pgNext.querySelector('.lbl').textContent='';pgNextT.textContent='Cover';}
+      else{pgNext.disabled=false;pgNext.querySelector('.lbl').textContent='Next';pgNextT.textContent=pageTitle(cur+1);}
+    }
+    document.getElementById('fPrev').disabled=(cur<=1);
+    document.getElementById('fNext').disabled=(cur>=N);
+    tocBtns.forEach(function(b){b.classList.toggle('active',+b.dataset.i===cur);});
+  }
+
+  document.getElementById('beginBtn').onclick=function(){go(1);};
+  document.getElementById('fPrev').onclick=function(){if(cur>1)go(cur-1);};
+  document.getElementById('fNext').onclick=function(){if(cur<N)go(cur+1);};
+  pgPrev.onclick=function(){go(cur-1);};
+  pgNext.onclick=function(){if(cur>=N){go(0);}else{go(cur+1);}};
+
+  // drawer
+  var drawer=document.getElementById('drawer'), scrim=document.getElementById('scrim');
+  function openDrawer(){drawer.classList.add('open');scrim.classList.add('open');}
+  function closeDrawer(){drawer.classList.remove('open');scrim.classList.remove('open');}
+  document.getElementById('menuBtn').onclick=openDrawer;
+  scrim.onclick=closeDrawer;
+
+  // theme
+  var html=document.documentElement, sun=document.getElementById('sunIcon'), moon=document.getElementById('moonIcon');
+  function setTheme(t){
+    html.setAttribute('data-theme',t);
+    sun.style.display = t==='day'?'block':'none';
+    moon.style.display = t==='day'?'none':'block';
+    document.querySelector('meta[name=theme-color]').setAttribute('content', t==='day'?'#efe6d4':'#0f1219');
+    try{localStorage.setItem('aa_theme',t);}catch(e){}
+  }
+  document.getElementById('themeBtn').onclick=function(){
+    setTheme(html.getAttribute('data-theme')==='day'?'night':'day');
+  };
+  try{
+    var savedT=localStorage.getItem('aa_theme');
+    setTheme(savedT==='day'?'day':'night'); // night is the default; day only if the reader chose it
+  }catch(e){}
+
+  // text size
+  var STEPS=[0.85,0.92,1,1.1,1.22,1.35,1.5];
+  var fIdx=2;
+  var fontBtn=document.getElementById('fontBtn'), fontPop=document.getElementById('fontPop');
+  var fUp=document.getElementById('fUp'), fDown=document.getElementById('fDown'), fVal=document.getElementById('fVal');
+  function applyScale(){
+    var s=STEPS[fIdx];
+    html.style.setProperty('--reader-scale',s);
+    fVal.textContent=Math.round(s*100)+'%';
+    fDown.disabled=(fIdx<=0); fUp.disabled=(fIdx>=STEPS.length-1);
+    try{localStorage.setItem('aa_fscale',fIdx);}catch(e){}
+  }
+  fUp.onclick=function(){if(fIdx<STEPS.length-1){fIdx++;applyScale();}};
+  fDown.onclick=function(){if(fIdx>0){fIdx--;applyScale();}};
+  function openFont(){fontPop.classList.add('open');fontBtn.setAttribute('aria-expanded','true');}
+  function closeFont(){fontPop.classList.remove('open');fontBtn.setAttribute('aria-expanded','false');}
+  fontBtn.onclick=function(e){e.stopPropagation();fontPop.classList.contains('open')?closeFont():openFont();};
+  fontPop.onclick=function(e){e.stopPropagation();};
+  document.addEventListener('click',function(){if(fontPop.classList.contains('open'))closeFont();});
+  try{var sf=localStorage.getItem('aa_fscale');if(sf!==null){var n=+sf;if(n>=0&&n<STEPS.length)fIdx=n;}}catch(e){}
+  applyScale();
+
+  // read-aloud: plays audio/ch{N}.mp3 if present, else falls back to the device voice
+  var audioEl=new Audio(); audioEl.preload='none';
+  var curBtn=null, fellBack=false;
+  var ICONS='<svg class="ico-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'+
+    '<svg class="ico-stop" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2.5"/></svg>';
+  function setBtn(btn,state){ // state: 'play' | 'stop' | 'load'
+    btn.classList.toggle('playing',state==='stop');
+    btn.classList.toggle('loading',state==='load');
+    btn.querySelector('.lab').textContent = state==='stop'?'Stop':(state==='load'?'Loading':'Listen');
+  }
+  function stopAudio(){
+    try{audioEl.pause();audioEl.currentTime=0;}catch(e){}
+    if(window.speechSynthesis)speechSynthesis.cancel();
+    if(curBtn){setBtn(curBtn,'play');curBtn=null;}
+  }
+  function speakFallback(sec,btn){
+    if(!('speechSynthesis'in window)){stopAudio();return;}
+    fellBack=true;
+    var ps=sec.querySelectorAll(':scope > p');
+    var text=Array.prototype.map.call(ps,function(p){return p.textContent;}).join('\n\n');
+    var u=new SpeechSynthesisUtterance(text);
+    u.rate=.92;u.pitch=1.0;
+    u.onend=function(){stopAudio();};
+    setBtn(btn,'stop');
+    speechSynthesis.cancel();speechSynthesis.speak(u);
+  }
+  function toggleListen(i,btn,sec){
+    if(curBtn===btn){stopAudio();return;}   // tapping the active button stops it
+    stopAudio(); curBtn=btn; fellBack=false; setBtn(btn,'load');
+    audioEl.src=auUrl('ch'+i+'.mp3');
+    audioEl.onended=function(){stopAudio();};
+    audioEl.onerror=function(){ if(auSwap(audioEl))return; if(!fellBack&&curBtn===btn) speakFallback(sec,btn); };
+    var p=audioEl.play();
+    if(p&&p.then)p.then(function(){setBtn(btn,'stop');}).catch(function(){ if(!fellBack&&curBtn===btn) speakFallback(sec,btn); });
+  }
+  pages.forEach(function(sec){
+    var i=+sec.dataset.i; if(i<1)return;
+    var head=sec.querySelector('.chead'); if(!head)return;
+    var wrap=document.createElement('div'); wrap.className='listen-wrap';
+    var b=document.createElement('button'); b.className='listen'; b.type='button';
+    b.innerHTML=ICONS+'<span class="lab">Listen</span>';
+    b.onclick=function(){toggleListen(i,b,sec);};
+    wrap.appendChild(b);
+    var dl=document.createElement('a'); dl.className='chdl';
+    dl.href='https://archive.org/download/athy-and-alexander-john-records/Athy-and-Alexander-Audiobook.mp3'; dl.setAttribute('download','Athy-and-Alexander-Audiobook.mp3');
+    dl.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M5 21h14"/></svg>Download audiobook (MP3)';
+    wrap.appendChild(dl);
+    head.parentNode.insertBefore(wrap,head.nextSibling);
+  });
+
+  // keyboard
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'&&cur<N)go(cur+1);
+    else if(e.key==='ArrowLeft'&&cur>1)go(cur-1);
+    else if(e.key==='Escape'){closeDrawer();closeFont();}
+  });
+
+  // swipe (horizontal)
+  var x0=null,y0=null;
+  document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;y0=e.touches[0].clientY;},{passive:true});
+  document.addEventListener('touchend',function(e){
+    if(x0===null)return;
+    var dx=e.changedTouches[0].clientX-x0, dy=e.changedTouches[0].clientY-y0;
+    if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.6){
+      if(dx<0&&cur<N&&cur>0)go(cur+1);
+      else if(dx>0&&cur>1)go(cur-1);
+    }
+    x0=y0=null;
+  },{passive:true});
+
+  // initial position: hash > saved > cover
+  var start=0;
+  var m=(location.hash||'').match(/ch(\d+)/);
+  if(m){start=+m[1];}
+  else{try{var s=localStorage.getItem('aa_pos');if(s!==null)start=+s;}catch(e){}}
+  go(start,true);
 })();
 </script>
 </body>

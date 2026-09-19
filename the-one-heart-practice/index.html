@@ -1,250 +1,347 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.youtube-nocookie.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';">
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob:; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-<title>The One Heart Practice — John Records</title>
-<meta name="description" content="A body-led practice in five gestures — My Heart, Our Hearts, More Hearts, All Hearts, Return — carried through three times, because the one practicing is not the same by the third pass. Offered freely." />
-<meta name="author" content="John Records" />
-<link rel="canonical" href="https://johnrecords.org/the-one-heart-practice/" />
-<meta property="og:title" content="The One Heart Practice — John Records" />
-<meta property="og:description" content="A body-led practice in five gestures — My Heart, Our Hearts, More Hearts, All Hearts, Return — carried through three times, because the one practicing is not the same by the third pass. Offered freely." />
-<meta property="og:url" content="https://johnrecords.org/the-one-heart-practice/" />
-<meta property="og:type" content="book" />
-<meta property="og:image" content="https://johnrecords.org/assets/plates/oneheart.jpg" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="The One Heart Practice — John Records" />
-<meta name="twitter:description" content="A body-led practice in five gestures — My Heart, Our Hearts, More Hearts, All Hearts, Return — carried through three times, because the one practicing is not the same by the third pass. Offered freely." />
-<meta name="twitter:image" content="https://johnrecords.org/assets/plates/oneheart.jpg" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The One Heart Practice — John Records with Doug Matchett</title>
+<link rel="canonical" href="https://johnrecords.org/the-one-heart-practice/">
+<meta name="author" content="John Records">
+<meta name="description" content="A practice by John Records with Doug Matchett — a magazine-style guide to opening the heart in stages, from Namaste to One Heart.">
+<meta property="og:title" content="The One Heart Practice — John Records with Doug Matchett">
+<meta property="og:description" content="A practice by John Records with Doug Matchett — a magazine-style guide to opening the heart in stages, from Namaste to One Heart.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://johnrecords.org/the-one-heart-practice/">
+<meta property="og:image" content="https://johnrecords.org/assets/plates/oneheart.jpg">
+<meta property="og:url" content="https://johnrecords.org/the-one-heart-practice/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://johnrecords.org/assets/plates/oneheart.jpg">
+<meta name="twitter:title" content="The One Heart Practice — John Records with Doug Matchett">
+<meta name="twitter:description" content="A practice by John Records with Doug Matchett — a magazine-style guide to opening the heart in stages, from Namaste to One Heart.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<script src="vendor/react.production.min.js"></script>
+<script src="vendor/react-dom.production.min.js"></script>
 <style>
-:root{
-  --room:#EFE3C8; --paper:#FAF5E9; --card:#FFFDF4;
-  --ink:#2A2118; --ink-soft:#6E5F4B; --ink-faint:#93856D;
-  --oak:#7A4E28; --oak-deep:#53341A;
-  --oak-grain:linear-gradient(180deg,#8a5c33,#6b4322 55%,#53341A);
-  --terracotta:#A64B2A; --leaf:#3E5A45; --rose:#A85F62; --tile:#E2BE72;
-  --lamp:#B07A26; --glow:transparent;
-  --line:rgba(83,52,26,.22); --line-faint:rgba(83,52,26,.10);
-  --shadow:0 18px 40px -22px rgba(42,33,24,.45);
-  --display:"IM Fell English","Iowan Old Style",Georgia,serif;
-  --read:"Newsreader",Georgia,"Times New Roman",serif;
-  --data:"DM Mono",ui-monospace,SFMono-Regular,monospace;
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --room:#191008; --paper:#241A0F; --card:#2E2214;
-    --ink:#F0E5CE; --ink-soft:#C4B394; --ink-faint:#94836A;
-    --oak:#B98B54; --oak-deep:#8A5F33;
-    --oak-grain:linear-gradient(180deg,#6b4a26,#4a3117 55%,#33200e);
-    --terracotta:#D2764E; --leaf:#8FB49A; --rose:#D49295; --tile:#B08A3F;
-    --lamp:#F2B94E; --glow:rgba(242,185,78,.16);
-    --line:rgba(240,229,206,.22); --line-faint:rgba(240,229,206,.09);
-    --shadow:0 18px 44px -20px rgba(0,0,0,.7);
-  }
-}
-:root[data-theme="dark"]{
-  --room:#191008; --paper:#241A0F; --card:#2E2214;
-  --ink:#F0E5CE; --ink-soft:#C4B394; --ink-faint:#94836A;
-  --oak:#B98B54; --oak-deep:#8A5F33;
-  --oak-grain:linear-gradient(180deg,#6b4a26,#4a3117 55%,#33200e);
-  --terracotta:#D2764E; --leaf:#8FB49A; --rose:#D49295; --tile:#B08A3F;
-  --lamp:#F2B94E; --glow:rgba(242,185,78,.16);
-  --line:rgba(240,229,206,.22); --line-faint:rgba(240,229,206,.09);
-  --shadow:0 18px 44px -20px rgba(0,0,0,.7);
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%; overflow-x:clip}
-body{
-  margin:0; background:var(--room); color:var(--ink);
-  font-family:var(--read); font-optical-sizing:auto;
-  font-size:23.125px; line-height:1.62; -webkit-font-smoothing:antialiased;
-  overflow-x:clip;
-}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--terracotta);outline-offset:3px}
-.page{
-  max-width:840px; margin:0 auto; background:var(--paper);
-  padding:0 clamp(22px,4.5vw,64px) clamp(28px,4vw,52px);
-  box-shadow:0 0 0 1px var(--line-faint), 0 30px 80px -40px rgba(42,33,24,.5);
-}
-.strip{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:16px 0; font-family:var(--data); font-size:16.25px;
-  letter-spacing:.04em; color:var(--ink-faint);
-}
-.strip .who{color:var(--ink-soft)}
-.strip a.home{color:var(--oak); text-decoration:none; border-bottom:1px solid var(--line)}
-.strip a.home:hover{color:var(--terracotta); border-color:var(--terracotta)}
-.lampbtn{
-  display:flex; align-items:center; gap:8px; background:none; border:none;
-  color:var(--ink-faint); font-family:var(--data); font-size:16.25px;
-  letter-spacing:.04em; cursor:pointer; padding:4px;
-}
-.lampbtn:hover{color:var(--lamp)}
-.lampbtn svg{display:block; overflow:visible}
-.lampbtn.searchbtn svg{fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round}
-.lampbtn .shade{fill:var(--lamp)}
-.lampbtn .base{fill:var(--oak)}
-.lampbtn .halo{fill:var(--glow)}
-.skip-link{
-  position:absolute; top:-48px; left:12px; z-index:1000;
-  background:var(--card); color:var(--oak);
-  font-family:var(--data); font-size:0.875rem; letter-spacing:.08em;
-  text-transform:uppercase; padding:10px 16px;
-  border:1px solid var(--line); text-decoration:none;
-  transition:top .15s ease;
-}
-.skip-link:focus{top:12px}
-header.mast{padding:clamp(18px,4vw,36px) 0 clamp(8px,2vw,16px)}
-header.mast h1{
-  font-family:var(--display); font-weight:400; font-size:clamp(40px,6.75vw,62.5px);
-  line-height:1.08; margin:0 0 14px; letter-spacing:.005em;
-}
-header.mast .byline{margin:0 0 6px; color:var(--ink-soft); font-size:20px}
-header.mast .thesis{
-  margin:0; font-size:23.125px; color:var(--ink-soft); max-width:44em;
-}
-.keyband{
-  height:10px; margin:18px 0 0;
-  background-image:repeating-linear-gradient(45deg, var(--terracotta) 0 6px, transparent 6px 12px);
-  opacity:.5;
-}
-.plate-hero{margin:clamp(20px,4vw,34px) 0 0; border-radius:3px; overflow:hidden; box-shadow:var(--shadow)}
-.plate-hero img{display:block; width:100%; height:auto}
-.leadin{margin:clamp(30px,4.5vw,46px) 0 0; color:var(--ink-soft); font-size:21.875px; max-width:40em}
-.leadin a{color:var(--oak); text-decoration:none; border-bottom:1px solid var(--line)}
-.leadin a:hover{color:var(--terracotta); border-color:var(--terracotta)}
-.cta{
-  display:inline-block; margin:28px 0 0; padding:14px 26px;
-  background:var(--oak); color:var(--paper); font-family:var(--data);
-  font-size:17.5px; letter-spacing:.04em; text-decoration:none; border-radius:4px;
-  box-shadow:var(--shadow);
-}
-.cta:hover{background:var(--oak-deep)}
-.note{margin:16px 0 0; color:var(--ink-faint); font-size:17.5px}
-footer{
-  margin-top:clamp(40px,6vw,64px); padding:20px 0 8px; border-top:1px solid var(--line);
-  font-family:var(--data); font-size:15.625px; color:var(--ink-faint);
-}
-footer a{color:var(--oak); text-decoration:none; border-bottom:1px solid var(--line)}
-footer a:hover{color:var(--terracotta); border-color:var(--terracotta)}
-@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
-@media (max-width:600px){
-  .strip{flex-wrap:wrap; row-gap:12px}
-  .strip a.home{flex:0 0 100%}
-  .strip-controls{flex:0 0 100%; justify-content:flex-end}
-  .lampbtn span{display:none}
-}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* site-wide search overlay (Pagefind) */
-.strip-controls{display:flex; align-items:center; gap:4px}
-.gsearch-overlay{position:fixed; inset:0; z-index:200; background:rgba(0,0,0,.45);
-  display:flex; align-items:flex-start; justify-content:center; padding:10vh 16px 0}
-.gsearch-overlay.hidden{display:none}
-.gsearch-panel{background:var(--paper); color:var(--ink); border-radius:14px; width:100%;
-  max-width:640px; box-shadow:0 20px 60px rgba(0,0,0,.35); padding:14px; max-height:70vh;
-  display:flex; flex-direction:column}
-.gsearch-panel input{width:100%; padding:12px 14px; font-size:20px; border:1px solid var(--line);
-  border-radius:10px; background:var(--paper); color:var(--ink); box-sizing:border-box}
-.gsearch-results{margin-top:10px; overflow:auto}
-.gsearch-hit{display:block; padding:10px 8px; border-radius:8px; text-decoration:none; color:inherit}
-.gsearch-hit:hover{background:var(--card)}
-.gsearch-hit-title{display:block; font-weight:600; font-size:17.5px}
-.gsearch-hit-excerpt{display:block; font-size:16.25px; color:var(--ink-soft); margin-top:2px}
-.gsearch-hit-excerpt mark{background:#ffe082; color:#333; border-radius:3px; padding:0 2px}
-.gsearch-empty{padding:10px 8px; font-size:16.25px; color:var(--ink-soft)}
+  :root {
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* 100svh = small viewport height: always the visible area with browser chrome showing.
+     This is the standard fix for iOS Safari clipping content behind the toolbar. */
+  html, body { width: 100%; height: 100svh; overflow: hidden; background: #1a0e0a; }
+
+  #root { width: 100%; height: 100%; }
+
+  .track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  .track::-webkit-scrollbar { display: none; }
+
+  .panel {
+    flex: 0 0 100vw;
+    width: 100vw;
+    height: 100svh;
+    scroll-snap-align: start;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ── iPad/short-viewport safety net: allow vertical scroll within a panel ── */
+  @media (max-height: 859px) and (min-width: 768px) {
+    .panel { overflow-x: hidden; overflow-y: auto; scrollbar-width: none; }
+    .panel::-webkit-scrollbar { display: none; }
+  }
+
+  /* ── Mobile: vertical scroll-snap ── */
+  @media (max-width: 767px) {
+    .track {
+      flex-direction: column;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      scroll-snap-type: y proximity;
+    }
+    .panel {
+      flex: 0 0 auto;
+      width: 100vw;
+      min-height: 100svh;
+      height: auto;
+      overflow: visible;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    .arrow { display: none !important; }
+    .panel-label { font-size: 11.25px; top: 12px; right: 12px; }
+    .top-controls { bottom: 16px; left: 12px; }
+    .tweaks-panel { right: 12px; bottom: 60px; width: 200px; }
+  }
+
+  /* Nav dots */
+  .nav-dots {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+    mix-blend-mode: normal;
+  }
+  @media (max-width: 767px) {
+    .nav-dots {
+      flex-direction: column;
+      bottom: auto;
+      left: auto;
+      top: 50%;
+      right: 5px;
+      transform: translateY(-50%);
+    }
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.35);
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s var(--ease-out);
+    padding: 0;
+  }
+  .dot.active {
+    background: rgba(255,255,255,0.9);
+    transform: scale(1.5);
+  }
+
+  /* Arrows */
+  .arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .arrow.visible { opacity: 1; }
+  .arrow-left { left: 16px; }
+  .arrow-right { right: 16px; }
+  .arrow svg { width: 32px; height: 32px; }
+
+  /* Panel number label */
+  .panel-label {
+    position: absolute;
+    top: 32px;
+    right: 40px;
+    font-family: var(--font-body);
+    font-size: 13.75px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.45;
+    z-index: 10;
+  }
+
+  /* ── Top-left controls: home link + font size ── */
+  .top-controls {
+    position: fixed;
+    bottom: 80px;
+    left: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 100;
+  }
+  .font-control {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    background: rgba(10,6,4,0.68);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.13);
+    border-radius: 20px;
+    padding: 4px 6px;
+  }
+  .home-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(10,6,4,0.68);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.13);
+    border-radius: 20px;
+    padding: 6px 12px 6px 10px;
+    color: rgba(255,255,255,0.65);
+    font-family: var(--font-body);
+    font-size: 13.75px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: color 0.2s, background 0.2s;
+  }
+  .home-link:hover {
+    color: rgba(255,255,255,0.95);
+    background: rgba(10,6,4,0.85);
+  }
+  .home-link svg { width: 13px; height: 13px; flex-shrink: 0; }
+  .font-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(255,255,255,0.65);
+    font-family: var(--font-body);
+    font-size: 16.25px;
+    font-weight: 300;
+    padding: 2px 8px;
+    border-radius: 14px;
+    transition: color 0.2s, background 0.2s;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+  }
+  .font-btn:hover:not(:disabled) {
+    color: rgba(255,255,255,0.95);
+    background: rgba(255,255,255,0.1);
+  }
+  .font-btn:disabled { opacity: 0.22; cursor: default; }
+  .font-display {
+    font-family: var(--font-body);
+    font-size: 11.25px;
+    color: rgba(255,255,255,0.38);
+    letter-spacing: 0.14em;
+    min-width: 34px;
+    text-align: center;
+    user-select: none;
+  }
+
+  /* Tweaks panel */
+  .tweaks-panel {
+    position: fixed;
+    bottom: 80px;
+    right: 24px;
+    background: rgba(10,6,4,0.92);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 20px 22px;
+    z-index: 200;
+    width: 240px;
+    font-family: var(--font-body);
+    color: rgba(255,255,255,0.85);
+    font-size: 15px;
+    display: none;
+  }
+  .tweaks-panel.open { display: block; }
+  .tweaks-title {
+    font-size: 13.75px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 16px;
+  }
+  .tweak-row { margin-bottom: 14px; }
+  .tweak-label { display: block; margin-bottom: 6px; opacity: 0.7; }
+  .tweak-options { display: flex; gap: 6px; }
+  .tweak-btn {
+    flex: 1;
+    padding: 5px 0;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px;
+    color: rgba(255,255,255,0.7);
+    font-family: var(--font-body);
+    font-size: 13.75px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .tweak-btn.sel {
+    background: rgba(255,255,255,0.18);
+    border-color: rgba(255,255,255,0.3);
+    color: white;
+  }
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Book","name":"The One Heart Practice","url":"https://johnrecords.org/the-one-heart-practice/","author":{"@type":"Person","name":"John Records"}}
-</script>
+<template id="__bundler_thumbnail" data-bg-color="#6b2d1e">
+  <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+    <rect width="800" height="500" fill="#6b2d1e"/>
+    <circle cx="400" cy="250" r="160" fill="none" stroke="#c8844a" stroke-width="1" opacity="0.5"/>
+    <circle cx="400" cy="250" r="110" fill="none" stroke="#c8844a" stroke-width="1" opacity="0.4"/>
+    <circle cx="400" cy="250" r="60" fill="#c8844a" opacity="0.18"/>
+    <text x="400" y="238" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="300" fill="#f0e0cc" opacity="0.9" letter-spacing="2">The One Heart</text>
+    <text x="400" y="268" text-anchor="middle" font-family="Georgia, serif" font-size="18" font-style="italic" font-weight="300" fill="#c8844a" opacity="0.85" letter-spacing="1">Practice</text>
+  </svg>
+</template>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-<div class="page" data-pagefind-body>
-
-  <div class="strip" data-pagefind-ignore>
-    <a class="home" href="/">&larr; John&rsquo;s Reading Nook</a>
-    <div class="strip-controls">
-      <button class="lampbtn searchbtn" type="button" data-gsearch-open aria-label="Search the site" title="Search the site">
-        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="11" cy="11" r="7"/>
-          <path d="M21 21l-4.35-4.35"/>
-        </svg>
-        <span>Search</span>
-      </button>
-      <button class="lampbtn" id="lamp" type="button" aria-pressed="false" aria-label="Light the lamp">
-        <svg width="22" height="22" viewBox="0 0 26 26" aria-hidden="true">
-          <circle class="halo" cx="13" cy="9" r="12"/>
-          <path class="shade" d="M5 11 L9 3 H17 L21 11 Z"/>
-          <rect class="base" x="12" y="11" width="2" height="9"/>
-          <path class="base" d="M8 22 Q13 19 18 22 L18 23 H8 Z"/>
-        </svg>
-        <span id="lampword">Light the lamp</span>
-      </button>
-    </div>
-  </div>
-
-  <div id="gsearch-overlay" class="gsearch-overlay hidden" role="dialog" aria-modal="true" aria-label="Search johnrecords.org" data-pagefind-ignore>
-    <div class="gsearch-panel">
-      <input id="gsearch-input" type="search" placeholder="Search johnrecords.org&hellip; (Esc to close)" autocomplete="off" />
-      <div id="gsearch-results" class="gsearch-results"></div>
-    </div>
-  </div>
-
-  <header class="mast">
-    <h1>The One Heart Practice</h1>
-    <p class="thesis">A body-led practice in five gestures — My Heart, Our Hearts, More Hearts, All Hearts, Return — carried through three times, because the one practicing is not the same by the third pass. Offered freely.</p>
-  </header>
-
-  <main id="main" tabindex="-1">
-
-  <div class="keyband" role="presentation"></div>
-
-  <figure class="plate-hero">
-    <img src="/assets/plates/oneheart.jpg" width="768" height="512" loading="eager" alt="Open palms holding a softly radiant heart, cover art for The One Heart Practice." />
-  </figure>
-
-  <p class="leadin">This book is hosted in full &mdash; text and narrated audio &mdash; at its own
-    address so it doesn&rsquo;t depend on this page staying around.</p>
-  <a class="cta" href="https://verdant-poplar-rfb7.here.now/">Read The One Heart Practice &rarr;</a>
-  <p class="note">verdant-poplar-rfb7.here.now</p>
-
-  </main>
-
-  <footer data-pagefind-ignore>
-    <span>&copy; John Records &middot; <a href="mailto:john.records@gmail.com">john.records@gmail.com</a></span>
-  </footer>
-
+<div id="root"></div>
+<!-- Plain-text copy of the practice: what Pagefind, crawlers, archives and no-JS browsers see.
+     Hidden when the reader runs; shown by the <noscript> rule below when JS is off. Hand-copied from the rendered panels; update if the source text changes. -->
+<div id="ohp-text" data-pagefind-body data-pagefind-meta="title:The One Heart Practice" hidden>
+<h1>The One Heart Practice</h1>
+<p>A Practice by John Records with Doug Matchett. A body-based contemplative practice for an open world.</p>
+<h2>Namaste</h2>
+<blockquote>"You are holy. I see it. I bow to it."</blockquote>
+<p>The practice begins with the traditional greeting — hands pressed together at the heart, bowing to the holiness in another.</p>
+<p>This is the doorway. Everything that follows moves through it.</p>
+<h2>Stage One: My Heart</h2>
+<p>Hands come to rest at the center of the chest. The practitioner turns attention inward — to their own heart, their own life, their own experience of this moment.</p>
+<blockquote>"This is where I am. This is what I carry."</blockquote>
+<p>The gesture is intimate and self-receiving. The practice begins here because it must — with the honest, embodied, present self.</p>
+<h2>Stage Two: Our Hearts</h2>
+<p>The arms open slightly, widening from the chest — an opening that includes the partner, or a held sense of those close to us. The field expands.</p>
+<blockquote>"Your heart matters too. We are in this together."</blockquote>
+<h2>Stage Three: More Hearts</h2>
+<p>The arms continue to widen, now encompassing a larger circle — community, strangers, those across difference, those in suffering or joy beyond our immediate sight.</p>
+<blockquote>"There are more of us. The circle is wider than I usually remember."</blockquote>
+<h2>Stage Four: Open to All Hearts</h2>
+<p>"Arms open, nothing withheld."</p>
+<h2>Stage Five: Gathering All Hearts</h2>
+<p>While lovingly sensing All Hearts, the Gatherer of Hearts — called by different names in different traditions — gently moves the arms in a bringing-together motion, and gathers all hearts into One Heart, where they have always been.</p>
+<p>This culminates in the praying hands — the Namaste gesture — which is not other than One Heart.</p>
+<blockquote>"All Hearts gathered into One Heart — where they have always been."</blockquote>
+<h2>Stage Six: The Return</h2>
+<p>The hands return to the heart. But the return is not a retreat — it is a homecoming informed by the full journey outward and back inward.</p>
+<blockquote>"I return to my heart — the same heart, and not the same."</blockquote>
+<h2>Three Cycles</h2>
+<p>For those beginning the practice, three or more cycles of the full gesture sequence are recommended. Each cycle is qualitatively different — not repetition, but deepening.</p>
+<p>With time, One Heart may perceptibly awaken in the practitioner after a single cycle — or even by the simple act of placing a hand upon the heart.</p>
+<h3>I. The Ordinary Self</h3>
+<p>The practice begins where we always begin — with the daily, embodied, somewhat distracted self. Tired from the news. Managing the to-do list. Carrying its particular griefs. This is the honest starting point.</p>
+<p>The smaller self. The necessary beginning.</p>
+<h3>II. The Higher Self</h3>
+<p>By the second cycle, something has shifted. The act of moving through the stages has changed the one who is practicing. A more spacious self comes forward — less defended, more permeable.</p>
+<p>Holds the ordinary, daily self with compassion.</p>
+<h3>III. The Highest Self</h3>
+<p>A third quality of presence may emerge — less "mine" in the ordinary sense, more transparent to the larger life. The place where the particular heart and the heart of all things are most nearly one.</p>
+<p>The divine does not stand apart from the personal — it moves through it.</p>
+<h2>Theological Ground</h2>
+<p>Rooted in panentheism — the view that all things exist within the divine, and the divine within all things, while also exceeding them.</p>
+<p>"The particular and the universal are not enemies. They are the pulse of reality."</p>
+<p>Drawing from Hindu, Buddhist, Christian and Jewish traditions. Practitioners need not hold any of these traditions explicitly. The practice is accessible across and beyond any particular framework.</p>
+<h2>This practice is for those trying to stay open</h2>
+<p>For activists who are burning out. For contemplatives whose practice has become private. For ordinary people who want to remember, daily, that their heart belongs to a larger whole.</p>
+<p>"Short enough to do in a few minutes. Deep enough to practice for a lifetime."</p>
+<p>By John Records with Doug Matchett. See also <a href="/love-in-action-revised/">Love in Action</a>. This practice is offered freely, as a gift.</p>
 </div>
+<noscript><style>#ohp-text[hidden]{display:block;max-width:40rem;margin:2rem auto;padding:0 1rem;font:1.1rem/1.6 Georgia,serif}</style></noscript>
 
-<script src="/gsearch.js" defer></script>
-<script>
-(function(){
-  var root = document.documentElement;
-  var btn  = document.getElementById('lamp');
-  var word = document.getElementById('lampword');
-  function evening(){
-    var t = root.getAttribute('data-theme');
-    if (t) return t === 'dark';
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
-  }
-  function paint(){
-    var on = evening();
-    btn.setAttribute('aria-pressed', String(on));
-    btn.setAttribute('aria-label', on ? 'Morning' : 'Light the lamp');
-    word.textContent = on ? 'Morning' : 'Light the lamp';
-  }
-  btn.addEventListener('click', function(){
-    root.setAttribute('data-theme', evening() ? 'light' : 'dark');
-    paint();
-  });
-  paint();
-})();
-</script>
+<script src="app.js"></script>
 </body>
 </html>

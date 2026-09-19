@@ -1,0 +1,35 @@
+{
+  "chapter": 17,
+  "title": "Fruit For You",
+  "duration": 61.198,
+  "paragraphs": [
+    {
+      "start": 2.24,
+      "end": 11.92
+    },
+    {
+      "start": 11.92,
+      "end": 25.52
+    },
+    {
+      "start": 25.52,
+      "end": 29.2
+    },
+    {
+      "start": 29.2,
+      "end": 34.48
+    },
+    {
+      "start": 34.48,
+      "end": 40.16
+    },
+    {
+      "start": 40.16,
+      "end": 52.64
+    },
+    {
+      "start": 52.64,
+      "end": 61.198
+    }
+  ]
+}
