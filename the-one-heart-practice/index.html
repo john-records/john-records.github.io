@@ -283,6 +283,31 @@
     border-color: rgba(255,255,255,0.3);
     color: white;
   }
+/* site-wide search overlay (Pagefind) */
+.gsearch-overlay{position:fixed; inset:0; z-index:2000; background:rgba(0,0,0,.45);
+  display:flex; align-items:flex-start; justify-content:center; padding:10vh 16px 0}
+.gsearch-overlay.hidden{display:none}
+.gsearch-panel{background:#241511; color:#f3e9df; border-radius:14px; width:100%;
+  max-width:640px; box-shadow:0 20px 60px rgba(0,0,0,.35); padding:14px; max-height:70vh;
+  display:flex; flex-direction:column}
+.gsearch-panel input{width:100%; padding:12px 14px; font-size:20px; font-family:inherit; border:1px solid rgba(255,255,255,0.25);
+  border-radius:10px; background:#241511; color:#f3e9df; box-sizing:border-box}
+.gsearch-results{margin-top:10px; overflow:auto}
+.gsearch-hit{display:block; padding:10px 8px; border-radius:8px; text-decoration:none; color:inherit}
+.gsearch-hit:hover{background:rgba(255,255,255,0.08)}
+.gsearch-hit-title{display:block; font-weight:600; font-size:17.5px}
+.gsearch-hit-excerpt{display:block; font-size:16.25px; color:rgba(243,233,223,0.7); margin-top:2px}
+.gsearch-hit-excerpt mark{background:#ffe082; color:#333; border-radius:3px; padding:0 2px}
+.gsearch-empty{padding:10px 8px; font-size:16.25px; color:rgba(243,233,223,0.7)}
+  .gsearch-panel{font-family:var(--font-body)}
+  .ohp-search{position:fixed;top:16px;left:24px;z-index:100;display:flex;align-items:center;gap:5px;
+    appearance:none;background:rgba(10,6,4,0.68);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.13);border-radius:20px;padding:6px 12px 6px 10px;cursor:pointer;
+    color:rgba(255,255,255,0.65);font-family:var(--font-body);font-size:13.75px;letter-spacing:0.04em;
+    transition:color 0.2s, background 0.2s}
+  .ohp-search:hover,.ohp-search:focus-visible{color:rgba(255,255,255,0.95);background:rgba(10,6,4,0.85)}
+  .ohp-search svg{width:13px;height:13px;flex-shrink:0}
+  @media (max-width: 767px) { .ohp-search{top:12px;left:12px} }
 </style>
 <template id="__bundler_thumbnail" data-bg-color="#6b2d1e">
   <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
@@ -297,6 +322,14 @@
 </head>
 <body>
 <div id="root"></div>
+<button class="ohp-search" type="button" data-gsearch-open aria-label="Search the site" title="Search the site"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg><span>Search</span></button>
+<div id="gsearch-overlay" class="gsearch-overlay hidden" role="dialog" aria-modal="true" aria-label="Search johnrecords.org" data-pagefind-ignore>
+  <div class="gsearch-panel">
+    <input id="gsearch-input" type="search" placeholder="Search johnrecords.org… (Esc to close)" autocomplete="off" />
+    <div id="gsearch-results" class="gsearch-results"></div>
+  </div>
+</div>
+
 <!-- Plain-text copy of the practice: what Pagefind, crawlers, archives and no-JS browsers see.
      Hidden when the reader runs; shown by the <noscript> rule below when JS is off. Hand-copied from the rendered panels; update if the source text changes. -->
 <div id="ohp-text" data-pagefind-body data-pagefind-meta="title:The One Heart Practice" hidden>
@@ -349,5 +382,6 @@
 <noscript><style>#ohp-text[hidden]{display:block;max-width:40rem;margin:2rem auto;padding:0 1rem;font:1.1rem/1.6 Georgia,serif}</style></noscript>
 
 <script src="app.js"></script>
+<script src="/gsearch.js" defer></script>
 </body>
 </html>

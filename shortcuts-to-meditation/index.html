@@ -1392,6 +1392,26 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0d1b2a; }
   .fs-btn  { font-size: 12.5px !important; padding: 3px 7px !important; }
 }
 .nook-home{position:fixed;top:20px;left:14px;z-index:1000;font-family:'Lato',sans-serif;font-size:13.75px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.55);text-decoration:none;padding:4px}.nook-home:hover,.nook-home:focus-visible{color:#fff}@media (max-width:640px){.nook-home span{display:none}}
+/* site-wide search overlay (Pagefind) */
+.gsearch-overlay{position:fixed; inset:0; z-index:2000; background:rgba(0,0,0,.45);
+  display:flex; align-items:flex-start; justify-content:center; padding:10vh 16px 0}
+.gsearch-overlay.hidden{display:none}
+.gsearch-panel{background:#14243a; color:#f2ece0; border-radius:14px; width:100%;
+  max-width:640px; box-shadow:0 20px 60px rgba(0,0,0,.35); padding:14px; max-height:70vh;
+  display:flex; flex-direction:column}
+.gsearch-panel input{width:100%; padding:12px 14px; font-size:20px; font-family:inherit; border:1px solid rgba(255,255,255,.28);
+  border-radius:10px; background:#14243a; color:#f2ece0; box-sizing:border-box}
+.gsearch-results{margin-top:10px; overflow:auto}
+.gsearch-hit{display:block; padding:10px 8px; border-radius:8px; text-decoration:none; color:inherit}
+.gsearch-hit:hover{background:rgba(255,255,255,.09)}
+.gsearch-hit-title{display:block; font-weight:600; font-size:17.5px}
+.gsearch-hit-excerpt{display:block; font-size:16.25px; color:rgba(242,236,224,.7); margin-top:2px}
+.gsearch-hit-excerpt mark{background:#ffe082; color:#333; border-radius:3px; padding:0 2px}
+.gsearch-empty{padding:10px 8px; font-size:16.25px; color:rgba(242,236,224,.7)}
+.gsearch-panel{font-family:'Lato',sans-serif}
+.nook-search{position:fixed;top:16px;right:14px;z-index:1000;appearance:none;border:0;background:none;color:rgba(255,255,255,.55);cursor:pointer;padding:6px;line-height:0;border-radius:50%}
+.nook-search svg{width:22px;height:22px;display:block}
+.nook-search:hover,.nook-search:focus-visible{color:#fff}
 </style>
 <meta property="og:title" content="Shortcuts to Meditation" />
 <meta property="og:description" content="A practical guide to meditation featuring five core techniques for finding peace and stillness in daily life." />
@@ -1840,7 +1860,15 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0d1b2a; }
 <button class="nav-arrow right" id="nextBtn" onclick="navigate(1)">&#8594;</button>
 
 <a class="nook-home" href="/" aria-label="Return to John's Reading Nook" title="John's Reading Nook">&larr;<span> Nook</span></a>
+<button class="nook-search" type="button" data-gsearch-open aria-label="Search the site" title="Search the site"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg></button>
 <div class="page-num" id="pageNum">1 / 12</div>
+
+<div id="gsearch-overlay" class="gsearch-overlay hidden" role="dialog" aria-modal="true" aria-label="Search johnrecords.org" data-pagefind-ignore>
+  <div class="gsearch-panel">
+    <input id="gsearch-input" type="search" placeholder="Search johnrecords.org… (Esc to close)" autocomplete="off" />
+    <div id="gsearch-results" class="gsearch-results"></div>
+  </div>
+</div>
 
 <div class="fs-controls">
   <span class="fs-label">Text</span>
@@ -1962,5 +1990,6 @@ hideNav(); // hidden by default; appears on proximity
 
 updateUI();
 </script>
+<script src="/gsearch.js" defer></script>
 </body>
 </html>

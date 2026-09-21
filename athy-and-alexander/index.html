@@ -237,6 +237,22 @@ main{max-width:39rem;margin:0 auto;padding:52px 22px 120px;
 .iconbtn.home{width:auto;border-radius:20px;padding:0 13px 0 10px;gap:6px}
 .iconbtn.home svg{width:18px;height:18px}
 .iconbtn.home span{font-family:"Cormorant Garamond",serif;font-size:0.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+/* site-wide search overlay (Pagefind) */
+.gsearch-overlay{position:fixed; inset:0; z-index:2000; background:rgba(0,0,0,.45);
+  display:flex; align-items:flex-start; justify-content:center; padding:10vh 16px 0}
+.gsearch-overlay.hidden{display:none}
+.gsearch-panel{background:var(--page); color:var(--ink); border-radius:14px; width:100%;
+  max-width:640px; box-shadow:0 20px 60px rgba(0,0,0,.35); padding:14px; max-height:70vh;
+  display:flex; flex-direction:column}
+.gsearch-panel input{width:100%; padding:12px 14px; font-size:20px; font-family:inherit; border:1px solid var(--rule-2);
+  border-radius:10px; background:var(--page); color:var(--ink); box-sizing:border-box}
+.gsearch-results{margin-top:10px; overflow:auto}
+.gsearch-hit{display:block; padding:10px 8px; border-radius:8px; text-decoration:none; color:inherit}
+.gsearch-hit:hover{background:var(--sel)}
+.gsearch-hit-title{display:block; font-weight:600; font-size:17.5px}
+.gsearch-hit-excerpt{display:block; font-size:16.25px; color:var(--muted); margin-top:2px}
+.gsearch-hit-excerpt mark{background:#ffe082; color:#333; border-radius:3px; padding:0 2px}
+.gsearch-empty{padding:10px 8px; font-size:16.25px; color:var(--muted)}
 </style>
 <script>
 /* Audio hosting: mp3s live on the Internet Archive (permanent), with the here.now mirror as fallback.
@@ -398,7 +414,8 @@ main{max-width:39rem;margin:0 auto;padding:52px 22px 120px;
     <span class="bar-ch" id="barTitle"></span>
   </div>
   <div class="barright">
-    <button class="iconbtn" id="fontBtn" aria-label="Text size" aria-haspopup="true" aria-expanded="false">
+    <button class="iconbtn" type="button" data-gsearch-open aria-label="Search the site" title="Search the site"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg></button>
+  <button class="iconbtn" id="fontBtn" aria-label="Text size" aria-haspopup="true" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><text x="1.5" y="19" font-family="'Cormorant Garamond',serif" font-weight="600" font-size="15">A</text><text x="13" y="19" font-family="'Cormorant Garamond',serif" font-weight="600" font-size="10">a</text></svg>
     </button>
     <button class="iconbtn" id="themeBtn" aria-label="Toggle day and night">
@@ -407,6 +424,13 @@ main{max-width:39rem;margin:0 auto;padding:52px 22px 120px;
     </button>
   </div>
 </header>
+
+<div id="gsearch-overlay" class="gsearch-overlay hidden" role="dialog" aria-modal="true" aria-label="Search johnrecords.org" data-pagefind-ignore>
+  <div class="gsearch-panel">
+    <input id="gsearch-input" type="search" placeholder="Search johnrecords.org… (Esc to close)" autocomplete="off" />
+    <div id="gsearch-results" class="gsearch-results"></div>
+  </div>
+</div>
 
 <!-- text-size control -->
 <div class="fontpop" id="fontPop" role="dialog" aria-label="Text size">
@@ -1061,5 +1085,6 @@ main{max-width:39rem;margin:0 auto;padding:52px 22px 120px;
   go(start,true);
 })();
 </script>
+<script src="/gsearch.js" defer></script>
 </body>
 </html>

@@ -335,6 +335,23 @@ body[data-mode=flow] .turn{display:none}
   .ded .stz{margin-bottom:1.438rem}
 }
 
+/* site-wide search overlay (Pagefind) */
+.gsearch-overlay{position:fixed; inset:0; z-index:2000; background:rgba(0,0,0,.45);
+  display:flex; align-items:flex-start; justify-content:center; padding:10vh 16px 0}
+.gsearch-overlay.hidden{display:none}
+.gsearch-panel{background:var(--bg2); color:var(--ink); border-radius:14px; width:100%;
+  max-width:640px; box-shadow:0 20px 60px rgba(0,0,0,.35); padding:14px; max-height:70vh;
+  display:flex; flex-direction:column}
+.gsearch-panel input{width:100%; padding:12px 14px; font-size:20px; font-family:inherit; border:1px solid var(--faint);
+  border-radius:10px; background:var(--bg2); color:var(--ink); box-sizing:border-box}
+.gsearch-results{margin-top:10px; overflow:auto}
+.gsearch-hit{display:block; padding:10px 8px; border-radius:8px; text-decoration:none; color:inherit}
+.gsearch-hit:hover{background:var(--glow)}
+.gsearch-hit-title{display:block; font-weight:600; font-size:17.5px}
+.gsearch-hit-excerpt{display:block; font-size:16.25px; color:var(--dim); margin-top:2px}
+.gsearch-hit-excerpt mark{background:#ffe082; color:#333; border-radius:3px; padding:0 2px}
+.gsearch-empty{padding:10px 8px; font-size:16.25px; color:var(--dim)}
+#chrome .searchbtn svg{width:1.1em;height:1.1em;display:block}
 </style>
 </head>
 <body data-theme="night" data-mode="paged">
@@ -344,11 +361,19 @@ body[data-mode=flow] .turn{display:none}
   <button id="btn-toc" aria-label="Contents" aria-expanded="false"><span class="ic">☰</span></button>
   <div class="where"><span id="where-mv">Remember Who You Are</span><span id="where-n"></span></div>
   <div class="tools">
+    <button class="searchbtn" type="button" data-gsearch-open aria-label="Search the site" title="Search the site"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg></button>
     <button id="btn-flow" aria-label="Switch to continuous scrolling" aria-pressed="false"><span class="ic">≡</span></button>
     <button id="btn-size" aria-label="Text size"><span class="ic">A</span></button>
     <button id="btn-theme" aria-label="Day or night"><span class="ic">☾</span></button>
   </div>
 </header>
+
+<div id="gsearch-overlay" class="gsearch-overlay hidden" role="dialog" aria-modal="true" aria-label="Search johnrecords.org" data-pagefind-ignore>
+  <div class="gsearch-panel">
+    <input id="gsearch-input" type="search" placeholder="Search johnrecords.org… (Esc to close)" autocomplete="off" />
+    <div id="gsearch-results" class="gsearch-results"></div>
+  </div>
+</div>
 
 <nav id="toc" hidden aria-label="Contents">
   <div class="toc-in">
@@ -1325,5 +1350,6 @@ flashChrome();
 })();
 
 </script>
+<script src="/gsearch.js" defer></script>
 </body>
 </html>

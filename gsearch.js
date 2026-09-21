@@ -1,8 +1,11 @@
 // Site-wide search, backed by a Pagefind index built across johnrecords.org
 // and the Autobiography of a Yogi book (separate repo, same origin). Loaded
-// with a plain <script src> tag from every page on both sites, so it must
-// stay a classic script with no build step — the dynamic import() below is
-// the only ES2020+ feature it needs.
+// with a plain <script src> tag from any page that has the search overlay
+// markup (#gsearch-overlay, #gsearch-input, #gsearch-results, plus one or
+// more [data-gsearch-open] buttons); pages without that markup are untouched
+// because this script bails out when it can't find them. It must stay a
+// classic script with no build step — the dynamic import() below is the only
+// ES2020+ feature it needs.
 (function () {
   function ready(fn) {
     if (document.readyState !== "loading") fn();
@@ -51,6 +54,12 @@
     }
     overlay.addEventListener("click", function (e) {
       if (e.target === overlay) close();
+    });
+    // Reader pages bind arrow keys / Space / Home / End on document to turn
+    // pages. Keep typing inside the overlay from reaching them; Escape still
+    // bubbles so the close handler below (and the page's own) can see it.
+    overlay.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape") e.stopPropagation();
     });
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && !overlay.classList.contains("hidden")) close();
