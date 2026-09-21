@@ -171,6 +171,10 @@
     gap: 8px;
     z-index: 100;
   }
+  /* Mobile override must follow the base rule to win the cascade */
+  @media (max-width: 767px) {
+    .top-controls { bottom: 16px; left: 12px; }
+  }
   .font-control {
     display: flex;
     align-items: center;
