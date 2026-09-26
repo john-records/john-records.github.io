@@ -912,6 +912,32 @@ body{
   .run::after{left:-1px;right:-1px}
   .famindex__runs{gap:10px 6px}
 }
+/* site-wide search overlay (Pagefind) */
+.gsearch-overlay{position:fixed; inset:0; z-index:2000; background:rgba(0,0,0,.45);
+  display:flex; align-items:flex-start; justify-content:center; padding:10vh 16px 0}
+.gsearch-overlay.hidden{display:none}
+.gsearch-panel{background:var(--paper-2); color:var(--kajal); border-radius:14px; width:100%;
+  max-width:640px; box-shadow:0 20px 60px rgba(0,0,0,.35); padding:14px; max-height:70vh;
+  display:flex; flex-direction:column; box-sizing:border-box}
+.gsearch-panel input{width:100%; padding:12px 14px; font-size:20px; font-family:inherit; border:1px solid var(--hair);
+  border-radius:10px; background:var(--paper-2); color:var(--kajal); box-sizing:border-box}
+.gsearch-results{margin-top:10px; overflow:auto}
+.gsearch-hit{display:block; padding:10px 8px; border-radius:8px; text-decoration:none; color:inherit}
+.gsearch-hit:hover{background:var(--lift)}
+.gsearch-hit-title{display:block; font-weight:600; font-size:17.5px}
+.gsearch-hit-excerpt{display:block; font-size:16.25px; color:var(--ink-3); margin-top:2px}
+.gsearch-hit-excerpt mark{background:#ffe082; color:#333; border-radius:3px; padding:0 2px}
+.gsearch-empty{padding:10px 8px; font-size:16.25px; color:var(--ink-3)}
+.utils .gs{display:inline-flex;align-items:center;justify-content:center;height:27px;padding:0 9px}
+.utils .gs svg{width:15px;height:15px}
+@media (pointer:coarse){.utils .gs{height:44px;min-width:44px;padding:0 12px}}
+/* a phone can't hold the home link and four 44px controls on one line: the
+   link keeps its line and the controls drop to a row of their own beneath it */
+@media (max-width:380px){
+  .utils{flex-wrap:wrap;row-gap:8px}
+  .utils::after{content:"";order:1;flex-basis:100%;height:0}
+  .utils > :not(.home){order:2}
+}
 </style>
 
 <div class="folio">
@@ -921,6 +947,7 @@ body{
          reader and not to any one screen -->
     <div class="utils">
       <a class="tog home" href="https://johnrecords.org/" aria-label="Return to John's Reading Nook" title="John's Reading Nook">⌂ Nook</a>
+      <button class="tog gs" type="button" data-gsearch-open aria-label="Search johnrecords.org" title="Search johnrecords.org"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg></button>
       <span class="type" role="group" aria-label="Size of the type">
         <button class="tog" data-fs="-1" aria-label="Smaller type">A–</button>
         <button class="tog" data-fs="1" aria-label="Larger type">A+</button>
@@ -1718,5 +1745,12 @@ addEventListener("keydown", e => {
 });
 </script>
 
+<div id="gsearch-overlay" class="gsearch-overlay hidden" role="dialog" aria-modal="true" aria-label="Search johnrecords.org" data-pagefind-ignore>
+  <div class="gsearch-panel">
+    <input id="gsearch-input" type="search" placeholder="Search johnrecords.org… (Esc to close)" autocomplete="off" />
+    <div id="gsearch-results" class="gsearch-results"></div>
+  </div>
+</div>
+<script src="/gsearch.js" defer></script>
 </body>
 </html>

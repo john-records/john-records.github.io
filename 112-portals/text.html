@@ -65,7 +65,31 @@ h3{margin:1.5em 0 .3em;font-size:.7rem;font-weight:400;text-transform:uppercase;
 .gloss-t{font-size:.9rem;color:var(--ink-2);line-height:1.7}
 .back{margin:1.2em 0 0;font-size:.85rem}
 .foot{margin-top:1em;color:var(--ink-2);font-size:.88rem}
+.topnav{display:flex;justify-content:flex-end;margin:0 0 1.2em}
+.topnav button{appearance:none;background:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;
+  border:1px solid var(--rule);border-radius:999px;padding:7px 14px;min-height:36px;
+  font:inherit;font-size:.85rem;color:var(--ink-2)}
+.topnav button:hover,.topnav button:focus-visible{color:var(--madder);border-color:var(--madder)}
+.topnav svg{width:15px;height:15px}
+@media (pointer:coarse){.topnav button{min-height:44px}}
+/* site-wide search overlay (Pagefind) */
+.gsearch-overlay{position:fixed; inset:0; z-index:2000; background:rgba(0,0,0,.45);
+  display:flex; align-items:flex-start; justify-content:center; padding:10vh 16px 0}
+.gsearch-overlay.hidden{display:none}
+.gsearch-panel{background:var(--paper); color:var(--ink); border-radius:14px; width:100%;
+  max-width:640px; box-shadow:0 20px 60px rgba(0,0,0,.35); padding:14px; max-height:70vh;
+  display:flex; flex-direction:column; box-sizing:border-box}
+.gsearch-panel input{width:100%; padding:12px 14px; font-size:20px; font-family:inherit; border:1px solid var(--rule);
+  border-radius:10px; background:var(--paper); color:var(--ink); box-sizing:border-box}
+.gsearch-results{margin-top:10px; overflow:auto}
+.gsearch-hit{display:block; padding:10px 8px; border-radius:8px; text-decoration:none; color:inherit}
+.gsearch-hit:hover{background:rgba(128,112,96,.14)}
+.gsearch-hit-title{display:block; font-weight:600; font-size:17.5px}
+.gsearch-hit-excerpt{display:block; font-size:16.25px; color:var(--ink-2); margin-top:2px}
+.gsearch-hit-excerpt mark{background:#ffe082; color:#333; border-radius:3px; padding:0 2px}
+.gsearch-empty{padding:10px 8px; font-size:16.25px; color:var(--ink-2)}
 @media print{
+  .topnav,.gsearch-overlay{display:none}
   :root{--paper:#fff;--ink:#000;--ink-2:#333;--ink-3:#666;--rule:#ccc;
         --madder:#000}
   body{font-size:11pt}
@@ -85,6 +109,7 @@ h3{margin:1.5em 0 .3em;font-size:.7rem;font-weight:400;text-transform:uppercase;
 <meta name="twitter:description" content="A collection of all 112 dharanas from the Vijnana Bhairava Tantra, featuring Sanskrit chants and new translations." /></head>
 <body data-pagefind-body data-pagefind-meta="title:112 Portals: all 112 verses">
 <div class="wrap">
+<nav class="topnav" aria-label="Site" data-pagefind-ignore><button type="button" data-gsearch-open><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg><span>Search the site</span></button></nav>
 <h1>112 Portals</h1>
 <p class="sub"><span class="deva" lang="sa-Deva">विज्ञानभैरव</span> Vijñāna Bhairava Tantra · all 112 verses on one page</p>
 <p class="standfirst">This is the whole text in one document — every verse in Devanagari and IAST, both English registers, the practice notes, the word-by-word gloss and, where it has been read, Śivopādhyāya’s commentary. It carries no script and no pictures, so it prints, searches and copies cleanly. <a href="index.html">The reader is here →</a></p>
@@ -2782,5 +2807,12 @@ Which is why he does not stop where we stop. Let one abandon the intellect itsel
 <hr>
 <p class="foot">Mūla text established against Kashmir Series of Texts and Studies vol. VIII, Vijñānabhairava with the Uddyota of Śivopādhyāya, ed. Mukunda Rāma Śāstrī, Bombay 1918 (public domain). All 224 lines were collated against the printed plates; every departure from the electronic text we began from is shown with the verse it belongs to.</p><p class="foot">Original English rendering and practice notes made for this reader directly from the Sanskrit, 2026. No existing translation was used as a source, and none is reproduced here.</p><p class="foot">The verses are ninth-century and public domain. Everything made here — the English, the notes, the commentary — is <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Credit the edition and say what you changed.</p>
 </div>
+<div id="gsearch-overlay" class="gsearch-overlay hidden" role="dialog" aria-modal="true" aria-label="Search johnrecords.org" data-pagefind-ignore>
+  <div class="gsearch-panel">
+    <input id="gsearch-input" type="search" placeholder="Search johnrecords.org… (Esc to close)" autocomplete="off" />
+    <div id="gsearch-results" class="gsearch-results"></div>
+  </div>
+</div>
+<script src="/gsearch.js" defer></script>
 </body>
 </html>

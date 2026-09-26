@@ -56,10 +56,13 @@
       if (e.target === overlay) close();
     });
     // Reader pages bind arrow keys / Space / Home / End on document to turn
-    // pages. Keep typing inside the overlay from reaching them; Escape still
-    // bubbles so the close handler below (and the page's own) can see it.
+    // pages, and Escape to close whatever the reader has open (a chapter, a
+    // portal, a drawer). The overlay is modal, so no key pressed inside it
+    // should reach them: Escape closes the overlay here and stops, rather than
+    // also shutting the page underneath.
     overlay.addEventListener("keydown", function (e) {
-      if (e.key !== "Escape") e.stopPropagation();
+      if (e.key === "Escape") close();
+      e.stopPropagation();
     });
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && !overlay.classList.contains("hidden")) close();
