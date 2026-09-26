@@ -180,8 +180,11 @@ main{max-width:39rem;margin:0 auto;padding:52px 22px 120px;
 .chead{text-align:center;margin:14px 0 30px}
 .chead .num{font-family:var(--chrome-font);text-transform:uppercase;letter-spacing:.4em;font-size:0.875rem;
   color:var(--gold);padding-left:.4em}
-.chead .ttl{font-family:var(--display-font);font-weight:600;font-size:clamp(2.875rem,2.125rem + 5vw,4.75rem);
-  line-height:1.05;margin:.18em 0 0;color:var(--ink)}
+/* 12vw caps the title on phones so a long single word ("Acknowledgments") still
+   fits the column; at 375px the clamp alone gave 53px and pushed the page wide.
+   break-word is the backstop for anything longer. */
+.chead .ttl{font-family:var(--display-font);font-weight:600;font-size:min(clamp(2.875rem,2.125rem + 5vw,4.75rem),12vw);
+  line-height:1.05;margin:.18em 0 0;color:var(--ink);overflow-wrap:break-word}
 .headpiece{width:min(88vw,460px);height:auto;margin:24px auto 8px}
 .page p{margin:0 0 1.05em}
 .page p.first{text-indent:0}

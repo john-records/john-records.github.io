@@ -1378,8 +1378,11 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0d1b2a; }
   .cover-pills { gap: 7px !important; }
   .cover-pill { font-size: 11.25px !important; padding: 6px 12px !important; }
 
-  /* Back cover responsive */
-  .back-inner { padding: 24px !important; }
+  /* Back cover responsive. Centred with overflow hidden, a phone lost the
+     last pills and the author line off the bottom; scroll instead, and let
+     auto margins centre it only when there's room. */
+  .back-cover { overflow-y: auto !important; justify-content: flex-start !important; }
+  .back-inner { padding: 64px 24px 90px !important; margin: auto 0; }
   .back-pills { gap: 7px !important; }
   .back-pill  { font-size: 11.25px !important; padding: 6px 12px !important; }
 

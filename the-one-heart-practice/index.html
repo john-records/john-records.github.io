@@ -171,9 +171,13 @@
     gap: 8px;
     z-index: 100;
   }
-  /* Mobile override must follow the base rule to win the cascade */
+  /* Mobile overrides must follow the base rules to win the cascade. The
+     panel label moves clear of each panel's kicker line, and panels keep
+     room at the bottom so their last line isn't stuck under the fixed bar. */
   @media (max-width: 767px) {
     .top-controls { bottom: 16px; left: 12px; }
+    .panel-label { top: 12px; right: 12px; }
+    .panel { padding-bottom: 72px; }
   }
   .font-control {
     display: flex;
@@ -307,7 +311,11 @@
     transition:color 0.2s, background 0.2s}
   .ohp-search:hover,.ohp-search:focus-visible{color:rgba(255,255,255,0.95);background:rgba(10,6,4,0.85)}
   .ohp-search svg{width:13px;height:13px;flex-shrink:0}
-  @media (max-width: 767px) { .ohp-search{top:12px;left:12px} }
+  /* On a phone the top-left corner is where every panel puts its "Stage One"
+     kicker, so the pill sits bottom-right, level with the Nook / text-size bar. */
+  @media (max-width: 767px) { .ohp-search{top:auto;left:auto;bottom:18px;right:12px} }
+  /* Beside the Nook and text-size pills there's no room for the word on the narrowest phones */
+  @media (max-width: 360px) { .ohp-search span{display:none} }
 </style>
 <template id="__bundler_thumbnail" data-bg-color="#6b2d1e">
   <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
