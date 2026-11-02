@@ -1104,7 +1104,7 @@ function PanelCover({
       maxWidth: 340,
       margin: 0
     }
-  }, "A body-based contemplative practice for an open world")));
+  }, "Simple movements and perceptions to realize the One Heart")));
 }
 function PanelNameste({
   p,
@@ -1171,7 +1171,7 @@ function PanelNameste({
       paddingLeft: 20,
       marginBottom: 20
     }
-  }, "\"You are holy. I see it. I bow to it.\""), React.createElement("p", {
+  }, "See your own reflection in your partner."), React.createElement("p", {
     style: {
       fontFamily: 'var(--font-body)',
       fontWeight: 300,
@@ -1181,7 +1181,7 @@ function PanelNameste({
       opacity: 0.72,
       marginBottom: 16
     }
-  }, "The practice begins with the traditional greeting \u2014 hands pressed together at the heart, bowing to the holiness in another."), React.createElement("p", {
+  }, "With a partner in front of you, or a mental partner if no one is physically present, slowly bring your palms together. Notice how your consciousness changes."), React.createElement("p", {
     style: {
       fontFamily: 'var(--font-display)',
       fontStyle: 'italic',
@@ -1191,7 +1191,7 @@ function PanelNameste({
       color: p.accent,
       opacity: 0.9
     }
-  }, "This is the doorway. Everything that follows moves through it.")));
+  }, "Mentally acknowledge the Divine, by whatever name is comfortable for you, in your partner. Bow your head a little in humility.")));
   const vpad = isShort ? '44px 60px 44px 80px' : '80px 60px 80px 80px';
   return React.createElement("div", {
     style: {
@@ -1243,7 +1243,7 @@ function PanelNameste({
       paddingLeft: 24,
       margin: `0 0 ${isShort ? 18 : 28}px`
     }
-  }, "\"You are holy. I see it. I bow to it.\""), React.createElement("p", {
+  }, "See your own reflection in your partner."), React.createElement("p", {
     style: {
       fontFamily: 'var(--font-body)',
       fontWeight: 300,
@@ -1253,7 +1253,7 @@ function PanelNameste({
       opacity: 0.72,
       marginBottom: isShort ? 12 : 20
     }
-  }, "The practice begins with the traditional greeting \u2014 hands pressed together at the heart, bowing to the holiness in another."), React.createElement("p", {
+  }, "With a partner in front of you, or a mental partner if no one is physically present, slowly bring your palms together. Notice how your consciousness changes."), React.createElement("p", {
     style: {
       fontFamily: 'var(--font-display)',
       fontStyle: 'italic',
@@ -1263,7 +1263,7 @@ function PanelNameste({
       color: p.accent,
       opacity: 0.9
     }
-  }, "This is the doorway. Everything that follows moves through it.")), React.createElement("div", {
+  }, "Mentally acknowledge the Divine, by whatever name is comfortable for you, in your partner. Bow your head a little in humility.")), React.createElement("div", {
     style: {
       display: 'flex',
       alignItems: 'stretch',
@@ -1356,7 +1356,7 @@ function PanelMyHeart({
       color: p.fg,
       opacity: 0.7
     }
-  }, "Hands come to rest at the center of the chest. The practitioner turns attention inward \u2014 to their own heart, their own life, their own experience of this moment.")), React.createElement("div", {
+  }, "Stack your palms over your heart. Feel your own physical heart with gratitude. Feelings and emotions may arise: let them.")), React.createElement("div", {
     style: {
       padding: '0 24px 40px',
       position: 'relative',
@@ -1373,7 +1373,7 @@ function PanelMyHeart({
       opacity: 0.88,
       marginBottom: 20
     }
-  }, "\"This is where I am. This is what I carry.\""), React.createElement("p", {
+  }, "Wherever you go, wherever you look, you'll never find anyone more worthy of love than you."), React.createElement("p", {
     style: {
       fontFamily: 'var(--font-body)',
       fontWeight: 300,
@@ -1384,7 +1384,7 @@ function PanelMyHeart({
       paddingTop: 20,
       borderTop: `1px solid ${p.accent}30`
     }
-  }, "The gesture is intimate and self-receiving. The practice begins here because it must \u2014 with the honest, embodied, present self.")));
+  }, "Don't rush past this. The love we offer the world includes love of ourself.")));
   return React.createElement("div", {
     style: {
       display: 'grid',
@@ -1468,7 +1468,7 @@ function PanelMyHeart({
       opacity: 0.7,
       maxWidth: 380
     }
-  }, "Hands come to rest at the center of the chest. The practitioner turns attention inward \u2014 to their own heart, their own life, their own experience of this moment.")), React.createElement("div", {
+  }, "Stack your palms over your heart. Feel your own physical heart with gratitude. Feelings and emotions may arise: let them.")), React.createElement("div", {
     style: {
       display: 'flex',
       flexDirection: 'column',
@@ -1488,7 +1488,7 @@ function PanelMyHeart({
       opacity: 0.88,
       marginBottom: 20
     }
-  }, "\"This is where I am. This is what I carry.\""), React.createElement("div", {
+  }, "Wherever you go, wherever you look, you'll never find anyone more worthy of love than you."), React.createElement("div", {
     style: {
       flex: 1
     }
@@ -1504,7 +1504,7 @@ function PanelMyHeart({
       paddingTop: 20,
       borderTop: `1px solid ${p.accent}30`
     }
-  }, "The gesture is intimate and self-receiving. The practice begins here because it must \u2014 with the honest, embodied, present self.")));
+  }, "Don't rush past this. The love we offer the world includes love of ourself.")));
 }
 function PanelOurHearts({
   p,
@@ -1581,7 +1581,7 @@ function PanelOurHearts({
       opacity: 0.72,
       marginBottom: 20
     }
-  }, "The arms open slightly, widening from the chest \u2014 an opening that includes the partner, or a held sense of those close to us. The field expands."), React.createElement("blockquote", {
+  }, "Let your hands open outward, as if welcoming someone in. Open your heart to your partner's, and receive their heart with gratitude and appreciation."), React.createElement("blockquote", {
     style: {
       fontFamily: 'var(--font-display)',
       fontStyle: 'italic',
@@ -1591,7 +1591,7 @@ function PanelOurHearts({
       color: p.fg,
       opacity: 0.88
     }
-  }, "\"Your heart matters too. We are in this together.\"")));
+  }, "Linger, fall in love with anyone with whom you practice.")));
   return React.createElement("div", {
     style: {
       display: 'grid',
@@ -1651,7 +1651,7 @@ function PanelOurHearts({
       opacity: 0.72,
       marginBottom: isShort ? 16 : 24
     }
-  }, "The arms open slightly, widening from the chest \u2014 an opening that includes the partner, or a held sense of those close to us. The field expands."), React.createElement("blockquote", {
+  }, "Let your hands open outward, as if welcoming someone in. Open your heart to your partner's, and receive their heart with gratitude and appreciation."), React.createElement("blockquote", {
     style: {
       fontFamily: 'var(--font-display)',
       fontStyle: 'italic',
@@ -1661,7 +1661,7 @@ function PanelOurHearts({
       color: p.fg,
       opacity: 0.88
     }
-  }, "\"Your heart matters too. We are in this together.\"")), React.createElement("div", {
+  }, "Linger, fall in love with anyone with whom you practice.")), React.createElement("div", {
     style: {
       position: 'relative',
       borderLeft: `1px solid ${p.accent}18`,
@@ -1749,7 +1749,7 @@ function PanelMoreHearts({
       opacity: 0.72,
       marginBottom: 24
     }
-  }, "The arms continue to widen, now encompassing a larger circle \u2014 community, strangers, those across difference, those in suffering or joy beyond our immediate sight."), React.createElement("blockquote", {
+  }, "Open your hands and arms wider. Bring to heart the people given to you to love \u2014 family, friends, the people at work, the stranger at the market. Feel the connections that are already there."), React.createElement("blockquote", {
     style: {
       fontFamily: 'var(--font-display)',
       fontStyle: 'italic',
@@ -1761,7 +1761,7 @@ function PanelMoreHearts({
       borderLeft: `2px solid ${p.accent}`,
       paddingLeft: 16
     }
-  }, "\"There are more of us. The circle is wider than I usually remember.\"")));
+  }, "You might feel awe, the cup of your heart might run over with love.")));
   return React.createElement("div", {
     style: {
       display: 'flex',
@@ -1836,7 +1836,7 @@ function PanelMoreHearts({
       opacity: 0.72,
       marginBottom: isShort ? 20 : 32
     }
-  }, "The arms continue to widen, now encompassing a larger circle \u2014 community, strangers, those across difference, those in suffering or joy beyond our immediate sight."), React.createElement("blockquote", {
+  }, "Open your hands and arms wider. Bring to heart the people given to you to love \u2014 family, friends, the people at work, the stranger at the market. Feel the connections that are already there."), React.createElement("blockquote", {
     style: {
       fontFamily: 'var(--font-display)',
       fontStyle: 'italic',
@@ -1848,7 +1848,7 @@ function PanelMoreHearts({
       borderLeft: `2px solid ${p.accent}`,
       paddingLeft: 20
     }
-  }, "\"There are more of us. The circle is wider than I usually remember.\"")));
+  }, "You might feel awe, the cup of your heart might run over with love.")));
 }
 function PanelAllHearts({
   p,
@@ -1927,9 +1927,20 @@ function PanelAllHearts({
       fontSize: isMobile ? sz(17) : sz(22),
       lineHeight: 1.5,
       color: p.accent,
-      maxWidth: 460
+      maxWidth: 560,
+      marginBottom: 12
     }
-  }, "\"Arms open, nothing withheld.\"")));
+  }, "Open your arms wide. Now include everyone: the suffering and the joyful, the people you find difficult, even those who cause harm, living and deceased."), React.createElement("p", {
+    style: {
+      fontFamily: 'var(--font-display)',
+      fontStyle: 'italic',
+      fontWeight: 300,
+      fontSize: isMobile ? sz(17) : sz(22),
+      lineHeight: 1.5,
+      color: p.accent,
+      maxWidth: 560
+    }
+  }, "Your broken-open heart has room for the whole of Creation.")));
 }
 function PanelGatheringHearts({
   p,
@@ -2016,7 +2027,7 @@ function PanelGatheringHearts({
       opacity: 0.75,
       marginBottom: 24
     }
-  }, "This culminates in the praying hands \u2014 the Namaste gesture \u2014 which is not other than One Heart.")), React.createElement("div", {
+  }, "This culminates in the praying hands, the Namaste gesture, which is not other than One Heart. Rest here a moment.")), React.createElement("div", {
     style: {
       padding: '0 24px 40px',
       position: 'relative',
@@ -2032,7 +2043,7 @@ function PanelGatheringHearts({
       color: p.fg,
       opacity: 0.9
     }
-  }, "\"All Hearts gathered into One Heart \u2014 where they have always been.\"")));
+  }, "It is one heart, beating in all of us, reflected in all of us, and you are an aspect of it.")));
   return React.createElement("div", {
     style: {
       display: 'grid',
@@ -2123,7 +2134,7 @@ function PanelGatheringHearts({
       color: p.fg,
       opacity: 0.75
     }
-  }, "This culminates in the praying hands \u2014 the Namaste gesture \u2014 which is not other than One Heart.")), React.createElement("div", {
+  }, "This culminates in the praying hands, the Namaste gesture, which is not other than One Heart. Rest here a moment.")), React.createElement("div", {
     style: {
       display: 'flex',
       flexDirection: 'column',
@@ -2144,7 +2155,7 @@ function PanelGatheringHearts({
       opacity: 0.9,
       marginBottom: isShort ? 20 : 36
     }
-  }, "\"All Hearts gathered into One Heart \u2014 where they have always been.\""), React.createElement("div", {
+  }, "It is one heart, beating in all of us, reflected in all of us, and you are an aspect of it."), React.createElement("div", {
     style: {
       display: 'flex',
       alignItems: 'center',
@@ -2251,7 +2262,7 @@ function PanelReturn({
       opacity: 0.75,
       marginBottom: 24
     }
-  }, "The hands return to the heart. But the return is not a retreat \u2014 it is a homecoming informed by the full journey outward and back inward."), React.createElement("blockquote", {
+  }, "After practice get up, and let what you touched move your hands and feet. Putting your hand to your heart during the day can help you to remember who you are."), React.createElement("blockquote", {
     style: {
       fontFamily: 'var(--font-display)',
       fontStyle: 'italic',
@@ -2262,7 +2273,7 @@ function PanelReturn({
       opacity: 0.9,
       marginBottom: 24
     }
-  }, "\"I return to my heart \u2014 the same heart, and not the same.\"")), React.createElement("div", {
+  }, "Yours are the hands of love, yours are the feet of love.")), React.createElement("div", {
     style: {
       padding: '0 24px 40px',
       position: 'relative',
@@ -2332,7 +2343,7 @@ function PanelReturn({
       color: p.fg,
       opacity: 0.75
     }
-  }, "The hands return to the heart. But the return is not a retreat \u2014 it is a homecoming informed by the full journey outward and back inward.")), React.createElement("div", {
+  }, "After practice get up, and let what you touched move your hands and feet. Putting your hand to your heart during the day can help you to remember who you are.")), React.createElement("div", {
     style: {
       display: 'flex',
       flexDirection: 'column',
@@ -2354,7 +2365,7 @@ function PanelReturn({
       opacity: 0.9,
       marginBottom: isShort ? 18 : 32
     }
-  }, "\"I return to my heart \u2014 the same heart, and not the same.\""), React.createElement("div", {
+  }, "Yours are the hands of love, yours are the feet of love."), React.createElement("div", {
     style: {
       flex: 1,
       minHeight: 0,
@@ -2378,19 +2389,19 @@ function PanelCycles({
   const sz = n => Math.round(n * tweaks.fontScale);
   const cycles = [{
     num: 'I',
-    name: 'The Ordinary Self',
-    desc: 'The practice begins where we always begin — with the daily, embodied, somewhat distracted self. Tired from the news. Managing the to-do list. Carrying its particular griefs. This is the honest starting point.',
-    italic: 'The smaller self. The necessary beginning.'
+    name: 'The First Cycle',
+    desc: 'This is not a rote practice. It may vary from day to day: sometimes grief, sometimes love, sometimes joy, stillness, peace.',
+    italic: 'Let come whatever may come.'
   }, {
     num: 'II',
-    name: 'The Higher Self',
-    desc: 'By the second cycle, something has shifted. The act of moving through the stages has changed the one who is practicing. A more spacious self comes forward — less defended, more permeable.',
-    italic: 'Holds the ordinary, daily self with compassion.'
+    name: 'The Second Cycle',
+    desc: 'You might notice that the person who began the practice has changed, opened, during the practice.',
+    italic: 'Pause and linger and savor at any place.'
   }, {
     num: 'III',
-    name: 'The Highest Self',
-    desc: 'A third quality of presence may emerge — less "mine" in the ordinary sense, more transparent to the larger life. The place where the particular heart and the heart of all things are most nearly one.',
-    italic: 'The divine does not stand apart from the personal — it moves through it.'
+    name: 'The Third Cycle',
+    desc: 'Let One Heart, the One Person, engage in the practice, to know itself more fully, to waken more fully in, through and as you.',
+    italic: 'Thus Love incarnates.'
   }];
   if (isMobile) return React.createElement("div", {
     style: {
@@ -2432,7 +2443,7 @@ function PanelCycles({
       marginBottom: 10,
       opacity: 0.7
     }
-  }, "Structure"), React.createElement("h2", {
+  }, "Practice"), React.createElement("h2", {
     style: {
       fontFamily: 'var(--font-display)',
       fontWeight: 300,
@@ -2452,7 +2463,7 @@ function PanelCycles({
       opacity: 0.72,
       marginBottom: 12
     }
-  }, "For those beginning the practice, three or more cycles of the full gesture sequence are recommended. Each cycle is qualitatively different \u2014 not repetition, but deepening."), React.createElement("p", {
+  }, "Do the full cycle three times, or as many times as you wish, at whatever pace. Two or three breaths in each position is enough."), React.createElement("p", {
     style: {
       fontFamily: 'var(--font-display)',
       fontStyle: 'italic',
@@ -2462,7 +2473,7 @@ function PanelCycles({
       color: p.accent,
       opacity: 0.85
     }
-  }, "With time, One Heart may perceptibly awaken in the practitioner after a single cycle \u2014 or even by the simple act of placing a hand upon the heart.")), React.createElement("div", {
+  }, "You might also find that even one cycle of the practice suffices to shift your awareness to that of the One Heart.")), React.createElement("div", {
     style: {
       display: 'flex',
       flexDirection: 'column',
@@ -2571,7 +2582,7 @@ function PanelCycles({
       marginBottom: isShort ? 8 : 12,
       opacity: 0.7
     }
-  }, "Structure"), React.createElement("h2", {
+  }, "Practice"), React.createElement("h2", {
     style: {
       fontFamily: 'var(--font-display)',
       fontWeight: 300,
@@ -2597,7 +2608,7 @@ function PanelCycles({
       opacity: 0.72,
       maxWidth: 420
     }
-  }, "For those beginning the practice, three or more cycles of the full gesture sequence are recommended. Each cycle is qualitatively different \u2014 not repetition, but deepening."), React.createElement("p", {
+  }, "Do the full cycle three times, or as many times as you wish, at whatever pace. Two or three breaths in each position is enough."), React.createElement("p", {
     style: {
       fontFamily: 'var(--font-display)',
       fontStyle: 'italic',
@@ -2608,7 +2619,7 @@ function PanelCycles({
       opacity: 0.85,
       maxWidth: 420
     }
-  }, "With time, One Heart may perceptibly awaken in the practitioner after a single cycle \u2014 or even by the simple act of placing a hand upon the heart."))), React.createElement("div", {
+  }, "You might also find that even one cycle of the practice suffices to shift your awareness to that of the One Heart."))), React.createElement("div", {
     style: {
       display: 'grid',
       gridTemplateColumns: '1fr 1fr 1fr',
@@ -2723,7 +2734,7 @@ function PanelTheology({
       marginBottom: 16,
       opacity: 0.8
     }
-  }, "Foundation"), React.createElement("h2", {
+  }, "The Insight"), React.createElement("h2", {
     style: {
       fontFamily: 'var(--font-display)',
       fontWeight: 300,
@@ -2733,11 +2744,11 @@ function PanelTheology({
       letterSpacing: '-0.02em',
       marginBottom: 20
     }
-  }, "Theological", React.createElement("br", null), React.createElement("em", {
+  }, "The One", React.createElement("br", null), React.createElement("em", {
     style: {
       fontStyle: 'italic'
     }
-  }, "Ground")), React.createElement("p", {
+  }, "Person")), React.createElement("p", {
     style: {
       fontFamily: 'var(--font-body)',
       fontWeight: 300,
@@ -2747,11 +2758,11 @@ function PanelTheology({
       opacity: 0.7,
       marginBottom: 18
     }
-  }, "Rooted in ", React.createElement("strong", {
+  }, "It works and plays with the insight that we each and all are ", React.createElement("strong", {
     style: {
       fontWeight: 400
     }
-  }, "panentheism"), " \u2014 the view that all things exist within the divine, and the divine within all things, while also exceeding them."), React.createElement("p", {
+  }, "aspects of the One Person"), ". Christians call that Jesus. Not other than Krishna and the rest of the pantheon of avatars."), React.createElement("p", {
     style: {
       fontFamily: 'var(--font-display)',
       fontStyle: 'italic',
@@ -2762,7 +2773,7 @@ function PanelTheology({
       opacity: 0.9,
       marginBottom: 28
     }
-  }, "\"The particular and the universal are not enemies. They are the pulse of reality.\"")), React.createElement("div", {
+  }, "Our hearts are an aspect of, a facet of, a gateway to, One Heart.")), React.createElement("div", {
     style: {
       padding: '0 24px 40px',
       position: 'relative',
@@ -2820,7 +2831,7 @@ function PanelTheology({
       color: p.fg,
       opacity: 0.65
     }
-  }, "Practitioners need not hold any of these traditions explicitly. The practice is accessible across and beyond any particular framework.")));
+  }, "The One Heart is depicted as the Sacred Heart of Jesus in Catholicism. Call it by whatever name is comfortable for you.")));
   return React.createElement("div", {
     style: {
       display: 'grid',
@@ -2865,7 +2876,7 @@ function PanelTheology({
       marginBottom: isShort ? 12 : 20,
       opacity: 0.8
     }
-  }, "Foundation"), React.createElement("h2", {
+  }, "The Insight"), React.createElement("h2", {
     style: {
       fontFamily: 'var(--font-display)',
       fontWeight: 300,
@@ -2875,11 +2886,11 @@ function PanelTheology({
       letterSpacing: '-0.02em',
       marginBottom: isShort ? 20 : 32
     }
-  }, "Theological", React.createElement("br", null), React.createElement("em", {
+  }, "The One", React.createElement("br", null), React.createElement("em", {
     style: {
       fontStyle: 'italic'
     }
-  }, "Ground")), React.createElement("p", {
+  }, "Person")), React.createElement("p", {
     style: {
       fontFamily: 'var(--font-body)',
       fontWeight: 300,
@@ -2889,11 +2900,11 @@ function PanelTheology({
       opacity: 0.7,
       marginBottom: isShort ? 16 : 24
     }
-  }, "Rooted in ", React.createElement("strong", {
+  }, "It works and plays with the insight that we each and all are ", React.createElement("strong", {
     style: {
       fontWeight: 400
     }
-  }, "panentheism"), " \u2014 the view that all things exist within the divine, and the divine within all things, while also exceeding them."), React.createElement("p", {
+  }, "aspects of the One Person"), ". Christians call that Jesus. Not other than Krishna and the rest of the pantheon of avatars."), React.createElement("p", {
     style: {
       fontFamily: 'var(--font-display)',
       fontStyle: 'italic',
@@ -2903,7 +2914,7 @@ function PanelTheology({
       color: p.accent,
       opacity: 0.9
     }
-  }, "\"The particular and the universal are not enemies. They are the pulse of reality.\"")), React.createElement("div", {
+  }, "Our hearts are an aspect of, a facet of, a gateway to, One Heart.")), React.createElement("div", {
     style: {
       display: 'flex',
       flexDirection: 'column',
@@ -2965,7 +2976,7 @@ function PanelTheology({
       color: p.fg,
       opacity: 0.65
     }
-  }, "Practitioners need not hold any of these traditions explicitly. The practice is accessible across and beyond any particular framework.")));
+  }, "The One Heart is depicted as the Sacred Heart of Jesus in Catholicism. Call it by whatever name is comfortable for you.")));
 }
 function PanelForYou({
   p,
@@ -3013,7 +3024,7 @@ function PanelForYou({
       marginBottom: 12,
       opacity: 0.8
     }
-  }, "This practice is for"), React.createElement("h2", {
+  }, "Make it your own"), React.createElement("h2", {
     style: {
       fontFamily: 'var(--font-display)',
       fontWeight: 300,
@@ -3022,11 +3033,11 @@ function PanelForYou({
       color: p.fg,
       letterSpacing: '-0.02em'
     }
-  }, "Those trying to stay ", React.createElement("em", {
+  }, "Please ", React.createElement("em", {
     style: {
       fontStyle: 'italic'
     }
-  }, "open"))), React.createElement("div", {
+  }, "experiment"))), React.createElement("div", {
     style: {
       display: 'flex',
       flexDirection: 'column',
@@ -3044,7 +3055,7 @@ function PanelForYou({
       color: p.fg,
       opacity: 0.72
     }
-  }, "For activists who are burning out. For contemplatives whose practice has become private. For ordinary people who want to remember, daily, that their heart belongs to a larger whole."), React.createElement("p", {
+  }, "The gestures are optional and not prescriptive. You don't have to do them this way. All Hearts can be intimidating, so be prudent in your opening to suffering, and open if you feel it's right for you."), React.createElement("p", {
     style: {
       fontFamily: 'var(--font-display)',
       fontStyle: 'italic',
@@ -3053,7 +3064,7 @@ function PanelForYou({
       lineHeight: 1.6,
       color: p.accent
     }
-  }, "\"Short enough to do in a few minutes. Deep enough to practice for a lifetime.\"")), React.createElement("div", {
+  }, "Let it feed you.")), React.createElement("div", {
     style: {
       textAlign: 'center',
       marginTop: 32,
@@ -3133,7 +3144,7 @@ function PanelForYou({
       marginBottom: 16,
       opacity: 0.8
     }
-  }, "This practice is for"), React.createElement("h2", {
+  }, "Make it your own"), React.createElement("h2", {
     style: {
       fontFamily: 'var(--font-display)',
       fontWeight: 300,
@@ -3142,11 +3153,11 @@ function PanelForYou({
       color: p.fg,
       letterSpacing: '-0.02em'
     }
-  }, "Those trying to stay ", React.createElement("em", {
+  }, "Please ", React.createElement("em", {
     style: {
       fontStyle: 'italic'
     }
-  }, "open"))), React.createElement("div", {
+  }, "experiment"))), React.createElement("div", {
     style: {
       display: 'grid',
       gridTemplateColumns: '1fr 1.4fr',
@@ -3170,7 +3181,7 @@ function PanelForYou({
       color: p.fg,
       opacity: 0.72
     }
-  }, "For activists who are burning out. For contemplatives whose practice has become private. For ordinary people who want to remember, daily, that their heart belongs to a larger whole."), React.createElement("p", {
+  }, "The gestures are optional and not prescriptive. You don't have to do them this way. All Hearts can be intimidating, so be prudent in your opening to suffering, and open if you feel it's right for you."), React.createElement("p", {
     style: {
       fontFamily: 'var(--font-display)',
       fontStyle: 'italic',
@@ -3179,7 +3190,7 @@ function PanelForYou({
       lineHeight: 1.6,
       color: p.accent
     }
-  }, "\"Short enough to do in a few minutes. Deep enough to practice for a lifetime.\"")), React.createElement("div", {
+  }, "Let it feed you.")), React.createElement("div", {
     style: {
       display: 'flex',
       alignItems: 'center',
