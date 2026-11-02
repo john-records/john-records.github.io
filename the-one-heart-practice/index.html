@@ -72,6 +72,8 @@
     .panel::-webkit-scrollbar { display: none; }
     .panel > div:not(.panel-label) { height: auto !important; min-height: 100%; }
   }
+  /* On short screens the corner label runs into each panel's top line */
+  @media (min-width: 768px) and (max-height: 859px) { .panel-label { display: none; } }
 
   /* ── Mobile: vertical scroll-snap ── */
   @media (max-width: 767px) {

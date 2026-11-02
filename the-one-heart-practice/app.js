@@ -2551,7 +2551,7 @@ function PanelCycles({
       height: '100%',
       position: 'relative',
       zIndex: 5,
-      padding: isShort ? '40px 80px 24px' : '60px 80px 40px'
+      padding: isShort ? '58px 80px 24px' : '60px 80px 40px'
     }
   }, React.createElement(PanelGraphic, {
     style: {
@@ -3127,7 +3127,7 @@ function PanelForYou({
       height: '100%',
       position: 'relative',
       zIndex: 5,
-      padding: isShort ? '40px 80px' : '60px 80px'
+      padding: isShort ? '40px 80px 64px' : '60px 80px'
     }
   }, React.createElement("div", {
     style: {
