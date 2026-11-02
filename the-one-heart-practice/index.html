@@ -64,10 +64,13 @@
     justify-content: center;
   }
 
-  /* ── iPad/short-viewport safety net: allow vertical scroll within a panel ── */
-  @media (max-height: 859px) and (min-width: 768px) {
-    .panel { overflow-x: hidden; overflow-y: auto; scrollbar-width: none; }
+  /* ── Tablet and desktop: a panel scrolls if its text outgrows the screen (short
+     screens, or A+). safe center keeps the top reachable; older Safari falls back
+     to top-aligned. ── */
+  @media (min-width: 768px) {
+    .panel { overflow-x: hidden; overflow-y: auto; scrollbar-width: none; align-items: flex-start; align-items: safe center; }
     .panel::-webkit-scrollbar { display: none; }
+    .panel > div:not(.panel-label) { height: auto !important; min-height: 100%; }
   }
 
   /* ── Mobile: vertical scroll-snap ── */
@@ -125,6 +128,8 @@
     transition: all 0.4s var(--ease-out);
     padding: 0;
   }
+  .dot { position: relative; }
+  .dot::after { content: ''; position: absolute; inset: -14px -5px; }
   .dot.active {
     background: rgba(255,255,255,0.9);
     transform: scale(1.5);

@@ -21,6 +21,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0d1b2a; }
   display: flex;
   width: 100vw;
   height: 100vh;
+  height: 100svh;
   overflow-x: scroll;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
@@ -33,6 +34,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0d1b2a; }
   min-width: 100vw;
   width: 100vw;
   height: 100vh;
+  height: 100svh;
   scroll-snap-align: start;
   position: relative;
   overflow: hidden;
@@ -342,7 +344,8 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0d1b2a; }
   padding: 56px 50px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  justify-content: safe center;
   overflow-y: auto;
 }
 .df-big-num {
@@ -490,7 +493,8 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0d1b2a; }
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  justify-content: safe center;
 }
 .caut-title {
   font-family: 'Cormorant Garamond', serif;
@@ -705,7 +709,8 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0d1b2a; }
   padding: 52px 46px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  justify-content: safe center;
   overflow-y: auto;
 }
 .gest-title {
@@ -1041,7 +1046,8 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0d1b2a; }
   padding: 52px 46px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  justify-content: safe center;
   overflow-y: auto;
 }
 .nam-right h2 {
@@ -1252,9 +1258,9 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0d1b2a; }
 }
 
 /* ===========================
-   RESPONSIVE — MOBILE (≤ 650px)
+   RESPONSIVE — PHONE AND UPRIGHT TABLET: ONE COLUMN
 =========================== */
-@media (max-width: 650px) {
+@media (max-width: 650px), (max-width: 1200px) and (orientation: portrait) {
   /* Side-by-side pages → stacked column, page scrolls internally */
   .dear-friends,
   .caution,
@@ -1268,6 +1274,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0d1b2a; }
   .df-left, .caut-left, .nam-left {
     width: 100% !important;
     flex-shrink: 0;
+    overflow-y: visible !important;
   }
   .df-right, .caut-right, .nam-right {
     width: 100% !important;
@@ -1292,6 +1299,8 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0d1b2a; }
   .nam-right  { padding: 22px !important; }
   .gest-left  { padding: 28px 22px !important; }
   .gest-right { padding: 22px !important; }
+  .df-right, .caut-right, .nam-right, .gest-right { padding-bottom: 90px !important; }
+  .df-left, .caut-left, .gest-left, .nam-left, .bow-header { padding-top: 54px !important; }
 
   /* Decorative large numbers — shrink */
   .df-big-num { font-size: 80px; }
@@ -1369,7 +1378,16 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0d1b2a; }
     padding: 18px 20px !important;
   }
   .all-tips { padding-bottom: 90px !important; }
+  .wi-col.is { padding-bottom: 90px !important; }
 
+  .ben-grid { padding-bottom: 20px; }
+  .back-inner { padding: 64px 24px 90px !important; }
+}
+
+/* ===========================
+   RESPONSIVE — PHONE (≤ 650px)
+=========================== */
+@media (max-width: 650px) {
   /* Cover responsive */
   .cover-inner  { padding: 20px !important; }
   .cover-stat-row { gap: 20px !important; margin: 16px 0 6px !important; }
@@ -1378,11 +1396,6 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0d1b2a; }
   .cover-pills { gap: 7px !important; }
   .cover-pill { font-size: 11.25px !important; padding: 6px 12px !important; }
 
-  /* Back cover responsive. Centred with overflow hidden, a phone lost the
-     last pills and the author line off the bottom; scroll instead, and let
-     auto margins centre it only when there's room. */
-  .back-cover { overflow-y: auto !important; justify-content: flex-start !important; }
-  .back-inner { padding: 64px 24px 90px !important; margin: auto 0; }
   .back-pills { gap: 7px !important; }
   .back-pill  { font-size: 11.25px !important; padding: 6px 12px !important; }
 
@@ -1394,6 +1407,38 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0d1b2a; }
   .sc-nav  { gap: 4px !important; bottom: 38px !important; }
   .fs-btn  { font-size: 12.5px !important; padding: 3px 7px !important; }
 }
+
+/* ===========================
+   TOUCH AND SHORT SCREENS
+   Centred columns lose their top once text overflows (hence "safe center"
+   above), and nothing here may depend on hover. Controls sit on their own
+   dark backing so they show on the cream pages too.
+=========================== */
+.df-left, .caut-left, .gest-left, .nam-left {
+  justify-content: flex-start;
+  justify-content: safe center;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.back-cover { overflow-y: auto; justify-content: flex-start; }
+.back-inner { margin: auto 0; }
+.df-right, .caut-right, .gest-right, .nam-right, .wi-col, .bow-left, .bow-right,
+.sigh-left, .sigh-right, .still-left, .still-right, .all-seq, .all-tips { padding-bottom: 76px; }
+.nav-dots { background: rgba(13,27,42,0.55); padding: 6px 12px; border-radius: 14px; bottom: 10px; }
+.dot { position: relative; width: 8px; height: 8px; }
+.dot::after { content: ''; position: absolute; inset: -14px -5px; }
+.nav-arrow { background: rgba(13,27,42,0.6); border-color: rgba(255,255,255,0.4); }
+.nav-arrow:hover { background: rgba(13,27,42,0.8); }
+.page-num { right: 176px; }
+@media (max-width: 1400px) {
+  .nav-arrow { top: auto; bottom: 10px; transform: none; width: 46px; height: 46px; }
+  .all-header { padding-top: 52px !important; }
+}
+.benefits { overflow-y: auto; }
+.ben-grid { flex: 1 0 auto; grid-template-rows: auto; overflow: visible !important; }
+.ben-card { overflow-y: visible; }
+.ben-footer { padding-bottom: 70px !important; }
+.wi-bottom { padding-bottom: 60px; }
 .nook-home{position:fixed;top:20px;left:14px;z-index:1000;font-family:'Lato',sans-serif;font-size:13.75px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.55);text-decoration:none;padding:4px}.nook-home:hover,.nook-home:focus-visible{color:#fff}@media (max-width:640px){.nook-home span{display:none}}
 /* site-wide search overlay (Pagefind) */
 .gsearch-overlay{position:fixed; inset:0; z-index:2000; background:rgba(0,0,0,.45);
@@ -1922,6 +1967,7 @@ let scrollTimer;
 magazine.addEventListener('scroll', () => {
   clearTimeout(scrollTimer);
   scrollTimer = setTimeout(() => {
+    if (resizing) return;
     const p = Math.round(magazine.scrollLeft / window.innerWidth);
     if (p !== current) { current = p; updateUI(); }
   }, 60);
@@ -1935,14 +1981,18 @@ document.addEventListener('keydown', e => {
   if (e.key === 'End')  { e.preventDefault(); goTo(TOTAL - 1); }
 });
 
-// Touch swipe
-let tx = 0, ty = 0;
-magazine.addEventListener('touchstart', e => { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
-magazine.addEventListener('touchend',   e => {
-  const dx = tx - e.changedTouches[0].clientX;
-  const dy = Math.abs(ty - e.changedTouches[0].clientY);
-  if (Math.abs(dx) > 50 && Math.abs(dx) > dy) navigate(dx > 0 ? 1 : -1);
-}, { passive: true });
+// Turning the device changes the page width; stay on the same page
+let lastWidth = window.innerWidth, resizing = false, resizeTimer;
+window.addEventListener('resize', () => {
+  if (window.innerWidth === lastWidth) return;
+  lastWidth = window.innerWidth;
+  resizing = true;
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    magazine.scrollLeft = pages[current].offsetLeft;
+    resizing = false;
+  }, 150);
+});
 
 // Font size control
 const fsLevels = [0.82, 1.0, 1.25, 1.44, 1.65];
@@ -1964,7 +2014,11 @@ function hideNav() {
   scNav.classList.add('nav-hidden');
 }
 
+// A tap also fires a mousemove, which must not count as the mouse leaving
+let lastTouch = 0;
+
 document.addEventListener('mousemove', e => {
+  if (Date.now() - lastTouch < 1000) return;
   if (e.clientY > window.innerHeight - NAV_ZONE) {
     showNav();
   } else {
@@ -1972,12 +2026,15 @@ document.addEventListener('mousemove', e => {
   }
 });
 
-// Touch: show briefly then hide
+// Touch: a tap near the bottom shows the shortcut pills for a few seconds
 let touchTimer;
-document.addEventListener('touchstart', () => {
-  showNav();
-  clearTimeout(touchTimer);
-  touchTimer = setTimeout(hideNav, 2000);
+document.addEventListener('touchstart', e => {
+  lastTouch = Date.now();
+  if (e.touches[0].clientY > window.innerHeight - NAV_ZONE) {
+    showNav();
+    clearTimeout(touchTimer);
+    touchTimer = setTimeout(hideNav, 5000);
+  }
 }, { passive: true });
 
 // Keyboard nav: flash the nav so user knows it exists

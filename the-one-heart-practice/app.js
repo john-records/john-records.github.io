@@ -1055,7 +1055,7 @@ function PanelCover({
       justifyContent: 'space-between',
       textAlign: 'center',
       zIndex: 5,
-      padding: isMobile ? '7vh 28px 8vh' : '9vh 60px 11vh'
+      padding: isMobile ? '7vh 28px 8vh' : '9vh 60px max(11vh, 130px)'
     }
   }, React.createElement("div", {
     style: {
@@ -2299,7 +2299,7 @@ function PanelReturn({
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'flex-end',
-      padding: isShort ? '40px 40px 44px 80px' : '60px 40px 80px 80px',
+      padding: isShort ? '40px 40px 126px 80px' : '60px 40px 126px 80px',
       position: 'relative',
       zIndex: 6
     }
@@ -3317,15 +3317,33 @@ function App() {
   const getVisibleHeight = () => window.visualViewport?.height ?? window.innerHeight;
   const [isShort, setIsShort] = useState(() => window.innerWidth >= 768 && getVisibleHeight() < 860);
   const trackRef = useRef(null);
+  const currentRef = useRef(current);
+  currentRef.current = current;
+  const resizingRef = useRef(false);
   const n = PANELS_DATA.length;
   useEffect(() => {
+    let lastWidth = window.innerWidth,
+      timer;
     const handler = () => {
       setIsMobile(window.innerWidth < 768);
       setIsShort(window.innerWidth >= 768 && getVisibleHeight() < 860);
+      if (window.innerWidth === lastWidth) return;
+      // Turning the device changes the panel width; stay on the same panel
+      lastWidth = window.innerWidth;
+      resizingRef.current = true;
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        const el = trackRef.current;
+        if (el) {
+          if (window.innerWidth < 768) el.scrollTop = el.children[currentRef.current]?.offsetTop ?? 0;else el.scrollLeft = currentRef.current * window.innerWidth;
+        }
+        resizingRef.current = false;
+      }, 150);
     };
     window.addEventListener('resize', handler);
     window.visualViewport?.addEventListener('resize', handler);
     return () => {
+      clearTimeout(timer);
       window.removeEventListener('resize', handler);
       window.visualViewport?.removeEventListener('resize', handler);
     };
@@ -3362,6 +3380,7 @@ function App() {
       el.scrollLeft = current * window.innerWidth;
     }
     const handler = () => {
+      if (resizingRef.current) return;
       const m = window.innerWidth < 768;
       if (m) {
         const panels = Array.from(el.children);
